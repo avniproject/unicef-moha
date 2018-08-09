@@ -1,0 +1,39 @@
+[
+  {
+  "name": "Name and Type of Health Facility",
+  "uuid": "0ed9c702-12db-4c72-8f3e-baba9898af0c",
+  "dataType": "Text"
+  },
+  {
+    "name": "Address",
+    "uuid": "543a5ae4-b474-4c0f-b3ff-1313b7a8b44e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of Nodal Person",
+    "uuid": "4205021b-68e6-43ec-a78b-ff6471f62337",
+    "dataType": "Text"
+  },
+  {
+    "name": "Placeholder FOR OFFICE USE ONLY",
+    "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650",
+    "dataType": "Coded",
+    "answers": []
+  },
+  {
+    "name": "FBMDR NO.",
+    "uuid": "13a9c2e3-b1a9-478a-a110-67a1e21c5ab8",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "MCTS NO",
+    "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Reporting Date",
+    "uuid": "a08c7590-1940-4a88-8d66-ec46649669cd",
+    "dataType": "Date"
+  }
+
+]

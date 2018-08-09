@@ -1,0 +1,18 @@
+{
+  "organisation": "MDSR",
+  "catchments": [
+    {
+      "name": "1",
+      "uuid": "bc8f2be0-7423-4f9e-a70e-71c54892deed",
+      "type": "Area",
+      "addressLevels": [
+        {
+          "uuid": "ae684b32-f355-41c6-be1d-d9d8a1a1b942",
+          "name": "Assam",
+          "level": 1,
+          "type": "Area"
+        }
+      ]
+    }
+  ]
+}

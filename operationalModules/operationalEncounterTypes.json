@@ -1,0 +1,13 @@
+{
+  "organisationName": "MDSR",
+  "operationalEncounterTypes": [
+    {
+      "uuid": "42d867f1-209b-465f-ba90-d9c865b0ccc6",
+      "name": "Form 4 : Facility Based MDR",
+      "encounterType": {
+        "uuid": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
+        "comment": "Form 4 : Facility Based MDR"
+      }
+    }
+  ]
+}

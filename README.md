@@ -1,2 +1,0 @@
-# UNICEF-MDSR
-MDSR Platform for UNICEF
