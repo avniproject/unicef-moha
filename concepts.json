@@ -1,5 +1,111 @@
 [
   {
+    "name": "Referral Time to reach from Facility 1",
+    "uuid": "7820fd91-a878-4f22-82c4-44b8684e24f6",
+    "dataType": "Date"
+  },
+  {
+  "name": "Referral Time to reach from Facility 2",
+  "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
+  "type" : "Date"
+  },
+  {
+    "name": "Referral Time to reach to Facility 3 ref 1",
+    "uuid": "19c9874b-1d1f-4dd8-a8ee-861bf5db5afd",
+    "type" : "Date"
+  },
+  {
+    "name": "3. Date of spontaneous abortion/ date of termination of pregnany",
+    "uuid": "9b7b4dad-5cab-4bad-9861-fef24e16e423",
+    "dataType": "Date"
+  },
+  {
+    "name": "3. No. of completed pregnancy weeks at time of delivery",
+    "uuid": "0625382b-a698-4232-b3bb-5ef94aa66fb3",
+    "dataType": "Date"
+  },
+  {
+    "name": "Live Births",
+    "uuid": "eca8d9c2-b818-4913-abb1-1724920c9a41",
+    "dataType": "Numeric",
+    "unit": "No of live births"
+  },
+  {
+    "name": "Still Births",
+    "uuid": "f751d9b5-a83c-48c9-8db6-4418aa3c24d8",
+    "dataType": "Numeric",
+    "unit": "No. of still births"
+  },
+  {
+    "name": "2b. Duration of onset of problem after delivery",
+    "uuid": "7ba57be5-d20b-430f-8b2d-8a2816db4672",
+    "dataType": "Date"
+  },
+  {
+    "name": "11. No of post natal checkups received",
+    "uuid": "4993b64f-e285-4b73-8d59-a181b579e6d6",
+    "dataType": "Numeric",
+    "unit": "No of checkups"
+  },
+  {
+    "name": "Prolonged labour (Primi>12hrs / Subsequent deliveries > 8hrs)",
+    "uuid": "6408b61b-afaa-4902-b39f-4aa1ef38635d"
+  },
+  {
+    "name": "Severe bleeding/bleeding with clots - (one saree/in skirt soaked = 500ml)",
+    "uuid": "a8640e9d-dedc-4539-bded-739996c8314f"
+  },
+  {
+    "name": "labour pain which disappeared suddenly",
+    "uuid": "451f3d90-4188-48ae-a0c6-85f849338d06"
+  },
+  {
+    "name": "Inversion of the uterus",
+    "uuid": "14e2e37a-66ee-4698-a77d-95601be8692b"
+  },
+  {
+    "name": "Unattended",
+    "uuid": "2bb7f087-8712-4849-8f3d-d95e18ba2098"
+  },
+  {
+    "name": "Received IV drip",
+    "uuid": "3ac13818-9a62-43b2-a878-dd8e8f85a18e"
+  },
+  {
+    "name": "Blood transfusion",
+    "uuid": "d7fd0e23-c557-45b0-8d0d-bfa6e8341da8"
+  },
+  {
+    "name": "Oxygen was given",
+    "uuid": "8118904e-bf87-4aaa-8617-8fdca260c858"
+  },
+  {
+    "name": "Cause of death",
+    "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
+  },
+  {
+    "name": "Not Applicable",
+    "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+  },
+  {
+    "name": "New born death",
+    "uuid": "29e2a89b-82d4-44c8-9ba8-119a3af7f3fe"
+  },
+  {
+    "name": "VHND",
+    "uuid": "1d3d49c5-feba-48d4-9a18-e1aecffb29a6"
+  },
+  {
+    "name": "Not Known",
+    "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+  },
+  {
+    "name": "High Blood Pressure",
+    "uuid": "63398939-0a45-46ee-8d92-f01d55e96c1a"
+  },
+  
+  
+  {
   "name": "Name and Type of Health Facility",
   "uuid": "0ed9c702-12db-4c72-8f3e-baba9898af0c",
   "dataType": "Text"
@@ -15,7 +121,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Placeholder FOR OFFICE USE ONLY",
+    "name": "Placeholder",
     "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650",
     "dataType": "Coded",
     "answers": []
@@ -34,6 +140,2434 @@
     "name": "Reporting Date",
     "uuid": "a08c7590-1940-4a88-8d66-ec46649669cd",
     "dataType": "Date"
+  },
+  {
+    "name": "Inpatient No",
+    "uuid": "612ec753-4579-4e28-a305-5083bd4d9feb",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Medico-legal admission",
+    "uuid": "77209dcc-a49d-40f1-929a-4ef95b4f085b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Complete Address",
+    "uuid": "8b8a1118-f2be-4f3d-ace7-8f7a16164c00",
+    "dataType": "Text"
+  },
+  {
+    "name": "Contact/Mobile No",
+    "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Illiterate",
+    "uuid": "1211de53-f6ab-4297-a4f7-c65cbe84f4ee",
+    "dataType": "NA"
+  },
+  {
+    "name": "Upto 5th Class",
+    "uuid": "09b53132-7dc6-40a9-9f8e-8518db62f3fc",
+    "dataType": "NA"
+  },
+  {
+    "name": "Beyond 12th Class",
+    "uuid": "cc6802f7-791f-4dc0-a2c9-8403cd499668",
+    "dataType": "NA"
+  },
+  {
+    "name": "Education",
+    "uuid": "8c18f5a3-7ede-472c-a540-ad4ec6eb7152",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name":"Illiterate",
+        "uuid": "1211de53-f6ab-4297-a4f7-c65cbe84f4ee"
+      },
+      {
+        "name":"Upto 5th Class",
+        "uuid": "09b53132-7dc6-40a9-9f8e-8518db62f3fc"
+      },
+      {
+        "name":"Beyond 12th Class",
+        "uuid": "cc6802f7-791f-4dc0-a2c9-8403cd499668"
+      }
+    ]
+  },
+  {
+    "name": "BPL Certified",
+    "uuid": "ac3047d4-7163-4402-88e5-ef796840528e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Self certified BPL",
+    "uuid": "a9874621-3c8b-4e99-b033-08c0f1fcc86c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Not BPL",
+    "uuid": "7f38713c-af73-4e0a-b5b2-2f982fffba38",
+    "dataType": "NA"
+  },
+  {
+    "name": "Below Poverty Line",
+    "uuid": "cd6e5e69-fa7a-4eb8-9b7c-96735ff7fdf1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name":"BPL Certified",
+        "uuid": "ac3047d4-7163-4402-88e5-ef796840528e"
+      },
+      {
+        "name":"Self certified BPL",
+        "uuid": "a9874621-3c8b-4e99-b033-08c0f1fcc86c"
+      },
+      {
+        "uuid": "7f38713c-af73-4e0a-b5b2-2f982fffba38",
+        "name": "Not BPL"
+      }
+    ]
+  },
+  {
+    "name": "Date and Time of Admission",
+    "uuid": "89881a1f-a428-40a6-a8d9-cf77ab9ef0b0",
+    "dataType": "Date"
+  },
+  {
+    "name": "Date and Time of Death",
+    "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
+    "dataType": "Date"
+  },
+  {
+    "name": "Duration of Hospital Stay",
+    "uuid": "9cf4c6e4-a516-4121-8f78-7501c7fbe8c4",
+    "dataType": "Date"
+  },
+  {
+    "name": "Duration of ICU Stay",
+    "uuid": "2f6e79b3-eafa-4101-b01a-a18636fc21a7",
+    "dataType": "Date"
+  },
+  {
+    "name": "Admission-delivery interval",
+    "uuid": "bc543109-7ab8-4ba4-af97-b3ba171e9153",
+    "dataType": "Date"
+  },
+  {
+    "name": "Admission-death interval",
+    "uuid": "01882f0f-41e5-4ce1-b0d3-0116e279d1cc",
+    "dataType": "Date"
+  },
+  {
+    "uuid": "4006c7ed-b1b8-459a-8424-181969d6f23a",
+    "name":"Ectopic",
+    "dataType":"NA"
+  },
+  {
+    "name": "Undelivered",
+    "uuid": "08d3cb69-3c1d-4020-90a0-7ffba2bc6ee7",
+    "dataType": "NA"
+  },
+
+  {
+    "name": "Outcome of Pregnancy",
+    "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "03dddd29-c1bb-4231-a17b-55445e247e7d",
+        "name": "Abortion"
+      },
+      {
+        "uuid": "4006c7ed-b1b8-459a-8424-181969d6f23a",
+        "name": "Ectopic"
+      },
+      {
+        "uuid": "e3999b21-821c-4c6e-9953-156e70b9217c",
+        "name": "Live Birth"
+      },
+      {
+        "uuid": "797c7923-1993-49d9-b759-1706aae62ae9",
+        "name": "Still Birth"
+      },
+      {
+        "uuid": "08d3cb69-3c1d-4020-90a0-7ffba2bc6ee7",
+        "name": "Undelivered"
+      }
+    ]
+  },
+  {
+    "name": "Complaints at time of admission",
+    "uuid": "8ec0e2b3-e3c7-441a-bde0-e6d9997646be",
+    "dataType": "Text"
+  },
+  {
+    "name": "No of Living Children",
+    "uuid": "3999f6c7-bf9b-4c1e-a5a0-55cd90839bc7",
+    "dataType": "Numeric"
+  },
+  {
+    "uuid": "778ea076-6517-4d14-97a6-681eb788583c",
+    "name": "Before 22 weeks",
+    "dataType": "NA"
+  },
+  {
+    "name": "Antenatal 22-34 weeks",
+    "uuid": "ce2f0027-631f-482e-90d1-159f0c3a7ff6"
+  },
+  {
+    "name": "Antenatal >=34 weeks",
+    "uuid": "01bb98ed-e327-4ae5-aa80-1bbce714cbe9"
+  },
+  {
+    "name": "Intrapartum",
+    "uuid": "f13ef158-188c-4294-86d4-597b8b036281"
+  },
+  {
+    "name": "Post-Partum up to 24hrs",
+    "uuid": "0004f08e-52ad-4207-a7a4-5c705077928c"
+  },
+  {
+    "name": "Post-natal 24hrs - 1 week",
+    "uuid": "b13ab23f-467d-4c54-a8b2-947485936179"
+  },
+  {
+    "name": "Post-natal - More than 1 week to 42 days",
+    "uuid": "5e1bc693-00cf-4723-94ca-b7edfac2fb53"
+  },
+  {
+    "name": "Period of gestation",
+    "uuid": "772cb5b7-3187-448b-9136-6c1b487937e1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "778ea076-6517-4d14-97a6-681eb788583c",
+        "name": "Before 22 weeks"
+      },
+      {
+
+        "name": "Antenatal 22-34 weeks",
+        "uuid": "ce2f0027-631f-482e-90d1-159f0c3a7ff6"
+      },
+      {
+        "name":"Antenatal >= 34 weeks",
+        "uuid": "01bb98ed-e327-4ae5-aa80-1bbce714cbe9"
+      },
+      {
+        "name": "Intrapartum",
+        "uuid": "f13ef158-188c-4294-86d4-597b8b036281"
+      },
+      {
+        "name": "Post-Partum up to 24hrs",
+        "uuid": "0004f08e-52ad-4207-a7a4-5c705077928c"
+      },
+      {
+        "name": "Post-natal 24hrs - 1 week",
+        "uuid": "b13ab23f-467d-4c54-a8b2-947485936179"
+      },
+      {
+        "name": "Post-natal - More than 1 week to 42 days",
+        "uuid": "5e1bc693-00cf-4723-94ca-b7edfac2fb53"
+      }
+    ]
+  },
+  {
+    "name": "Stable",
+    "uuid": "d367a371-d156-43eb-94ab-8e1671472b4e"
+  },
+  {
+    "name": "Semi conscious responds to verbal command",
+    "uuid": "cc6b6ab3-e392-4bab-ba06-31eaf0e38c1e"
+  },
+  {
+    "name": "Semi conscious responds to painful stimuli",
+    "uuid": "3427f554-3069-4e4a-9b84-6a4ad1e7abde"
+  },
+  {
+    "name": "Brought Dead",
+    "uuid": "344b0a63-3147-4d00-9423-58effd8fdb97"
+  },
+  {
+    "name": "Condition on Admission",
+    "uuid": "11d4816d-4253-4dda-92fc-16f2d2704e5a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Stable",
+        "uuid": "d367a371-d156-43eb-94ab-8e1671472b4e"
+      },
+      {
+        "name": "Semi conscious responds to verbal command",
+        "uuid": "cc6b6ab3-e392-4bab-ba06-31eaf0e38c1e"
+      },
+      {
+        "name": "Semi conscious responds to painful stimuli",
+        "uuid": "3427f554-3069-4e4a-9b84-6a4ad1e7abde"
+      },
+      {
+        "name": "Unconscious",
+        "uuid": "04d0248b-72c4-4d78-b4f1-3e3d9cc247b1"
+      },
+      {
+        "name": "Brought Dead",
+        "uuid": "344b0a63-3147-4d00-9423-58effd8fdb97"
+      }
+    ]
+  },
+  {
+    "name": "No of Places Visited Prior",
+    "uuid": "51218c08-1fd8-4706-81f6-25f48d634da9",
+    "dataType": "Numeric"
+  },
+
+  {
+    "name": "Referral date from home",
+    "uuid": "b7fafaa7-5bc7-4c57-8dd0-3d7f0727a1c6",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication or labor from home",
+    "uuid": "147dfae9-1b84-4a55-9ed3-76704987f10c",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling/arrival of transport to home",
+    "uuid": "2ea89ce6-d287-4ff0-884f-d8cfe892670a",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Transport Used from home",
+    "uuid": "ca5c3e67-2d06-4947-b0be-8565a62eb39d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time to reach from home",
+    "uuid": "f96d2d85-957b-43b3-b216-b31e30d73389",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Money Spent on transport from home",
+    "uuid": "7d6e6b5f-6ef6-4eca-bce6-bf735210d913",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Referral Name of facility/level from home",
+    "uuid": "228a8af6-86ef-4843-b684-8141700330a9",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Staff",
+    "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+  },
+  {
+    "name": "Rererral Attended from home",
+    "uuid": "a356bc32-32e6-4218-a111-b0d20c69071b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Referral reason from home",
+    "uuid": "55231d98-3103-4a7d-b3ff-f26ec80c5ab3",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Slip from home",
+    "uuid": "d93d42eb-3384-4d18-9c0a-7d1d663ea63f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Referral Treatment from home",
+    "uuid": "07820ece-e1fe-4a59-b896-2bee6c0eeb9f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on treatment/ medicine/ Diagnostics from home",
+    "uuid": "f1b4ceff-05ad-4ec9-9f2a-f83c68d6e372",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time spent in facility from home",
+    "uuid": "c2915175-9c96-4bf7-b946-dad002528d97",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral date from Facility 1",
+    "uuid": "1b36a513-0f93-4fbb-bd91-4d7079b2c655",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication or labor from Faclity 1",
+    "uuid": "cb49b1d2-51f3-4932-bfe3-7a154da8e062",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling/arrival of transport to Facility 1",
+    "uuid": "50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Transport Used from Facility 1",
+    "uuid": "aa7b415c-6a86-4fee-8571-29a9afe55d13",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time to reach from  Facility 1",
+    "uuid": "d3fbfce1-ff22-42ce-99bc-4df3c3361046",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Money Spent on transport from Facility 1",
+    "uuid": "00f6e34a-500c-4a84-b331-40fb6682e05b",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Referral Name of facility/level from Facility 1",
+    "uuid": "a3938cb7-3b85-4a79-be93-8755cda12a6d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Staff",
+    "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+  },
+  {
+    "name": "Rererral Attended at Facility 1",
+    "uuid": "7fd6dfff-4e8e-4412-9f21-c6c9e7a322aa",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Referral reason from Facility 1",
+    "uuid": "5b9df7c4-4493-4a11-9b39-c534bcdad60d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Slip from Facility 1",
+    "uuid": "a2576f78-9099-42b0-9e52-0c741675e1c7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Referral Treatment at Facility 1",
+    "uuid": "e751fcb0-d8c3-47fc-8d39-d61feff047d2",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on treatment/ medicine/ Diagnostics from Facility 1",
+    "uuid": "eb1f02b6-431a-4600-b63b-a4ae947a663a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time spent in facility at Facility 1",
+    "uuid": "4a232aaa-ba51-4a07-9995-e05723e2c6b7",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral date from Facility 2",
+    "uuid": "6239db6f-0dd1-4c81-b131-5f6c194ccd2f",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication or labor from Faclity 2",
+    "uuid": "6ed4757a-9db8-4b02-a855-4bcf48a5ed8a",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling/arrival of transport to Facility 2",
+    "uuid": "99c2471f-cdc6-4a33-91a7-81ebbce7179b",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Transport Used from Facility 2",
+    "uuid": "fadc97ed-738b-4872-bc3e-7b21d3ddf7da",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time to reach from  Facility 2",
+    "uuid": "e193c36e-3f18-4077-8ba5-32a2fb5f5500",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Money Spent on transport from Facility 2",
+    "uuid": "100fcbea-fbe8-4063-8aae-508edc7f2670",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Referral Name of facility/level from Facility 2",
+    "uuid": "6f64c2e5-05a1-4d10-9b73-cd3ee64e301a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Rererral Attended at Facility 2",
+    "uuid": "582ddda2-e720-4ce8-8891-8246a68f3dc5",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Referral reason from Facility 2",
+    "uuid": "30b9950f-e78c-46d1-864b-b8a4cef0a965",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Slip from Facility 2",
+    "uuid": "76468e15-0ae4-4cb7-9eaf-756ea4256b4b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Referral Treatment at Facility 2",
+    "uuid": "70f354df-5846-4e7d-aec2-661bd2aba924",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on treatment/ medicine/ Diagnostics from Facility 2",
+    "uuid": "dc211530-9c2c-4835-8d7e-b615b38fa2bb",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time spent in facility at Facility 2",
+    "uuid": "edd5599e-c4d4-4f4f-a0a3-280c46179c21",
+    "dataType": "Date"
+  },
+
+
+
+  {
+    "name": "Referral date from Facility 3",
+    "uuid": "31aa2e89-2e6e-48ea-a9b6-4a14de360547",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication or labor from Facility 3",
+    "uuid": "6ce00a0e-c05f-4b77-b49e-3420ff5646b6",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling/arrival of transport to Facility 3",
+    "uuid": "cd7c2138-4806-43e1-9e03-0e98ec53d8e8",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Transport Used from Facility 3",
+    "uuid": "be50416d-a8ff-4da0-a0dd-941a319013bc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time to reach to Facility 3 ref2",
+    "uuid": "b2bbe74f-39c8-4e45-b850-6417d7f3e903",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral Money Spent on transport from Facility 3",
+    "uuid": "199ea726-9235-4553-8f7b-21c4b66b1ffc",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Referral Name of facility/level from Facility 3",
+    "uuid": "b4b8c7ed-7daa-47d7-961a-d47b47b4b45e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Attended by at Facility 3",
+    "uuid": "a4233145-2938-4377-aa3e-0f92cb2eff7a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Referral reason from Facility 3",
+    "uuid": "27daf271-29b8-4402-9ce6-abfbd4ae63d9",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Slip from Facility 3",
+    "uuid": "4d547c43-136c-4ef2-bf9d-eadd927c5b97",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Referral Treatment at Facility 3",
+    "uuid": "f6a950ca-5268-4ef4-8643-9b1f774f856e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on treatment/ medicine/ Diagnostics from Facility 3",
+    "uuid": "609a5111-b61c-461d-9c3d-2431e31f9fc1",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Time spent in facility at Facility 3",
+    "uuid": "9a6cf54d-81cd-43d8-99f3-9f47be38fba4",
+    "dataType": "Date"
+  },
+  {
+    "name": "Is Abortion Cause",
+    "uuid": "100b445e-1a08-4d85-a2cb-7bafc0b0a9f9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Ectopic Pregnancy",
+    "uuid": "460f62be-5bad-4aae-96ec-ec828ecfa1c6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Gestational Trophoblastic Disease",
+    "uuid": "708740ff-7823-4f3b-a4eb-9e9188961649",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Placenta Previa",
+    "uuid": "9917e4b7-bdfc-4bf2-aaa2-190fdae2558d"
+  },
+  {
+    "name": "Placental abruption",
+    "uuid": "06311f76-ae0d-4fc2-adeb-99e10855bd50"
+  },
+  {
+    "name": "Placental Causes",
+    "uuid": "1f8ba737-518f-44ec-8e5b-a8007b09b7a9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Placenta Previa",
+        "uuid": "9917e4b7-bdfc-4bf2-aaa2-190fdae2558d"
+      },
+      {
+        "name": "Placental Abruption",
+        "uuid": "06311f76-ae0d-4fc2-adeb-99e10855bd50"
+      }
+    ]
+  },
+  {
+    "name": "Scar Dehiscence",
+    "uuid": "e2e15be5-1e1d-4234-95b2-57828b7ffa7f"
+  },
+  {
+    "name": "Rupture Uterus",
+    "uuid": "b89c51cd-b3e6-43b2-b3f3-1114b1d15837"
+  },
+  {
+    "name": "Late pregnancy Bleeding other than placental causes",
+    "uuid": "b1eda256-213e-43bb-a06c-d6bfb60b16bf",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Scar Dehiscence",
+        "uuid": "e2e15be5-1e1d-4234-95b2-57828b7ffa7f"
+      },
+      {
+        "name": "Rupture Uterus",
+        "uuid": "b89c51cd-b3e6-43b2-b3f3-1114b1d15837"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Intrapartum Bleeding",
+    "uuid": "31804433-94c1-4d35-8e97-bde2a793f480",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Atonic",
+    "uuid": "241c607f-622c-4d7f-a505-d17547a9dec0"
+  },
+  {
+    "name": "Traumatic",
+    "uuid": "47ad4655-4e47-4b81-ab96-8c94788961f2"
+  },
+  {
+    "name": "Mixed",
+    "uuid": "f0c70866-c4fb-4bc6-92ba-c5021142ed9a"
+  },
+  {
+    "name": "Postpartum Bleeding",
+    "uuid": "f61fb650-e75f-4f47-8ede-1d01bba4c082",
+    "dataType": "Coded",
+    "answers":[
+      {
+        "name": "Atonic",
+        "uuid": "241c607f-622c-4d7f-a505-d17547a9dec0"
+      },
+      {
+        "name": "Traumatic",
+        "uuid": "47ad4655-4e47-4b81-ab96-8c94788961f2"
+      },
+      {
+        "name": "Mixed",
+        "uuid": "f0c70866-c4fb-4bc6-92ba-c5021142ed9a"
+      }
+    ]
+  },
+  {
+    "name": "Gestational Hypertension",
+    "uuid": "e3c0c91a-c3e1-46c9-8e55-eada6eb4b8bd"
+  },
+  {
+    "name": "Hypertensive disorder of Pregnancy",
+    "uuid": "9929586a-01a9-4f9a-9731-71a669f9312d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Gestational Hypertension",
+        "uuid": "e3c0c91a-c3e1-46c9-8e55-eada6eb4b8bd"
+      },
+      {
+        "name": "Pre-eclampsia",
+        "uuid": "4c5c8ed4-3166-4782-b010-728aeee3ebb1"
+      },
+      {
+        "name": "Eclampsia",
+        "uuid": "489f07e5-d9e1-478a-969d-3acad587a15e"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "other"
+      }
+    ]
+  },
+  {
+    "name": "Normal labor",
+    "uuid": "29d71871-01cc-41f7-af70-7b312a55d801"
+  },
+  {
+    "name": "Inversion of Uterus",
+    "uuid": "1a227cc0-2dd2-4f62-836f-57cc38238927"
+  },
+  {
+    "name": "labor related Disorder",
+    "uuid": "ea73bc0a-678b-46a6-9885-95a33a673c8d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Normal labor",
+        "uuid": "29d71871-01cc-41f7-af70-7b312a55d801"
+      },
+      {
+        "name": "Prolonged labor",
+        "uuid": "2156deeb-bec7-4614-873f-eed4807a74f3"
+      },
+      {
+        "name": "Inversion of Uterus",
+        "uuid": "1a227cc0-2dd2-4f62-836f-57cc38238927"
+      },
+      {
+        "name": "Retained Placenta",
+        "uuid": "d211703c-beab-40f3-9e87-a271759c5ec9"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Anaemia",
+    "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+  },
+  {
+    "name": "Medical Disorder",
+    "uuid": "1aae23a3-aa93-4065-a9d4-86b1f5e80c10",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Anaemia",
+        "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+      },
+      {
+        "name": "Heart Disease",
+        "uuid": "89d2230c-7c64-4959-8835-bef4667f8428"
+      },
+      {
+        "name": "TB",
+        "uuid": "ca8a5f57-c409-47ad-8acf-921cdd0fc191"
+      },
+      {
+        "name": "Diabetes",
+        "uuid": "674f348f-5075-4c85-8bc2-9edfdee27505"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Post Abortal",
+    "uuid": "8f8e5804-ae0d-4888-824d-e1f3190cc372"
+  },
+  {
+    "name": "Antepartum",
+    "uuid": "95b9d0cb-9e3a-4809-b55d-01471f8fec97"
+  },
+  {
+    "name": "Post-Partum",
+    "uuid": "6df0590b-67ce-4eed-8574-8d062c25d5ad"
+  },
+  {
+    "name": "Diagnosis",
+    "uuid": "f088de32-c472-4468-88a4-3a250da5b473",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Post Abortal",
+        "uuid": "8f8e5804-ae0d-4888-824d-e1f3190cc372"
+      },
+      {
+        "name": "Antepartum",
+        "uuid": "95b9d0cb-9e3a-4809-b55d-01471f8fec97"
+      },
+      {
+        "name": "Intrapartum",
+        "uuid": "f13ef158-188c-4294-86d4-597b8b036281"
+      },
+      {
+        "name": "Post-Partum",
+        "uuid": "6df0590b-67ce-4eed-8574-8d062c25d5ad"
+      }
+      
+    ]
+  },
+  {
+    "name": "Viral such as Hepatitis/HIV AIDS/Others",
+    "uuid": "3877dd4e-b8ac-4f2f-a89f-943c80da5863"
+  },
+  {
+    "name": "Dengue",
+    "uuid": "5e9e7336-7ed2-4cf8-b60a-12e8ec4d6374"
+  },
+  {
+    "name": "Lower respiratory tract infection",
+    "uuid": "6063894d-f0dd-4b43-8959-d89ca94714ac"
+  },
+
+  {
+    "name": "Underlying cause of infection",
+    "uuid": "3f007de4-fd27-45df-9027-b865786c23bc",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Viral such as Hepatitis/HIV AIDS/Others",
+        "uuid": "3877dd4e-b8ac-4f2f-a89f-943c80da5863"
+      },
+      {
+        "name": "Malaria",
+        "uuid": "0dee2973-eebe-4699-b676-b770fdd1c411"
+      },
+      {
+        "name": "Dengue",
+        "uuid": "5e9e7336-7ed2-4cf8-b60a-12e8ec4d6374"
+      },
+      {
+        "name": "Lower respiratory tract infection",
+        "uuid": "6063894d-f0dd-4b43-8959-d89ca94714ac"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Incidental/Accidental Disorder",
+    "uuid": "5d9c6cb9-d49f-4c5b-a8c8-ac37ba97b495",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other Diagnosis",
+    "uuid": "06c7c94a-59bc-4f97-8ef5-b54eef08ccd7",
+    "dataType": "Text"
+  },
+  {
+    "name": "Spontaneous",
+    "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5"
+  },
+  {
+    "name": "Abortion Type",
+    "uuid": "b3e245ca-a965-464f-823a-cd75ead26911",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Spontaneous",
+        "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5"
+      },
+      {
+        "name": "Induced",
+        "uuid": "9e7d21e8-8123-46de-8bf0-f3c79e5810b0"
+      }
+    ]
+  },
+  {
+    "name": "Complete",
+    "uuid": "f75e41d0-f1d5-42f8-a6b6-f154ae1d17ac"
+  },
+  {
+    "name": "Incomplete",
+    "uuid": "f932325d-e3c1-4a06-a60c-fc56eaac13a5"
+  },
+  {
+    "name": "Spontaneous abortion detail",
+    "uuid": "59ebc42c-01cd-4d50-a055-6406d00faf2d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Complete",
+        "uuid": "f75e41d0-f1d5-42f8-a6b6-f154ae1d17ac"
+      },
+      {
+        "name": "Incomplete",
+        "uuid": "f932325d-e3c1-4a06-a60c-fc56eaac13a5"
+      }
+    ]
+  },
+  {
+    "name": "Legal",
+    "uuid": "a3601925-df68-4026-a29b-bfb8aea124d3"
+  },
+  {
+    "name": "Illegal",
+    "uuid": "4f26e888-2807-4b87-b548-4af3b2c8d96c"
+  },
+  {
+    "name": "Induced abortion details",
+    "uuid": "dfa16927-16b3-4746-a39c-2d62214ceaae",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Legal",
+        "uuid": "a3601925-df68-4026-a29b-bfb8aea124d3"
+      },
+      {
+        "name": "Illegal",
+        "uuid": "4f26e888-2807-4b87-b548-4af3b2c8d96c"
+      }
+    ]
+  },
+  {
+  "name": "Medical methods",
+  "uuid": "43e34edd-c1d6-4bd5-a483-0c54b94ff281"
+  },
+  {
+    "name": "MVA",
+    "uuid": "55a87387-1735-4a24-9219-d95894cf22c1"
+  },
+  {
+    "name": "D&E / S&E",
+    "uuid": "12537e83-b37c-4851-9fb3-69534eabf90f"
+  },
+  {
+    "name": "Extra amniotic installation",
+    "uuid": "41c3611d-9e21-42de-8bbc-458755d4397d"
+  },
+  {
+    "name": "Hysterotomy",
+    "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
+  },
+  {
+    "name": "Abortion procedure adopted",
+    "uuid": "44a60c43-b235-4e28-ba60-eeab1a2d1974",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Medical methods",
+        "uuid": "43e34edd-c1d6-4bd5-a483-0c54b94ff281"
+      },
+      {
+        "name": "MVA",
+        "uuid": "55a87387-1735-4a24-9219-d95894cf22c1"
+      },
+      {
+        "name": "D&E / S&E",
+        "uuid": "12537e83-b37c-4851-9fb3-69534eabf90f"
+      },
+      {
+        "name": "Extra amniotic installation",
+        "uuid": "41c3611d-9e21-42de-8bbc-458755d4397d"
+      },
+      {
+        "name": "Hysterotomy",
+        "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Uneventful",
+    "uuid": "533128ee-0fc7-4051-a54a-ce9aa5301f28"
+  },
+  {
+    "name": "Sepsis",
+    "uuid": "2dcacc7f-4225-47fc-8b22-0f07156d7520"
+  },
+  {
+    "name": "Hemorrhage",
+    "uuid": "62aa4830-2bd3-436a-ac37-f972c699ac3f"
+  },
+  {
+    "name": "Post abortal period symptoms",
+    "uuid": "97b5a664-97c2-421b-bc8e-7be3875e7807",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Uneventful",
+        "uuid": "533128ee-0fc7-4051-a54a-ce9aa5301f28"
+      },
+      {
+        "name": "Sepsis",
+        "uuid": "2dcacc7f-4225-47fc-8b22-0f07156d7520"
+      },
+      {
+        "name": "Hemorrhage",
+        "uuid": "62aa4830-2bd3-436a-ac37-f972c699ac3f"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Specify the centre visited",
+    "uuid": "147df247-b1cb-4bf5-afc2-c8bcbee8668f",
+    "dataType":"Text"
+  },
+  {
+    "name": "Termination done in more than 1 center",
+    "uuid": "6b86a5a2-bf82-4855-a63d-16d8237ecc2b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "uuid": "147df247-b1cb-4bf5-afc2-c8bcbee8668f",
+        "name": "Specify the centre visited"
+      }
+    ]
+  },
+  {
+    "name": "ANC Received",
+    "uuid": "4497cd7f-da68-4bff-81ca-4eb3d0ced0ec",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "CHC",
+    "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+  },
+  {
+    "name": "SDH",
+    "uuid": "5884f592-80b4-44a1-9247-823d37398d2a"
+  },
+  {
+    "name": "District Hospital (DH)",
+    "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+  },
+  {
+    "name": "Medical college",
+    "uuid": "e15982e1-825f-4872-a354-1a0a6ed79b6e"
+  },
+  {
+    "name": "Private hospital",
+    "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+  },
+  {
+    "name": "Type of facility",
+    "uuid": "113a3c58-0211-44b7-8ac1-976f3580b6ec",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "SC",
+        "uuid": "fe24e909-6346-4e84-bacc-2ec5ae85bed8"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "Sub District Hospital (SDH)",
+        "uuid": "5884f592-80b4-44a1-9247-823d37398d2a"
+      },
+      {
+        "name": "District Hospital (DH)",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "Medical college",
+        "uuid": "e15982e1-825f-4872-a354-1a0a6ed79b6e"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Obstetrician",
+    "uuid": "7be9abc0-a96c-4528-8ecd-dea448b638d1"
+  },
+  {
+    "name": "AYUSH",
+    "uuid": "387d3616-c170-4675-85df-a16a32d36e84"
+  },
+  {
+    "name": "Service provided by",
+    "uuid": "e315b178-a617-415e-a55a-93e64075cacc",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "ANM",
+        "uuid": "d3f764e5-938a-42dd-bdef-02614d424f8d"
+      },
+      {
+        "name": "MO",
+        "uuid": "c5a95b60-61b9-4861-a9a2-9b783e768b27"
+      },
+      {
+        "name": "Obstetrician",
+        "uuid": "7be9abc0-a96c-4528-8ecd-dea448b638d1"
+      },
+      {
+        "name": "AYUSH",
+        "uuid": "387d3616-c170-4675-85df-a16a32d36e84"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Told about disorder/ complication",
+    "uuid": "3b480c15-9a8d-4594-9b39-0f15138a3f78",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Ectopic pregnancy risk factor",
+    "uuid": "43ea8e22-0e39-41aa-ac56-0c88467fedb3"
+  },
+  {
+    "name": "Vesicular mole",
+    "uuid": "29fc8f8b-2424-406c-b6cd-705dc674a0f3"
+  },
+  {
+    "name": "Hydramnios/Oligohydramnios",
+    "uuid": "156423c1-4301-4bc3-b84c-f59dd21f470b"
+  },
+  {
+    "name": "Multiple Pregnancy",
+    "uuid": "e627db5e-c82f-4dfb-a522-613e436007a4"
+  },
+  {
+    "name": "Abnormal presentation",
+    "uuid": "b22472a7-14bc-4f07-a779-efd9e4e29d38"
+  },
+  {
+    "name": "Big baby",
+    "uuid": "b241bc78-21ea-4adb-9fda-8c66b426410e"
+  },
+  {
+    "name": "Medical Conditions",
+    "uuid": "4bcad42c-6ee8-4db3-8891-5fea6c6ea753",
+    "dataType": "Text"
+  },
+  {
+    "name": "Risk facor identified",
+    "uuid": "c78bdae2-6ba0-4eda-909e-41d2f3aaf271",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Abortion",
+        "uuid": "03dddd29-c1bb-4231-a17b-55445e247e7d"
+      },
+      {
+        "name": "Ectopic pregnancy risk factor",
+        "uuid": "43ea8e22-0e39-41aa-ac56-0c88467fedb3"
+      },
+      {
+        "name": "Vesicular mole",
+        "uuid": "29fc8f8b-2424-406c-b6cd-705dc674a0f3"
+      },
+      {
+        "name": "APH",
+        "uuid": "bbcab554-15c0-424f-a86f-e12a9ad38a53"
+      },
+      {
+        "name": "Hydramnios/Oligohydramnios",
+        "uuid": "156423c1-4301-4bc3-b84c-f59dd21f470b"
+      },
+      {
+        "uuid": "9af1e8e9-f16c-46de-8794-ac302444c63d",
+        "name": "Short Stature"
+      },
+      {
+        "name": "PIH/PE",
+        "uuid": "5a738df9-b09a-4e7d-b683-189a9cdabcad"
+      },
+      {
+        "name": "Previous C-section",
+        "uuid": "de5d06c1-df58-4e0f-949c-52100f769932"
+      },
+      {
+        "name": "Multiple Pregnancy",
+        "uuid": "e627db5e-c82f-4dfb-a522-613e436007a4"
+      },
+      {
+        "uuid": "338d5fb1-0493-4270-8d35-81105c239bbb",
+        "name": "Grand Multipara"
+      },
+      {
+        "name": "Abnormal presentation",
+        "uuid": "b22472a7-14bc-4f07-a779-efd9e4e29d38"
+      },
+      {
+        "name": "Big baby",
+        "uuid": "b241bc78-21ea-4adb-9fda-8c66b426410e"
+      },
+      {
+        "name": "Anaemia",
+        "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+      },
+      {
+        "name": "Diabetes",
+        "uuid": "674f348f-5075-4c85-8bc2-9edfdee27505"
+      },
+      {
+        "name": "Medical Conditions",
+        "uuid": "4bcad42c-6ee8-4db3-8891-5fea6c6ea753"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "labor Pain",
+    "uuid": "bbb1a2b5-9535-46da-9e2b-67b47b5cc5e7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Past facility",
+    "uuid": "402742ac-14bf-4392-ba7c-3e5250a223fb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Current facility",
+    "uuid": "4888f0d8-7e78-4441-9b2e-3eee56e77f89",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Intrapartum Hge",
+    "uuid": "e000d604-0f90-4343-bebe-02e61bf1b6e4"
+  },
+  {
+    "name": "IP Sepsis",
+    "uuid": "de81921a-0106-485b-afb1-d6ba36c74bb2"
+  },
+  {
+    "name": "Complication during labor",
+    "uuid": "e26cd7f7-0117-4b9c-bfa0-6055b68e6430",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "eclampsia/pre-ecclampsia",
+        "uuid": "4c5c8ed4-3166-4782-b010-728aeee3ebb1"
+      },
+      {
+        "name": "Prolonged labor",
+        "uuid": "2156deeb-bec7-4614-873f-eed4807a74f3"
+      },
+      {
+        "name": "Obstructed labor/Rupture Uterus",
+        "uuid": "3654f7c6-e515-4653-8298-50dfb54d2152"
+      },
+      {
+        "name": "Intrapartum Hge",
+        "uuid": "e000d604-0f90-4343-bebe-02e61bf1b6e4"
+      },
+      {
+        "name": "Inversion of Uterus",
+        "uuid": "1a227cc0-2dd2-4f62-836f-57cc38238927"
+      },
+      {
+        "name": "IP Sepsis",
+        "uuid": "de81921a-0106-485b-afb1-d6ba36c74bb2"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Undelivered mode",
+    "uuid": "eff2209c-5e76-4da6-8a8a-8c9a1c4795b9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Normal with episiotomy",
+    "uuid": "4e524088-a06f-40fe-8482-4d8dc46ef8b1"
+  },
+  {
+    "name": "Assisted",
+    "uuid": "5e5acaab-b92e-418c-9b8f-b61dce8e13ee"
+  },
+  {
+    "name": "Assisted-Forceps",
+    "uuid": "4e65210b-3b5a-4318-abc6-7575d4336ea4"
+  },
+  {
+    "name": "Assisted- Vaccum",
+    "uuid": "9f0dc85f-289e-44a5-baa0-8e9b58fc992b"
+  },
+  {
+    "name": "Breech",
+    "uuid": "d225cac9-f306-49ba-b9d3-3826c92995e6"
+  },
+  {
+    "name": "Vaginal Delivery",
+    "uuid": "34a73afe-b6d0-4e70-af4a-6c9710de95dc",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Normal",
+        "uuid": "ba43b326-18a1-4f8d-ad04-29b0371461e0"
+      },
+      {
+        "name": "Normal with episiotomy",
+        "uuid": "4e524088-a06f-40fe-8482-4d8dc46ef8b1"
+      },
+      {
+        "name": "Assisted",
+        "uuid": "5e5acaab-b92e-418c-9b8f-b61dce8e13ee"
+      },
+      {
+        "name": "Assisted-Forceps",
+        "uuid": "4e65210b-3b5a-4318-abc6-7575d4336ea4"
+      },
+      {
+        "name": "Assisted- Vaccum",
+        "uuid": "9f0dc85f-289e-44a5-baa0-8e9b58fc992b"
+      },
+      {
+        "name": "Breech",
+        "uuid": "d225cac9-f306-49ba-b9d3-3826c92995e6"
+      },
+      {
+        "name": "Multiple Pregnancy",
+        "uuid": "e627db5e-c82f-4dfb-a522-613e436007a4"
+      }
+    ]
+  },
+  {
+    "name": "Elective",
+    "uuid": "dad3e15a-7bd9-4c7b-b417-4333872ee4cb"
+  },
+  {
+    "name": "Emergency",
+    "uuid": "2262fab9-ea69-43fe-874c-b28bea7d9c8c"
+  },
+  {
+    "name": "Caesarean section type",
+    "uuid": "28f5d885-23d0-45ac-833f-0d6f20e3f56d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Elective",
+        "uuid": "dad3e15a-7bd9-4c7b-b417-4333872ee4cb"
+      },
+      {
+        "name": "Emergency",
+        "uuid": "2262fab9-ea69-43fe-874c-b28bea7d9c8c"
+      }
+    ]
+  },
+  {
+    "name": "Laparotomy type",
+    "uuid": "b6861170-19a1-4398-9c20-9561883f1e3d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Rupture Uterus",
+        "uuid": "ae847737-5be5-4c55-8abe-db3606c2de6b"
+      },
+      {
+        "uuid": "4006c7ed-b1b8-459a-8424-181969d6f23a",
+        "name": "Ectopic"
+      }
+    ]
+  },
+  {
+    "name": "Indication type",
+    "uuid": "8af338f7-0014-454e-afa2-479e3b42c4f6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "General anaesthesia",
+    "uuid": "076870c8-e047-45eb-80b3-4b9fdb8b148e"
+  },
+  {
+    "name": "Reg- epidural / Spinal",
+    "uuid": "96b269b3-9265-4897-86f8-48e00dc4957a"
+  },
+  {
+    "name": "Local",
+    "uuid": "8c93ec86-0f84-41aa-9cda-c4f6301f94de"
+  },
+  {
+    "name": "Anaesthesia",
+    "uuid": "13edc693-1f6b-4863-88bb-56a2d3dbf3b6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "General anaesthesia",
+        "uuid": "076870c8-e047-45eb-80b3-4b9fdb8b148e"
+      },
+      {
+        "name": "Reg- epidural / Spinal",
+        "uuid": "96b269b3-9265-4897-86f8-48e00dc4957a"
+      },
+      {
+        "name": "Local",
+        "uuid": "8c93ec86-0f84-41aa-9cda-c4f6301f94de"
+      }
+    ]
+  },
+  {
+    "name": "First Stage",
+    "uuid": "a0356305-5675-4d27-9c94-074e3e265f13"
+  },
+  {
+    "name": "Second stage",
+    "uuid": "9769452f-7395-4deb-ac28-878f274429ac"
+  },
+  {
+    "name": "Third stage",
+    "uuid": "bbd27697-1f81-4ec4-84d2-e50dd243966f"
+  },
+  {
+    "name": "Post birth",
+    "uuid": "7127312f-43d1-4f3f-a1ad-f1fd2d940213"
+  },
+  {
+    "name": "Stage of Labor",
+    "uuid": "c412ce45-df14-46b6-941b-0c35e147d767",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "First Stage",
+        "uuid": "a0356305-5675-4d27-9c94-074e3e265f13"
+      },
+      {
+        "name": "Second stage",
+        "uuid": "9769452f-7395-4deb-ac28-878f274429ac"
+      },
+      {
+        "name": "Third stage",
+        "uuid": "bbd27697-1f81-4ec4-84d2-e50dd243966f"
+      },
+      {
+        "name": "Post birth",
+        "uuid": "7127312f-43d1-4f3f-a1ad-f1fd2d940213"
+      }
+    ]
+  },
+  {
+    "name": "Within <= 6hrs of birth",
+    "uuid": "9d3ececa-e6a4-4b56-8e2c-5aa08b0d43e8"
+  },
+  {
+    "name": ">6 - <= 24hrs of birth",
+    "uuid": "5bcf3aee-cb7e-4a53-a7f5-4d6bf4731b2b"
+  },
+  {
+    "name": ">24 hrs after birth",
+    "uuid": "3c6e69dd-0a0a-4085-8e0d-e9b948e8afdc"
+  },
+  {
+    "name": "Post birth details",
+    "uuid": "95027850-dabc-404e-8ad5-82abe85ec39a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Within <= 6hrs of birth",
+        "uuid": "9d3ececa-e6a4-4b56-8e2c-5aa08b0d43e8"
+      },
+      {
+        "name": ">6 - <= 24hrs of birth",
+        "uuid": "5bcf3aee-cb7e-4a53-a7f5-4d6bf4731b2b"
+      },
+      {
+        "name": ">24 hrs after birth",
+        "uuid": "3c6e69dd-0a0a-4085-8e0d-e9b948e8afdc"
+      }
+    ]
+  },
+  {
+    "name": "Alive",
+    "uuid": "4179b79c-8d4e-4447-afaf-5a9eaed5a722"
+  },
+  {
+    "name": "Fresh still birth",
+    "uuid": "90ba2fe7-0ecc-42e3-8421-51feb138d1fd"
+  },
+  {
+    "name": "Macerated still birth",
+    "uuid": "bd05f4cc-06ea-4df6-9626-8ca81114a487"
+  },
+  {
+    "name": "Neonatal death",
+    "uuid": "240999b7-e5e1-43ac-8ad9-97929e0435b0"
+  },
+  {
+    "name": "Neonatal Outcome",
+    "uuid": "d5fc607b-aced-446d-b89d-59038b09bbbe",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Alive",
+        "uuid": "4179b79c-8d4e-4447-afaf-5a9eaed5a722"
+      },
+      {
+        "name": "Fresh still birth",
+        "uuid": "90ba2fe7-0ecc-42e3-8421-51feb138d1fd"
+      },
+      {
+        "name": "Macerated still birth",
+        "uuid": "bd05f4cc-06ea-4df6-9626-8ca81114a487"
+      },
+      {
+        "name": "Neonatal death",
+        "uuid": "240999b7-e5e1-43ac-8ad9-97929e0435b0"
+      }
+    ]
+  },
+  {
+    "name": "Birth asphxia",
+    "uuid": "fc9137c3-4fc6-4239-9f5a-f2686722221a"
+  },
+  {
+    "name": "Respiratory distress",
+    "uuid": "6bec59d6-c3aa-4e61-9619-a58a81445155"
+  },
+  {
+    "name": "Aspiration including MAS",
+    "uuid": "4ffcc5ed-22d6-4821-b208-48e54bef1fde"
+  },
+  {
+    "name": "Sepsis",
+    "uuid": "2dcacc7f-4225-47fc-8b22-0f07156d7520"
+  },
+  {
+    "name": "Cong Anomalies",
+    "uuid": "a3a643de-5540-4654-860a-5c20b3bdb4ec"
+  },
+  {
+    "name": "Preterm",
+    "uuid": "2ceecbb7-3962-434a-b38d-a5f8ca0dfd39"
+  },
+  {
+    "name": "Probable cause of death",
+    "uuid": "206af019-6ea1-4b0e-ab51-3b6218e61eba",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Birth asphxia",
+        "uuid": "fc9137c3-4fc6-4239-9f5a-f2686722221a"
+      },
+      {
+        "name": "Respiratory distress",
+        "uuid": "6bec59d6-c3aa-4e61-9619-a58a81445155"
+      },
+      {
+        "name": "Aspiration including MAS",
+        "uuid": "4ffcc5ed-22d6-4821-b208-48e54bef1fde"
+      },
+      {
+        "name": "Sepsis",
+        "uuid": "2dcacc7f-4225-47fc-8b22-0f07156d7520"
+      },
+      {
+        "name": "Cong Anomalies",
+        "uuid": "a3a643de-5540-4654-860a-5c20b3bdb4ec"
+      },
+      {
+        "name": "Preterm",
+        "uuid": "2ceecbb7-3962-434a-b38d-a5f8ca0dfd39"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other Cause of death",
+    "uuid": "c6ab74e9-ea91-4614-8983-3f3136d4b10a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Uneventful",
+    "uuid": "533128ee-0fc7-4051-a54a-ce9aa5301f28"
+  },
+  {
+    "name": "Eventful",
+    "uuid": "34c599de-e8ea-4311-b739-762b58f2df2a"
+  },
+  {
+    "name": "Postnatal Period",
+    "uuid": "aa3ba2ab-7731-4a27-8a8a-d385f0c6b1f8",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Uneventful",
+        "uuid": "533128ee-0fc7-4051-a54a-ce9aa5301f28"
+      },
+      {
+        "name": "Eventful",
+        "uuid": "34c599de-e8ea-4311-b739-762b58f2df2a"
+      }
+    ]
+  },
+  {
+    "name": "CVA/Pulmonary embolism",
+    "uuid": "2deefac4-7d3d-47ed-8d83-5f224c0fa102"
+  },
+  {
+    "name": "sepsis/ ards",
+    "uuid": "8ab73e26-71e1-4b6c-9a72-f818f07d12c4"
+  },
+  {
+    "name": "Post op complication",
+    "uuid": "11dbf8aa-ed9e-441f-851f-dc313dca03c7"
+  },
+  {
+    "name": "Medical conditions",
+    "uuid": "10c1a3a3-902b-44b8-9064-844181124cb6"
+  },
+  {
+    "name": "Probable cause of death in case of eventful death",
+    "uuid": "0705498d-175d-4639-bd53-18eeac59f877",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "PPH",
+        "uuid": "4ed8b24e-e031-4289-9c1e-70bde07a80a4"
+      },
+      {
+        "name": "Eclampsia",
+        "uuid": "489f07e5-d9e1-478a-969d-3acad587a15e"
+      },
+      {
+        "name": "CVA/Pulmonary embolism",
+        "uuid": "2deefac4-7d3d-47ed-8d83-5f224c0fa102"
+      },
+      {
+        "name": "sepsis/ ards",
+        "uuid": "8ab73e26-71e1-4b6c-9a72-f818f07d12c4"
+      },
+      {
+        "name": "Anemia",
+        "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+      },
+      {
+        "name": "Post op complication",
+        "uuid": "11dbf8aa-ed9e-441f-851f-dc313dca03c7"
+      },
+      {
+        "name": "Medical conditions",
+        "uuid": "10c1a3a3-902b-44b8-9064-844181124cb6"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Evacuation",
+    "uuid": "378e8f3b-b1ff-4606-b0ed-5f9b4b444d67"
+  },
+  {
+    "name": "Transfusion",
+    "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
+  },
+  {
+    "name": "Laparotomy/laparoscopy",
+    "uuid": "1a2ba7e1-c80d-4a57-9910-72b2496e445d"
+  },
+  {
+    "name": "Early pregnancy interventions",
+    "uuid": "b40e4fec-eeb4-499d-947c-133b5811e34b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Evacuation",
+        "uuid": "378e8f3b-b1ff-4606-b0ed-5f9b4b444d67"
+      },
+      {
+        "name": "Transfusion",
+        "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
+      },
+      {
+        "name": "Laparotomy/laparoscopy",
+        "uuid": "1a2ba7e1-c80d-4a57-9910-72b2496e445d"
+      },
+      {
+        "name": "Hysterectomy",
+        "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
+      }     
+    ]
+  },
+  {
+    "name": "Version",
+    "uuid": "e3d3873c-a99e-4869-b133-23e0d8fa6da7"
+  },
+  {
+    "name": "Other surgeries",
+    "uuid": "fe97fd2b-f3ac-454b-a8e5-c9c39422955e"
+  },
+  {
+    "name": "Antenatal Interventions",
+    "uuid": "0827a2e8-a2b9-45fb-9692-c81836c5b122",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Transfusion",
+        "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
+      },
+      {
+        "name": "Version",
+        "uuid": "e3d3873c-a99e-4869-b133-23e0d8fa6da7"
+      },
+      {
+        "name": "Other surgeries",
+        "uuid": "fe97fd2b-f3ac-454b-a8e5-c9c39422955e"
+      }
+    ]
+  },
+  {
+    "name": "Manual removal of placenta",
+    "uuid": "e512f6d0-312e-485f-9038-10cc740370e3"
+  },
+  {
+    "name": "Conservative surgery",
+    "uuid": "bc910456-fdd7-473d-bd2b-a6b6e158cd61"
+  },
+  {
+    "name": "Intrapartum Intervention",
+    "uuid": "27505089-3f5e-444f-878b-87b22d69f070",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Instrumental",
+        "uuid": "eeaf9b42-71f7-49d4-80c6-a498619d1645"
+      },
+      {
+        "name": "Caesarean section",
+        "uuid": "f5192c76-f772-4e84-8fea-16d980de15bc"
+      },
+      {
+        "name": "Hysterectomy",
+        "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
+      },
+      {
+        "name": "Manual removal of placenta",
+        "uuid": "e512f6d0-312e-485f-9038-10cc740370e3"
+      },
+      {
+        "name": "Conservative surgery",
+        "uuid": "bc910456-fdd7-473d-bd2b-a6b6e158cd61"
+      },
+      {
+        "name": "Transfusion",
+        "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
+      }
+    ]
+  },
+  {
+    "name": "Removal of retained POC",
+    "uuid": "c9dcdc93-c60a-4abe-acf1-f7b931038b0b"
+  },
+  {
+    "name": "Laparotomy",
+    "uuid": "cd44ba53-3240-4cc2-8cf3-c308ce31e019"
+  },
+  {
+    "name": "Postpartum Intervention",
+    "uuid": "0d3b9940-1410-4b98-ba1e-ca934fc1b05d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Removal of retained POC",
+        "uuid": "c9dcdc93-c60a-4abe-acf1-f7b931038b0b"
+      },
+      {
+        "name": "Laparotomy",
+        "uuid": "cd44ba53-3240-4cc2-8cf3-c308ce31e019"
+      },
+      {
+        "name": "Hysterectomy",
+        "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
+      },
+      {
+        "name": "Transfusion",
+        "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
+      }      
+    ]
+  },
+  {
+    "name": "Anaesthesia -GA",
+    "uuid": "5945a5aa-9981-4e71-85a4-b7c71469cce8"
+  },
+  {
+    "name": "Spinal",
+    "uuid": "c97d9b43-fc55-462a-9700-4745950d671d"
+  },
+  {
+    "name": "Epidural",
+    "uuid": "b89dd255-fe64-4626-9e4f-ee49472c71a9"
+  },
+  {
+    "name": "ICU monitoring",
+    "uuid": "66004ea6-844d-41c3-a3c3-07a8e9393f97"
+  },
+  {
+    "name": "Anaesthesia Intervention",
+    "uuid": "2cbb7e66-6b9c-41ca-8636-34e50255dddc",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Anaesthesia -GA",
+        "uuid": "5945a5aa-9981-4e71-85a4-b7c71469cce8"
+      },
+      {
+        "name": "Spinal",
+        "uuid": "c97d9b43-fc55-462a-9700-4745950d671d"
+      },
+      {
+        "name": "Local",
+        "uuid": "8c93ec86-0f84-41aa-9cda-c4f6301f94de"
+      },
+      {
+        "name": "Epidural",
+        "uuid": "b89dd255-fe64-4626-9e4f-ee49472c71a9"
+      },
+      {
+        "name": "ICU monitoring",
+        "uuid": "66004ea6-844d-41c3-a3c3-07a8e9393f97"
+      }
+    ]
+  },
+  {
+    "name": "Blood transfusion given",
+    "uuid": "2860dd68-3c69-4d0d-a5bc-47c2826ac6fb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Number of blood units",
+    "uuid": "01402db4-b091-4288-8cee-8cc115ada333",
+    "dataType": "Numeric",
+    "unit": "Quantity"
+  },
+  {
+    "name": "Transfusion reaction occurred",
+    "uuid": "741f9df1-8dcb-44b8-a9b6-70b89fed87f4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Primary diagnosis/condition leading to death",
+    "uuid": "b199a365-815a-49b7-a232-7f2c55b18ecb",
+    "dataType": "Text"
+  },
+  {
+    "name": "Antecedent cause of death",
+    "uuid": "bbfde929-97a2-4948-88e8-6349e14a26ff",
+    "dataType": "Text"
+  },
+  {
+    "name": "Not Known",
+    "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+  },
+  {
+    "name": "Delay in woman seeking help",
+    "uuid": "da364946-d11b-4ce2-85c6-1d61daf62dd0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Refusal of treatment or admission",
+    "uuid": "7c942ee9-dd3f-4476-8d58-b2bb9c9e4323",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Refusal of admission in previous facility",
+    "uuid": "5358eb08-5d76-481a-89ce-f2eb24ad302f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Logistical Problems",
+    "uuid": "fcdeadae-e1f8-4a0d-89f5-2e1b0104073e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "lack of transport from home to health care facility",
+    "uuid": "57afa4f8-a533-4bb0-b4a7-62094ec53868",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Lack of transport between health care facilities",
+    "uuid": "33e76c6c-41a8-4d68-8d87-7fb0c0f1d410",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "lack of assured referral system",
+    "uuid": "e7cbc7b0-7b96-448a-8c40-eb09f2220878",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Lack of facilities, equipment or consumable",
+    "uuid": "45adbbbb-a6c7-4678-8139-a4e41e8f5aaa",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Lack of blood/ blood product",
+    "uuid": "cb2f1f5e-3085-4fe2-ab9c-8da142339f0a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Lack of OT availability",
+    "uuid": "d7fb30ff-4c70-4fc2-b938-10ca8d7121fd",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Lack of human resources",
+    "uuid": "662f1569-41b1-4eb3-8983-f962918bc59c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Lack of Anesthetist",
+    "uuid": "99e5b54b-9ebf-4832-b7ce-85134cadf9b1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+{
+    "name": "Lack of Obstetricians",
+    "uuid": "57d52e87-695c-4a4f-b262-5d495a6c8ca4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Lack of expertise, training or education",
+    "uuid": "c0e38dc4-d72e-498c-af8b-6b2ad00a7841",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Performed",
+    "uuid": "271b723f-d349-4c5c-89ca-32811f9617f3"
+  },
+  {
+    "name": "Not performed",
+    "uuid": "c294de0e-2479-498e-8df6-f09b38c98c25"
+  },
+  {
+    "name": "Autopsy performed",
+    "uuid": "e93127f1-7b72-4acc-99a4-00ad59b750ed",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Performed",
+        "uuid": "271b723f-d349-4c5c-89ca-32811f9617f3"
+      },
+      {
+        "name": "Not performed",
+        "uuid": "c294de0e-2479-498e-8df6-f09b38c98c25"
+      }
+    ]
+  },
+  {
+    "name": "Final diagnosis details",
+    "uuid": "899b6d45-bea6-4a20-b85d-d365ea7984cd",
+    "dataType": "Text"
+  },
+  {
+    "name": "Case summary",
+    "uuid": "2e21f6a5-6500-46be-8697-c3eac21a0bde",
+    "dataType": "Notes"
+  },
+  {
+    "name": "Name of MO on duty",
+    "uuid": "bc4e9124-4afb-4c21-8dd6-e79f4d24fd5f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of MO on duty",
+    "uuid": "ceaa3948-76fa-4e0f-9ef1-dfd1cf329170",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date of filling",
+    "uuid": "205dac1b-9f59-416a-97a9-6fc625f23dab",
+    "dataType": "Date"
+  },
+  {
+    "name": "Name of Nodal officer of the hospital",
+    "uuid": "ce006fcb-e72a-4fba-9560-8f6bb59ad699",
+    "dataType": "Text"
+  },
+  {
+    "name": "Address of the institution",
+    "uuid": "9d5dfa62-fdd0-44b3-a490-8903e262ca4d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Whole Blood units",
+    "uuid": "eb0a9789-de73-4b4c-a86e-db0a41cf0845",
+    "dataType": "Numeric",
+    "unit": "Quantity"
+  },
+  {
+    "name": "PRBC",
+    "uuid": "e0f3f7ce-df38-4481-882a-c566b50ed495",
+    "dataType": "Numeric",
+    "unit": "Quantity"
+  },
+  {
+    "name": "FFP",
+    "uuid": "f114dd2e-8239-449f-bc91-c17230eb8da7",
+    "dataType": "Numeric",
+    "unit": "Quantity"
+  },
+  {
+    "name": "Platelets",
+    "uuid": "92494139-7216-4b36-ab54-b69777fd30da",
+    "dataType": "Numeric",
+    "unit": "Quantity"
+  },
+  {
+    "name": "Cryo",
+    "uuid": "d94486d6-cbcd-4dae-97b6-ea82681ea0d7",
+    "dataType": "Numeric",
+    "unit": "Quantity"
   }
 
 ]

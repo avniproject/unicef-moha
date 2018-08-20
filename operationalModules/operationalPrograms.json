@@ -3,10 +3,10 @@
   "operationalPrograms": [
     {
       "uuid": "61383d58-82b4-44fb-96d0-6449f0e68c1b",
-      "name": "Facility Based MDR",
+      "name": "MDR",
       "program": {
         "uuid": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
-        "comment": "Facility Based MDR"
+        "comment": "MDR"
       }
     }
   ]

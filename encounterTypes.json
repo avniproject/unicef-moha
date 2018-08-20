@@ -2,5 +2,10 @@
   {
     "uuid": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
     "name": "Form 4 : Facility Based MDR"
+  },
+  {
+    "name": "Form5 : Community Based Verbal Autopsy Form",
+    "uuid": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c"
   }
+
 ]

@@ -38,6 +38,7 @@ create_org: ## Create MDSR org and user+privileges
 
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
+	$(call _curl,POST,concepts,@cbmdr/CommunityBasedVerbalAutopsyFormConcept.json)
 
 deploy_refdata: deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
@@ -47,6 +48,9 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
 
 	$(call _curl,POST,forms,@fbmdr/FacilityBasedMaternalDeathReviewForm.json)
+
+	$(call _curl,POST,forms,@cbmdr/CommunityBasedVerbalAutopsy.json)
+
 	$(call _curl,POST,formMappings,@formMappings.json)
 
 # </refdata>

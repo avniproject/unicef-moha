@@ -8,6 +8,14 @@
         "uuid": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
         "comment": "Form 4 : Facility Based MDR"
       }
+    },
+    {
+      "uuid": "a77b9936-ab0a-46db-9a92-d90911e0f9e0",
+      "name": "Form 5: Community Based Verbal Autopsy",
+      "encounterType": {
+        "uuid": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c",
+        "comment": "Form 5 : Community Based Verbal Autopsy"
+      }
     }
   ]
 }

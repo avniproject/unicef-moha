@@ -5,5 +5,12 @@
     "encounterTypeUUID": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
     "comment": "Facility Based MDR"
+  },
+  {
+    "uuid": "971a9b44-352a-4471-b05e-3637e065befb",
+    "formUUID": "814fdf94-52d9-48ee-a923-4042d799fb61",
+    "encounterTypeUUID": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c",
+    "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
+    "comment": "Community Based Verbal Autopsy"
   }
 ]

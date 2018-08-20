@@ -1,0 +1,2492 @@
+[
+  {
+    "name": "No of weeks of pregnancy",
+    "uuid": "7d73d261-3975-4b0a-bbba-fe765955b962",
+    "dataType": "Numeric",
+    "unit": "No. of Weeks"
+  },
+  {
+    "name": "Severe breathlessness/cyanosis/edema",
+    "uuid": "03747047-f47f-4616-9e93-9e67c3627fe9"
+  },
+  {
+    "name": "Severe bleeding",
+    "uuid": "87ba7b3c-aae0-435a-b240-88f462072b76"
+  },
+  {
+    "name": "High fever and foul smelling discharge",
+    "uuid": "f9e7b4fd-8f09-4a57-9d3c-05dd1f94c3d6"
+  },
+  {
+    "name": "Unconsciousness/ visual disturbance",
+    "uuid": "20c351e8-a407-4a40-98ff-d545b51a1929"
+  },
+  {
+    "name": "Bleeding from multiple sites",
+    "uuid": "3ad109df-00b2-4d77-bbcb-d5cfa720208b"
+  },
+  {
+    "name": "Severe leg pain, swelling",
+    "uuid": "c3b7f72a-e290-490c-8db9-0bd1d095b4c8"
+  },
+  {
+    "name": "Abnormal behaviour",
+    "uuid": "ff4b809c-f930-4a36-b5d6-7371bd3b8228"
+  },
+  {
+    "name": "Sudden chest pain & collapse",
+    "uuid": "56b4dcdf-6e0d-410c-b32e-1da6f0ec45a1"
+  },
+  {
+    "name": "Staff nurse",
+    "uuid": "5632e645-b24d-4dee-904a-c844d2ef8a49"
+  },
+  {
+    "name": "Family's preference",
+    "uuid": "f7250583-4732-4f5b-bcf0-8210aab5cefc"
+  },
+  {
+    "name": "Village Dai is good",
+    "uuid": "acbac6e2-7ce7-4af6-8a5b-10b4d7883f3b"
+  },
+  {
+    "name": "No transport facilities",
+    "uuid": "5b60b42c-06fe-4036-894f-f1ab9f126bc3"
+  },
+  {
+    "name": "Cost of transport is high",
+    "uuid": "93600837-097e-48a1-9d96-a1f8172293e2"
+  },
+  {
+    "name": "No information given about need for institutional delivery",
+    "uuid": "38fd9333-048c-44d7-9636-9993bb8fdc98"
+  },
+  {
+    "name": "Services not available at the nearest health facility",
+    "uuid": "e246f470-a18c-4f41-b769-080bbf3ae338"
+  },
+  {
+    "name": "High expenses",
+    "uuid": "8e876bcd-641b-484c-b5ee-b173bf7fe1bc"
+  },
+  {
+    "name": "Bad experience at institution",
+    "uuid": "4973f419-49a7-4e04-a43d-4d73e4a30ff9"
+  },
+  {
+    "name": "No complication so no need",
+    "uuid": "27067363-1eb4-4f88-8929-28cd6f2d86af"
+  },
+  {
+    "name": "Home is more comfortable",
+    "uuid": "d3528342-7d89-4d42-a58d-2f1d2f4db171"
+  },
+  {
+    "name": "High fever",
+    "uuid": "2732062b-ffe4-4e26-a2e9-5211c28079d1"
+  },
+  {
+    "name": "Foul smelling discharge",
+    "uuid": "cdc915f0-3b59-4561-a26d-1b5fb74fe3bb"
+  },
+  {
+    "name": "Bleeding",
+    "uuid": "d3edaf02-abd7-4ab9-9dd9-081fefe96aa9"
+  },
+  {
+    "name": "Shock",
+    "uuid": "82398e09-b336-4be9-b9d9-36f6bd9c6f74"
+  },
+  {
+    "name": "Medical Condition/Bleeding started spontaneously",
+    "uuid": "8df259ad-1aa7-41e6-94bd-f870abc0b982"
+  },
+  {
+    "name": "Wanted to terminate the pregnancy",
+    "uuid": "a4fc7d58-232a-4798-b198-e6fe41340e50"
+  },
+  {
+    "name": "Oral Medicine",
+    "uuid": "f3224d24-61bf-483c-aa19-2ecfc7babd22"
+  },
+  {
+    "name": "Traditional Vaginal Herbal Medication",
+    "uuid": "fbccec87-0a9e-4a3b-9cea-3f2ba2abb369"
+  },
+  {
+    "name": "Instrumentation",
+    "uuid": "7da75d30-a265-47e5-b9a4-18e2f24d06a1"
+  },
+  {
+    "name": "Alopathic doctor",
+    "uuid": "6cb61fd9-09d5-4f37-a546-08283e2455fb"
+  },
+  {
+    "name": "ASHA",
+    "uuid": "5e1a3c7d-c8c3-42d2-b469-d66114988361",
+    "dataType": "NA"
+  },
+  {
+    "name": "Dai",
+    "uuid": "e9b9f255-4166-4060-bf69-5b3caba4e29e"
+  },
+  {
+    "name": "Tetanus Toxoid Injection",
+    "uuid": "7aa3831f-f458-4749-b5a3-09a4733ca86b"
+  },
+  {
+    "name": "Blood Pressure Measurement",
+    "uuid": "1d0134e1-4f65-4b34-ab23-5b5bb6c91e64"
+  },
+  {
+    "name": "Hemoglobin test",
+    "uuid": "4ef7d4d8-e2b7-4380-8e84-7a3c976e7c6b"
+  },
+  {
+    "name": "Abdominal Examination",
+    "uuid": "66e98a75-0e1b-4276-9f3e-c62350112070"
+  },
+  {
+    "name": "Iron Folic Acid provided",
+    "uuid": "11600390-ae61-4c2c-bda0-49091c12c722"
+  },
+  {
+    "name": "Severity of complication not known",
+    "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+  },
+  {
+    "name": "Health facility was very far",
+    "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+  },
+  {
+    "name": "Lack of transport",
+    "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+  },
+  {
+    "name": "Financial Reason",
+    "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+  },
+  {
+    "name": "Family Reason",
+    "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+  },
+  {
+    "name": "Faith in local healers/dai",
+    "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+  },
+  {
+    "name": "Beliefs and customs",
+    "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+  },
+  {
+    "name": "Disrespectful behavior of the provider",
+    "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+  },
+  {
+    "name": "Quack",
+    "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+  },
+  
+  {
+    "name": "Sudden excruciating pain",
+    "uuid": "c071e0b4-62eb-496f-af41-69664e73fd46"
+  },
+  {
+    "name": "High fever with rigor",
+    "uuid": "9863e1b9-ca93-425a-b323-20687fcf1bac"
+  },
+  {
+    "name": "Fits",
+    "uuid": "089627fe-d782-44a6-b6ba-522be1bc04f7"
+  },
+  {
+    "name": "No foetal movement",
+    "uuid": "1c196737-0510-4f42-8e7e-fd88e83ceb0d"
+  },
+  {
+    "name": "Bleeding P/V",
+    "uuid": "0ba1bd71-b3d6-49f5-a557-12730fd5d94c"
+  },
+  {
+    "name": "BPL",
+    "uuid": "5c9f10e3-3e20-4a3b-a971-f43b40dd017c"
+  },
+  {
+    "name": "Non-BPL",
+    "uuid": "a6f992d5-57d6-4ac2-a674-45631474c539"
+  },
+  {
+    "name": "In-transit",
+    "uuid": "46ce824e-6b22-4b6c-b0fd-746da6f99f75"
+  },
+  {
+    "name": "During pregnancy",
+    "uuid": "1bd556dd-7436-43d4-8af7-4e6f0d8f2883"
+  },
+  {
+    "name": "During Delivery",
+    "uuid": "5704e76c-0aae-442b-911f-5cbf7bc0c368"
+  },
+  {
+    "name": "Within 42 days of delivery",
+    "uuid": "8392f34f-3ae0-4075-aaa7-de7c69a190b5"
+  },
+  {
+    "name": "During abortion or within 6 weeks after abortion",
+    "uuid": "7093eed8-f291-4db0-877c-9b9485a8d26a"
+  },
+  {
+    "name": "Sub-Health Centre",
+    "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+  },
+  {
+    "name": "Home",
+    "uuid": "bb75a86c-05af-4b05-b699-860737d19e57"
+  },
+  {
+    "name": "Name of Investigator",
+    "uuid": "a425325b-919e-4aca-801f-5d9c8ae9f211",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of Investigator",
+    "uuid": "eb3336cc-454c-44ff-be3c-a67f7ebfc22f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date of Investigation",
+    "uuid": "a6351c9a-9e76-4e0d-af62-01dda452f895",
+    "dataType": "Date"
+  },
+  {
+    "name": "Probable cause of death details",
+    "uuid": "04880a88-b87e-4bd5-a75d-ce230b847506",
+    "dataType": "Text"
+  },
+  {
+    "name": "Participate in this interview",
+    "uuid": "55b83b4e-48a0-432c-be25-d164e0067561",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Respondent Name",
+    "uuid": "2967f6b2-7f22-428d-b753-deb91791cd5f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of Interviewer",
+    "uuid": "2ae9c037-5183-4aaa-bc7a-3f3ae104dd67",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date of Interview",
+    "uuid": "ef4496a8-0c02-4472-91e9-432f9cd64620",
+    "dataType": "Date"
+  },
+  {
+    "name": "Name and Designation of Investigator 1",
+    "uuid": "49b04d10-6ef6-45fa-81f1-652976291e00",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name and Designation of Investigator 2",
+    "uuid": "46742922-0a9f-44d3-9e3b-87b529e87f0e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of the respondent",
+    "uuid": "ced2be73-842f-44fe-a380-fab94a9474b4",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of the deceased woman",
+    "uuid": "87493ece-1633-41c2-8a87-8d17c748583c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Relationship of the respondent/s with the deceased woman",
+    "uuid": "cd640449-02b3-402c-a063-6b0014900885",
+    "dataType": "Text"
+  },
+  {
+    "name": "Age of the deceased woman at the time of death",
+    "uuid": "edd950ba-148d-4e1d-b086-6de471a6b965",
+    "dataType": "Numeric",
+    "unit": "years"
+  },
+  {
+    "name": "Period of Death",
+    "uuid": "1ffb6eeb-84ab-4323-b86b-ea97fbc847d1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "During pregnancy",
+        "uuid": "1bd556dd-7436-43d4-8af7-4e6f0d8f2883"
+      },
+      {
+        "name": "During Delivery",
+        "uuid": "5704e76c-0aae-442b-911f-5cbf7bc0c368"
+      },
+      {
+        "name": "Within 42 days of delivery",
+        "uuid": "8392f34f-3ae0-4075-aaa7-de7c69a190b5"
+      },
+      {
+        "name": "During abortion or within 6 weeks after abortion",
+        "uuid": "7093eed8-f291-4db0-877c-9b9485a8d26a"
+      }
+      
+    ]
+  },
+  {
+    "name": "Place of death",
+    "uuid": "e355d9d8-c10d-4f1f-821d-e86ac5bc8b75",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Home",
+        "uuid": "bb75a86c-05af-4b05-b699-860737d19e57"
+      },
+      {
+        "name": "Sub-District Hospital",
+        "uuid": "5884f592-80b4-44a1-9247-823d37398d2a"
+      },
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "In-transit",
+        "uuid": "46ce824e-6b22-4b6c-b0fd-746da6f99f75"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other Place of death",
+    "uuid": "3631fbd7-40d9-456d-8987-ba3b9d5f4a2f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Specify the name and place of the institution or village / urban area where death occurred",
+    "uuid": "4daa982b-5886-405a-be04-4c26cbca3c41",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date & Time of Death",
+    "uuid": "f7e5d7d4-110a-4ecd-a77d-7fb26086f68e",
+    "dataType": "Date"
+  },
+  {
+    "name": "Did the doctor or nurse at the health facility tell you the cause of death.",
+    "uuid": "f44552ea-41f7-4056-b3ca-6867d3893ec2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      }
+    ]
+  },
+  {
+    "name": "Cause of death",
+    "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
+  },
+  {
+    "name": "Deceased woman married",
+    "uuid": "c7381c2e-1f1d-4175-b8d9-9ebc54cae55b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Other Religion",
+    "uuid": "8cb023a6-d855-42a7-840b-286dd8ef3ed6",
+    "dataType":"Text"
+  },
+  {
+    "name": "BPL Status",
+    "uuid": "7a30ab52-f140-49be-8386-085d36379cfa",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "BPL",
+        "uuid": "5c9f10e3-3e20-4a3b-a971-f43b40dd017c"
+      },
+      {
+        "name": "Non-BPL",
+        "uuid": "a6f992d5-57d6-4ac2-a674-45631474c539"
+      }
+
+    ]
+  },
+  {
+    "name": "Other Education",
+    "uuid": "9899e90e-efa7-4755-b0b7-d91444a1995a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name and location of the nearest government /  private facility profiding emergency obstetric care services",
+    "uuid": "03fb1242-a83c-4421-ace7-1a0c10c89b97",
+    "dataType":"Text"
+  },
+  {
+    "name": "Distance of this facility from the residence",
+    "uuid": "23fd3369-d1d3-4ab9-a6c9-a6c3641f94a8",
+    "dataType": "Numeric",
+    "unit": "Km"
+  },
+  {
+    "name": "Mode of transport available to reach this facility",
+    "uuid": "60e17127-ff83-46a4-b007-e0cdd562874c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Infant Survival",
+    "uuid": "59ff5327-2911-4fb0-a895-3b3714550147",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Alive",
+        "uuid": "4179b79c-8d4e-4447-afaf-5a9eaed5a722"
+      },
+      {
+        "name": "New born death",
+        "uuid": "29e2a89b-82d4-44c8-9ba8-119a3af7f3fe"
+      },
+      {
+        "name": "Still Birth",
+        "uuid": "797c7923-1993-49d9-b759-1706aae62ae9"
+      },
+      {
+        "name": "Not applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      }
+      
+    ]
+  },
+  {
+    "name": "Antenatal care received",
+    "uuid": "913df14a-525d-4fd0-b69f-4a5a9acab7b0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Number of Antenatal care received",
+    "uuid": "bdd87c87-f073-40c0-952a-38f9cd160235",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Place of antenatal checkup",
+    "uuid": "bf699779-4fd4-48d0-8450-e843ecded6eb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "VHND",
+        "uuid": "1d3d49c5-feba-48d4-9a18-e1aecffb29a6"
+      },
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "CHC",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Medical college",
+        "uuid": "e15982e1-825f-4872-a354-1a0a6ed79b6e"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other place of antenatal checkup",
+    "uuid": "af349d7b-22fd-43d7-925d-b7c4af0b0e49",
+    "dataType": "Text"
+  },
+  {
+    "name": "Services during ANC",
+    "uuid": "15423d2c-4d95-4b4e-a574-47e4049c8ceb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Tetanus Toxoid Injection",
+        "uuid": "7aa3831f-f458-4749-b5a3-09a4733ca86b"
+      },
+      {
+        "name": "Blood Pressure Measurement",
+        "uuid": "1d0134e1-4f65-4b34-ab23-5b5bb6c91e64"
+      },
+      {
+        "name": "Hemoglobin test",
+        "uuid": "4ef7d4d8-e2b7-4380-8e84-7a3c976e7c6b"
+      },
+      {
+        "name": "Abdominal Examination",
+        "uuid": "66e98a75-0e1b-4276-9f3e-c62350112070"
+      },
+      {
+        "name": "Iron Folic Acid provided",
+        "uuid": "11600390-ae61-4c2c-bda0-49091c12c722"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+
+    ]
+  },
+  {
+    "name": "Problem during antenatal period",
+    "uuid": "11e40f0e-4b64-4b49-a3c6-624669c07165",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Symptoms for problems during ANC",
+    "uuid": "1e542756-fa2e-4cef-925c-7f36bb54156e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Headache",
+        "uuid": "4085f165-ccb8-409b-9d6e-ea7755cf123e"
+      },
+      {
+        "name": "Edema",
+        "uuid": "39c2d80c-2105-4aad-acc6-7e4880f6243a"
+      },
+      {
+        "name": "Anemia",
+        "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+      },
+      {
+        "name": "High Blood Pressure",
+        "uuid": "63398939-0a45-46ee-8d92-f01d55e96c1a"
+      },
+      {
+        "name": "Bleeding P/V",
+        "uuid": "0ba1bd71-b3d6-49f5-a557-12730fd5d94c"
+      },
+      {
+        "name": "No foetal movement",
+        "uuid": "1c196737-0510-4f42-8e7e-fd88e83ceb0d"
+      },
+      {
+        "name": "Fits",
+        "uuid": "089627fe-d782-44a6-b6ba-522be1bc04f7"
+      },
+      {
+        "name": "Sudden excruciating pain",
+        "uuid": "c071e0b4-62eb-496f-af41-69664e73fd46"
+      },
+      {
+        "name": "High fever with rigor",
+        "uuid": "9863e1b9-ca93-425a-b323-20687fcf1bac"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other Symptoms",
+    "uuid": "899fd3df-dcbd-4024-8a4e-86f2df2f60bc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Care for these symptoms",
+    "uuid": "8a46cfec-f6c4-4802-ac8d-3d230c8dab11",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Other seeked care",
+    "uuid": "a6bf54e1-4591-4f5f-8600-a2c6fab928f3",
+    "dataType":"Text"
+  },
+  {
+    "name": "Where seeked care",
+    "uuid": "f061a8b1-213b-47db-954a-e43b80a4cb56",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Reason for not seeking care 3",
+    "uuid": "62cc39a8-be58-473e-9fde-36824ab73127",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+      
+    ]
+  },
+  {
+    "name": "Other reason for not seeking care 1",
+    "uuid": "20d1bf50-a3b8-4c45-b71f-ad1bc1de2491",
+    "dataType": "Text"
+  },
+  {
+    "name": "Died during antenatal period",
+    "uuid": "8b38acd7-82d4-4be1-8615-ad006a37d31d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Problems deceased woman had at time of death",
+    "uuid": "0f151dbe-93a6-46f4-a759-36b13de95c50",
+    "dataType": "Text"
+  },
+  {
+    "name": "Symptoms at time of death",
+    "uuid": "86039e4d-efd8-4920-9e73-869fca7bc0a9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Headache",
+        "uuid": "4085f165-ccb8-409b-9d6e-ea7755cf123e"
+      },
+      {
+        "name": "Edema",
+        "uuid": "39c2d80c-2105-4aad-acc6-7e4880f6243a"
+      },
+      {
+        "name": "Anemia",
+        "uuid": "43ea47d8-8c92-4564-a9df-eee28191f85c"
+      },
+      {
+        "name": "High Blood Pressure",
+        "uuid": "63398939-0a45-46ee-8d92-f01d55e96c1a"
+      },
+      {
+        "name": "Bleeding P/V",
+        "uuid": "0ba1bd71-b3d6-49f5-a557-12730fd5d94c"
+      },
+      {
+        "name": "No foetal movement",
+        "uuid": "1c196737-0510-4f42-8e7e-fd88e83ceb0d"
+      },
+      {
+        "name": "Fits",
+        "uuid": "089627fe-d782-44a6-b6ba-522be1bc04f7"
+      },
+      {
+        "name": "Sudden excruciating pain",
+        "uuid": "c071e0b4-62eb-496f-af41-69664e73fd46"
+      },
+      {
+        "name": "High fever with rigor",
+        "uuid": "9863e1b9-ca93-425a-b323-20687fcf1bac"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other symptoms at time of death",
+    "uuid": "2266a771-71bf-4f8f-a0ba-267bfd630982",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referred at that time",
+    "uuid": "514144ac-4782-481d-b32c-19dcd9f28ff4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+
+    ]
+  },
+  {
+    "name": "Did she seek care",
+    "uuid": "ee47b9b0-eb32-4bab-80cc-efd525f01f98",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Where seeked care for these complications",
+    "uuid": "2b3da568-9523-42e4-a9ab-4ef581096723",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "CHC",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other place to seek care",
+    "uuid": "00719230-f57d-4c51-8183-eded9a67267f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date of referral from home",
+    "uuid": "3240300b-d6b8-4fa6-ab0a-45cab2c24d91",
+    "dataType": "Date"
+  },
+  {
+    "name": "Time of onset of complication of labor at home",
+    "uuid": "e58bb7d9-66d4-49b6-b74a-cedac3ab2a5f",
+    "dataType": "Date"
+  },
+  {
+    "name": "Time of calling/arrival of transport at home",
+    "uuid": "265f1a7c-a13c-4d99-a9b7-d95a49b4ef70",
+    "dataType": "Date"
+  },
+  {
+    "name": "Transport used from home",
+    "uuid": "019ed2ac-f118-4cc2-b752-625d880720a8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date of referral from Facility 1",
+    "uuid": "31daf0fb-376d-42ba-be82-a0d7e20a6cfd",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication at facility 1",
+    "uuid": "bdddd6ae-504f-4562-b00c-96f9a794693b",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling of transport from facility 1",
+    "uuid": "f8e8200e-7f5a-4839-8e9c-9e8f08fccc63",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral transport used",
+    "uuid": "bb85a4a6-d35b-4878-80fd-2aca12af2857",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on transportation from facility 1",
+    "uuid": "60982d69-1cb9-448b-916f-1b7af4b93aae",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Name of facility/level of referral form facility 1",
+    "uuid": "6916fe24-12d4-4595-9d19-b3581473e68f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Attened at facility 1 by",
+    "uuid": "db1a4228-8029-4039-aa8c-334da1fba10e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Reason for referral from facility 1",
+    "uuid": "7d162394-617b-4dee-9d0b-8ec427e12acf",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral slip given from Facility 1",
+    "uuid": "dcd04ea9-c92b-4356-94dd-67408e17c933",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Treatment given at Facility 1",
+    "uuid": "14516c0a-4aa5-4615-97f7-a3188cb77e91",
+    "dataType": "Text"
+  },
+  {
+    "name": "Money spent on treatment at facility 1",
+    "uuid": "ff2aaf60-b72e-46ff-88dd-ee02e2a1e26f",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Time spent at facility 1",
+    "uuid": "5dcadb2f-910a-4e33-950d-a67296a1aae8",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
+  },
+
+  {
+    "name": "Date of referral from Facility 2",
+    "uuid": "39eac12e-88bb-4b17-ad1c-cfeb7c328b20",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication at facility 2",
+    "uuid": "05afff29-f474-408b-b4ea-fccf75b29996",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling of transport from facility 2",
+    "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral transport used from facility 2",
+    "uuid": "ed54c6c0-f08d-4a06-8835-9eff0b5f9824",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on transportation from facility 2",
+    "uuid": "c6b8d417-76aa-42bc-b6ff-43098f18dbcb",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Name of facility/level of referral form facility 2",
+    "uuid": "ad9b7585-75f2-4670-baac-e2eda7dc8e32",
+    "dataType": "Text"
+  },
+  {
+    "name": "Attended at facility 2 by",
+    "uuid": "0f498e7c-92e6-4407-8c76-526127e4037a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Reason for referral from facility 2",
+    "uuid": "6f169c87-ce42-4966-947d-6f036c31b13c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral slip given from Facility 2",
+    "uuid": "dcd04ea9-c92b-4356-94dd-67408e17c933",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Treatment given at Facility 2",
+    "uuid": "9b34c076-a43d-4f5b-8ab9-44e8c1a861d3",
+    "dataType": "Text"
+  },
+  {
+    "name": "Money spent on treatment at facility 2",
+    "uuid": "ff2aaf60-b72e-46ff-88dd-ee02e2a1e26f",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Time spent at facility 2",
+    "uuid": "25cf63f3-3d05-423e-8837-2ac6828d90cc",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
+  },
+  {
+    "name": "Date of referral from Facility 3",
+    "uuid": "842e56af-a74c-4102-b271-215c648dde99",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of onset of complication at facility 3",
+    "uuid": "d625abc1-f93c-44c7-bb53-983af6a49082",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral time of calling of transport from facility 3",
+    "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
+    "dataType": "Date"
+  },
+  {
+    "name": "Referral transport used from facility 3",
+    "uuid": "328d7efd-39a5-4aa6-9e31-26bebced8d1b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral Money spent on transportation from facility 3",
+    "uuid": "c89bc382-df76-49fb-b685-21dfcf746c11",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Name of facility/level of referral form facility 3",
+    "uuid": "ca0a04aa-334f-4237-983a-905dfd071cde",
+    "dataType": "Text"
+  },
+  {
+    "name": "Attended at facility 3 by",
+    "uuid": "e9c09426-00ba-4ffb-90a1-9b3ead39a337",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "Reason for referral from facility 3",
+    "uuid": "2048afc7-7872-455e-83f4-fa12f3ce462f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Referral slip given from Facility 3",
+    "uuid": "c9a0d818-4fda-4c28-bb33-4551740eedf2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Treatment given at Facility 3",
+    "uuid": "ebd26d62-f3c1-498d-918a-94c535b11838",
+    "dataType": "Text"
+  },
+  {
+    "name": "Money spent on treatment at facility 3",
+    "uuid": "c7829aca-9edb-4e90-b11e-07cb8a9d8963",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "Time spent at facility 3",
+    "uuid": "a620420d-3b52-45f4-9bf2-e1e539638e6f",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
+  },
+  {
+    "name": "Reasons for not seeking care",
+    "uuid": "b559e6c1-4f0a-41cc-8e3d-79cc81caf846",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason for not seeking care 2",
+    "uuid": "b7b8a157-12b6-480e-adc3-7db72b7cec18",
+    "dataType": "Text"
+  },
+  {
+    "name": "Did deceased woman died while having abortion",
+    "uuid": "ef32af44-9595-4f23-a441-f3b7e2b91665",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Type of abortion",
+    "uuid": "3c387716-7fe2-40d6-86a6-41628ed50edb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Spontaneous",
+        "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5"
+      },
+      {
+        "name": "Induced",
+        "uuid": "9e7d21e8-8123-46de-8bf0-f3c79e5810b0"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Where was the abortion completed",
+    "uuid": "71980fe4-af70-4e4b-a53a-735b738238e6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Home",
+        "uuid": "bb75a86c-05af-4b05-b699-860737d19e57"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, where was abortion completed",
+    "uuid": "d742e6b7-8ed7-4d83-8513-2ec303faf2f5",
+    "dataType": "Text"
+  },
+  {
+    "name": "Abortion inducing method",
+    "uuid": "5583472c-5559-407b-b2eb-8e32d709b2f1",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Oral Medicine",
+        "uuid": "f3224d24-61bf-483c-aa19-2ecfc7babd22"
+      },
+      {
+        "name": "Traditional Vaginal Herbal Medication",
+        "uuid": "fbccec87-0a9e-4a3b-9cea-3f2ba2abb369"
+      },
+      {
+        "name": "Instrumentation",
+        "uuid": "7da75d30-a265-47e5-b9a4-18e2f24d06a1"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Induced abortion performed at",
+    "uuid": "2fc661cb-29fb-4bfe-9b6c-77375173405d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Home",
+        "uuid": "bb75a86c-05af-4b05-b699-860737d19e57"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }     
+    ]
+  },
+  {
+    "name": "Other, where she had induced abortion",
+    "uuid": "8fe6bbc8-6cae-41c5-985a-979a4944da8b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Induced abortion performed by",
+    "uuid": "a0ac3d78-77ae-45a8-af66-8f6d1144c8a2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Alopathic doctor",
+        "uuid": "6cb61fd9-09d5-4f37-a546-08283e2455fb"
+      },
+      {
+        "name": "AYUSH Doctor",
+        "uuid": "387d3616-c170-4675-85df-a16a32d36e84"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Dai",
+        "uuid": "e9b9f255-4166-4060-bf69-5b3caba4e29e"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, who performed the abortion",
+    "uuid": "80bc390f-dc9a-465e-96c8-40cae85e6a9c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Reason for inducing the abortion",
+    "uuid": "e31162a3-ca80-4ce8-adfc-97b201be3e21",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Medical Condition/Bleeding started spontaneously",
+        "uuid": "8df259ad-1aa7-41e6-94bd-f870abc0b982"
+      },
+      {
+        "name": "Wanted to terminate the pregnancy",
+        "uuid": "a4fc7d58-232a-4798-b198-e6fe41340e50"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      } 
+    ]
+  },
+  {
+    "name": "Description of inducing abortion",
+    "uuid": "1f5b781c-1360-4ab8-9dd1-4fc9bdecad71",
+    "dataType": "Text"
+  },
+  {
+    "name": "Complication/symptoms after the abortion",
+    "uuid": "c7c04aac-f63c-4c0e-8b11-7e379cb8e31f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "High fever",
+        "uuid": "2732062b-ffe4-4e26-a2e9-5211c28079d1"
+      },
+      {
+        "name": "Foul smelling discharge",
+        "uuid": "cdc915f0-3b59-4561-a26d-1b5fb74fe3bb"
+      },
+      {
+        "name": "Bleeding",
+        "uuid": "d3edaf02-abd7-4ab9-9dd9-081fefe96aa9"
+      },
+      {
+        "name": "Shock",
+        "uuid": "82398e09-b336-4be9-b9d9-36f6bd9c6f74"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Seek care after developing complication 1",
+    "uuid": "d0073b51-c020-489b-bfba-cbb3834cb1e4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      }
+    ]
+  },
+  {
+    "name": "Seek care after developing complication 2",
+    "uuid": "02f97f10-5043-4db1-952c-803762532df0",
+    "dataType": "Text"
+  },
+  {
+    "name": "Reason for not seeking the care",
+    "uuid": "12bbcc67-21e0-4e4b-8fa3-6c1c1f1ef3d9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason for not seeking care 3",
+    "uuid": "668dd606-f285-42c9-92af-b6a6edfdb5e1",
+    "dataType": "Text"
+  },
+  {
+    "name": "Place of delivery. ",
+    "uuid": "704bd399-471e-47f7-a557-15a8822e7de0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Home",
+        "uuid": "bb75a86c-05af-4b05-b699-860737d19e57"
+      },
+      {
+        "name": "Sub-District Hospital",
+        "uuid": "5884f592-80b4-44a1-9247-823d37398d2a"
+      },
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "In-transit",
+        "uuid": "46ce824e-6b22-4b6c-b0fd-746da6f99f75"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, place of delivery",
+    "uuid": "b600db53-5338-47ff-b4af-cd9118f7e91b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Reason for home delivery",
+    "uuid": "e7ae50e1-4c1c-43bd-8584-54b0d24d109a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Family's preference",
+        "uuid": "f7250583-4732-4f5b-bcf0-8210aab5cefc"
+      },
+      {
+        "name": "Village Dai is good",
+        "uuid": "acbac6e2-7ce7-4af6-8a5b-10b4d7883f3b"
+      },
+      {
+        "name": "No transport facilities",
+        "uuid": "5b60b42c-06fe-4036-894f-f1ab9f126bc3"
+      },
+      {
+        "name": "Cost of transport is high",
+        "uuid": "93600837-097e-48a1-9d96-a1f8172293e2"
+      },
+      {
+        "name": "No information given about need for institutional delivery",
+        "uuid": "38fd9333-048c-44d7-9636-9993bb8fdc98"
+      },
+      {
+        "name": "Services not available at the nearest health facility",
+        "uuid": "e246f470-a18c-4f41-b769-080bbf3ae338"
+      },
+      {
+        "name": "High expenses",
+        "uuid": "8e876bcd-641b-484c-b5ee-b173bf7fe1bc"
+      },
+      {
+        "name": "Bad experience at institution",
+        "uuid": "4973f419-49a7-4e04-a43d-4d73e4a30ff9"
+      },
+      {
+        "name": "No complication so no need",
+        "uuid": "27067363-1eb4-4f88-8929-28cd6f2d86af"
+      },
+      {
+        "name": "Home is more comfortable",
+        "uuid": "d3528342-7d89-4d42-a58d-2f1d2f4db171"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, reason for home delivery",
+    "uuid": "2f7da1fd-f199-4068-8f7a-cb3cf881af1e",
+    "dataType": "Text"
+  },
+  {
+    "name": "Date andd time of delivery",
+    "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a",
+    "dataType": "Date"
+  },
+  {
+    "name": "Date and time of death",
+    "uuid": "129198de-adec-4575-b960-047e30b8cefd",
+    "dataType": "Date"
+  },
+  {
+    "name": "Delivery conducted by",
+    "uuid": "3868f0f7-51b7-4714-ab84-6ecb321ae885",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Alopathic doctor",
+        "uuid": "6cb61fd9-09d5-4f37-a546-08283e2455fb"
+      },
+      {
+        "name": "AYUSH doctor",
+        "uuid": "387d3616-c170-4675-85df-a16a32d36e84"
+      },
+      {
+        "name": "ANM",
+        "uuid": "d3f764e5-938a-42dd-bdef-02614d424f8d"
+      },
+      {
+        "name": "Staff nurse",
+        "uuid": "5632e645-b24d-4dee-904a-c844d2ef8a49"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "other, delivery conducte by",
+    "uuid": "462fff03-0a0c-4552-bf78-7a212834c6e5",
+    "dataType": "Text"
+  },
+  {
+    "name": "Type of delivery.",
+    "uuid": "aac560fc-303d-464d-9922-f0e4ea18d79d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Normal",
+        "uuid": "ba43b326-18a1-4f8d-ad04-29b0371461e0"
+      },
+      {
+        "name": "C-seciton",
+        "uuid": "eb68c395-17dc-4679-828c-487753228e9f"
+      },
+      {
+        "name": "Assisted",
+        "uuid": "5e5acaab-b92e-418c-9b8f-b61dce8e13ee"
+      },
+      {
+        "name": "Unattended",
+        "uuid": "2bb7f087-8712-4849-8f3d-d95e18ba2098"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Complication during labor.",
+    "uuid": "301165eb-9c76-45c0-89a8-a21eac81cfbf",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Prolonged labour (Primi>12hrs / Subsequent deliveries > 8hrs)",
+        "uuid": "6408b61b-afaa-4902-b39f-4aa1ef38635d"
+      },
+      {
+        "name": "Severe bleeding/bleeding with clots - (one saree/in skirt soaked = 500ml)",
+        "uuid": "a8640e9d-dedc-4539-bded-739996c8314f"
+      },
+      {
+        "name": "labour pain which disappeared suddenly",
+        "uuid": "451f3d90-4188-48ae-a0c6-85f849338d06"
+      },
+      {
+        "name": "Inversion of the uterus",
+        "uuid": "14e2e37a-66ee-4698-a77d-95601be8692b"
+      },
+      {
+        "name": "Retained placenta",
+        "uuid": "d211703c-beab-40f3-9e87-a271759c5ec9"
+      },
+      {
+        "name": "Convulsions",
+        "uuid": "b694eefb-6b9d-4123-98a4-1bfc39a7dcb4"
+      },
+      {
+        "name": "Severe breathlessness/cyanosis/edema",
+        "uuid": "03747047-f47f-4616-9e93-9e67c3627fe9"
+      },
+      {
+        "name": "Unconsciousness",
+        "uuid": "04d0248b-72c4-4d78-b4f1-3e3d9cc247b1"
+      },
+      {
+        "name": "High fever",
+        "uuid": "2732062b-ffe4-4e26-a2e9-5211c28079d1"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other complication during labor / delivery",
+    "uuid": "a45ea9cd-2be0-4d0a-b68d-5150dedd01bc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Treatmet provided at health facility",
+    "uuid": "c2f51fe9-1610-4535-a679-bb77cebe9ce9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Received IV drip",
+        "uuid": "3ac13818-9a62-43b2-a878-dd8e8f85a18e"
+      },
+      {
+        "name": "Blood transfusion",
+        "uuid": "d7fd0e23-c557-45b0-8d0d-bfa6e8341da8"
+      },
+      {
+        "name": "Oxygen was given",
+        "uuid": "8118904e-bf87-4aaa-8617-8fdca260c858"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, treatment provided at health facility",
+    "uuid": "95c83bef-053e-4d99-acdf-e3b326fb5c48",
+    "dataType": "Text"
+  },
+  {
+    "name": "Details of treatment from hospital record",
+    "uuid": "d3f8c64e-d983-414a-a4cf-909558043f7f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Information about the complication from hospital",
+    "uuid": "aad907d4-381c-4b04-82b6-86866f463eb4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Description of information given",
+    "uuid": "7a3d684c-a57e-4ceb-94a2-df45a5afaa37",
+    "dataType": "Text"
+  },
+  {
+    "name": "Delay in initiating treatment 1",
+    "uuid": "4d83afcc-4eec-4bc3-81fe-2ea36f45ad3c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      },
+      {
+        "name": "Not applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      }
+    ]
+  },
+  {
+    "name": "description of delay in treatment 1",
+    "uuid": "fe283485-a971-442f-a4e9-e2b21c32d505",
+    "dataType": "Text"
+  },
+  {
+    "name": "Care seeked in home delivery",
+    "uuid": "df9125c1-af56-41ac-a3d9-a1025bac081b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Reason for not seeking care in home delivery",
+    "uuid": "48b4a563-bf3c-4870-8415-c512f7e4c25f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, reason for not seeking care",
+    "uuid": "d670c4f6-27bb-4c97-985e-c903b0dc1acc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Where seek care",
+    "uuid": "b169ef37-1f46-41e5-a0db-fa9e4eeb405b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other, care seeked",
+    "uuid": "e34fa97d-1e9f-446f-a558-9cb1e95a9f9d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Information given about nature of complication ",
+    "uuid": "0a9358d2-84e8-4056-90c7-6ab36bd01ff6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Description of nature of complication",
+    "uuid": "ced27e49-e658-4af8-a041-d374f61c4ea8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Delay in initiating treatment 2",
+    "uuid": "8148431d-0006-4ce3-975e-35e0e6fe247b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Description of delay in initiating the treatment 2",
+    "uuid": "25d97fb0-eb3a-4b03-b748-aa09a4a8dd3f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Deceased woman referred from place of delivery",
+    "uuid": "73a40297-bf71-4def-a90f-36dad552422b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "deceased woman referred in case of home delivery",
+    "uuid": "9905cd49-e313-40e9-a367-74d34d82aba4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Woman attend referral centre",
+    "uuid": "82cc079f-6a8b-4368-9b1d-767483b3e232",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      }
+    ]
+  },
+  {
+    "name": "Reason for not seeking care 1",
+    "uuid": "71026db3-f2ff-4678-b554-5418c3ed23e9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason for not seeking care from hospital",
+    "uuid": "b52f6ba4-c794-4045-bbde-ad1bc19c6553",
+    "dataType": "Text"
+  },
+  {
+    "name": "Information given to relative about nature of complication",
+    "uuid": "f9d8f7aa-c229-4af8-832a-24a6cdb62ae6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Details of information given about the nature of complication to family",
+    "uuid": "4b6a3c48-3b67-4a28-b38a-6523962d7255",
+    "dataType": "Text"
+  },
+  {
+    "name": "Delay in initiating treatment 3",
+    "uuid": "f48594bb-708a-4121-ab37-f885762a6a79",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Not known",
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+      },
+      {
+        "name": "Not applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      }
+    ]
+  },
+  {
+    "name": "description of delay in treatment 3",
+    "uuid": "63096bd8-bd43-45d9-84ad-2d68e8d3c29f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Any problem following delivery",
+    "uuid": "a8d00f9f-056a-4de5-90d8-224ec828ae71",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      }
+    ]
+  },
+  {
+    "name": "Date and time of onset of problem",
+    "uuid": "a93c67d9-3dd4-4e27-8a52-6d5960d3c1bd",
+    "dataType": "Date"
+  },
+  {
+    "name": "Problem during postnatal period",
+    "uuid": "915a72da-8e27-4aff-9283-a4459281522d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severe bleeding",
+        "uuid": "87ba7b3c-aae0-435a-b240-88f462072b76"
+      },
+      {
+        "name": "High fever and foul smelling discharge",
+        "uuid": "f9e7b4fd-8f09-4a57-9d3c-05dd1f94c3d6"
+      },
+      {
+        "name": "Unconsciousness/ visual disturbance",
+        "uuid": "20c351e8-a407-4a40-98ff-d545b51a1929"
+      },
+      {
+        "name": "Bleeding from multiple sites",
+        "uuid": "3ad109df-00b2-4d77-bbcb-d5cfa720208b"
+      },
+      {
+        "name": "Severe leg pain, swelling",
+        "uuid": "c3b7f72a-e290-490c-8db9-0bd1d095b4c8"
+      },
+      {
+        "name": "Abnormal behaviour",
+        "uuid": "ff4b809c-f930-4a36-b5d6-7371bd3b8228"
+      },
+      {
+        "name": "Severe anemia",
+        "uuid": "1aff631c-e487-4202-a862-122b45168ac6"
+      },
+      {
+        "name": "Sudden chest pain & collapse",
+        "uuid": "56b4dcdf-6e0d-410c-b32e-1da6f0ec45a1"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Describe Other, postnatal period problem",
+    "uuid": "a9e315dc-b178-45e5-9865-e042fb315bbf",
+    "dataType": "Text"
+  },
+  {
+    "name": "Did she seek treatment",
+    "uuid": "4e65a938-503e-40ca-a121-41e855a09e63",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Where seeked treatment",
+    "uuid": "a13c7c06-bc67-403e-92fa-740c3ea1cdad",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other place to seek treatment in postnatal",
+    "uuid": "25e84245-a829-4c5e-9379-1bf01acd8d18",
+    "dataType": "Text"
+  },
+  {
+    "name": "Treatment in hospital",
+    "uuid": "bc39c166-c853-4170-8fc4-b5e876018f36",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Received IV drip",
+        "uuid": "3ac13818-9a62-43b2-a878-dd8e8f85a18e"
+      },
+      {
+        "name": "Blood transfusion",
+        "uuid": "d7fd0e23-c557-45b0-8d0d-bfa6e8341da8"
+      },
+      {
+        "name": "Oxygen was given",
+        "uuid": "8118904e-bf87-4aaa-8617-8fdca260c858"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other treatment",
+    "uuid": "d4419fb1-3b50-4cbf-9dda-ffdc8e5f320c",
+    "dataType": "Text"
+  },
+  {
+    "name": "Details of treatment revceived from hospital record",
+    "uuid": "83b056ae-3924-4789-9ef4-3532c201b8ff",
+    "dataType": "Text"
+  },
+  {
+    "name": "Was she referred",
+    "uuid": "0c9ec484-a94e-4035-8460-d73c3d730557",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Referral attended",
+    "uuid": "c968f906-79d2-4ac2-882d-7091302df767",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Reason for not seeking care 2",
+    "uuid": "4ccafbcf-0320-485d-8aee-4e66144ba6ef",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Severity of complication not known",
+        "uuid": "c4512103-98d4-44a9-9515-f9387d3a9f88"
+      },
+      {
+        "name": "Health facility was very far",
+        "uuid": "43962e68-1f89-4ebd-8111-039e33be18fc"
+      },
+      {
+        "name": "Lack of transport",
+        "uuid": "6626608d-f6c5-4e65-a5d6-586301bf5550"
+      },
+      {
+        "name": "Financial Reason",
+        "uuid": "b8022e63-8c02-4f48-943e-2c1efa080524"
+      },
+      {
+        "name": "Family Reason",
+        "uuid": "3cce2654-b33f-4436-a0ca-f12015ecaf5f"
+      },
+      {
+        "name": "Faith in local healers/dai",
+        "uuid": "322045a3-c0e9-4709-99c6-9dc26283092d"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Disrespectful behavior of the provider",
+        "uuid": "32305eed-7d16-4fdd-8807-a7da4d1abce3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other reason for not seeking care 4",
+    "uuid": "325a9bbd-c400-41b8-a1bc-17a3b87edf85",
+    "dataType": "Text"
+  },
+  {
+    "name": "Any postnatal checkups received",
+    "uuid": "c5726d7b-f470-4159-ae73-5578fce7f6d2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "Postnatal checkup done by",
+    "uuid": "13fee8d6-5c00-4256-a4e1-589febb538a5",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "ANM",
+        "uuid": "d3f764e5-938a-42dd-bdef-02614d424f8d"
+      },
+      {
+        "name": "ASHA",
+        "uuid": "5e1a3c7d-c8c3-42d2-b469-d66114988361"
+      },
+      {
+        "name": "Dai",
+        "uuid": "e9b9f255-4166-4060-bf69-5b3caba4e29e"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Other , post natal checkup done by",
+    "uuid": "a7644be7-d3f5-4f74-9fae-0fe5127322e2",
+    "dataType": "Text"
+  },
+  {
+    "name": "Open History",
+    "uuid": "5ddb88ec-b309-44ed-ac29-0045023ab36a",
+    "dataType": "Text"
+  },
+  {
+    "name": "steps to prevent death",
+    "uuid": "6daf0c36-3a3f-4487-ae0b-6bc64ca04052",
+    "dataType": "Text"
+  }
+]
