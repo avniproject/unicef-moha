@@ -48,8 +48,8 @@ deploy_refdata: deploy_concepts
 	$(call _curl,POST,operationalPrograms,@operationalModules/operationalPrograms.json)
 
 	$(call _curl,POST,forms,@fbmdr/FacilityBasedMaternalDeathReviewForm.json)
-
 	$(call _curl,POST,forms,@cbmdr/CommunityBasedVerbalAutopsy.json)
+	$(call _curl,POST,forms,@MaternalDeathCaseSummaryForm.json)
 
 	$(call _curl,POST,formMappings,@formMappings.json)
 

@@ -1,5 +1,322 @@
 [
   {
+    "name": "Date of second interview",
+    "uuid": "1a59837e-f17c-44fc-85ad-2553f7027023",
+    "dataType": "Date"
+  },
+  {
+    "name": "Delay in getting transport for first facility",
+    "uuid": "30857088-040f-4838-8c15-e30d43a50336"
+  },
+  {
+    "name": "Delay in mobilizing funds",
+    "uuid": "ea106b81-b05e-4d42-891a-261435af5d70"
+  },
+  {
+    "name": "Not reacing appropriate/referral facility in time",
+    "uuid": "bb0f3e6d-c4f3-4da9-a209-09481703837d"
+  },
+  {
+    "name": "Difficult terrain",
+    "uuid": "96639544-519d-4ee3-ad71-d744e7ea96b3"
+  },
+  {
+    "name": "Delay in initiating treatment",
+    "uuid": "ce8f4bab-c939-4928-ac4f-98a25722f646"
+  },
+  {
+    "name": "Substandard treatment in hospital",
+    "uuid": "fd79cda3-86d3-44cf-a678-c89a5fae6b97"
+  },
+  {
+    "name": "Lack of blood, equipments and drugs",
+    "uuid": "3ff9509a-f6b2-426c-b3e9-0bbccf79e6b1"
+  },
+  {
+    "name": "Lack of adequate funds",
+    "uuid": "78150dae-3081-485c-aa0e-e1d6c1b3475d"
+  },
+  {
+    "name": "Unawareness of danger signs",
+    "uuid": "a8666d7d-9f5c-4bf8-b5cc-5419af91a65d"
+  },
+  {
+    "name": "Illiteracy & Ignorance",
+    "uuid": "053f4e91-435d-456a-a3cc-7cdecd2e467a"
+  },
+  {
+    "name": "Delay in decision making",
+    "uuid": "e92c3000-9afd-4932-aa8b-434332ce1a55"
+  },
+  {
+    "name": "No birth preparedness",
+    "uuid": "5bf3533f-06d3-445e-85f9-7b781adc4b99"
+  },
+  {
+    "name": "Lack of assured services",
+    "uuid": "513476e4-a47e-49d9-9096-176e6a721484"
+  },
+  {
+    "name": "Unawareness about services available in nearby facility",
+    "uuid": "7592f568-d826-4d0c-b468-31e598bc8a03"
+  },
+  {
+    "name": "Name of District",
+    "uuid": "18cf744b-6125-4cfd-818d-5533f2e1ab0d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of block",
+    "uuid": "8a73d129-bf0a-4d0c-ba23-d0078325fd99",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of PHC",
+    "uuid": "3644dfe7-ab1d-4107-bd12-c61aa4b0eb7d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of facility",
+    "uuid": "353a13f7-0f7b-4189-be23-6dff6456231a",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of deceased woman",
+    "uuid": "5a2abdd0-8d25-4342-85b5-f8958826a80f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Place of residence",
+    "uuid": "e42d89b6-12fd-400a-8c25-d67251ecdfa2",
+    "dataType": "Text"
+  },
+  {
+    "name": "Native place",
+    "uuid": "b9a674b8-1520-4033-99e0-25057820a5f1",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of place of death",
+    "uuid": "079fb844-0d72-49cf-8389-b821f1b5ab37",
+    "dataType": "Text"
+  },
+  {
+    "name": "During or within 6 weeks of abortion",
+    "uuid": "9120844c-126e-4b71-8af4-5e9bf8a96cc4"
+  },
+  {
+    "name": "In labour or During Delivery",
+    "uuid": "c650b1ac-b94b-44c4-946d-c5aa168f64dc"
+  },
+  {
+    "name": "Within 1 week after delivery",
+    "uuid": "10a2e447-d1c1-4cd4-b529-33c76a409533"
+  },
+  {
+    "name": "7-42 days after delivery",
+    "uuid": "526322b5-5d89-4fb6-8df3-fe1ee42c4110"
+  },
+  {
+    "name": "Infant Outcome",
+    "uuid": "cc745a79-95f7-431c-8bce-420eee785d40",
+    "dataType": "Text"
+  },
+  {
+    "name": "Number of alive children",
+    "uuid": "85a2e410-411d-4243-bef9-d5d047bde636",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "Probable direct obstetric cause of death",
+    "uuid": "ad15d9eb-cf06-4cb5-9712-0a012df9bdb8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Indirect obstetric cause of death",
+    "uuid": "33780edb-34e5-4a68-b0e0-4262a5e3217b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Contributory causes of death",
+    "uuid": "fd68540c-78dd-4dc3-bec1-48c877d8c3eb",
+    "dataType": "Text"
+  },
+  {
+    "name": "Initiative suggested",
+    "uuid": "a9f577da-ca62-4fb7-82ca-4f23e27d15c8",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of investigator 1",
+    "uuid": "5504a61b-d3c1-486d-a630-591c529209af",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of investigator 1",
+    "uuid": "24ea2641-72f9-4985-8014-c2790a2de169",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of investigator 2",
+    "uuid": "f83c51a6-3b49-4738-bbdd-45fe89337f52",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of investigator 2",
+    "uuid": "b2ebe620-c8c8-4caa-8e3d-f1440e7f042f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of investigator 3",
+    "uuid": "90de1d6a-2f0a-4d25-bbc9-09acf8813f04",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of investigator 3",
+    "uuid": "95092623-09f3-4ada-ab06-95b4f546a556",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of Block MO/Facility Nodal officer",
+    "uuid": "5f6b867d-d0a5-4a59-b940-b767593dc70d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Delay in seeking care",
+    "uuid": "9813a8c2-b49c-45c5-94bb-6abdde0c8900",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Unawareness of danger signs",
+        "uuid": "a8666d7d-9f5c-4bf8-b5cc-5419af91a65d"
+      },
+      {
+        "name": "Illiteracy & Ignorance",
+        "uuid": "053f4e91-435d-456a-a3cc-7cdecd2e467a"
+      },
+      {
+        "name": "Delay in decision making",
+        "uuid": "e92c3000-9afd-4932-aa8b-434332ce1a55"
+      },
+      {
+        "name": "No birth preparedness",
+        "uuid": "5bf3533f-06d3-445e-85f9-7b781adc4b99"
+      },
+      {
+        "name": "Beliefs and customs",
+        "uuid": "fec2d8a8-471e-4a0a-9973-2e36b0993d6f"
+      },
+      {
+        "name": "Lack of assured services",
+        "uuid": "513476e4-a47e-49d9-9096-176e6a721484"
+      },
+      {
+        "name": "Unawareness about services available in nearby facility",
+        "uuid": "7592f568-d826-4d0c-b468-31e598bc8a03"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Delay in reaching health facility",
+    "uuid": "b74b985b-9717-4ea6-9e9a-0a47b6cc220f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Delay in getting transport for first facility",
+        "uuid": "30857088-040f-4838-8c15-e30d43a50336"
+      },
+      {
+        "name": "Delay in mobilizing funds",
+        "uuid": "ea106b81-b05e-4d42-891a-261435af5d70"
+      },
+      {
+        "name": "Not reacing appropriate/referral facility in time",
+        "uuid": "bb0f3e6d-c4f3-4da9-a209-09481703837d"
+      },
+      {
+        "name": "Difficult terrain",
+        "uuid": "96639544-519d-4ee3-ad71-d744e7ea96b3"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Delay in receiving adequate care in facility",
+    "uuid": "bd248784-7978-4f8f-bd79-8dd3064d2847",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Delay in initiating treatment",
+        "uuid": "ce8f4bab-c939-4928-ac4f-98a25722f646"
+      },
+      {
+        "name": "Substandard treatment in hospital",
+        "uuid": "fd79cda3-86d3-44cf-a678-c89a5fae6b97"
+      },
+      {
+        "name": "Lack of blood, equipments and drugs",
+        "uuid": "3ff9509a-f6b2-426c-b3e9-0bbccf79e6b1"
+      },
+      {
+        "name": "Lack of adequate funds",
+        "uuid": "78150dae-3081-485c-aa0e-e1d6c1b3475d"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
+  },
+  {
+    "name": "Timing of death in pregnancy",
+    "uuid": "9e0e21b0-e5c2-406a-8da6-a11a78d65329",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Pregnancy",
+        "uuid": "adc37af2-06c1-4adf-9f10-0e121b8a49b8"
+      },
+      {
+        "name": "During or within 6 weeks of abortion",
+        "uuid": "9120844c-126e-4b71-8af4-5e9bf8a96cc4"
+      },
+      {
+        "name": "In labour or During Delivery",
+        "uuid": "c650b1ac-b94b-44c4-946d-c5aa168f64dc"
+      },
+      {
+        "name": "Within 1 week after delivery",
+        "uuid": "10a2e447-d1c1-4cd4-b529-33c76a409533"
+      },
+      {
+        "name": "7-42 days after delivery",
+        "uuid": "526322b5-5d89-4fb6-8df3-fe1ee42c4110"
+      }
+    ]
+  },
+  {
+    "name": "Previous abortion",
+    "uuid": "05dbdea3-2d60-4c18-9d53-57c01bd0a05b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Spontaneous",
+        "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5"
+      },
+      {
+        "name": "Induced",
+        "uuid": "9e7d21e8-8123-46de-8bf0-f3c79e5810b0"
+      }
+    ]
+  },
+  {
     "name": "Referral Time to reach from Facility 1",
     "uuid": "7820fd91-a878-4f22-82c4-44b8684e24f6",
     "dataType": "Date"
@@ -103,8 +420,6 @@
     "name": "High Blood Pressure",
     "uuid": "63398939-0a45-46ee-8d92-f01d55e96c1a"
   },
-  
-  
   {
   "name": "Name and Type of Health Facility",
   "uuid": "0ed9c702-12db-4c72-8f3e-baba9898af0c",
@@ -169,7 +484,8 @@
   {
     "name": "Contact/Mobile No",
     "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1",
-    "dataType": "Numeric"
+    "dataType": "Numeric",
+    "unit":"Contact Number"
   },
   {
     "name": "Illiterate",

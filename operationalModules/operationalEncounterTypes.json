@@ -16,6 +16,13 @@
         "uuid": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c",
         "comment": "Form 5 : Community Based Verbal Autopsy"
       }
+    },
+    {
+      "uuid": "ecee795c-2bde-4cbd-afa7-2c877d2df5e0",
+      "name": "Form 6 : MDR Case summary",
+      "encounterType": {
+        "uuid": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403"
+      }
     }
   ]
 }

@@ -1,0 +1,470 @@
+{
+  "name": "MDR Case Summary",
+  "uuid": "d982c23e-133c-4012-99fc-33eb9598d166",
+  "formType": "ProgramEncounter",
+  "formElementGroups": [
+    {
+      "uuid": "75fa6c41-fd2b-4173-bcc9-8ccc0cc6fed8",
+      "name": "Facility details",
+      "display": "Facility details",
+      "displayOrder": 1,
+      "formElements": [
+        {
+          "name": "Name of the District",
+          "uuid": "9ab5ce88-b0e3-4c96-93e7-0eef980c8ed7",
+          "keyValues": [],
+          "concept": {
+            "uuid": "18cf744b-6125-4cfd-818d-5533f2e1ab0d"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Name of the Block",
+          "uuid": "4e952e75-d30f-4beb-924c-228fa006d7ce",
+          "keyValues": [],
+          "concept": {
+            "uuid": "8a73d129-bf0a-4d0c-ba23-d0078325fd99"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Name of the PHC",
+          "uuid": "a2ef4541-6685-4baf-b395-b8104bb302c9",
+          "keyValues": [],
+          "concept": {
+            "uuid": "3644dfe7-ab1d-4107-bd12-c61aa4b0eb7d"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Name of the Facility",
+          "uuid": "e94cc1e6-2059-4b66-bd5a-fb45d3c91ac9",
+          "keyValues": [],
+          "concept": {
+            "uuid": "353a13f7-0f7b-4189-be23-6dff6456231a"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "e4aaf4ed-d4db-4fee-be7c-9f25725ae4a8",
+      "name": "Particulars of deceased woman",
+      "display": "Particulars of deceased woman",
+      "displayOrder": 2,
+      "formElements": [
+        {
+          "name": "MCTS ID",
+          "uuid": "765a699e-97e5-4ecf-ae0e-27c3227bfd0b",
+          "keyValues": [],
+          "concept": {
+            "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Name of deceased woman",
+          "uuid": "f7dfa940-4fab-410b-9e0f-07bc56eef28d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "5a2abdd0-8d25-4342-85b5-f8958826a80f"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Age",
+          "uuid": "fee1d3fe-93a1-4311-84fe-0830b70e202b",
+          "keyValues": [],
+          "concept": {
+            "uuid": "edd950ba-148d-4e1d-b086-6de471a6b965"
+          },
+          "displayOrder":3 ,
+          "mandatory": false
+        },
+       {
+          "name": "Relegion",
+          "uuid": "030fd5e7-4c3d-4db3-b94d-f89e970a1732",
+          "keyValues": [],
+          "concept": {
+            "uuid": "c922c13c-1fa2-42dd-a7e8-d234b0324870"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Caste",
+          "uuid": "9cc2b22d-f699-4ad5-9d81-00b4e593e344",
+          "keyValues": [],
+          "concept": {
+            "uuid": "61ab6413-5c6a-4512-ab6e-7d5cd1439569"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "6624c98b-e551-4ce2-95d7-58508c9f2602",
+      "name": "Address when death occured",
+      "display": "Address when death occured",
+      "displayOrder": 3,
+      "formElements": [
+        {
+          "name": "Place of Residence",
+          "uuid": "f99c43be-f7d4-4bdd-982b-47115459fde2",
+          "keyValues": [],
+          "concept": {
+            "uuid": "e42d89b6-12fd-400a-8c25-d67251ecdfa2"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Native place",
+          "uuid": "3aec2ccb-e144-41f5-90ac-a0a9ca007b45",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b9a674b8-1520-4033-99e0-25057820a5f1"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Palce of death",
+          "uuid": "dd412671-5dc4-4a80-8b3e-034e4891f880",
+          "keyValues": [],
+          "concept": {
+            "uuid": "079fb844-0d72-49cf-8389-b821f1b5ab37"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "b6ba28f6-9879-44ce-a412-e97018264941",
+      "name": "Date and time of death",
+      "display": "Date and time of death",
+      "displayOrder": 4,
+      "formElements": [
+        {
+          "name": "Date and Time of death",
+          "uuid": "41ae51b9-2937-4abe-8d9e-18fb4bdc64d2",
+          "keyValues": [],
+          "concept": {
+            "name": "Date and Time of death",
+            "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
+            "dataType": "Date"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Timing of death",
+          "uuid": "4a09b549-0d7c-4546-9874-ec823d307774",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "9e0e21b0-e5c2-406a-8da6-a11a78d65329"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        }       
+      ]
+    },
+    {
+      "uuid": "dc9a801c-1694-4021-8eb6-a16738761ccc",
+      "name": "Obstetric History",
+      "display": "Obstetric History",
+      "displayOrder": 5,
+      "formElements": [
+        {
+          "name": "Gravida",
+          "uuid": "938fb1d2-3569-4865-a2c9-ef75968019a5",
+          "keyValues": [],
+          "concept": {
+            "name": "Gravida",
+            "uuid": "dc2c23e9-19ad-471f-81d1-213069ccc975",
+            "dataType": "Numeric"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Para",
+          "uuid": "79fdb070-1657-4a88-b61c-1a06c52682df",
+          "keyValues": [],
+          "concept": {
+            "name": "Para",
+            "uuid": "2d679fd5-a75b-46bd-96c2-10c180187342",
+            "dataType": "Numeric"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Previous abortion",
+          "uuid": "2ad2fff0-2f90-44e6-8306-78772a81d5a5",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "05dbdea3-2d60-4c18-9d53-57c01bd0a05b"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Infant Outcome",
+          "uuid": "101aa0cb-07b4-4213-85af-1071294a53bf",
+          "keyValues": [],
+          "concept": {
+            "uuid": "cc745a79-95f7-431c-8bce-420eee785d40"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Number of alive children",
+          "uuid": "67308997-6769-4aa4-b3bf-bda6afc9ac18",
+          "keyValues": [],
+          "concept": {
+            "name": "Number of alive children",
+            "uuid": "85a2e410-411d-4243-bef9-d5d047bde636",
+            "dataType": "Numeric"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "98687e79-0297-4db3-8bae-4b57669dd0b7",
+      "name": "Investigation",
+      "display": "Investigation",
+      "displayOrder": 6,
+      "formElements": [
+        {
+          "name": "Date of interview",
+          "uuid": "24b27da0-e416-460e-b22e-b1e25aeb57c4",
+          "keyValues": [],
+          "concept": {
+            "name": "Date of interview",
+            "uuid": "ef4496a8-0c02-4472-91e9-432f9cd64620",
+            "dataType": "Date"
+          },
+          "displayOrder": 1,
+          "mandatory": true
+        },
+        {
+          "name": "Date of interview 2 (if second visit done)",
+          "uuid": "761c9adc-f9aa-4e11-a68b-eb02300b13ef",
+          "keyValues": [],
+          "concept": {
+            "name": "Date of interview 2 (if second visit done)",
+            "uuid": "1a59837e-f17c-44fc-85ad-2553f7027023",
+            "dataType": "Date"
+          },
+          "displayOrder": 2,
+          "mandatory": true
+        },
+        {
+          "name": "Name of main respondent",
+          "uuid": "f25a2e1d-d1c9-4959-b50d-c394d5e85d57",
+          "keyValues": [],
+          "concept": {
+            "uuid": "2967f6b2-7f22-428d-b753-deb91791cd5f"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Contact number of main respondent",
+          "uuid": "d9c893f1-5f67-41ba-8259-847094c477f9",
+          "keyValues": [],
+          "concept": {
+            "name": "Contact number of main respondent",
+            "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1",
+            "dataType": "Numeric",
+            "unit": "Contact Number"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "4746e429-a3c2-4502-bbd8-2cd935ef0b3a",
+      "name": "Delay",
+      "display": "Delay",
+      "displayOrder": 7,
+      "formElements": [
+        {
+          "name": "Delay in seeking care",
+          "uuid": "720d4904-d018-43b0-a957-29331c945949",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "9813a8c2-b49c-45c5-94bb-6abdde0c8900"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Delay in reaching health facility",
+          "uuid": "15cd6884-ee83-4fe4-9734-12d339acac25",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "b74b985b-9717-4ea6-9e9a-0a47b6cc220f"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Delay in receiving adequate care in facility",
+          "uuid": "ccf152c3-9113-4c58-8be4-86e4d753c1d1",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "bd248784-7978-4f8f-bd79-8dd3064d2847"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "26dce7f5-e0b7-47ef-87fd-0b2efbf8a229",
+      "name": "Analysis",
+      "display": "Analysis",
+      "displayOrder": 8,
+      "formElements": [
+        {
+          "name": "Probable direct obstetric cause of death",
+          "uuid": "9a67f9c6-22f0-45e0-80a9-4909ab530c45",
+          "keyValues": [],
+          "concept": {
+            "uuid": "ad15d9eb-cf06-4cb5-9712-0a012df9bdb8"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Indirect obstetric cause of death",
+          "uuid": "08772d36-9e9e-4564-9d1a-d65d6dbbbb2a",
+          "keyValues": [],
+          "concept": {
+            "uuid": "33780edb-34e5-4a68-b0e0-4262a5e3217b"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Contributory causes of death",
+          "uuid": "cbdb7b94-e632-4f05-94b7-908186ef7bba",
+          "keyValues": [],
+          "concept": {
+            "uuid": "fd68540c-78dd-4dc3-bec1-48c877d8c3eb"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Initiative suggested",
+          "uuid": "3ed70109-f1ab-42c5-aed3-7697ab89aa42",
+          "keyValues": [],
+          "concept": {
+            "uuid": "a9f577da-ca62-4fb7-82ca-4f23e27d15c8"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        }
+      ]
+    },
+    {
+      "uuid": "0f279f48-c8d9-4b80-a562-301912b144e2",
+      "name": "Investigation team",
+      "display": "Investigation team",
+      "displayOrder": 9,
+      "formElements": [
+        {
+          "name": "Name of investigator 1",
+          "uuid": "8f83067c-306b-467a-b503-18882da869bd",
+          "keyValues": [],
+          "concept": {
+            "uuid": "5504a61b-d3c1-486d-a630-591c529209af"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Designation of investigator 1",
+          "uuid": "754f0811-d5a0-44b1-9e9a-1623ca443899",
+          "keyValues": [],
+          "concept": {
+            "uuid": "24ea2641-72f9-4985-8014-c2790a2de169"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Name of investigator 2",
+          "uuid": "0f170fe0-b0a6-4d4e-bfc8-7e1670a4918a",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f83c51a6-3b49-4738-bbdd-45fe89337f52"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Designation of investigator 2",
+          "uuid": "d824f709-86f0-4972-8589-caa838c2a99d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b2ebe620-c8c8-4caa-8e3d-f1440e7f042f"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Name of investigator 3",
+          "uuid": "7362a37c-7f31-40eb-9b0d-662517fafe65",
+          "keyValues": [],
+          "concept": {
+            "uuid": "90de1d6a-2f0a-4d25-bbc9-09acf8813f04"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        },
+        {
+          "name": "Designation of investigator 3",
+          "uuid": "3119da5a-8350-4ac2-bbcf-01353172cb67",
+          "keyValues": [],
+          "concept": {
+            "uuid": "95092623-09f3-4ada-ab06-95b4f546a556"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        },
+        {
+          "name": "Name of Block MO/Facility Nodal officer",
+          "uuid": "9fcad56a-d797-4847-8bcd-07bbe903a9e2",
+          "keyValues": [],
+          "concept": {
+            "uuid": "5f6b867d-d0a5-4a59-b940-b767593dc70d"
+          },
+          "displayOrder": 7,
+          "mandatory": false
+        }
+      ]
+    }
+  ]
+}
+

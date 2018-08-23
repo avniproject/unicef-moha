@@ -12,5 +12,12 @@
     "encounterTypeUUID": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
     "comment": "Community Based Verbal Autopsy"
+  },
+  {
+    "uuid": "771e6efa-1fdf-4580-b54b-62f220ebc8f6",
+    "formUUID": "d982c23e-133c-4012-99fc-33eb9598d166",
+    "encounterTypeUUID": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403",
+    "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
+    "comment": "MDR case summary"
   }
 ]
