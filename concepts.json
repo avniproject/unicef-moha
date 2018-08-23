@@ -1,5 +1,40 @@
 [
   {
+    "name": "Name of state",
+    "uuid": "7b6cd601-0edd-4f83-82d7-628cf64ee8bd",
+    "dataType": "Text"
+  },
+  {
+    "name": "Village Name",
+    "uuid": "c556feff-233b-4703-9a70-56f85975ff8d",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of Husaband",
+    "uuid": "eb2fabb9-f5f8-4ee6-bab2-88e489df8751",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of Father",
+    "uuid": "f7c955f5-6747-4695-bf96-f6deb8fb41b4",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of reporting person",
+    "uuid": "a334f0f7-434d-4acf-b4c2-dff3cb6f454b",
+    "dataType": "Text"
+  },
+  {
+    "name": "Designation of reporting person",
+    "uuid": "ad31dc43-3c4d-48ff-aae6-194858207f1f",
+    "dataType": "Text"
+  },
+  {
+    "name": "Name of subcenter",
+    "uuid": "4b721e9d-bf7f-4ccd-bf7e-1df9d40308ab",
+    "dataType": "Text"
+  },
+  {
     "name": "Date of second interview",
     "uuid": "1a59837e-f17c-44fc-85ad-2553f7027023",
     "dataType": "Date"

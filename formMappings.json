@@ -19,5 +19,12 @@
     "encounterTypeUUID": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
     "comment": "MDR case summary"
+  },
+  {
+    "uuid": "c301c739-809a-43e3-b86f-2dfb5aeb5220",
+    "formUUID": "68171a3b-106d-4b2c-bf18-8732eb10cf5c",
+    "encounterTypeUUID": null,
+    "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
+    "comment": "MDR Notification form"
   }
 ]
