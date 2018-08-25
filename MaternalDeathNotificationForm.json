@@ -111,6 +111,17 @@
           "mandatory": false
         },
         {
+          "name": "Other place of death",
+          "uuid": "77186dfe-c4ec-439c-a66a-f363ed30d0be",
+          "keyValues": [],
+          "concept": {
+            "uuid": "3631fbd7-40d9-456d-8987-ba3b9d5f4a2f"
+          },
+          "displayOrder": 3,
+          "mandatory": true
+        },
+
+        {
           "name": "When did death occur",
           "uuid": "77538170-fba1-4292-8901-0c90f1ae395d",
           "keyValues": [],
@@ -118,7 +129,7 @@
           "concept": {
             "uuid": "9e0e21b0-e5c2-406a-8da6-a11a78d65329"
           },
-          "displayOrder": 3,
+          "displayOrder": 4,
           "mandatory": false
         }
       ]
