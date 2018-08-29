@@ -42,28 +42,172 @@ class FbmdrViewFilter {
         return statusBuilder.build();
     }
 
-    // @WithStatusBuilder
-    // otherCausesOfHypertensiveDisorderInPregnancy([programEncounter, formElement], statusBuilder){
-    //     statusBuilder.show().when.valueInEncounter("Hypertensive disorder of Pregnancy").containsAnswerConceptName("Other");
-    //     return statusBuilder.build();
-    // }
-    //
-    // @WithStatusBuilder
-    // otherLaborRelatedDisorder([programEncounter, formElement], statusBuilder){
-    //     statusBuilder.show().when.valueInEncounter("labor related Disorder").containsAnswerConceptName("Other");
-    //     return statusBuilder.build();
-    // }
-    //
-    // @WithStatusBuilder
-    // otherMedicalDisorder([programEncounter, formElement], statusBuilder){
-    //     statusBuilder.show().when.valueInEncounter("Medical Disorder").containsAnswerConceptName("Other");
-    //     return statusBuilder.build();
-    // }
-    // @WithStatusBuilder
-    // otherUnderlyingCauseOfInfection([programEncounter, formElement], statusBuilder){
-    //         statusBuilder.show().when.valueInEncounter("Underlying cause of infection").containsAnswerConceptName("Other");
-    //         return statusBuilder.build();
-    //     }g
+    @WithStatusBuilder
+    otherCauseOfHypertensiveDisorderOfPregnancy([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Hypertensive disorder of Pregnancy").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+
+    @WithStatusBuilder
+    otherLaborRelatedDisorder([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("labor related Disorder").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    otherMedicalDisorder([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Medical Disorder").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    otherUnderlyingCauseOfInfection([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Underlying cause of infection").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    otherIncidentalAccidentalDisorder([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Incidental/Accidental Disorder").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    otherProcedureAdoptedForAbortion([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Abortion procedure adopted").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyTheCentreVisited([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Termination done in more than 1 center").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    bIfYesTypeOfFacility([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    cServiceProvidedBy([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    dWasSheToldAboutAnyDisorderComplication([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    eWhatWasTheRiskFactorIdentified([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    otherRiskFactorIdentified([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Risk factor identified").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    detailsOfOtherTypeOfFacilityWhereAncReceived([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Type of facility").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    detailsOfOtherSpecialists([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Service provided by").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    iPastFacility([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("labor Pain").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    iiCurrentFacility([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("labor Pain").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    otherComplicationDuringLabor([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Complication during labor").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    postBirthDetails([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Stage of Labor").containsAnswerConceptName("Post birth");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyTheCauseOfDeathInCaseOfOther([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Probable cause of death").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    ifEventfulProbableCauseOfDeath([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Postnatal Period").containsAnswerConceptName("Eventful");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    detailsOfMedicalConditions([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Probable cause of death in case of eventful death").containsAnswerConceptName("Medical conditions");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    otherCauseOfDeath([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Probable cause of death in case of eventful death").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    ifYesNoOfUnits([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    wholeBlood([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    prbc([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    ffp([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    platelets([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+    @WithStatusBuilder
+    cryo([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    finalDiagnosisDetails([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Autopsy performed").containsAnswerConceptName("Performed");
+        return statusBuilder.build();
+    }
+
+
 
 
     static exec(programEncounter, formElementGroup, today) {
