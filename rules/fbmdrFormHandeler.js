@@ -63,7 +63,7 @@ class FbmdrViewFilter {
     // otherUnderlyingCauseOfInfection([programEncounter, formElement], statusBuilder){
     //         statusBuilder.show().when.valueInEncounter("Underlying cause of infection").containsAnswerConceptName("Other");
     //         return statusBuilder.build();
-    //     }
+    //     }g
 
 
     static exec(programEncounter, formElementGroup, today) {
