@@ -88,7 +88,7 @@
           "mandatory": false
         },
        {
-          "name": "Relegion",
+          "name": "Religion",
           "uuid": "030fd5e7-4c3d-4db3-b94d-f89e970a1732",
           "keyValues": [],
           "concept": {
@@ -111,8 +111,8 @@
     },
     {
       "uuid": "6624c98b-e551-4ce2-95d7-58508c9f2602",
-      "name": "Address when death occured",
-      "display": "Address when death occured",
+      "name": "Address when death occurred",
+      "display": "Address when death occurred",
       "displayOrder": 3,
       "formElements": [
         {

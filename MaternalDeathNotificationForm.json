@@ -94,7 +94,7 @@
           "concept": {
             "name": "Date and Time of death",
             "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
-            "dataType": "Date"
+            "dataType": "DateTime"
           },
           "displayOrder": 1,
           "mandatory": false

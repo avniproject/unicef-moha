@@ -58,7 +58,7 @@ deploy_refdata: deploy_concepts
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata deploy_checklists deploy_rules##
+deploy: deploy_refdata deploy_checklists deploy_rules
 # </deploy>
 
 # <deploy>

@@ -1679,14 +1679,14 @@
     "dataType": "Text"
   },
   {
-    "name": "Date andd time of delivery",
+    "name": "Date and time of delivery",
     "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a",
-    "dataType": "Date"
+    "dataType": "DateTime"
   },
   {
     "name": "Date and time of death",
     "uuid": "129198de-adec-4575-b960-047e30b8cefd",
-    "dataType": "Date"
+    "dataType": "DateTime"
   },
   {
     "name": "Delivery conducted by",
@@ -2200,7 +2200,7 @@
   {
     "name": "Date and time of onset of problem",
     "uuid": "a93c67d9-3dd4-4e27-8a52-6d5960d3c1bd",
-    "dataType": "Date"
+    "dataType": "DateTime"
   },
   {
     "name": "Problem during postnatal period",

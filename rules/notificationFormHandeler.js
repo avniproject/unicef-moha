@@ -3,11 +3,6 @@ import lib from './lib';
 import { RuleFactory, FormElementStatus, FormElementsStatusHelper ,FormElementStatusBuilder, complicationsBuilder as ComplicationsBuilder } from 'rules-config/rules';
 
 const RuleHelper = require('./RuleHelper');
-// const ObservationMatcherAnnotationFactory = require('../ObservationMatcherAnnotationFactory');
-// const CodedObservationMatcher = ObservationMatcherAnnotationFactory(RuleHelper.Scope.Enrolment, 'containsAnyAnswerConceptName')(['programEnrolment', 'formElement']);
-
-
-
 const Decision = RuleFactory("68171a3b-106d-4b2c-bf18-8732eb10cf5c", "Decision");
 const EnrolmentViewFilter = RuleFactory("68171a3b-106d-4b2c-bf18-8732eb10cf5c","ViewFilter");
 

@@ -1622,7 +1622,7 @@
           "concept": {
             "name": "4. Date and Time of delivery",
             "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a",
-            "dataType": "Date"
+            "dataType": "DateTime"
           },
           "displayOrder": 8,
           "mandatory": true
