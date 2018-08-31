@@ -1,5 +1,11 @@
 [
   {
+    "name": "Texting",
+    "uuid": "936d3ad6-4c8c-4278-9cd6-78c18e21f35a",
+    "dataType": "Text"
+  },
+  
+  {
     "name": "No of weeks of pregnancy",
     "uuid": "7d73d261-3975-4b0a-bbba-fe765955b962",
     "dataType": "Numeric",
@@ -261,7 +267,7 @@
   {
     "name": "Probable cause of death details",
     "uuid": "04880a88-b87e-4bd5-a75d-ce230b847506",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "name": "Participate in this interview",
@@ -402,7 +408,7 @@
   {
     "name": "Date & Time of Death",
     "uuid": "f7e5d7d4-110a-4ecd-a77d-7fb26086f68e",
-    "dataType": "Date"
+    "dataType": "DateTime"
   },
   {
     "name": "Did the doctor or nurse at the health facility tell you the cause of death.",
@@ -420,10 +426,6 @@
         "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
       }
     ]
-  },
-  {
-    "name": "Cause of death",
-    "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
   },
   {
     "name": "Deceased woman married",

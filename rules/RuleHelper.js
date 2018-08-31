@@ -9,6 +9,7 @@ class RuleHelper {
         return statusBuilder.build();
     }
 
+
     static encounterCodedObsNotHave(programEncounter, formElement, conceptName, answerConceptName) {
         let statusBuilder = new FormElementStatusBuilder({programEncounter, formElement});
         statusBuilder.show().when.valueInEncounter(conceptName).not.containsAnswerConceptName(answerConceptName);
@@ -66,6 +67,8 @@ class RuleHelper {
         return scheduleBuilder;
     }
 
+
+
     static addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
         scheduleBuilder.add({
                 name: visitName,
@@ -74,6 +77,14 @@ class RuleHelper {
                 maxDate: moment(earliestDate).add(numberOfDaysForMaxOffset, 'days').toDate()
             }
         );
+    }
+
+    static hideFormElementGroup(formElementGroup) {
+        return formElementGroup.getFormElements().map(fe => new FormElementStatus(fe.uuid, false));
+    }
+
+    static hideFormElementGroupHasEncounterObs(formElementGroup, mapper) {
+        return formElementGroup.getFormElements().map(mapper);
     }
 
     static scheduleOneVisit(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {

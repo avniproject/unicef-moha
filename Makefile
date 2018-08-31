@@ -58,11 +58,11 @@ deploy_refdata: deploy_concepts
 # </refdata>
 
 # <deploy>
-deploy: deploy_refdata deploy_checklists deploy_rules
+deploy: deploy_refdata deploy_rules 
 # </deploy>
 
 # <deploy>
-deploy_rules: ##
+deploy_rules:
 	node index.js "$(server_url)" "$(token)"
 # </deploy>
 

@@ -537,7 +537,8 @@
   },
   {
     "name": "Cause of death",
-    "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
+    "uuid": "105764fd-9786-4254-b3ae-a00f711ec952",
+    "dataType":"Text"
   },
   {
     "name": "Not Applicable",
@@ -658,6 +659,10 @@
       {
         "name":"Beyond 12th Class",
         "uuid": "cc6802f7-791f-4dc0-a2c9-8403cd499668"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
       }
     ]
   },
@@ -752,7 +757,8 @@
       },
       {
         "uuid": "e3999b21-821c-4c6e-9953-156e70b9217c",
-        "name": "Live Birth"
+        "name": "Live Birth",
+        "dataType":"Text"
       },
       {
         "uuid": "797c7923-1993-49d9-b759-1706aae62ae9",
