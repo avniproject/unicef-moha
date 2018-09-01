@@ -1,4 +1,20 @@
 [
+
+  {
+    "name": "Other cause of delay in seeking care",
+    "uuid": "f0bf309c-7970-4027-ad59-246d541822c0",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other cause of delay in reaching health facility",
+    "uuid": "6ae35ea6-74f1-46a9-8435-af5f1e4cb3a1",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other cause of delay in receiving adequate care in facility",
+    "uuid": "28af8aa3-3c87-4ff0-9622-ed67e55ee3c9",
+    "dataType": "Text"
+  },
   {
     "name": "Details of medical conditions",
     "uuid": "75fd4760-d30e-409f-a44e-7e5df5a9ba77",
@@ -478,7 +494,7 @@
   {
     "name": "3. No. of completed pregnancy weeks at time of delivery",
     "uuid": "0625382b-a698-4232-b3bb-5ef94aa66fb3",
-    "dataType": "Date"
+    "dataType": "Duration"
   },
   {
     "name": "Live Births",

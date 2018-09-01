@@ -99,6 +99,20 @@ class CbmdrViewFilter {
             return statusBuilder.build();
     }
 
+    // //not working rule
+    // @WithStatusBuilder
+    // viiDeathDuringAntenatalPeriod([programEncounter, formElement], statusBuilder) {
+    //         statusBuilder.show().when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
+    //         return statusBuilder.build();
+    // }
+
+    @WithStatusBuilder
+    ifOtherWriteSymptoms([programEncounter, formElement], statusBuilder) {
+        console.log("other symptom rule");
+        statusBuilder.show().when.valueInEncounter("Symptoms at time of death").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
 
 
 

@@ -749,7 +749,7 @@
           "name": "2. What were the symptoms.",
           "uuid": "fd117b1e-d078-4c5d-a6da-226c2ff5d130",
           "keyValues": [],
-          "type": "Select",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "86039e4d-efd8-4920-9e73-869fca7bc0a9"
           },
@@ -757,7 +757,7 @@
           "mandatory": false
         },
         {
-          "name": "If,other, write symptoms",
+          "name": "If other, write symptoms",
           "uuid": "b24279a3-3354-4c69-9d0b-fb79bb498ee5",
           "keyValues": [],
           "concept": {
@@ -1614,9 +1614,7 @@
             }
           ],
           "concept": {
-            "name": "3. No. of completed pregnancy weeks at time of delivery",
-            "uuid": "0625382b-a698-4232-b3bb-5ef94aa66fb3",
-            "dataType": "Date"
+            "uuid": "0625382b-a698-4232-b3bb-5ef94aa66fb3"
           },
           "displayOrder": 7,
           "mandatory": true

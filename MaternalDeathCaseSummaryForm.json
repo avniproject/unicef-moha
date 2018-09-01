@@ -136,7 +136,7 @@
           "mandatory": false
         },
         {
-          "name": "Palce of death",
+          "name": "Place of death",
           "uuid": "dd412671-5dc4-4a80-8b3e-034e4891f880",
           "keyValues": [],
           "concept": {
@@ -160,7 +160,7 @@
           "concept": {
             "name": "Date and Time of death",
             "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
-            "dataType": "Date"
+            "dataType": "DateTime"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -271,7 +271,7 @@
             "dataType": "Date"
           },
           "displayOrder": 2,
-          "mandatory": true
+          "mandatory": false
         },
         {
           "name": "Name of main respondent",
@@ -316,6 +316,16 @@
           "mandatory": false
         },
         {
+          "name": "Other Cause of Delay in seeking care",
+          "uuid": "b0d57447-76c2-46c9-9b92-187687fd4062",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f0bf309c-7970-4027-ad59-246d541822c0"
+          },
+          "displayOrder": 1.1,
+          "mandatory": false
+        },
+        {
           "name": "Delay in reaching health facility",
           "uuid": "15cd6884-ee83-4fe4-9734-12d339acac25",
           "keyValues": [],
@@ -327,6 +337,16 @@
           "mandatory": false
         },
         {
+          "name": "Other Cause of Delay in reaching health facility",
+          "uuid": "0eb6ea38-2b9f-4bbb-a388-65cd5c5f9834",
+          "keyValues": [],
+          "concept": {
+            "uuid": "6ae35ea6-74f1-46a9-8435-af5f1e4cb3a1"
+          },
+          "displayOrder": 2.1,
+          "mandatory": false
+        },
+        {
           "name": "Delay in receiving adequate care in facility",
           "uuid": "ccf152c3-9113-4c58-8be4-86e4d753c1d1",
           "keyValues": [],
@@ -335,6 +355,16 @@
             "uuid": "bd248784-7978-4f8f-bd79-8dd3064d2847"
           },
           "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Other Cause of Delay in receiving adequate ccare in facility",
+          "uuid": "b1fea02a-ab51-4199-8de1-225638a825ff",
+          "keyValues": [],
+          "concept": {
+            "uuid": "28af8aa3-3c87-4ff0-9622-ed67e55ee3c9"
+          },
+          "displayOrder": 3.1,
           "mandatory": false
         }
       ]
