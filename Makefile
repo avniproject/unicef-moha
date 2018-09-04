@@ -18,7 +18,7 @@ server:= $(if $(server),$(server),http://localhost)
 server_url:=$(server):$(port)
 
 su:=$(shell id -un)
-org_name=MDSR
+org_name=UNICEF - MOHA
 
 define _curl
 	curl -X $(1) $(server_url)/$(2) -d $(3)  \
@@ -40,8 +40,12 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@cbmdr/CommunityBasedVerbalAutopsyFormConcept.json)
 
-deploy_refdata: deploy_concepts
-	$(call _curl,POST,locations,@locations.json)
+deploy_locations:
+	$(call _curl,POST,locations,@districts.json)
+	$(call _curl,POST,locations,@blocks.json)
+	$(call _curl,POST,locations,@phcs.json)
+
+deploy_refdata: deploy_locations deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
