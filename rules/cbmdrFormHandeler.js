@@ -1,8 +1,7 @@
 
 import { RuleFactory, FormElementStatus, FormElementsStatusHelper ,FormElementStatusBuilder, StatusBuilderAnnotationFactory} from 'rules-config/rules';
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
-const RuleHelper = require('./RuleHelper');
-import lib from './lib';
+    const RuleHelper = require('./RuleHelper');
 
 
 const EncounterViewFilter = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61","ViewFilter");
@@ -506,13 +505,6 @@ class CbmdrViewFilter {
             return statusBuilder.build();
         })
     }
-
-
-
-
-
-
-
 
 
     static exec(programEncounter, formElementGroup, today) {

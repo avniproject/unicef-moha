@@ -1,0 +1,52 @@
+const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
+const _ = require('lodash');
+const moment = require("moment");
+const RuleHelper = require('./RuleHelper');
+
+const cbmdrVisitRule = RuleFactory("68171a3b-106d-4b2c-bf18-8732eb10cf5c", "VisitSchedule");
+const caseSummaryScheduleForForm5 = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61", "VisitSchedule");
+const caseSummaryScheduleForForm4 = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a", "VisitSchedule");
+
+
+@cbmdrVisitRule("e08ec9cc-3f99-4014-ab43-419ea5186ec7", "CommunityBasedMdrVisitPostEnrolment", 10.0)
+class CbMdrPostEnrolment {
+    static exec(programEnrolment, visitSchedule = []) {
+        let scheduleBuilder = RuleHelper.createEnrolmentScheduleBuilder(programEnrolment, visitSchedule);
+        let dateOfReporting = programEnrolment.getObservationReadableValue('Reporting Date');
+        let earliestDate = _.isNil(dateOfReporting) ? programEnrolment.enrolmentDateTime : dateOfReporting;
+
+        if(programEnrolment.getObservationReadableValue("Form filled in")==="Community"){
+            let maxDate = 21;
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
+        }
+        else if (programEnrolment.getObservationReadableValue("Form filled in")==="Facility"){
+            let maxDate = 2;
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 4 : Facility Based MDR', 'Form 4 : Facility Based MDR', earliestDate, maxDate);
+        }
+
+    }
+
+}
+
+@caseSummaryScheduleForForm5("76b2d695-4311-4ed5-86dc-7b4393a952f3", "caseSummarySchedulePostForm5", 10.0)
+class CaseSummaryPostForm5 {
+    static exec(programEncounter, visitSchedule = []){
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let dateOfEncounter = programEncounter.encounterDateTime;
+        let maxDate = 1;
+        return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Community", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
+    }
+}
+
+@caseSummaryScheduleForForm4("7bd5f9eb-97f8-4780-b527-a10fea22341d", "caseSummarySchedulePostForm4", 10.0)
+class CaseSummaryPostForm6 {
+    static exec(programEncounter, visitSchedule = []){
+        let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
+        let dateOfEncounter = programEncounter.encounterDateTime;
+        let maxDate = 1;
+        return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Facility", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
+    }
+}
+
+
+module.exports = {CbMdrPostEnrolment, CaseSummaryPostForm5, CaseSummaryPostForm6};

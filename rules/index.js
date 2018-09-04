@@ -5,5 +5,5 @@ module.exports = _.merge({},
     ,require('./fbmdrFormHandeler')
     ,require('./cbmdrFormHandeler')
     ,require('./MaternalDeathCaseSummaryHandeler')
-    // ,require('./visitSchedule')
+    ,require('./visitSchedule')
 );
