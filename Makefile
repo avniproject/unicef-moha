@@ -40,12 +40,7 @@ deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@cbmdr/CommunityBasedVerbalAutopsyFormConcept.json)
 
-deploy_locations:
-	$(call _curl,POST,locations,@districts.json)
-	$(call _curl,POST,locations,@blocks.json)
-	$(call _curl,POST,locations,@phcs.json)
-
-deploy_refdata: deploy_locations deploy_concepts
+deploy_refdata: deploy_concepts
 	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)

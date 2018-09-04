@@ -1,14 +1,14 @@
 {
-  "organisation": "MDSR",
+  "organisation": "UNICEF - MOHA",
   "catchments": [
     {
       "name": "1",
-      "uuid": "bc8f2be0-7423-4f9e-a70e-71c54892deed",
-      "type": "Area",
+      "uuid": "988abcc6-0dbf-49bf-9a97-cd7020346f3f",
+      "type": "District",
       "locations": [
         {
-          "uuid": "ae684b32-f355-41c6-be1d-d9d8a1a1b942",
-          "comment": "Assam"
+          "uuid": "111cfc45-469e-44b3-a9ad-e7723efef736",
+          "comment": "Hailakandi"
         }
       ]
     }
