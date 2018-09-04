@@ -1,7 +1,7 @@
 [
   {
-    "name": "Texting",
-    "uuid": "936d3ad6-4c8c-4278-9cd6-78c18e21f35a",
+    "name": "VIII. 11. If Other, specify",
+    "uuid": "6ff1cc86-efdb-4f17-9666-5841321087b0",
     "dataType": "Text"
   },
   
@@ -1522,7 +1522,45 @@
   {
     "name": "Seek care after developing complication 2",
     "uuid": "02f97f10-5043-4db1-952c-803762532df0",
-    "dataType": "Text"
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Sub-Health Centre",
+        "uuid": "501312e4-22ba-4abd-936f-5a2be6a53e7d"
+      },
+      {
+        "name": "District hospital",
+        "uuid": "1bbdf5b5-cc4d-48ba-bd31-19cda7c2608d"
+      },
+      {
+        "name": "PHC",
+        "uuid": "b4007f93-f288-49aa-b2ad-96f1a0f75a43"
+      },
+      {
+        "name": "Private hospital",
+        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+      },
+      {
+        "name": "Community Health Centre (CHC)",
+        "uuid": "780e8b55-306c-47c9-a20f-e500451cd511"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
+      },
+      {
+        "name": "Not Applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
+        "abnormal": false
+      }
+    ]
   },
   {
     "name": "Reason for not seeking the care",
@@ -1573,7 +1611,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Place of delivery. ",
+    "name": "Place of delivery.",
     "uuid": "704bd399-471e-47f7-a557-15a8822e7de0",
     "dataType": "Coded",
     "answers": [
@@ -2490,5 +2528,313 @@
     "name": "steps to prevent death",
     "uuid": "6daf0c36-3a3f-4487-ae0b-6bc64ca04052",
     "dataType": "Text"
+  },
+
+
+
+
+
+  {
+    "name": "X. Date of referral from home",
+    "uuid": "d0b56cef-8d96-4b46-8985-ff834d7a0242",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Time of onset of complication of labor at home",
+    "uuid": "bb768e54-50bf-4acd-b481-39653303b452",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Time of calling/arrival of transport at home",
+    "uuid": "7de28c1b-7c58-45c2-b766-444ba0131e34",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Transport used from home",
+    "uuid": "2d2b91c3-74db-43ad-9e57-678479427d20",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Date of referral from Facility 1",
+    "uuid": "6c9766e9-7128-4483-b587-f2a9199b9981",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral time of onset of complication at facility 1",
+    "uuid": "1cd88bbe-b5e3-4879-8bc3-6604a9d9d65f",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral time of calling of transport from facility 1",
+    "uuid": "38d65814-7fdd-4a77-8b70-66034cb10678",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral transport used",
+    "uuid": "93b1b241-e145-4e4f-a897-2dddc81d1b12",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral Money spent on transportation from facility 1",
+    "uuid": "22bf7ca3-6ba7-4372-ab2e-e61d70b175cb",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Name of facility/level of referral form facility 1",
+    "uuid": "47d89571-be99-4458-828e-2534515be93b",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Attened at facility 1 by",
+    "uuid": "a86048c3-c55c-4478-9832-87e3544140a0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "X. Referral Time to reach from Facility 1",
+    "uuid": "daa70298-7f90-46f6-abbb-f7bacfb66ad4",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Reason for referral from facility 1",
+    "uuid": "c91d02a8-2261-4a47-9afb-bdf4c80139f1",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral slip given from Facility 1",
+    "uuid": "96dd6138-3c0d-40bd-aa59-807b62dd87a2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "X. Treatment given at Facility 1",
+    "uuid": "f683e4bd-f942-4d1b-923d-d1853d103bfc",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Money spent on treatment at facility 1",
+    "uuid": "2faeb2a6-edc7-48ce-bf68-33f61deb5c76",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Time spent at facility 1",
+    "uuid": "9b25b7e2-ee93-4f54-9900-1174b112f6b2",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
+  },
+
+  {
+    "name": "X. Date of referral from Facility 2",
+    "uuid": "1b806320-3956-4ca0-bf24-a67294ae5f1a",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral Time to reach from Facility 2",
+    "uuid": "b7447e47-2b66-417f-96e4-b0dcdd7763b2",
+    "type" : "Date"
+  },
+  {
+    "name": "X. Referral time of onset of complication at facility 2",
+    "uuid": "1c2a7104-30ad-41f4-b4ef-0615db691643",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral time of calling of transport from facility 2",
+    "uuid": "676a967b-a9c1-4e44-9179-b68c673ddde1",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral transport used from facility 2",
+    "uuid": "ed54c6c0-f08d-4a06-8835-9eff0b5f9824",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral Money spent on transportation from facility 2",
+    "uuid": "745585c6-e5f3-4465-b20a-bd0c1987bf38",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Name of facility/level of referral form facility 2",
+    "uuid": "f3061746-5b69-41f6-8eed-97b50913f901",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Attended at facility by",
+    "uuid": "2d632d7d-4480-4bbe-b991-ccbfe8e29ce8",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "X. Reason for referral from facility 2",
+    "uuid": "39e429b6-937f-41a8-8518-e594f66f481c",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral slip given from Facility 2",
+    "uuid": "9f31e2f0-b193-4cad-93fe-c3f071e74bed",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "X. Treatment given at Facility 2",
+    "uuid": "642f1360-169e-4f55-b2a5-6984a2a7fdfe",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Money spent on treatment at facility 2",
+    "uuid": "67fe72e3-d85b-4ba5-8fcc-c6379d511b92",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Time spent at facility 2",
+    "uuid": "d9aa2a20-baf0-40ac-8bd1-8925370e26a1",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
+  },
+  {
+    "name": "X. Date of referral from Facility 3",
+    "uuid": "12d6ad0d-d10c-42f0-a772-a9a84b64f32b",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral Time to reach to Facility 3",
+    "uuid": "96d05ffb-818e-487c-91fb-b00808edae6f",
+    "type" : "Date"
+  },
+  {
+    "name": "X. Referral time of onset of complication at facility 3",
+    "uuid": "8935ceb9-d461-4053-b471-3764a5936e3c",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral time of calling of transport from facility 3",
+    "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
+    "dataType": "Date"
+  },
+  {
+    "name": "X. Referral transport used from facility 3",
+    "uuid": "8bbe333f-acd5-4d95-96f9-d7e6ec00b0f3",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral Money spent on transportation from facility 3",
+    "uuid": "16797bde-913a-4228-8a91-fea4bbb01170",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Name of facility/level of referral form facility 3",
+    "uuid": "6a446b27-706c-4870-b2b8-2f486df95b64",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Attended at facility 3 by",
+    "uuid": "adfa5264-f51a-4986-a2c0-649cc523ae91",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+      }
+    ]
+  },
+  {
+    "name": "X. Reason for referral from facility 3",
+    "uuid": "005c1675-6d79-42d8-9039-622325097258",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Referral slip given from Facility 3",
+    "uuid": "c6080205-38d2-400b-8921-2177a82a9d7f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
+    "name": "X. Treatment given at Facility 3",
+    "uuid": "9deb75f9-0b98-43ee-9c6f-f45cf02c0076",
+    "dataType": "Text"
+  },
+  {
+    "name": "X. Money spent on treatment at facility 3",
+    "uuid": "bd83a32d-d03d-462f-8f45-4382c76a3613",
+    "dataType": "Numeric",
+    "unit": "Rs"
+  },
+  {
+    "name": "X. Time spent at facility 3",
+    "uuid": "43a6d1ff-f6b4-433e-b34d-aa616fc71992",
+    "dataType": "Numeric",
+    "unit": "Hours, days"
   }
 ]
