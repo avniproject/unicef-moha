@@ -496,17 +496,17 @@
   {
     "name": "Referral Time to reach from Facility 1",
     "uuid": "7820fd91-a878-4f22-82c4-44b8684e24f6",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
   "name": "Referral Time to reach from Facility 2",
   "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
-  "type" : "Date"
+  "type" : "Time"
   },
   {
     "name": "Referral Time to reach to Facility 3 ref 1",
     "uuid": "19c9874b-1d1f-4dd8-a8ee-861bf5db5afd",
-    "type" : "Date"
+    "type" : "Time"
   },
   {
     "name": "3. Date of spontaneous abortion/ date of termination of pregnany",
@@ -533,7 +533,7 @@
   {
     "name": "2b. Duration of onset of problem after delivery",
     "uuid": "7ba57be5-d20b-430f-8b2d-8a2816db4672",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "11. No of post natal checkups received",
@@ -940,12 +940,12 @@
   {
     "name": "Referral time of onset of complication or labor from home",
     "uuid": "147dfae9-1b84-4a55-9ed3-76704987f10c",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling/arrival of transport to home",
     "uuid": "2ea89ce6-d287-4ff0-884f-d8cfe892670a",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Transport Used from home",
@@ -955,7 +955,7 @@
   {
     "name": "Referral Time to reach from home",
     "uuid": "f96d2d85-957b-43b3-b216-b31e30d73389",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Money Spent on transport from home",
@@ -1035,12 +1035,12 @@
   {
     "name": "Referral time of onset of complication or labor from Faclity 1",
     "uuid": "cb49b1d2-51f3-4932-bfe3-7a154da8e062",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling/arrival of transport to Facility 1",
     "uuid": "50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Transport Used from Facility 1",
@@ -1050,7 +1050,7 @@
   {
     "name": "Referral Time to reach from  Facility 1",
     "uuid": "d3fbfce1-ff22-42ce-99bc-4df3c3361046",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Money Spent on transport from Facility 1",
@@ -1135,12 +1135,12 @@
   {
   "name": "Referral time of onset of complication or labor from Faclity 2",
   "uuid": "6ed4757a-9db8-4b02-a855-4bcf48a5ed8a",
-  "dataType": "DateTime"
+  "dataType": "Time"
   },
   {
   "name": "Referral time of calling/arrival of transport to Facility 2",
   "uuid": "99c2471f-cdc6-4a33-91a7-81ebbce7179b",
-  "dataType": "DateTime"
+  "dataType": "Time"
   },
   {
   "name": "Referral Transport Used from Facility 2",
@@ -1150,7 +1150,7 @@
   {
   "name": "Referral Time to reach from  Facility 2",
   "uuid": "e193c36e-3f18-4077-8ba5-32a2fb5f5500",
-  "dataType": "DateTime"
+  "dataType": "Time"
   },
   {
   "name": "Referral Money Spent on transport from Facility 2",
@@ -1234,12 +1234,12 @@
   {
     "name": "Referral time of onset of complication or labor from Facility 3",
     "uuid": "6ce00a0e-c05f-4b77-b49e-3420ff5646b6",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling/arrival of transport to Facility 3",
     "uuid": "cd7c2138-4806-43e1-9e03-0e98ec53d8e8",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Transport Used from Facility 3",
@@ -1249,7 +1249,7 @@
   {
     "name": "Referral Time to reach to Facility 3 ref2",
     "uuid": "b2bbe74f-39c8-4e45-b850-6417d7f3e903",
-    "dataType": "DateTime"
+    "dataType": "Time"
   },
   {
     "name": "Referral Money Spent on transport from Facility 3",

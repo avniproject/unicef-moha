@@ -940,12 +940,12 @@
   {
     "name": "Time of onset of complication of labor at home",
     "uuid": "e58bb7d9-66d4-49b6-b74a-cedac3ab2a5f",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Time of calling/arrival of transport at home",
     "uuid": "265f1a7c-a13c-4d99-a9b7-d95a49b4ef70",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Transport used from home",
@@ -960,12 +960,12 @@
   {
     "name": "Referral time of onset of complication at facility 1",
     "uuid": "bdddd6ae-504f-4562-b00c-96f9a794693b",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling of transport from facility 1",
     "uuid": "f8e8200e-7f5a-4839-8e9c-9e8f08fccc63",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral transport used",
@@ -1050,12 +1050,12 @@
   {
     "name": "Referral time of onset of complication at facility 2",
     "uuid": "05afff29-f474-408b-b4ea-fccf75b29996",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling of transport from facility 2",
     "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral transport used from facility 2",
@@ -1139,12 +1139,12 @@
   {
     "name": "Referral time of onset of complication at facility 3",
     "uuid": "d625abc1-f93c-44c7-bb53-983af6a49082",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral time of calling of transport from facility 3",
     "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "Referral transport used from facility 3",
@@ -2542,12 +2542,12 @@
   {
     "name": "X. Time of onset of complication of labor at home",
     "uuid": "bb768e54-50bf-4acd-b481-39653303b452",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Time of calling/arrival of transport at home",
     "uuid": "7de28c1b-7c58-45c2-b766-444ba0131e34",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Transport used from home",
@@ -2562,12 +2562,12 @@
   {
     "name": "X. Referral time of onset of complication at facility 1",
     "uuid": "1cd88bbe-b5e3-4879-8bc3-6604a9d9d65f",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral time of calling of transport from facility 1",
     "uuid": "38d65814-7fdd-4a77-8b70-66034cb10678",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral transport used",
@@ -2611,7 +2611,7 @@
   {
     "name": "X. Referral Time to reach from Facility 1",
     "uuid": "daa70298-7f90-46f6-abbb-f7bacfb66ad4",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Reason for referral from facility 1",
@@ -2657,17 +2657,17 @@
   {
     "name": "X. Referral Time to reach from Facility 2",
     "uuid": "b7447e47-2b66-417f-96e4-b0dcdd7763b2",
-    "type" : "Date"
+    "type" : "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 2",
     "uuid": "1c2a7104-30ad-41f4-b4ef-0615db691643",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral time of calling of transport from facility 2",
     "uuid": "676a967b-a9c1-4e44-9179-b68c673ddde1",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral transport used from facility 2",
@@ -2751,17 +2751,17 @@
   {
     "name": "X. Referral Time to reach to Facility 3",
     "uuid": "96d05ffb-818e-487c-91fb-b00808edae6f",
-    "type" : "Date"
+    "type" : "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 3",
     "uuid": "8935ceb9-d461-4053-b471-3764a5936e3c",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral time of calling of transport from facility 3",
     "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7",
-    "dataType": "Date"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral transport used from facility 3",
