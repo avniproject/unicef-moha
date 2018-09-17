@@ -1,0 +1,9 @@
+[
+  {
+    "uuid": "84e2d3a8-facb-45af-89bd-c1d2112f7152",
+    "name": "Foo",
+    "level": 1,
+    "type": "Bar",
+    "parents": []
+  }
+]
