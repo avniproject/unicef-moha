@@ -353,7 +353,7 @@
           "uuid": "d577e1cd-1577-4453-a619-7716083aa715",
           "keyValues": [],
           "concept": {
-            "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
+              "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
           },
           "displayOrder": 13,
           "mandatory": false

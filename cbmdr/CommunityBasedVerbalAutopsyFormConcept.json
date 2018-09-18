@@ -1750,6 +1750,18 @@
         "uuid": "5632e645-b24d-4dee-904a-c844d2ef8a49"
       },
       {
+        "name": "Dai",
+        "uuid": "e9b9f255-4166-4060-bf69-5b3caba4e29e"
+      },
+      {
+        "name": "Quack",
+        "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
+      },
+      {
+        "name": "Relatives",
+        "uuid": "bf99bcf7-5046-4835-9eb3-6fc5d558d60b"
+      },
+      {
         "name": "Don't know",
         "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
       },
@@ -2206,8 +2218,8 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       },
       {
-        "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "name": "Don't Know",
+        "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
       },
       {
         "name": "Not applicable",
