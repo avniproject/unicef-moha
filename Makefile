@@ -29,22 +29,24 @@ define _curl
 	@echo
 endef
 
+auth:
+	$(if $(poolId),$(eval token:=$(shell node scripts/token.js $(poolId) $(clientId) $(username) $(password))))
+	echo $(token)
+
 # <create_org>
 create_org: ## Create MDSR org and user+privileges
 	psql -U$(su) openchs < create_organisation.sql
 # </create_org>
 
 # <refdata>
-
 deploy_concepts:
 	$(call _curl,POST,concepts,@concepts.json)
 	$(call _curl,POST,concepts,@cbmdr/CommunityBasedVerbalAutopsyFormConcept.json)
 
 deploy_refdata: deploy_concepts
-	$(call _curl,POST,locations,@test-locations.json)
+	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,facilities,@test-facilities.json)
 	$(call _curl,POST,users,@test-users.json)
-	$(call _curl,POST,catchments,@catchments.json)
 	$(call _curl,POST,programs,@programs.json)
 	$(call _curl,POST,encounterTypes,@encounterTypes.json)
 	$(call _curl,POST,operationalEncounterTypes,@operationalModules/operationalEncounterTypes.json)
@@ -61,14 +63,13 @@ deploy_refdata: deploy_concepts
 
 # <deploy>
 deploy: deploy_refdata deploy_rules 
-# </deploy>
 
-# <deploy>
 deploy_rules:
 	node index.js "$(server_url)" "$(token)"
-# </deploy>
 
-# <c_d>
+deploy_staging:
+	make auth deploy poolId=ap-south-1_tuRfLFpm1 clientId=93kp4dj29cfgnoerdg33iev0v server=https://staging.openchs.org port=443 username=admin password=$(STAGING_ADMIN_USER_PASSWORD)
+
 create_deploy: create_org deploy ##
 # </c_d>
 
