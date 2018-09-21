@@ -10,16 +10,7 @@
       "displayOrder": 1,
       "formElements": [
         {
-          "name": "Name and Type of Health Facility",
-          "uuid": "c74e6fd7-902c-45f9-b891-ab97423779e9",
-          "concept": {
-            "uuid": "0ed9c702-12db-4c72-8f3e-baba9898af0c"
-          },
-          "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Address",
+          "name": "Name and Address of Health Facility",
           "uuid": "bdb4f696-8af5-4402-8325-695b4a9d0d05",
           "concept": {
             "uuid": "543a5ae4-b474-4c0f-b3ff-1313b7a8b44e"

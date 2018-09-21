@@ -599,14 +599,9 @@
     "uuid": "63398939-0a45-46ee-8d92-f01d55e96c1a"
   },
   {
-  "name": "Name and Type of Health Facility",
-  "uuid": "0ed9c702-12db-4c72-8f3e-baba9898af0c",
-  "dataType": "Text"
-  },
-  {
-    "name": "Address",
+    "name": "Name and Address of Health Facility",
     "uuid": "543a5ae4-b474-4c0f-b3ff-1313b7a8b44e",
-    "dataType": "Text"
+    "dataType": "Notes"
   },
   {
     "name": "Name of Nodal Person",

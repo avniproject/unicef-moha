@@ -467,7 +467,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Name and location of the nearest government /  private facility profiding emergency obstetric care services",
+    "name": "Name and location of the nearest government/private facility providing emergency obstetric care services",
     "uuid": "03fb1242-a83c-4421-ace7-1a0c10c89b97",
     "dataType":"Text"
   },
@@ -1843,6 +1843,10 @@
       {
         "name": "High fever",
         "uuid": "2732062b-ffe4-4e26-a2e9-5211c28079d1"
+      },
+      {
+        "name": "Not applicable",
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
