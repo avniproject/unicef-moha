@@ -130,10 +130,15 @@
         {
           "name": "Education",
           "uuid": "63fc431c-f8c1-4735-be94-f6f77ff7d094",
-          "keyValues": [],
+          "keyValues": [{
+            "key": "ExcludedAnswers",
+            "value": [
+              "Literate without schooling" ,"1-5" ,"6-7" , "8-10","11-12","Post Graduation and above","Other","Completed 5th Standard","Completed 8th Standard","Completed 12th Standard", "Graduation"
+            ]
+          }],
           "type":"SingleSelect",
           "concept": {
-            "uuid": "8c18f5a3-7ede-472c-a540-ad4ec6eb7152"
+            "uuid": "39595a16-a9c6-49a5-a42b-3f462607058c"
           },
           "displayOrder": 5,
           "mandatory": false

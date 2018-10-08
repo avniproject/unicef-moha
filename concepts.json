@@ -662,11 +662,6 @@
     "unit":"Contact Number"
   },
   {
-    "name": "Illiterate",
-    "uuid": "1211de53-f6ab-4297-a4f7-c65cbe84f4ee",
-    "dataType": "NA"
-  },
-  {
     "name": "Upto 5th Class",
     "uuid": "09b53132-7dc6-40a9-9f8e-8518db62f3fc",
     "dataType": "NA"
@@ -677,21 +672,51 @@
     "dataType": "NA"
   },
   {
+    "name": "6th to 12th Class",
+    "uuid": "ab742196-76f5-49fb-9b79-8ea33d4719bd"
+  },
+  {
+    "name": "Completed 5th Standard",
+    "uuid": "23e9dcd2-cbd3-42fa-b7ac-244e124cf6d3"
+  },
+  {
+    "name": "Completed 8th Standard",
+    "uuid": "10159ae3-603a-478d-9ee1-c7e6e6ce7bac"
+  },
+  {
+    "name": "Completed 12th Standard",
+    "uuid": "ea9a87eb-ae1f-41ef-9a36-629f40c26f8d"
+  },
+  {
     "name": "Education",
-    "uuid": "8c18f5a3-7ede-472c-a540-ad4ec6eb7152",
+    "uuid": "39595a16-a9c6-49a5-a42b-3f462607058c",
     "dataType": "Coded",
     "answers": [
-      {
-        "name":"Illiterate",
-        "uuid": "1211de53-f6ab-4297-a4f7-c65cbe84f4ee"
-      },
       {
         "name":"Upto 5th Class",
         "uuid": "09b53132-7dc6-40a9-9f8e-8518db62f3fc"
       },
       {
-        "name":"Beyond 12th Class",
-        "uuid": "cc6802f7-791f-4dc0-a2c9-8403cd499668"
+        "name": "Completed 5th Standard",
+        "uuid": "23e9dcd2-cbd3-42fa-b7ac-244e124cf6d3"
+      },
+      {
+        "name": "6th to 12th Class",
+        "uuid": "ab742196-76f5-49fb-9b79-8ea33d4719bd"
+      },
+
+      {
+        "name": "Completed 8th Standard",
+        "uuid": "10159ae3-603a-478d-9ee1-c7e6e6ce7bac"
+      },
+      {
+        "name": "Completed 12th Standard",
+        "uuid": "ea9a87eb-ae1f-41ef-9a36-629f40c26f8d"
+      },
+      {
+        "name": "Beyond 12th Class",
+        "uuid": "cc6802f7-791f-4dc0-a2c9-8403cd499668",
+        "dataType": "NA"
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
