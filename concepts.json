@@ -148,7 +148,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Name of Husaband",
+    "name": "Name of Husband",
     "uuid": "eb2fabb9-f5f8-4ee6-bab2-88e489df8751",
     "dataType": "Text"
   },
@@ -501,12 +501,12 @@
   {
   "name": "Referral Time to reach from Facility 2",
   "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
-  "type" : "Time"
+  "dataType" : "Time"
   },
   {
     "name": "Referral Time to reach to Facility 3 ref 1",
     "uuid": "19c9874b-1d1f-4dd8-a8ee-861bf5db5afd",
-    "type" : "Time"
+    "dataType" : "Time"
   },
   {
     "name": "3. Date of spontaneous abortion/ date of termination of pregnany",
@@ -815,8 +815,7 @@
       },
       {
         "uuid": "e3999b21-821c-4c6e-9953-156e70b9217c",
-        "name": "Live Birth",
-        "dataType":"Text"
+        "name": "Live Birth"
       },
       {
         "uuid": "797c7923-1993-49d9-b759-1706aae62ae9",
@@ -882,7 +881,7 @@
         "uuid": "ce2f0027-631f-482e-90d1-159f0c3a7ff6"
       },
       {
-        "name":"Antenatal >= 34 weeks",
+        "name": "Antenatal >=34 weeks",
         "uuid": "01bb98ed-e327-4ae5-aa80-1bbce714cbe9"
       },
       {

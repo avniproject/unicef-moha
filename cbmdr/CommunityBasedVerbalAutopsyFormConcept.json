@@ -2673,7 +2673,7 @@
   {
     "name": "X. Referral Time to reach from Facility 2",
     "uuid": "b7447e47-2b66-417f-96e4-b0dcdd7763b2",
-    "type" : "Time"
+    "dataType" : "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 2",
@@ -2767,7 +2767,7 @@
   {
     "name": "X. Referral Time to reach to Facility 3",
     "uuid": "96d05ffb-818e-487c-91fb-b00808edae6f",
-    "type" : "Time"
+    "dataType" : "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 3",

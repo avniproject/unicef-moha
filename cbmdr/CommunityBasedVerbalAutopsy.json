@@ -1086,8 +1086,7 @@
           }],
           "concept": {
             "name": "Referral Time to reach from Facility 2",
-            "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
-            "type" : "Date"
+            "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99"
           },
           "displayOrder": 5,
           "mandatory": false
