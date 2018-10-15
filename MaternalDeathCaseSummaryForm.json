@@ -4,58 +4,10 @@
   "formType": "ProgramEncounter",
   "formElementGroups": [
     {
-      "uuid": "75fa6c41-fd2b-4173-bcc9-8ccc0cc6fed8",
-      "name": "Facility details",
-      "display": "Facility details",
-      "displayOrder": 1,
-      "formElements": [
-        {
-          "name": "Name of the District",
-          "uuid": "9ab5ce88-b0e3-4c96-93e7-0eef980c8ed7",
-          "keyValues": [],
-          "concept": {
-            "uuid": "18cf744b-6125-4cfd-818d-5533f2e1ab0d"
-          },
-          "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Name of the Block",
-          "uuid": "4e952e75-d30f-4beb-924c-228fa006d7ce",
-          "keyValues": [],
-          "concept": {
-            "uuid": "8a73d129-bf0a-4d0c-ba23-d0078325fd99"
-          },
-          "displayOrder": 2,
-          "mandatory": false
-        },
-        {
-          "name": "Name of the PHC",
-          "uuid": "a2ef4541-6685-4baf-b395-b8104bb302c9",
-          "keyValues": [],
-          "concept": {
-            "uuid": "3644dfe7-ab1d-4107-bd12-c61aa4b0eb7d"
-          },
-          "displayOrder": 3,
-          "mandatory": false
-        },
-        {
-          "name": "Name of the Facility",
-          "uuid": "e94cc1e6-2059-4b66-bd5a-fb45d3c91ac9",
-          "keyValues": [],
-          "concept": {
-            "uuid": "353a13f7-0f7b-4189-be23-6dff6456231a"
-          },
-          "displayOrder": 4,
-          "mandatory": false
-        }
-      ]
-    },
-    {
       "uuid": "e4aaf4ed-d4db-4fee-be7c-9f25725ae4a8",
       "name": "Particulars of deceased woman",
       "display": "Particulars of deceased woman",
-      "displayOrder": 2,
+      "displayOrder": 1,
       "formElements": [
         {
           "name": "MCTS ID",
