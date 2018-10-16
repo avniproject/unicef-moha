@@ -1066,7 +1066,7 @@
     {
       "uuid": "08162f5e-be5c-4a1e-8405-371b3b92d2f7",
       "name": "1. Hemorrhage",
-      "display": "1. Hemorrhage",
+      "display": "1. Hemorrhage (if applicable)",
       "displayOrder": 12,
       "formElements": [
         {
@@ -1165,7 +1165,7 @@
     {
       "uuid": "ef478604-fa68-41a9-80d6-6b24ddd546b8",
       "name": "2. Hypertensive disorders of Pregnancy",
-      "display": "2. Hypertensive disorders of Pregnancy",
+      "display": "2. Hypertensive disorders of Pregnancy (if applicable)",
       "displayOrder": 13,
       "formElements": [
         {
@@ -1183,7 +1183,7 @@
     {
       "uuid": "9a46dae8-6c5b-4b14-8b31-877aff7ee04d",
       "name": "labor related Disorder",
-      "display": "3. labor related Disorder",
+      "display": "3. Labor related disorder (if applicable)",
       "displayOrder": 14,
       "formElements": [
         {
@@ -1211,7 +1211,7 @@
     {
       "uuid": "52c134f8-20f6-4c45-a43f-7a3b8ce4f59e",
       "name": "4. Medical Disorders",
-      "display": "4. Medical Disorders",
+      "display": "4. Medical Disorders (if applicable)",
       "displayOrder": 15,
       "formElements": [
         {
@@ -1239,7 +1239,7 @@
     {
       "uuid": "ce0a953d-e73e-4d56-973a-9071afaa1a93",
       "name": "5. Infection",
-      "display": "5. Infection",
+      "display": "5. Infection (if applicable)",
       "displayOrder": 16,
       "formElements": [
         {
