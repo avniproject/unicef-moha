@@ -16,17 +16,11 @@
           "concept": {
             "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f"
           },
-          "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Name of deceased woman",
-          "uuid": "f7dfa940-4fab-410b-9e0f-07bc56eef28d",
-          "keyValues": [],
-          "concept": {
-            "uuid": "5a2abdd0-8d25-4342-85b5-f8958826a80f"
+          "validFormat": {
+            "regex": "^[0-9]{13}$",
+            "descriptionKey": "Required13Digits"
           },
-          "displayOrder": 2,
+          "displayOrder": 1,
           "mandatory": false
         },
         {
@@ -36,10 +30,10 @@
           "concept": {
             "uuid": "edd950ba-148d-4e1d-b086-6de471a6b965"
           },
-          "displayOrder":3 ,
+          "displayOrder": 3,
           "mandatory": false
         },
-       {
+        {
           "name": "Religion",
           "uuid": "030fd5e7-4c3d-4db3-b94d-f89e970a1732",
           "keyValues": [],
@@ -127,13 +121,13 @@
           },
           "displayOrder": 2,
           "mandatory": false
-        }       
+        }
       ]
     },
     {
       "uuid": "dc9a801c-1694-4021-8eb6-a16738761ccc",
       "name": "Obstetric History",
-      "display": "Obstetric History",
+      "display": "Obstetric History (if applicable)",
       "displayOrder": 5,
       "formElements": [
         {
@@ -241,9 +235,11 @@
           "keyValues": [],
           "concept": {
             "name": "Contact number of main respondent",
-            "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1",
-            "dataType": "Numeric",
-            "unit": "Contact Number"
+            "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1"
+          },
+          "validFormat": {
+            "regex": "^[0-9]{10}$",
+            "descriptionKey": "Required10Digits"
           },
           "displayOrder": 4,
           "mandatory": false
