@@ -400,7 +400,7 @@
           "mandatory": false
         },
         {
-          "name": "No of Places visited prior",
+          "name": "Number of places visited prior",
           "uuid": "8a7651fe-eca0-42a5-9fe4-95b021a6c6e8",
           "keyValues": [],
           "concept": {

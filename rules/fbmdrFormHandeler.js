@@ -202,6 +202,29 @@ class FbmdrViewFilter {
     }
 
 
+    referralFormFromFacility1(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(1);
+            return statusBuilder.build();
+        })
+    }
+
+    referralFormFromFacility2(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(2);
+            return statusBuilder.build();
+        })
+    }
+
+    referralFormFromFacility3(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(3);
+            return statusBuilder.build();
+        })
+    }
 
 
     static exec(programEncounter, formElementGroup, today) {
