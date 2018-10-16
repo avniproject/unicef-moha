@@ -15,7 +15,7 @@
           "concept": {
             "uuid": "543a5ae4-b474-4c0f-b3ff-1313b7a8b44e"
           },
-          "displayOrder":2 ,
+          "displayOrder": 2,
           "mandatory": true
         },
         {
@@ -24,7 +24,7 @@
           "concept": {
             "uuid": "4205021b-68e6-43ec-a78b-ff6471f62337"
           },
-          "displayOrder":3,
+          "displayOrder": 3,
           "mandatory": true
         },
         {
@@ -43,11 +43,11 @@
         {
           "name": "FOR OFFICE USE ONLY",
           "uuid": "e9d1751e-2fa5-4e6b-ad12-44e27b09563b",
-          "concept":{
+          "concept": {
             "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
           },
-          "displayOrder":5,
-          "mandatory":false
+          "displayOrder": 5,
+          "mandatory": false
         },
         {
           "name": "FBMDR NO.",
@@ -59,7 +59,7 @@
             "regex": "^[0-9]{4}$",
             "descriptionKey": "Required4Digits"
           },
-          "displayOrder":6,
+          "displayOrder": 6,
           "mandatory": false
         },
         {
@@ -82,7 +82,7 @@
             "uuid": "a08c7590-1940-4a88-8d66-ec46649669cd"
           },
           "displayOrder": 8,
-          "mandatory":true
+          "mandatory": true
         }
       ]
     },
@@ -138,13 +138,25 @@
         {
           "name": "Education",
           "uuid": "63fc431c-f8c1-4735-be94-f6f77ff7d094",
-          "keyValues": [{
-            "key": "ExcludedAnswers",
-            "value": [
-              "Literate without schooling" ,"1-5" ,"6-7" , "8-10","11-12","Post Graduation and above","Other","Completed 5th Standard","Completed 8th Standard","Completed 12th Standard", "Graduation"
-            ]
-          }],
-          "type":"SingleSelect",
+          "keyValues": [
+            {
+              "key": "ExcludedAnswers",
+              "value": [
+                "Literate without schooling",
+                "1-5",
+                "6-7",
+                "8-10",
+                "11-12",
+                "Post Graduation and above",
+                "Other",
+                "Completed 5th Standard",
+                "Completed 8th Standard",
+                "Completed 12th Standard",
+                "Graduation"
+              ]
+            }
+          ],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "39595a16-a9c6-49a5-a42b-3f462607058c"
           },
@@ -192,13 +204,15 @@
         {
           "name": "1.c Duration of Hospital stay",
           "uuid": "a01f8db9-f258-4260-bda1-00cf61c334ae",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Days",
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Days",
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "9cf4c6e4-a516-4121-8f78-7501c7fbe8c4"
           },
@@ -341,7 +355,7 @@
           "name": "2.c Period of gestation",
           "uuid": "772cb5b7-3187-448b-9136-6c1b487937e1",
           "keyValues": [],
-          "dataType":"SingleSelect",
+          "dataType": "SingleSelect",
           "concept": {
             "uuid": "772cb5b7-3187-448b-9136-6c1b487937e1"
           },
@@ -360,14 +374,13 @@
           "name": "Condition on Admission",
           "uuid": "039428ee-56b3-47e5-8071-a938750bd44c",
           "keyValues": [],
-          "type":"SingleSelect",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "11d4816d-4253-4dda-92fc-16f2d2704e5a"
           },
           "displayOrder": 1,
           "mandatory": false
         }
-        
       ]
     },
     {
@@ -377,14 +390,14 @@
       "displayOrder": 7,
       "formElements": [
         {
-          "name": "Please fill the table below for the details on transport, referral and type of care given",
+          "name": "Please fill the following questions for details on transport, referral and type of care given",
           "uuid": "e510a44a-8058-45f1-8460-043f72db01c5",
           "keyValues": [],
           "concept": {
             "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
           },
           "displayOrder": 1.1,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "No of Places visited prior",
@@ -397,7 +410,6 @@
           "displayOrder": 1,
           "mandatory": false
         },
-        
         {
           "name": "Date",
           "uuid": "707e029a-6608-40a6-9d73-a3eac1bf94e9",
@@ -441,12 +453,14 @@
         {
           "name": "Time to reach",
           "uuid": "abf0332c-828d-4269-a63d-8e2e830e5800",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "f96d2d85-957b-43b3-b216-b31e30d73389"
           },
@@ -477,7 +491,7 @@
           "name": "Attended by Doctor/ nurse/ other staff/none",
           "uuid": "fff31c38-d767-4b5b-949f-90b8213b8f0a",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "a356bc32-32e6-4218-a111-b0d20c69071b"
           },
@@ -537,13 +551,15 @@
         {
           "name": "Time spent in facility",
           "uuid": "4ad70951-4857-4123-8039-343797c0b3d7",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Days",
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Days",
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "c2915175-9c96-4bf7-b946-dad002528d97"
           },
@@ -601,12 +617,14 @@
         {
           "name": "Referral Time to reach from Facility 1",
           "uuid": "51f3804e-04f2-464a-a3c0-aa459117fbd6",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "d3fbfce1-ff22-42ce-99bc-4df3c3361046"
           },
@@ -637,7 +655,7 @@
           "name": "Attended by Doctor/ nurse/ other staff/none at Facility 1",
           "uuid": "bfc77fb8-7996-461b-8498-77feab46471c",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "7fd6dfff-4e8e-4412-9f21-c6c9e7a322aa"
           },
@@ -697,20 +715,21 @@
         {
           "name": "Time spent in facility at Facility 1",
           "uuid": "6764e67d-b45d-48a5-86a1-d58070a5162a",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Days",
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Days",
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "4a232aaa-ba51-4a07-9995-e05723e2c6b7"
           },
           "displayOrder": 14,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -762,12 +781,14 @@
         {
           "name": "Referral Time to reach from Facility 2",
           "uuid": "c61bb84a-e7e5-4487-b284-dac4bbc712e3",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "e193c36e-3f18-4077-8ba5-32a2fb5f5500"
           },
@@ -798,7 +819,7 @@
           "name": "Attend by Doctor/ nurse/ other staff/none at Facility 2",
           "uuid": "9edbd61c-d316-46fe-8946-a19744591af9",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "582ddda2-e720-4ce8-8891-8246a68f3dc5"
           },
@@ -858,13 +879,15 @@
         {
           "name": "Time spent in facility at Facility 2",
           "uuid": "de1f7b3f-3c2f-441c-bef2-3c4cb95f99b7",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Days",
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Days",
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "edd5599e-c4d4-4f4f-a0a3-280c46179c21"
           },
@@ -953,7 +976,7 @@
           "name": "Attend by Doctor/ nurse/ other staff/none at Facility 3",
           "uuid": "644cf23e-a456-4722-a472-70d9f702332f",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "a4233145-2938-4377-aa3e-0f92cb2eff7a"
           },
@@ -1013,13 +1036,15 @@
         {
           "name": "Time spent in facility at Facility 3",
           "uuid": "d230703e-0173-471d-91c0-9e72f6543815",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Days",
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Days",
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "9a6cf54d-81cd-43d8-99f3-9f47be38fba4"
           },
@@ -1061,7 +1086,7 @@
           "concept": {
             "uuid": "460f62be-5bad-4aae-96ec-ec828ecfa1c6"
           },
-          "displayOrder":2,
+          "displayOrder": 2,
           "mandatory": false
         },
         {
@@ -1120,7 +1145,7 @@
           "concept": {
             "uuid": "31804433-94c1-4d35-8e97-bde2a793f480"
           },
-          "displayOrder":8 ,
+          "displayOrder": 8,
           "mandatory": false
         },
         {
@@ -1134,7 +1159,6 @@
           "displayOrder": 9,
           "mandatory": false
         }
-        
       ]
     },
     {
@@ -1151,16 +1175,6 @@
             "uuid": "9929586a-01a9-4f9a-9731-71a669f9312d"
           },
           "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Other cause of hypertensive disorder of pregnancy",
-          "uuid": "d61a3c28-5a4c-4650-b5c2-27a1e81cc5c0",
-          "keyValues": [],
-          "concept": {
-            "uuid": "615ed118-6dea-442b-bb3d-736ccd58ae55"
-          },
-          "displayOrder": 2,
           "mandatory": false
         }
       ]
@@ -1197,7 +1211,7 @@
       "uuid": "52c134f8-20f6-4c45-a43f-7a3b8ce4f59e",
       "name": "4. Medical Disorders",
       "display": "4. Medical Disorders",
-      "displayOrder": 15 ,
+      "displayOrder": 15,
       "formElements": [
         {
           "name": "Medical Disorder",
@@ -1273,7 +1287,7 @@
             "uuid": "5d9c6cb9-d49f-4c5b-a8c8-ac37ba97b495"
           },
           "displayOrder": 1,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "Other incidental/accidental disorder",
@@ -1335,7 +1349,7 @@
           "name": "ii. If Induced",
           "uuid": "af1fb403-f4b9-4a45-b753-e8c67783c41f",
           "keyValues": [],
-          "type":"SingleSelect",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "dfa16927-16b3-4746-a39c-2d62214ceaae"
           },
@@ -1350,7 +1364,7 @@
             "uuid": "44a60c43-b235-4e28-ba60-eeab1a2d1974"
           },
           "displayOrder": 4,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "Other procedure adopted for abortion",
@@ -1414,6 +1428,7 @@
           "name": "b. If Yes, Type of facility",
           "uuid": "1e4727dd-42af-4d54-9cb1-411c9f008c5b",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "113a3c58-0211-44b7-8ac1-976f3580b6ec"
           },
@@ -1421,16 +1436,15 @@
           "mandatory": false
         },
         {
-          "name":"Details of Other type of facility where ANC received",
+          "name": "Details of Other type of facility where ANC received",
           "uuid": "324fed20-bd53-44c7-a7fc-52f24186ddc2",
           "keyValues": [],
           "concept": {
             "uuid": "4e78dfb6-1879-441f-b287-2c35d7aa5086"
           },
-          "displayOrder":2.1 ,
+          "displayOrder": 2.1,
           "mandatory": true
         },
-
         {
           "name": "c. Service provided by",
           "uuid": "220c863d-95d7-453f-a764-0e184e71b97c",
@@ -1527,7 +1541,7 @@
           },
           "displayOrder": 2,
           "mandatory": false
-        }  
+        }
       ]
     },
     {
@@ -1540,6 +1554,7 @@
           "name": "Complication during labor",
           "uuid": "b7bd95d5-4af7-49f5-94ab-a47731092dfe",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "e26cd7f7-0117-4b9c-bfa0-6055b68e6430"
           },
@@ -1625,7 +1640,6 @@
           "displayOrder": 6,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -1641,7 +1655,7 @@
           "concept": {
             "uuid": "13edc693-1f6b-4863-88bb-56a2d3dbf3b6"
           },
-          "displayOrder":1 ,
+          "displayOrder": 1,
           "mandatory": false
         }
       ]
@@ -1659,7 +1673,7 @@
           "concept": {
             "uuid": "c412ce45-df14-46b6-941b-0c35e147d767"
           },
-          "displayOrder":1 ,
+          "displayOrder": 1,
           "mandatory": false
         },
         {
@@ -1718,7 +1732,6 @@
           "displayOrder": 2,
           "mandatory": false
         }
-        
       ]
     },
     {
@@ -1764,7 +1777,7 @@
           "concept": {
             "uuid": "e27afc2a-906e-4180-b7e9-91898fe7f0f7"
           },
-          "displayOrder":4 ,
+          "displayOrder": 4,
           "mandatory": false
         }
       ]
@@ -1773,7 +1786,7 @@
       "uuid": "7807f27d-0f64-4fc7-955d-00c46f7df69d",
       "name": "Interventions",
       "display": "5. Interventions",
-      "displayOrder":30 ,
+      "displayOrder": 30,
       "formElements": [
         {
           "name": "Early Pregnancy",
@@ -1958,7 +1971,7 @@
           "concept": {
             "uuid": "bbfde929-97a2-4948-88e8-6349e14a26ff"
           },
-          "displayOrder":1 ,
+          "displayOrder": 1,
           "mandatory": false
         }
       ]
@@ -1976,7 +1989,7 @@
           "concept": {
             "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
           },
-          "displayOrder":1 ,
+          "displayOrder": 1,
           "mandatory": false
         },
         {
@@ -2017,7 +2030,7 @@
             "uuid": "fcdeadae-e1f8-4a0d-89f5-2e1b0104073e"
           },
           "displayOrder": 5,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "lack of transport from home to health care facility",
@@ -2067,7 +2080,7 @@
             "uuid": "45adbbbb-a6c7-4678-8139-a4e41e8f5aaa"
           },
           "displayOrder": 10,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "Lack of blood/ blood product",

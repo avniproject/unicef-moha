@@ -47,7 +47,6 @@
     "uuid": "e27afc2a-906e-4180-b7e9-91898fe7f0f7",
     "dataType": "Text"
   },
-  
   {
     "name": "Other risk factor identified",
     "uuid": "b3164f0c-7629-41ec-8060-5a6a32e8aae2",
@@ -68,7 +67,6 @@
     "uuid": "2e808513-8949-41d8-ae19-ef1225284b81",
     "dataType": "Text"
   },
-  
   {
     "name": "Other incidental/accidental disorder",
     "uuid": "fb38a53c-6720-4d5d-a06d-54111a88ef2a",
@@ -79,14 +77,11 @@
     "uuid": "dea402d1-ec3e-4f5f-a4a6-cfd4af61b7e2",
     "dataType": "Text"
   },
-  
-  
   {
     "name": "Other Medical Disorder",
     "uuid": "4b7f1dab-65c4-4f21-852b-861ee7a0ffae",
     "dataType": "Text"
   },
-
   {
     "name": "Other underlying cause of infection",
     "uuid": "25b3a228-d1e4-49ae-aba4-4a7dfa49bbb5",
@@ -102,7 +97,6 @@
     "uuid": "615ed118-6dea-442b-bb3d-736ccd58ae55",
     "dataType": "Text"
   },
-  
   {
     "name": "Other cause of Antepartum Bleeding",
     "uuid": "97aa7c03-1177-40e8-911d-afe5a9595d05",
@@ -124,12 +118,12 @@
       {
         "name": "Suspected Maternal Death",
         "uuid": "1477aebc-e150-415d-a930-ebcbb6050662",
-        "abnormal":true
+        "abnormal": true
       },
       {
         "name": "Non-maternal death",
         "uuid": "88aa8bb6-210d-4624-b783-fdab56cf6e06",
-        "abnormal":true
+        "abnormal": true
       }
     ]
   },
@@ -499,14 +493,14 @@
     "dataType": "Time"
   },
   {
-  "name": "Referral Time to reach from Facility 2",
-  "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
-  "dataType" : "Time"
+    "name": "Referral Time to reach from Facility 2",
+    "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99",
+    "dataType": "Time"
   },
   {
     "name": "Referral Time to reach to Facility 3 ref 1",
     "uuid": "19c9874b-1d1f-4dd8-a8ee-861bf5db5afd",
-    "dataType" : "Time"
+    "dataType": "Time"
   },
   {
     "name": "3. Date of spontaneous abortion/ date of termination of pregnany",
@@ -576,7 +570,7 @@
   {
     "name": "Cause of death",
     "uuid": "105764fd-9786-4254-b3ae-a00f711ec952",
-    "dataType":"Text"
+    "dataType": "Text"
   },
   {
     "name": "Not Applicable",
@@ -628,7 +622,7 @@
     "name": "Reporting Date",
     "uuid": "a08c7590-1940-4a88-8d66-ec46649669cd",
     "dataType": "Date",
-    "mandatory":false
+    "mandatory": false
   },
   {
     "name": "Inpatient No",
@@ -659,7 +653,7 @@
     "name": "Contact/Mobile No",
     "uuid": "271edc25-bfdc-4eb9-85f1-16fafd5b28e1",
     "dataType": "Numeric",
-    "unit":"Contact Number"
+    "unit": "Contact Number"
   },
   {
     "name": "Upto 5th Class",
@@ -693,7 +687,7 @@
     "dataType": "Coded",
     "answers": [
       {
-        "name":"Upto 5th Class",
+        "name": "Upto 5th Class",
         "uuid": "09b53132-7dc6-40a9-9f8e-8518db62f3fc"
       },
       {
@@ -704,7 +698,6 @@
         "name": "6th to 12th Class",
         "uuid": "ab742196-76f5-49fb-9b79-8ea33d4719bd"
       },
-
       {
         "name": "Completed 8th Standard",
         "uuid": "10159ae3-603a-478d-9ee1-c7e6e6ce7bac"
@@ -745,11 +738,11 @@
     "dataType": "Coded",
     "answers": [
       {
-        "name":"BPL Certified",
+        "name": "BPL Certified",
         "uuid": "ac3047d4-7163-4402-88e5-ef796840528e"
       },
       {
-        "name":"Self certified BPL",
+        "name": "Self certified BPL",
         "uuid": "a9874621-3c8b-4e99-b033-08c0f1fcc86c"
       },
       {
@@ -767,7 +760,7 @@
     "name": "Date and Time of Death",
     "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
     "dataType": "DateTime",
-    "mandatory":false
+    "mandatory": false
   },
   {
     "name": "Duration of Hospital Stay",
@@ -791,15 +784,14 @@
   },
   {
     "uuid": "4006c7ed-b1b8-459a-8424-181969d6f23a",
-    "name":"Ectopic",
-    "dataType":"NA"
+    "name": "Ectopic",
+    "dataType": "NA"
   },
   {
     "name": "Undelivered",
     "uuid": "08d3cb69-3c1d-4020-90a0-7ffba2bc6ee7",
     "dataType": "NA"
   },
-
   {
     "name": "Outcome of Pregnancy",
     "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f",
@@ -876,7 +868,6 @@
         "name": "Before 22 weeks"
       },
       {
-
         "name": "Antenatal 22-34 weeks",
         "uuid": "ce2f0027-631f-482e-90d1-159f0c3a7ff6"
       },
@@ -950,7 +941,6 @@
     "uuid": "51218c08-1fd8-4706-81f6-25f48d634da9",
     "dataType": "Numeric"
   },
-
   {
     "name": "Referral date from home",
     "uuid": "b7fafaa7-5bc7-4c57-8dd0-3d7f0727a1c6",
@@ -1009,7 +999,8 @@
       },
       {
         "name": "None",
-        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true
       }
     ]
   },
@@ -1091,100 +1082,101 @@
     "dataType": "Text"
   },
   {
-  "name": "Referral Attended at Facility 1",
-  "uuid": "7fd6dfff-4e8e-4412-9f21-c6c9e7a322aa",
-  "dataType": "Coded",
-  "answers": [
-  {
-    "name": "Doctor",
-    "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
-    },
-    {
-    "name": "Nurse",
-    "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
-    },
-    {
-    "name": "Other Staff",
-    "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
-    },
-    {
-    "name": "None",
-    "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
-    }
-  ]
+    "name": "Referral Attended at Facility 1",
+    "uuid": "7fd6dfff-4e8e-4412-9f21-c6c9e7a322aa",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Doctor",
+        "uuid": "062071e7-85a9-4da0-9d59-c27b00e53a60"
+      },
+      {
+        "name": "Nurse",
+        "uuid": "f2060c53-4cb4-4b35-9bb6-6f717a8a3f56"
+      },
+      {
+        "name": "Other Staff",
+        "uuid": "b373b96b-85c8-47db-8056-87e89443e01b"
+      },
+      {
+        "name": "None",
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true
+      }
+    ]
   },
   {
-  "name": "Referral reason from Facility 1",
-  "uuid": "5b9df7c4-4493-4a11-9b39-c534bcdad60d",
-  "dataType": "Text"
+    "name": "Referral reason from Facility 1",
+    "uuid": "5b9df7c4-4493-4a11-9b39-c534bcdad60d",
+    "dataType": "Text"
   },
   {
-  "name": "Referral Slip from Facility 1",
-  "uuid": "a2576f78-9099-42b0-9e52-0c741675e1c7",
-  "dataType": "Coded",
-  "answers": [
-  {
-    "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-    },
-    {
-    "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-    }
-  ]
+    "name": "Referral Slip from Facility 1",
+    "uuid": "a2576f78-9099-42b0-9e52-0c741675e1c7",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   },
   {
-  "name": "Referral Treatment at Facility 1",
-  "uuid": "e751fcb0-d8c3-47fc-8d39-d61feff047d2",
-  "dataType": "Text"
+    "name": "Referral Treatment at Facility 1",
+    "uuid": "e751fcb0-d8c3-47fc-8d39-d61feff047d2",
+    "dataType": "Text"
   },
   {
-  "name": "Referral Money spent on treatment/ medicine/ Diagnostics from Facility 1",
-  "uuid": "eb1f02b6-431a-4600-b63b-a4ae947a663a",
-  "dataType": "Text"
+    "name": "Referral Money spent on treatment/ medicine/ Diagnostics from Facility 1",
+    "uuid": "eb1f02b6-431a-4600-b63b-a4ae947a663a",
+    "dataType": "Text"
   },
   {
-  "name": "Referral Time spent in facility at Facility 1",
-  "uuid": "4a232aaa-ba51-4a07-9995-e05723e2c6b7",
-  "dataType": "Duration"
+    "name": "Referral Time spent in facility at Facility 1",
+    "uuid": "4a232aaa-ba51-4a07-9995-e05723e2c6b7",
+    "dataType": "Duration"
   },
   {
-  "name": "Referral date from Facility 2",
-  "uuid": "6239db6f-0dd1-4c81-b131-5f6c194ccd2f",
-  "dataType": "Date"
+    "name": "Referral date from Facility 2",
+    "uuid": "6239db6f-0dd1-4c81-b131-5f6c194ccd2f",
+    "dataType": "Date"
   },
   {
-  "name": "Referral time of onset of complication or labor from Faclity 2",
-  "uuid": "6ed4757a-9db8-4b02-a855-4bcf48a5ed8a",
-  "dataType": "Time"
+    "name": "Referral time of onset of complication or labor from Faclity 2",
+    "uuid": "6ed4757a-9db8-4b02-a855-4bcf48a5ed8a",
+    "dataType": "Time"
   },
   {
-  "name": "Referral time of calling/arrival of transport to Facility 2",
-  "uuid": "99c2471f-cdc6-4a33-91a7-81ebbce7179b",
-  "dataType": "Time"
+    "name": "Referral time of calling/arrival of transport to Facility 2",
+    "uuid": "99c2471f-cdc6-4a33-91a7-81ebbce7179b",
+    "dataType": "Time"
   },
   {
-  "name": "Referral Transport Used from Facility 2",
-  "uuid": "fadc97ed-738b-4872-bc3e-7b21d3ddf7da",
-  "dataType": "Text"
+    "name": "Referral Transport Used from Facility 2",
+    "uuid": "fadc97ed-738b-4872-bc3e-7b21d3ddf7da",
+    "dataType": "Text"
   },
   {
-  "name": "Referral Time to reach from  Facility 2",
-  "uuid": "e193c36e-3f18-4077-8ba5-32a2fb5f5500",
-  "dataType": "Time"
+    "name": "Referral Time to reach from  Facility 2",
+    "uuid": "e193c36e-3f18-4077-8ba5-32a2fb5f5500",
+    "dataType": "Time"
   },
   {
-  "name": "Referral Money Spent on transport from Facility 2",
-  "uuid": "100fcbea-fbe8-4063-8aae-508edc7f2670",
-  "dataType": "Numeric"
+    "name": "Referral Money Spent on transport from Facility 2",
+    "uuid": "100fcbea-fbe8-4063-8aae-508edc7f2670",
+    "dataType": "Numeric"
   },
   {
-  "name": "Referral Name of facility/level from Facility 2",
-  "uuid": "6f64c2e5-05a1-4d10-9b73-cd3ee64e301a",
-  "dataType": "Text"
+    "name": "Referral Name of facility/level from Facility 2",
+    "uuid": "6f64c2e5-05a1-4d10-9b73-cd3ee64e301a",
+    "dataType": "Text"
   },
   {
-  "name": "Details of Other Staff attended referral at facility 2",
-  "uuid": "510abab6-0b52-46f6-80a2-937f2fa3af7e",
-  "dataType": "Text"
+    "name": "Details of Other Staff attended referral at facility 2",
+    "uuid": "510abab6-0b52-46f6-80a2-937f2fa3af7e",
+    "dataType": "Text"
   },
   {
     "name": "Referral Attended at Facility 2",
@@ -1205,7 +1197,8 @@
       },
       {
         "name": "None",
-        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539"
+        "uuid": "ebda5e05-a995-43ca-ad1a-30af3b937539",
+        "unique": true
       }
     ]
   },
@@ -1242,9 +1235,6 @@
     "uuid": "edd5599e-c4d4-4f4f-a0a3-280c46179c21",
     "dataType": "Duration"
   },
-
-
-
   {
     "name": "Referral date from Facility 3",
     "uuid": "31aa2e89-2e6e-48ea-a9b6-4a14de360547",
@@ -1464,7 +1454,7 @@
     "name": "Postpartum Bleeding",
     "uuid": "f61fb650-e75f-4f47-8ede-1d01bba4c082",
     "dataType": "Coded",
-    "answers":[
+    "answers": [
       {
         "name": "Atonic",
         "uuid": "241c607f-622c-4d7f-a505-d17547a9dec0"
@@ -1590,6 +1580,10 @@
     "dataType": "Coded",
     "answers": [
       {
+        "comment": "Hemorrhage",
+        "uuid": "62aa4830-2bd3-436a-ac37-f972c699ac3f"
+      },
+      {
         "name": "Post Abortal",
         "uuid": "8f8e5804-ae0d-4888-824d-e1f3190cc372"
       },
@@ -1605,7 +1599,6 @@
         "name": "Post-Partum",
         "uuid": "6df0590b-67ce-4eed-8574-8d062c25d5ad"
       }
-      
     ]
   },
   {
@@ -1620,7 +1613,6 @@
     "name": "Lower respiratory tract infection",
     "uuid": "6063894d-f0dd-4b43-8959-d89ca94714ac"
   },
-
   {
     "name": "Underlying cause of infection",
     "uuid": "3f007de4-fd27-45df-9027-b865786c23bc",
@@ -1736,8 +1728,8 @@
     ]
   },
   {
-  "name": "Medical methods",
-  "uuid": "43e34edd-c1d6-4bd5-a483-0c54b94ff281"
+    "name": "Medical methods",
+    "uuid": "43e34edd-c1d6-4bd5-a483-0c54b94ff281"
   },
   {
     "name": "MVA",
@@ -1824,7 +1816,7 @@
   {
     "name": "Specify the centre visited",
     "uuid": "147df247-b1cb-4bf5-afc2-c8bcbee8668f",
-    "dataType":"Text"
+    "dataType": "Text"
   },
   {
     "name": "Termination done in more than 1 center",
@@ -2595,7 +2587,7 @@
       {
         "name": "Hysterectomy",
         "uuid": "135449ba-b1e6-4e43-9187-5761b52a2545"
-      }     
+      }
     ]
   },
   {
@@ -2692,7 +2684,7 @@
       {
         "name": "Transfusion",
         "uuid": "332193f6-6988-42c5-8db5-f8073e59c1cb"
-      }      
+      }
     ]
   },
   {
@@ -2755,7 +2747,9 @@
     "name": "Number of blood units",
     "uuid": "01402db4-b091-4288-8cee-8cc115ada333",
     "dataType": "Numeric",
-    "unit": "Quantity"
+    "unit": "Quantity",
+    "lowAbsolute": 0,
+    "highAbsolute": 17
   },
   {
     "name": "Transfusion reaction occurred",
@@ -2835,7 +2829,7 @@
       }
     ]
   },
-{
+  {
     "name": "Logistical Problems",
     "uuid": "fcdeadae-e1f8-4a0d-89f5-2e1b0104073e",
     "dataType": "Coded",
@@ -2869,7 +2863,7 @@
       }
     ]
   },
-{
+  {
     "name": "Lack of transport between health care facilities",
     "uuid": "33e76c6c-41a8-4d68-8d87-7fb0c0f1d410",
     "dataType": "Coded",
@@ -2886,7 +2880,7 @@
       }
     ]
   },
-{
+  {
     "name": "lack of assured referral system",
     "uuid": "e7cbc7b0-7b96-448a-8c40-eb09f2220878",
     "dataType": "Coded",
@@ -2903,7 +2897,7 @@
       }
     ]
   },
-{
+  {
     "name": "Lack of facilities, equipment or consumable",
     "uuid": "45adbbbb-a6c7-4678-8139-a4e41e8f5aaa",
     "dataType": "Coded",
@@ -2920,7 +2914,7 @@
       }
     ]
   },
-{
+  {
     "name": "Lack of blood/ blood product",
     "uuid": "cb2f1f5e-3085-4fe2-ab9c-8da142339f0a",
     "dataType": "Coded",
@@ -2937,7 +2931,7 @@
       }
     ]
   },
-{
+  {
     "name": "Lack of OT availability",
     "uuid": "d7fb30ff-4c70-4fc2-b938-10ca8d7121fd",
     "dataType": "Coded",
@@ -2988,7 +2982,7 @@
       }
     ]
   },
-{
+  {
     "name": "Lack of Obstetricians",
     "uuid": "57d52e87-695c-4a4f-b262-5d495a6c8ca4",
     "dataType": "Coded",
@@ -3110,5 +3104,4 @@
     "dataType": "Numeric",
     "unit": "Quantity"
   }
-
 ]

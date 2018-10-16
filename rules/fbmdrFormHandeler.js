@@ -42,12 +42,6 @@ class FbmdrViewFilter {
         return statusBuilder.build();
     }
 
-    @WithStatusBuilder
-    otherCauseOfHypertensiveDisorderOfPregnancy([programEncounter, formElement], statusBuilder){
-        statusBuilder.show().when.valueInEncounter("Hypertensive disorder of Pregnancy").containsAnswerConceptName("Other");
-        return statusBuilder.build();
-    }
-
 
     @WithStatusBuilder
     otherLaborRelatedDisorder([programEncounter, formElement], statusBuilder){
