@@ -59,10 +59,14 @@
           "mandatory": false
         },
         {
-          "name": "MCTS NO",
+          "name": "MCTS ID",
           "uuid": "9978f900-28b8-4ade-ad9f-c29a951b00f9",
           "concept": {
             "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f"
+          },
+          "validFormat": {
+            "regex": "^[0-9]{13}$",
+            "descriptionKey": "Required13Digits"
           },
           "displayOrder": 7,
           "mandatory": false
