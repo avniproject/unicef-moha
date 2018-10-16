@@ -627,7 +627,7 @@
   {
     "name": "Inpatient No",
     "uuid": "612ec753-4579-4e28-a305-5083bd4d9feb",
-    "dataType": "Numeric"
+    "dataType": "Text"
   },
   {
     "name": "Medico-legal admission",
