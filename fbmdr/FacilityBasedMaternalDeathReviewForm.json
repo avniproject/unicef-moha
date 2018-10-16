@@ -1065,8 +1065,8 @@
     },
     {
       "uuid": "08162f5e-be5c-4a1e-8405-371b3b92d2f7",
-      "name": "Hemorrhage",
-      "display": "Hemorrhage",
+      "name": "1. Hemorrhage",
+      "display": "1. Hemorrhage",
       "displayOrder": 12,
       "formElements": [
         {
@@ -1102,8 +1102,9 @@
         {
           "name": "IV. Antepartum Bleeding",
           "uuid": "4e332b6e-31ff-4680-9941-5bdc294abc23",
+          "type": "SingleSelect",
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "25367c7e-d01b-4fa2-8358-f8c18e2687b6"
           },
           "displayOrder": 4,
           "mandatory": false

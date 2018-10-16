@@ -1376,6 +1376,19 @@
     ]
   },
   {
+    "name": "Antepartum Bleeding",
+    "uuid": "25367c7e-d01b-4fa2-8358-f8c18e2687b6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
+  },
+  {
     "name": "Placenta Previa",
     "uuid": "9917e4b7-bdfc-4bf2-aaa2-190fdae2558d"
   },
@@ -1579,10 +1592,6 @@
     "uuid": "f088de32-c472-4468-88a4-3a250da5b473",
     "dataType": "Coded",
     "answers": [
-      {
-        "comment": "Hemorrhage",
-        "uuid": "62aa4830-2bd3-436a-ac37-f972c699ac3f"
-      },
       {
         "name": "Post Abortal",
         "uuid": "8f8e5804-ae0d-4888-824d-e1f3190cc372"
