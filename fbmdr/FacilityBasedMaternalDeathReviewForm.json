@@ -16,7 +16,7 @@
             "uuid": "543a5ae4-b474-4c0f-b3ff-1313b7a8b44e"
           },
           "displayOrder":2 ,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Name of Nodal Person",
@@ -25,7 +25,7 @@
             "uuid": "4205021b-68e6-43ec-a78b-ff6471f62337"
           },
           "displayOrder":3,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Contact No.",
