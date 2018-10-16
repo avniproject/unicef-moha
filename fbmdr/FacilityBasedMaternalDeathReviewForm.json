@@ -55,6 +55,10 @@
           "concept": {
             "uuid": "13a9c2e3-b1a9-478a-a110-67a1e21c5ab8"
           },
+          "validFormat": {
+            "regex": "^[0-9]{4}$",
+            "descriptionKey": "Required4Digits"
+          },
           "displayOrder":6,
           "mandatory": false
         },
