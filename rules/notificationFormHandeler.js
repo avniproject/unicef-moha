@@ -15,12 +15,6 @@ class NotificationHandlerMDSR {
             .getFormElementsStatuses(new NotificationHandlerMDSR(), programEnrolment, formElementGroup);
     }
 
-    otherPlaceOfDeath(programEnrolment, formElement) {
-        const statusBuilder = this._getStatusBuilder(programEnrolment, formElement);
-        statusBuilder.show().when.valueInEnrolment("Place of death").containsAnswerConceptName("Other");
-        return statusBuilder.build();
-    }
-
 
     _getStatusBuilder(programEnrolment, formElement) {
         return new FormElementStatusBuilder({programEnrolment, formElement});

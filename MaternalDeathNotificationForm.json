@@ -19,47 +19,6 @@
           "displayOrder": 0.1,
           "mandatory": true
         },
-        
-        {
-          "name": "Name of state",
-          "uuid": "9b7f3788-b6e8-48ea-97fb-12af64620fd8",
-          "keyValues": [],
-          "concept": {
-            "uuid": "7b6cd601-0edd-4f83-82d7-628cf64ee8bd"
-          },
-          "displayOrder": 1,
-          "mandatory": false
-        },
-        {
-          "name": "Name of the District",
-          "uuid": "bcbe1ce6-f036-4a41-911c-51cea50c8392",
-          "keyValues": [],
-          "concept": {
-            "uuid": "18cf744b-6125-4cfd-818d-5533f2e1ab0d"
-          },
-          "displayOrder": 2,
-          "mandatory": false
-        },
-        {
-          "name": "Name of the Block",
-          "uuid": "6ca10dfa-85be-47ec-88d2-3fbd35bc245e",
-          "keyValues": [],
-          "concept": {
-            "uuid": "8a73d129-bf0a-4d0c-ba23-d0078325fd99"
-          },
-          "displayOrder": 3,
-          "mandatory": false
-        },
-        {
-          "name": "Name of village/ Description of location",
-          "uuid": "936244d1-aff0-4df3-b010-03c7ac1e7e09",
-          "keyValues": [],
-          "concept": {
-            "uuid": "c556feff-233b-4703-9a70-56f85975ff8d"
-          },
-          "displayOrder": 4,
-          "mandatory": false
-        },
         {
           "name": "Name of Husband",
           "uuid": "48f56d2d-a09b-493b-aff0-6fedb6364e0c",
@@ -89,7 +48,21 @@
           },
           "displayOrder": 7,
           "mandatory": false
-        }    
+        },
+        {
+          "name": "Contact number",
+          "uuid": "77394119-8e7a-4828-8697-047b63a37020",
+          "keyValues": [],
+          "concept": {
+            "uuid": "82fa0dbb-92f9-4ec2-9263-49054e64d909"
+          },
+          "validFormat": {
+            "regex": "^[0-9]{10}$",
+            "descriptionKey": "Required10Digits"
+          },
+          "displayOrder": 8,
+          "mandatory": false
+        }
       ]
     },
     {
@@ -114,24 +87,12 @@
           "name": "Place of death",
           "uuid": "7ad5a37d-6e41-4e02-9803-0c930098e9b8",
           "keyValues": [],
-          "type": "MultiSelect",
           "concept": {
-            "uuid": "e355d9d8-c10d-4f1f-821d-e86ac5bc8b75"
+            "uuid": "079fb844-0d72-49cf-8389-b821f1b5ab37"
           },
           "displayOrder": 2,
           "mandatory": false
         },
-        {
-          "name": "Other place of death",
-          "uuid": "77186dfe-c4ec-439c-a66a-f363ed30d0be",
-          "keyValues": [],
-          "concept": {
-            "uuid": "3631fbd7-40d9-456d-8987-ba3b9d5f4a2f"
-          },
-          "displayOrder": 3,
-          "mandatory": true
-        },
-
         {
           "name": "When did death occur",
           "uuid": "77538170-fba1-4292-8901-0c90f1ae395d",
@@ -140,7 +101,7 @@
           "concept": {
             "uuid": "9e0e21b0-e5c2-406a-8da6-a11a78d65329"
           },
-          "displayOrder": 4,
+          "displayOrder": 3,
           "mandatory": false
         }
       ]
