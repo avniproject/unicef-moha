@@ -75,7 +75,7 @@
             "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
           },
           "displayOrder": 1,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "2. Throughout the interview, the interviewer should be very polite and sensitive questions should be avoided.",
@@ -254,9 +254,14 @@
           "mandatory": false
         },
         {
-          "name": "2. Name of the deceased woman",
+          "name": "Name of the deceased woman",
           "uuid": "2985c71f-1938-4b30-8116-510d65d5fa7f",
-          "keyValues": [],
+          "keyValues": [
+            {
+              "key": "editable",
+              "value": false
+            }
+          ],
           "concept": {
             "uuid": "87493ece-1633-41c2-8a87-8d17c748583c"
           },
@@ -353,7 +358,7 @@
           "uuid": "d577e1cd-1577-4453-a619-7716083aa715",
           "keyValues": [],
           "concept": {
-              "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
+            "uuid": "105764fd-9786-4254-b3ae-a00f711ec952"
           },
           "displayOrder": 13,
           "mandatory": false
@@ -429,17 +434,27 @@
         {
           "name": "Education status",
           "uuid": "f82dd795-152b-4d11-922f-21fa247a283d",
-          "keyValues": [{
-            "key": "ExcludedAnswers",
-            "value": [
-              "Literate without schooling" ,"1-5" ,"6-7" , "8-10","11-12","Post Graduation and above","Upto 5th Class","6th to 12th Class", "Beyond 12th Class"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "ExcludedAnswers",
+              "value": [
+                "Literate without schooling",
+                "1-5",
+                "6-7",
+                "8-10",
+                "11-12",
+                "Post Graduation and above",
+                "Upto 5th Class",
+                "6th to 12th Class",
+                "Beyond 12th Class"
+              ]
+            }
+          ],
           "concept": {
             "uuid": "39595a16-a9c6-49a5-a42b-3f462607058c"
           },
           "displayOrder": 7,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "other Education",
@@ -579,6 +594,7 @@
           "name": "V.4. Place of Antenatal check-ups(Multiple response possible)",
           "uuid": "83887c03-d410-4080-bbdb-27bb5cb8a6df",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "bf699779-4fd4-48d0-8450-e843ecded6eb"
           },
@@ -599,7 +615,7 @@
           "name": "V.5. Services received during ANC (Multiple response possible)",
           "uuid": "8058a208-4b79-4b48-b9da-8af399a58134",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "15423d2c-4d95-4b4e-a574-47e4049c8ceb"
           },
@@ -644,12 +660,13 @@
             "uuid": "8a46cfec-f6c4-4802-ac8d-3d230c8dab11"
           },
           "displayOrder": 10,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "V.9. If yes, where did she seek care?",
           "uuid": "d53b857b-2102-4588-a7ec-14c84d789181",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
             "uuid": "f061a8b1-213b-47db-954a-e43b80a4cb56"
           },
@@ -688,7 +705,7 @@
           "mandatory": false
         },
         {
-          "name": "V.11. Did the woman died during Antenatal Period.",
+          "name": "V.11. Did the woman die during Antenatal Period.",
           "uuid": "53257989-283f-4eba-9e3a-31c6eed0727a",
           "keyValues": [],
           "type": "SingleSelect",
@@ -696,7 +713,7 @@
             "uuid": "8b38acd7-82d4-4be1-8615-ad006a37d31d"
           },
           "displayOrder": 15,
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },
@@ -716,7 +733,6 @@
           "displayOrder": 1,
           "mandatory": false
         },
-
         {
           "name": "VI. No of weeks of pregnancy",
           "uuid": "7775e38a-41ca-41e3-ad6f-d8fe6a66d115",
@@ -797,7 +813,7 @@
             "uuid": "ee47b9b0-eb32-4bab-80cc-efd525f01f98"
           },
           "displayOrder": 6,
-          "mandatory":  false
+          "mandatory": false
         },
         {
           "name": "VII. If yes, where did she seek care",
@@ -837,7 +853,7 @@
             "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
           },
           "displayOrder": 1.1,
-          "mandatory":false
+          "mandatory": false
         },
         {
           "name": "Date of referral from Home",
@@ -879,7 +895,6 @@
           "displayOrder": 5,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -931,12 +946,14 @@
         {
           "name": "Referral Time to reach from Facility 1",
           "uuid": "cd972109-be90-4270-920e-c43241e80f51",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach from Facility 1",
             "uuid": "7820fd91-a878-4f22-82c4-44b8684e24f6",
@@ -945,7 +962,6 @@
           "displayOrder": 5,
           "mandatory": true
         },
-
         {
           "name": "Referral Money spent on transport(Rs) from Facility 1",
           "uuid": "fbe53925-2a94-400e-a46d-438fa1421ab4",
@@ -970,7 +986,7 @@
           "name": "Attend by Doctor/ nurse/ other staff/none at Facility 1",
           "uuid": "1918e2ef-849f-47c6-9642-1987d8fa3c03",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "db1a4228-8029-4039-aa8c-334da1fba10e"
           },
@@ -1026,7 +1042,6 @@
           "displayOrder": 13,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -1078,12 +1093,14 @@
         {
           "name": "Referral Time to reach from Facility 2",
           "uuid": "e7bf8578-9575-451a-ae72-4c85f66347aa",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach from Facility 2",
             "uuid": "f5b0261f-33c4-4834-8bd4-ac2fc34f8c99"
@@ -1115,7 +1132,7 @@
           "name": "Attended by Doctor/ nurse/ other staff/none at Facility 2",
           "uuid": "560ab29a-07e4-4e91-9d36-959c2ccd37e9",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "0f498e7c-92e6-4407-8c76-526127e4037a"
           },
@@ -1223,16 +1240,18 @@
         {
           "name": "Referral Time to reach to Facility 3",
           "uuid": "c1516831-1958-4613-8d01-864d53c4bdf4",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach to Facility 3",
             "uuid": "19c9874b-1d1f-4dd8-a8ee-861bf5db5afd",
-            "type" : "Date"
+            "type": "Date"
           },
           "displayOrder": 5,
           "mandatory": false
@@ -1261,7 +1280,7 @@
           "name": "Attend by Doctor/ nurse/ other staff/none at Facility 3",
           "uuid": "1c066aaa-ca62-4ee6-bde7-33f2a643bef6",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "e9c09426-00ba-4ffb-90a1-9b3ead39a337"
           },
@@ -1356,7 +1375,7 @@
       "displayOrder": 15,
       "formElements": [
         {
-          "name": "VIII. 1. Did the deceased woman(name) die while having an abortion or within  6 weeks after having an abortion",
+          "name": "VIII. 1. Did the deceased woman(name) die while having an abortion or within 6 weeks after having an abortion",
           "uuid": "7c5097bc-84d3-40df-9c83-97d395ddee41",
           "type": "SingleSelect",
           "concept": {
@@ -1563,7 +1582,6 @@
           "displayOrder": 1,
           "mandatory": false
         },
-
         {
           "name": "IX. Intranatal services",
           "uuid": "abc1a78f-edbb-4fbf-81e3-648cd25cc789",
@@ -1578,7 +1596,7 @@
           "name": "IX. 1. Place of delivery",
           "uuid": "12c2b762-0286-4f4f-8f6e-1e1f8dcc432d",
           "keyValues": [],
-          "type":"SingleSelect",
+          "type": "SingleSelect",
           "concept": {
             "uuid": "704bd399-471e-47f7-a557-15a8822e7de0"
           },
@@ -1688,7 +1706,7 @@
           },
           "displayOrder": 12,
           "mandatory": false
-        }        
+        }
       ]
     },
     {
@@ -2016,7 +2034,6 @@
           "displayOrder": 1,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -2187,9 +2204,8 @@
       "uuid": "bcb5bc46-35b4-4c40-a572-8455faf84b24",
       "name": "Postnatal Checkups",
       "display": "Postnatal Checkups",
-      "displayOrder":18.2 ,
+      "displayOrder": 18.2,
       "formElements": [
-
         {
           "name": "X. 10. Did she receive any postnatal checkups",
           "uuid": "4b201cd6-79fe-42e4-89b7-c900038f0acc",
@@ -2221,7 +2237,7 @@
           "concept": {
             "uuid": "13fee8d6-5c00-4256-a4e1-589febb538a5"
           },
-          "displayOrder": 3 ,
+          "displayOrder": 3,
           "mandatory": true
         },
         {
@@ -2282,7 +2298,6 @@
           "displayOrder": 5,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -2334,12 +2349,14 @@
         {
           "name": "X. Referral Time to reach from Facility 1",
           "uuid": "40ebcc18-1dd5-4a81-92a7-8d82d7d358f6",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach from Facility 1",
             "uuid": "daa70298-7f90-46f6-abbb-f7bacfb66ad4",
@@ -2348,7 +2365,6 @@
           "displayOrder": 5,
           "mandatory": true
         },
-
         {
           "name": "X. Referral Money spent on transport(Rs) from Facility 1",
           "uuid": "be9f3b1f-ae4b-4c36-9eeb-13e6ac1f79c9",
@@ -2373,7 +2389,7 @@
           "name": "X. Attend by Doctor/ nurse/ other staff/none at Facility 1",
           "uuid": "de79fde4-5cd2-4c8c-b7cc-00751d53ccc4",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "a86048c3-c55c-4478-9832-87e3544140a0"
           },
@@ -2429,7 +2445,6 @@
           "displayOrder": 13,
           "mandatory": false
         }
-
       ]
     },
     {
@@ -2481,16 +2496,18 @@
         {
           "name": "X. Referral Time to reach from Facility 2",
           "uuid": "be10fa83-2691-4988-97cf-f773448d21fa",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach from Facility 2",
             "uuid": "b7447e47-2b66-417f-96e4-b0dcdd7763b2",
-            "type" : "Date"
+            "type": "Date"
           },
           "displayOrder": 5,
           "mandatory": false
@@ -2519,7 +2536,7 @@
           "name": "X. Attended by Doctor/ nurse/ other staff/none at Facility 2",
           "uuid": "04b91532-ce81-44e3-888e-a18493ab1bed",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "2d632d7d-4480-4bbe-b991-ccbfe8e29ce8"
           },
@@ -2627,16 +2644,18 @@
         {
           "name": "X. Referral Time to reach to Facility 3",
           "uuid": "3858fea5-44b9-45cc-939d-d9de02968ea4",
-          "keyValues": [{
-            "key": "durationOptions",
-            "value": [
-              "Hours"
-            ]
-          }],
+          "keyValues": [
+            {
+              "key": "durationOptions",
+              "value": [
+                "Hours"
+              ]
+            }
+          ],
           "concept": {
             "name": "Referral Time to reach to Facility 3",
             "uuid": "96d05ffb-818e-487c-91fb-b00808edae6f",
-            "type" : "Date"
+            "type": "Date"
           },
           "displayOrder": 5,
           "mandatory": false
@@ -2665,7 +2684,7 @@
           "name": "X. Attend by Doctor/ nurse/ other staff/none at Facility 3",
           "uuid": "c1701262-7bbf-4a5d-8414-51e31217e1c6",
           "keyValues": [],
-          "type":"MultiSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "adfa5264-f51a-4986-a2c0-649cc523ae91"
           },
@@ -2723,7 +2742,6 @@
         }
       ]
     },
-
     {
       "uuid": "545ae52c-d83c-445b-95ff-3791cd6cb1b2",
       "name": "Open History",
@@ -2760,7 +2778,6 @@
         }
       ]
     }
-        
   ]
 }
 

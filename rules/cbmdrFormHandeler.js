@@ -1,10 +1,16 @@
+import {
+    RuleFactory,
+    FormElementStatus,
+    FormElementsStatusHelper,
+    FormElementStatusBuilder,
+    StatusBuilderAnnotationFactory
+} from 'rules-config/rules';
 
-import { RuleFactory, FormElementStatus, FormElementsStatusHelper ,FormElementStatusBuilder, StatusBuilderAnnotationFactory} from 'rules-config/rules';
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
 
+const EncounterViewFilter = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61", "ViewFilter");
 
-const EncounterViewFilter = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61","ViewFilter");
 // const FormValidation = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a",'Validation');
 
 
@@ -15,48 +21,53 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Place of death").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ifYesWhatIsTheCauseOfDeath([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Did the doctor or nurse at the health facility tell you the cause of death.").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Did the doctor or nurse at the health facility tell you the cause of death.").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ageAtMarriage([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Deceased woman married").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Deceased woman married").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     otherReligion([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Religion").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Religion").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     otherEducation([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Education").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Education").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     v3IfYesNumberOfAntenatalCheckupsReceived([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     v4PlaceOfAntenatalCheckUpsMultipleResponsePossible([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
-   @WithStatusBuilder
-   v5ServicesReceivedDuringAncMultipleResponsePossible([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+
+    @WithStatusBuilder
+    v5ServicesReceivedDuringAncMultipleResponsePossible([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Antenatal care received").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     otherPlaceOfAntenatalCheckUps([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Place of antenatal checkup").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Place of antenatal checkup").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
@@ -70,39 +81,42 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Problem during antenatal period").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     v8DidSheSeekCareForTheseSymptoms([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Problem during antenatal period").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Problem during antenatal period").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     v9IfYesWhereDidSheSeekCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Care for these symptoms").containsAnswerConceptName("Yes");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Care for these symptoms").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     otherSeekCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Where seeked care").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Where seeked care").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     v10WhatWereTheReasonsForNotSeekingCareMultipleResponsePossible([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Care for these symptoms").containsAnswerConceptName("No");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Care for these symptoms").containsAnswerConceptName("No");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     otherReasonForNotSeekingCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Reason for not seeking care 3").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Reason for not seeking care 3").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
 
     //Module II formelement group to be skipped
 
     moduleIi(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes;
             return statusBuilder.build();
@@ -110,7 +124,7 @@ class CbmdrViewFilter {
     }
 
     deathDuringAntenatalPeriod(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
                 .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
@@ -119,94 +133,99 @@ class CbmdrViewFilter {
     }
 
     referralFromHomeVillage(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                    .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
-                    .when.valueInEncounter("Referred at that time").is.yes;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
+
     referralFormFromFacility1(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                    .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
-                    .when.valueInEncounter("Referred at that time").is.yes;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
+
     referralFormFromFacility2(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                    .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
-                    .when.valueInEncounter("Referred at that time").is.yes;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
 
     referralFormFromFacility3(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                    .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
-                    .when.valueInEncounter("Referred at that time").is.yes;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
 
 
     seekingCare(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                    .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
-                    .when.valueInEncounter("Did she seek care").is.no;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Did she seek care").is.no;
+            return statusBuilder.build();
+        })
+    }
+
     viiiAbortionRelatedDeath(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes;
+            return statusBuilder.build();
+        })
+    }
 
     moduleIii(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            return statusBuilder.build();
+        })
+    }
 
     outcomeOfTheDelivery(programEncounter, formElementGroup) {
-            return formElementGroup.formElements.map(fe=>{
-                let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
-                return statusBuilder.build();
-            })
-        }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            return statusBuilder.build();
+        })
+    }
+
     xPostNatalPeriod(programEncounter, formElementGroup) {
-                return formElementGroup.formElements.map(fe=>{
-                    let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                    statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
-                    return statusBuilder.build();
-                })
-            }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            return statusBuilder.build();
+        })
+    }
+
     problemsFollowingDelivery(programEncounter, formElementGroup) {
-                return formElementGroup.formElements.map(fe=>{
-                    let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-                    statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no.and
-                        .when.valueInEncounter("Any problem following delivery").is.yes;
-                    return statusBuilder.build();
-                })
-            }
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no.and
+                .when.valueInEncounter("Any problem following delivery").is.yes;
+            return statusBuilder.build();
+        })
+    }
 
     postnatalCheckups(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
             return statusBuilder.build();
@@ -214,30 +233,28 @@ class CbmdrViewFilter {
     }
 
 
-
-
-
     @WithStatusBuilder
     viiDeathDuringAntenatalPeriod([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viiIfYesWhereDidSheSeekCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Did she seek care").is.yes;
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Did she seek care").is.yes;
+        return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ifOtherSeekedCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Where seeked care for these complications").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Where seeked care for these complications").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viiiOtherReasonForNotSeekingCare([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Reasons for not seeking care").containsAnswerConceptName("Other");
-            return statusBuilder.build();
+        statusBuilder.show().when.valueInEncounter("Reasons for not seeking care").containsAnswerConceptName("Other");
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
@@ -269,6 +286,7 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     viii7IfTheAbortionWasInducedWhoPerformedTheAbortion([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
@@ -316,11 +334,13 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Seek care after developing complication 1").containsAnswerConceptName("No");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     viii11IfOtherSpecify([programEncounter, formElement], statusBuilder) {
-            statusBuilder.show().when.valueInEncounter("Seek care after developing complication 2").containsAnswerConceptName("Other");
-            return statusBuilder.build();
-        }
+        statusBuilder.show().when.valueInEncounter("Seek care after developing complication 2").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
     @WithStatusBuilder
     viii12OtherReasonForNotSeekingCare([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Reason for not seeking the care").containsAnswerConceptName("Other");
@@ -345,36 +365,42 @@ class CbmdrViewFilter {
         return statusBuilder.build();
     }
 
-   @WithStatusBuilder
-   ix6OtherConductedDelivery([programEncounter, formElement], statusBuilder) {
+    @WithStatusBuilder
+    ix6OtherConductedDelivery([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Delivery conducted by").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
-   @WithStatusBuilder
-   ix9OtherComplication([programEncounter, formElement], statusBuilder) {
+
+    @WithStatusBuilder
+    ix9OtherComplication([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Complication during labor.").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix10AOtherTreatmentProvided([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Treatmet provided at health facility").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix10DIfYesPleaseDescribeTheInformationGiven([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Information about the complication from hospital").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix10FIfYesPleaseDescribeTheDelayInGivingTreatment([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Delay in initiating treatment 1").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix11BInCaseOfNotSeekingCareWhatWereTheReasonsForNotSeekingCare([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Care seeked in home delivery").containsAnswerConceptName("No");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix11CWhereDidSheSeekCare([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Care seeked in home delivery").containsAnswerConceptName("Yes");
@@ -404,11 +430,13 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Delay in initiating treatment 2").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix15OtherReasonForNotSeekingCare([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Reason for not seeking care 1").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     ix17IfYesPleaseDescribeTheDetailsOfNatureOfComplicationFromTheHospital([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Information given to relative about nature of complication").containsAnswerConceptName("Yes");
@@ -420,6 +448,7 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Delay in initiating treatment 3").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     //Section X
 
     @WithStatusBuilder
@@ -433,6 +462,7 @@ class CbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Did she seek treatment").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
+
     @WithStatusBuilder
     x5IfOtherPleaseDescribeWhereDidSheSeekTreatment([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Where seeked treatment").containsAnswerConceptName("Other");
@@ -469,11 +499,17 @@ class CbmdrViewFilter {
         return statusBuilder.build();
     }
 
+    @WithStatusBuilder
+    viii2TypeOfAbortion([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of abortion").is.yes;
+        return statusBuilder.build();
+    }
+
 
     //Referral form section X
 
     xReferralFromHomeVillage(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
                 .or.when.valueInEncounter("Referral attended").yes;
@@ -482,28 +518,36 @@ class CbmdrViewFilter {
     }
 
     xReferralFormFromFacility1(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
                 .or.when.valueInEncounter("Referral attended").yes;
             return statusBuilder.build();
         })
     }
+
     xReferralFormFromFacility2(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
                 .or.when.valueInEncounter("Referral attended").yes;
             return statusBuilder.build();
         })
     }
+
     xReferralFormFromFacility3(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
+        return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
                 .or.when.valueInEncounter("Referral attended").yes;
             return statusBuilder.build();
         })
+    }
+
+
+    nameOfTheDeceasedWoman(programEncounter, formElement) {
+        const name = programEncounter.programEnrolment.individual.nameString;
+        return new FormElementStatus(formElement.uuid, true, name);
     }
 
 
