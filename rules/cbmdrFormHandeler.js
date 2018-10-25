@@ -501,7 +501,7 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     viii2TypeOfAbortion([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").is.yes;
+        statusBuilder.show().when.valueInEncounter("Did deceased woman died while having abortion").is.yes;
         return statusBuilder.build();
     }
 
