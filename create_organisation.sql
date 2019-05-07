@@ -1,12 +1,4 @@
-CREATE ROLE unicef_moha
-  NOINHERIT
-  PASSWORD 'password';
-
-GRANT unicef_moha TO openchs;
-
-GRANT ALL ON ALL TABLES IN SCHEMA public TO unicef_moha;
-GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO unicef_moha;
-GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO unicef_moha;
+select create_db_user('unicef_moha', 'password');
 
 INSERT INTO organisation (name, db_user, uuid, parent_organisation_id)
   SELECT
@@ -15,4 +7,4 @@ INSERT INTO organisation (name, db_user, uuid, parent_organisation_id)
     'feb521da-9d33-42f2-9c12-caa2cda6b7da',
     id
   FROM organisation
-  WHERE name = 'OpenCHS';
+  WHERE name = 'OpenCHS' and not exists (select 1 from organisation where name = 'UNICEF - MOHA');
