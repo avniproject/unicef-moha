@@ -3,5 +3,20 @@
     "name": "Test",
     "uuid": "536c1319-4a15-4116-a662-f2e973d90e31",
     "locationUUID": "a091c6f6-8e7c-456f-a084-f1c8ea35de14"
+  },
+  {
+    "name": "Facility1",
+    "uuid": "379b17cc-db44-4c1b-a98a-79509a04b66b",
+    "locationUUID": "72ea5163-aa34-41d4-a57a-b2a052c18c4a"
+  },
+  {
+    "name": "Facility2",
+    "uuid": "1e02644d-a86e-410d-bde1-530d8b53dd8a",
+    "locationUUID": "6c0f1b8a-b1d0-41d0-861f-c3dca59bb8cc"
+  },
+  {
+    "name": "Facility4",
+    "uuid": "2cb665ec-4251-4057-b171-62cceb26be90",
+    "locationUUID": "c5bce793-1cfb-4748-bc22-8ecdd1d854ac"
   }
 ]

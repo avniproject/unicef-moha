@@ -37,8 +37,8 @@ module.exports = IDI.configure({
             "cbmdr/CommunityBasedVerbalAutopsyFormConcept.json",
         ],
         "locations": [
-            "locations/blocks.json",
             "locations/districts.json",
+            "locations/blocks.json",
             "locations/phcs.json"
         ],
         "programs": ["programs.json"],

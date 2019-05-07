@@ -141,6 +141,39 @@
           "comment": "Bhawanipur"
         }
       ]
+    },
+    {
+      "name": "4",
+      "uuid": "92bd8c76-3173-4295-b8d8-64d500c83f19",
+      "type": "District",
+      "locations": [
+        {
+          "uuid": "72ea5163-aa34-41d4-a57a-b2a052c18c4a",
+          "comment": "Baksa"
+        }
+      ]
+    },
+    {
+      "name": "5",
+      "uuid": "324adf8a-b521-4dc8-9305-13cad8b2c4a4",
+      "type": "District",
+      "locations": [
+        {
+          "uuid": "6c0f1b8a-b1d0-41d0-861f-c3dca59bb8cc",
+          "comment": "Barpeta"
+        }
+      ]
+    },
+    {
+      "name": "7",
+      "uuid": "43d3c917-027e-4846-b4bc-56d2befb5b43",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "c5bce793-1cfb-4748-bc22-8ecdd1d854ac",
+          "comment": "Bikrampur"
+        }
+      ]
     }
   ]
 }
