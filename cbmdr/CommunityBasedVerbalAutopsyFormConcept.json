@@ -354,7 +354,7 @@
   },
   {
     "name": "Place of death",
-    "uuid": "e355d9d8-c10d-4f1f-821d-e86ac5bc8b75",
+    "uuid": "3f6c371a-4638-4823-be14-98c22f208902",
     "dataType": "Coded",
     "answers": [
       {
@@ -379,7 +379,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",
@@ -555,7 +555,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Medical college",
@@ -718,7 +718,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",
@@ -911,7 +911,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Quack",
@@ -1327,7 +1327,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Don't know",
@@ -1390,7 +1390,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Don't know",
@@ -1538,7 +1538,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",
@@ -1637,7 +1637,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",
@@ -2020,7 +2020,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",
@@ -2342,7 +2342,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "name": "Community Health Centre (CHC)",

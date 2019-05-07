@@ -1,0 +1,13 @@
+[
+  {
+    "uuid": "7719fbf9-f0e3-42f0-8ac4-5238da8ae21d",
+    "name": "mdr-admin",
+    "password": "password",
+    "email": "openchssupport+mdr+admin@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "operatingIndividualScope": "None",
+    "admin": false,
+    "orgAdmin": true
+  }
+]

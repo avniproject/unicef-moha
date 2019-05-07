@@ -1,5 +1,10 @@
 [
   {
+    "name": "Random",
+    "uuid": "32b2b44e-af70-4242-9b99-718c326c2720",
+    "dataType": "Text"
+  },
+  {
     "name": "Facility",
     "uuid": "331ea1dc-6140-4d07-a7bd-6e0a286f71a4"
   },
@@ -1672,10 +1677,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Spontaneous",
-    "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5"
-  },
-  {
     "name": "Abortion Type",
     "uuid": "b3e245ca-a965-464f-823a-cd75ead26911",
     "dataType": "Coded",
@@ -1879,10 +1880,6 @@
     "uuid": "e15982e1-825f-4872-a354-1a0a6ed79b6e"
   },
   {
-    "name": "Private hospital",
-    "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
-  },
-  {
     "name": "Type of facility",
     "uuid": "113a3c58-0211-44b7-8ac1-976f3580b6ec",
     "dataType": "Coded",
@@ -1913,7 +1910,7 @@
       },
       {
         "name": "Private hospital",
-        "uuid": "54961645-018f-443c-abaa-4663fa7d3d97"
+        "uuid": "8767f6a6-6ca9-41d1-b60e-2c5addf22168"
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",

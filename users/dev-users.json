@@ -1,0 +1,20 @@
+[
+  {
+    "uuid": "eebe7a0a-d2c0-4c16-9c64-c13ef87a958e",
+    "name": "mdr-dev",
+    "password": "password",
+    "email": "openchssupport+mdr+dev@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "988abcc6-0dbf-49bf-9a97-cd7020346f3f",
+    "facilities": [
+      {
+        "uuid": "cc6b91b7-28b7-4bd3-bdfc-81a4aec3bd8a",
+        "facilityUUID": "536c1319-4a15-4116-a662-f2e973d90e31"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
+  }
+]
