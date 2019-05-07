@@ -16,5 +16,29 @@
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
     "admin": false
+  },
+  {
+    "uuid": "e597dc5d-8679-4f2f-aa39-27aa9ffe1e42",
+    "name": "mdr-dev2",
+    "password": "password",
+    "email": "openchssupport+mdr+dev2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "736ae0a8-177d-483f-a6a5-b204a4c8efcf",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "b329582c-518f-425b-930f-89452c7242c6",
+    "name": "mdr-dev3",
+    "password": "password",
+    "email": "openchssupport+mdr+dev3@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "b25e19e6-d446-48e8-afb9-bc5d5cefa5ed",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false
   }
 ]

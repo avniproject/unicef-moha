@@ -7,8 +7,138 @@
       "type": "District",
       "locations": [
         {
-          "uuid": "20e00fe9-df07-4cd6-a6ca-370b47ff1429",
+          "uuid": "a091c6f6-8e7c-456f-a084-f1c8ea35de14",
           "comment": "Hailakandi"
+        }
+      ]
+    },
+    {
+      "name": "2",
+      "uuid": "736ae0a8-177d-483f-a6a5-b204a4c8efcf",
+      "type": "District",
+      "locations": [
+        {
+          "uuid": "5b9622c2-3e01-444f-9791-e8a4f722c87e",
+          "comment": "Cachar"
+        },
+        {
+          "uuid": "72ea5163-aa34-41d4-a57a-b2a052c18c4a",
+          "comment": "Baksa"
+        },
+        {
+          "uuid": "b9295a2c-aed1-423b-85c4-fa61b553535c",
+          "comment": "Kokrajhar"
+        },
+        {
+          "uuid": "785044c3-960f-490f-86af-68021624b05c",
+          "comment": "Tinsukia"
+        },
+        {
+          "uuid": "a7f777e3-4607-49b3-b53f-20d0682626a3",
+          "comment": "Jorhat"
+        },
+        {
+          "uuid": "9af26136-2d4e-4448-9e72-835e6811403a",
+          "comment": "Sivasagar"
+        },
+        {
+          "uuid": "0539fef3-b3ea-4ea3-805e-9f73a3f49c0a",
+          "comment": "Chirang"
+        },
+        {
+          "uuid": "86bc5727-cc1b-4217-be39-7f04e732c3ed",
+          "comment": "Lakhimpur"
+        },
+        {
+          "uuid": "abd2f092-0e22-423f-8f96-92e981ac673a",
+          "comment": "Darrang"
+        },
+        {
+          "uuid": "6c0f1b8a-b1d0-41d0-861f-c3dca59bb8cc",
+          "comment": "Barpeta"
+        },
+        {
+          "uuid": "7e58cc00-5479-42c0-bfa6-3d76c7c2b742",
+          "comment": "Dibrugarh"
+        },
+        {
+          "uuid": "c98d7876-01cd-414b-9dc4-153d2162d307",
+          "comment": "Karimganj"
+        },
+        {
+          "uuid": "0068384e-ad1b-4176-9bb3-efcafc0fba77",
+          "comment": "Sonitpur"
+        },
+        {
+          "uuid": "c86303a4-56ac-4a05-b3f9-64eb6c90aec8",
+          "comment": "Goalpara"
+        },
+        {
+          "uuid": "71288737-6fbe-44ee-bb61-d5b413c15db2",
+          "comment": "Nalbari"
+        },
+        {
+          "uuid": "1686d324-027a-4f3f-bd97-6528d1fa7f2c",
+          "comment": "Karbi Anglong"
+        },
+        {
+          "uuid": "460a60c4-c394-4af1-93b0-f431e7f58342",
+          "comment": "Dhemaji"
+        },
+        {
+          "uuid": "e3faaa3f-9aee-40a6-b0a0-d57f370e7f4c",
+          "comment": "Dima Hasao"
+        },
+        {
+          "uuid": "6979d170-ad5a-49e2-8f10-fe94d282f272",
+          "comment": "Udalguri"
+        },
+        {
+          "uuid": "4eb61dd5-a32e-490d-9be7-f153763d6fa1",
+          "comment": "Kamrup Rural"
+        },
+        {
+          "uuid": "1d9ce2cc-87ad-4843-a4d0-c9df3f53cb68",
+          "comment": "Nagaon"
+        },
+        {
+          "uuid": "e770f2da-e070-40ef-8bf4-2d521df757cf",
+          "comment": "Golaghat"
+        },
+        {
+          "uuid": "e3b49894-cfc2-4864-8adb-d5283103707d",
+          "comment": "District"
+        },
+        {
+          "uuid": "d4338992-e537-449e-bbfa-c886711762d2",
+          "comment": "Dhubri"
+        },
+        {
+          "uuid": "a091c6f6-8e7c-456f-a084-f1c8ea35de14",
+          "comment": "Hailakandi"
+        },
+        {
+          "uuid": "d2afaed8-3052-4923-bcd4-fe1825e7ce4c",
+          "comment": "Bongaigaon"
+        },
+        {
+          "uuid": "dc90bd3f-2750-44d9-89ea-9979f637bdcb",
+          "comment": "Kamrup Metro"
+        },
+        {
+          "uuid": "e3516c22-f29e-4369-9d25-a88475750f0a",
+          "comment": "Morigaon"
+        }
+      ]
+    },
+    {
+      "name": "3",
+      "uuid": "b25e19e6-d446-48e8-afb9-bc5d5cefa5ed",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "46ef4597-62cb-4e44-9011-b568d0d1fd2a",
+          "comment": "Bhawanipur"
         }
       ]
     }
