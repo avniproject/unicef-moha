@@ -2,24 +2,5 @@
   "name": "MDR Registration Form",
   "uuid": "96fabc2c-ec8f-4910-a9fa-5540d710d83a",
   "formType": "IndividualProfile",
-  "formElementGroups": [
-    {
-      "uuid": "c5548b66-5426-4755-b890-00bae59478a6",
-      "name": "Random",
-      "display": "Random",
-      "displayOrder": 1,
-      "formElements": [
-        {
-          "name": "Random",
-          "uuid": "4e12b351-5659-4ae2-aec9-8576d7fe39ff",
-          "keyValues": [],
-          "concept": {
-            "uuid": "32b2b44e-af70-4242-9b99-718c326c2720"
-          },
-          "displayOrder": 1,
-          "mandatory": false
-        }
-      ]
-    }
-  ]
+  "formElementGroups": []
 }

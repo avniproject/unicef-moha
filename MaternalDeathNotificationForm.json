@@ -81,7 +81,7 @@
             "dataType": "DateTime"
           },
           "displayOrder": 1,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Place of death",
@@ -91,7 +91,7 @@
             "uuid": "079fb844-0d72-49cf-8389-b821f1b5ab37"
           },
           "displayOrder": 2,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "When did death occur",
@@ -102,7 +102,7 @@
             "uuid": "9e0e21b0-e5c2-406a-8da6-a11a78d65329"
           },
           "displayOrder": 3,
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },

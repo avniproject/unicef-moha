@@ -189,7 +189,7 @@
             "uuid": "89881a1f-a428-40a6-a8d9-cf77ab9ef0b0"
           },
           "displayOrder": 1,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "1.b Date and Time of Death",
@@ -199,7 +199,7 @@
             "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93"
           },
           "displayOrder": 2,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "1.c Duration of Hospital stay",
@@ -281,7 +281,7 @@
             "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f"
           },
           "displayOrder": 7,
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },
@@ -1423,7 +1423,7 @@
             "uuid": "4497cd7f-da68-4bff-81ca-4eb3d0ced0ec"
           },
           "displayOrder": 1,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "b. If Yes, Type of facility",
@@ -1513,7 +1513,7 @@
             "uuid": "bbb1a2b5-9535-46da-9e2b-67b47b5cc5e7"
           },
           "displayOrder": 1,
-          "mandatory": false
+          "mandatory": true
         }
       ]
     },
@@ -2245,7 +2245,7 @@
             "uuid": "205dac1b-9f59-416a-97a9-6fc625f23dab"
           },
           "displayOrder": 4,
-          "mandatory": false
+          "mandatory": true
         },
         {
           "name": "Nodal officer of the hospital",
