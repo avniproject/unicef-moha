@@ -2233,7 +2233,7 @@
           "name": "X. 12. Who did the post natal check-ups",
           "uuid": "d5dfa60c-817d-41f0-bfe2-53c89026a02a",
           "keyValues": [],
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "13fee8d6-5c00-4256-a4e1-589febb538a5"
           },

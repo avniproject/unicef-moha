@@ -4,7 +4,6 @@
     "uuid": "6ff1cc86-efdb-4f17-9666-5841321087b0",
     "dataType": "Text"
   },
-  
   {
     "name": "No of weeks of pregnancy",
     "uuid": "7d73d261-3975-4b0a-bbba-fe765955b962",
@@ -192,7 +191,6 @@
     "name": "Quack",
     "uuid": "4c38a149-d3de-46e6-befd-623a4dbe8a97"
   },
-  
   {
     "name": "Sudden excruciating pain",
     "uuid": "c071e0b4-62eb-496f-af41-69664e73fd46"
@@ -349,7 +347,6 @@
         "name": "During abortion or within 6 weeks after abortion",
         "uuid": "7093eed8-f291-4db0-877c-9b9485a8d26a"
       }
-      
     ]
   },
   {
@@ -423,7 +420,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       }
     ]
   },
@@ -443,7 +441,7 @@
   {
     "name": "Other Religion",
     "uuid": "8cb023a6-d855-42a7-840b-286dd8ef3ed6",
-    "dataType":"Text"
+    "dataType": "Text"
   },
   {
     "name": "BPL Status",
@@ -458,7 +456,6 @@
         "name": "Non-BPL",
         "uuid": "a6f992d5-57d6-4ac2-a674-45631474c539"
       }
-
     ]
   },
   {
@@ -469,7 +466,7 @@
   {
     "name": "Name and location of the nearest government/private facility providing emergency obstetric care services",
     "uuid": "03fb1242-a83c-4421-ace7-1a0c10c89b97",
-    "dataType":"Text"
+    "dataType": "Text"
   },
   {
     "name": "Distance of this facility from the residence",
@@ -501,9 +498,9 @@
       },
       {
         "name": "Not applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       }
-      
     ]
   },
   {
@@ -567,7 +564,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -609,7 +607,6 @@
         "name": "Don't know",
         "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
       }
-
     ]
   },
   {
@@ -625,7 +622,8 @@
       },
       {
         "name": "Not Known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
     ]
   },
@@ -697,7 +695,7 @@
   {
     "name": "Other seeked care",
     "uuid": "a6bf54e1-4591-4f5f-8600-a2c6fab928f3",
-    "dataType":"Text"
+    "dataType": "Text"
   },
   {
     "name": "Where seeked care",
@@ -734,7 +732,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -783,7 +782,6 @@
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "abnormal": false
       }
-      
     ]
   },
   {
@@ -874,9 +872,9 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
-
     ]
   },
   {
@@ -1041,7 +1039,6 @@
     "dataType": "Numeric",
     "unit": "Hours, days"
   },
-
   {
     "name": "Date of referral from Facility 2",
     "uuid": "39eac12e-88bb-4b17-ad1c-cfeb7c328b20",
@@ -1281,7 +1278,8 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
     ]
   },
@@ -1399,7 +1397,7 @@
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
         "abnormal": false
-      }     
+      }
     ]
   },
   {
@@ -1463,7 +1461,7 @@
       {
         "name": "Don't know",
         "uuid": "a032ffce-c9f5-46f8-b89d-f82d5e91fc45"
-      } 
+      }
     ]
   },
   {
@@ -1515,7 +1513,8 @@
       },
       {
         "name": "Not applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       }
     ]
   },
@@ -1554,7 +1553,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -1846,7 +1846,8 @@
       },
       {
         "name": "Not applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -1927,11 +1928,13 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       },
       {
         "name": "Not applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       }
     ]
   },
@@ -2036,7 +2039,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -2080,7 +2084,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "name": "Don't Know",
@@ -2106,7 +2111,8 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
     ]
   },
@@ -2123,7 +2129,8 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
     ]
   },
@@ -2140,7 +2147,8 @@
       },
       {
         "name": "Not known",
-        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1"
+        "uuid": "3f193e56-067a-4694-a421-47a98f9a28f1",
+        "unique": true
       }
     ]
   },
@@ -2227,7 +2235,8 @@
       },
       {
         "name": "Not applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       }
     ]
   },
@@ -2358,7 +2367,8 @@
       },
       {
         "name": "Not Applicable",
-        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572"
+        "uuid": "798bd6b0-bd7a-4d91-a73f-6e468f420572",
+        "unique": true
       },
       {
         "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
@@ -2545,11 +2555,6 @@
     "uuid": "6daf0c36-3a3f-4487-ae0b-6bc64ca04052",
     "dataType": "Text"
   },
-
-
-
-
-
   {
     "name": "X. Date of referral from home",
     "uuid": "d0b56cef-8d96-4b46-8985-ff834d7a0242",
@@ -2664,7 +2669,6 @@
     "dataType": "Numeric",
     "unit": "Hours, days"
   },
-
   {
     "name": "X. Date of referral from Facility 2",
     "uuid": "1b806320-3956-4ca0-bf24-a67294ae5f1a",
@@ -2673,7 +2677,7 @@
   {
     "name": "X. Referral Time to reach from Facility 2",
     "uuid": "b7447e47-2b66-417f-96e4-b0dcdd7763b2",
-    "dataType" : "Time"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 2",
@@ -2767,7 +2771,7 @@
   {
     "name": "X. Referral Time to reach to Facility 3",
     "uuid": "96d05ffb-818e-487c-91fb-b00808edae6f",
-    "dataType" : "Time"
+    "dataType": "Time"
   },
   {
     "name": "X. Referral time of onset of complication at facility 3",
