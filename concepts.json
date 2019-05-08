@@ -73,8 +73,8 @@
     "dataType": "Text"
   },
   {
-    "name": "Other incidental/accidental disorder",
-    "uuid": "fb38a53c-6720-4d5d-a06d-54111a88ef2a",
+    "name": "Specify incidental/accidental disorder",
+    "uuid": "139fd4ab-e6e7-4f08-b4ef-89ad51e92322",
     "dataType": "Text"
   },
   {
@@ -830,8 +830,13 @@
     "dataType": "Text"
   },
   {
-    "name": "No of Living Children",
+    "name": "No of Living Children - Male",
     "uuid": "3999f6c7-bf9b-4c1e-a5a0-55cd90839bc7",
+    "dataType": "Numeric"
+  },
+  {
+    "name": "No of Living Children - Female",
+    "uuid": "6761e531-6bad-4158-bdfc-ba6df35d6e5b",
     "dataType": "Numeric"
   },
   {
@@ -944,7 +949,9 @@
   {
     "name": "No of Places Visited Prior",
     "uuid": "51218c08-1fd8-4706-81f6-25f48d634da9",
-    "dataType": "Numeric"
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "highAbsolute": 3
   },
   {
     "name": "Referral date from home",
@@ -1664,10 +1671,6 @@
       },
       {
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      },
-      {
-        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538",
-        "abnormal": false
       }
     ]
   },
@@ -3109,5 +3112,20 @@
     "uuid": "d94486d6-cbcd-4dae-97b6-ea82681ea0d7",
     "dataType": "Numeric",
     "unit": "Quantity"
+  },
+  {
+    "name": "Gave birth",
+    "uuid": "3bf2f6dc-49c6-4395-a918-43af5f458d6b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "name": "Yes",
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "name": "No",
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   }
 ]

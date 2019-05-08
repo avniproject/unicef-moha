@@ -1,8 +1,15 @@
+import {
+    FormElementsStatusHelper,
+    FormElementStatus,
+    FormElementStatusBuilder,
+    RuleFactory,
+    StatusBuilderAnnotationFactory,
+    WithName
+} from 'rules-config/rules';
+import lib from './lib';
 
-import { RuleFactory, FormElementStatus, FormElementsStatusHelper ,FormElementStatusBuilder, StatusBuilderAnnotationFactory} from 'rules-config/rules';
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 const RuleHelper = require('./RuleHelper');
-import lib from './lib';
 
 
 const EncounterViewFilter = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a","ViewFilter");
@@ -60,9 +67,8 @@ class FbmdrViewFilter {
         return statusBuilder.build();
     }
     @WithStatusBuilder
-    otherIncidentalAccidentalDisorder([programEncounter, formElement], statusBuilder){
-        statusBuilder.show().when.valueInEncounter("Incidental/Accidental Disorder").containsAnswerConceptName("Other");
-        return statusBuilder.build();
+    specifyIncidentalAccidentalDisorder([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Incidental/Accidental Disorder").is.yes;
     }
     @WithStatusBuilder
     otherProcedureAdoptedForAbortion([programEncounter, formElement], statusBuilder){
@@ -201,6 +207,20 @@ class FbmdrViewFilter {
         return statusBuilder.build();
     }
 
+    @WithStatusBuilder
+    ivAPlacentalCauses([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Antepartum Bleeding").is.yes;
+    }
+
+    @WithStatusBuilder
+    ivBLatePregnancyBleedingOtherThanPlacentalCauses([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Antepartum Bleeding").is.yes;
+    }
+
+    @WithStatusBuilder
+    neonatalOutcome([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Gave birth").is.yes;
+    }
 
     referralFormFromFacility1(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe=>{
