@@ -346,7 +346,7 @@
           "uuid": "ee28b6ae-0bd0-4b36-b12d-633198ceb5e8",
           "keyValues": [],
           "concept": {
-            "uuid": "3999f6c7-bf9b-4c1e-a5a0-55cd90839bc7"
+            "uuid": "07feabf6-13ec-41f2-8658-9bebc1848802"
           },
           "displayOrder": 6,
           "mandatory": false
@@ -414,7 +414,7 @@
           "uuid": "8a7651fe-eca0-42a5-9fe4-95b021a6c6e8",
           "keyValues": [],
           "concept": {
-            "uuid": "51218c08-1fd8-4706-81f6-25f48d634da9",
+            "uuid": "56e4d9dd-64dd-4c03-b92d-a27df84c662a",
             "dataType": "Numeric"
           },
           "displayOrder": 1,
