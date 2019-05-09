@@ -1,7 +1,6 @@
-const {RuleFactory, VisitScheduleBuilder} = require('rules-config/rules');
-const _ = require('lodash');
-const moment = require("moment");
-const RuleHelper = require('./RuleHelper');
+import _ from "lodash";
+import {RuleFactory, VisitScheduleBuilder} from "rules-config/rules";
+import RuleHelper from "./RuleHelper";
 
 const cbmdrVisitRule = RuleFactory("68171a3b-106d-4b2c-bf18-8732eb10cf5c", "VisitSchedule");
 const caseSummaryScheduleForForm5 = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61", "VisitSchedule");
@@ -15,7 +14,7 @@ class CbMdrPostEnrolment {
         let dateOfReporting = programEnrolment.getObservationReadableValue('Reporting Date');
         let earliestDate = _.isNil(dateOfReporting) ? programEnrolment.enrolmentDateTime : dateOfReporting;
 
-        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+        if (_.get(programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
         if(programEnrolment.getObservationReadableValue("Form filled in")==="Community"){
@@ -37,7 +36,7 @@ class CaseSummaryPostForm5 {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
-        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+        if (_.get(programEncounter.programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
         return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Community", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
@@ -50,7 +49,7 @@ class CaseSummaryPostForm6 {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
-        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+        if (_.get(programEncounter.programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
         if (programEncounter.programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
