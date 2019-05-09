@@ -15,6 +15,9 @@ class CbMdrPostEnrolment {
         let dateOfReporting = programEnrolment.getObservationReadableValue('Reporting Date');
         let earliestDate = _.isNil(dateOfReporting) ? programEnrolment.enrolmentDateTime : dateOfReporting;
 
+        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+            return scheduleBuilder.getAllUnique("encounterType");
+        }
         if(programEnrolment.getObservationReadableValue("Form filled in")==="Community"){
             let maxDate = 21;
             return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
@@ -34,6 +37,9 @@ class CaseSummaryPostForm5 {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
+        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+            return scheduleBuilder.getAllUnique("encounterType");
+        }
         return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Community", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
     }
 }
@@ -44,6 +50,12 @@ class CaseSummaryPostForm6 {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
+        if (programEnrolment.getObservationReadableValue("Type of death") !== "Suspected Maternal Death") {
+            return scheduleBuilder.getAllUnique("encounterType");
+        }
+        if (programEncounter.programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDR', 'Form5 : Community Based Verbal Autopsy Form', dateOfEncounter, 21);
+        }
         return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Facility", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
     }
 }
