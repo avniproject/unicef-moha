@@ -4,7 +4,7 @@
     {
       "uuid": "61383d58-82b4-44fb-96d0-6449f0e68c1b",
       "name": "MDSR",
-      "programRegistrationLabel": "Maternal Death",
+      "programSubjectLabel": "Maternal Death",
       "program": {
         "uuid": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
         "comment": "MDSR"
