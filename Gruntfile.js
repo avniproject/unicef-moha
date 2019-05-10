@@ -28,9 +28,9 @@ module.exports = IDI.configure({
         "catchments": [
             "catchments.json"
         ],
-        "facilities": [
-            "test-facilities.json"
-        ],
+        "facilities": {
+            "staging": ["facilities/staging-facilities.json"],
+        },
         "checklistDetails": [],
         "concepts": [
             "concepts.json",
@@ -47,7 +47,8 @@ module.exports = IDI.configure({
         "operationalPrograms": ["operationalModules/operationalPrograms.json"],
         "operationalSubjectTypes": ["operationalModules/operationalSubjectTypes.json"],
         "users": {
-            "dev": ["users/dev-users.json"]
+            "dev": ["users/dev-users.json"],
+            "staging": ["users/staging-users.json"],
         },
         "rules": [
             "./rules/index.js"

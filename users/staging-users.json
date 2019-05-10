@@ -1,0 +1,77 @@
+[
+  {
+    "uuid": "e597dc5d-8679-4f2f-aa39-27aa9ffe1e42",
+    "name": "cat2@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+dev2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "736ae0a8-177d-483f-a6a5-b204a4c8efcf",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "b329582c-518f-425b-930f-89452c7242c6",
+    "name": "cat3@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+dev3@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "b25e19e6-d446-48e8-afb9-bc5d5cefa5ed",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "5cd83e28-30ab-4508-aeb4-2fe8ee923b79",
+    "name": "facility1@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility1@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "9ada8823-c007-47c7-b6a1-1844adbd10b3",
+        "facilityUUID": "379b17cc-db44-4c1b-a98a-79509a04b66b"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "b329582c-518f-425b-930f-89452c7242c6",
+    "name": "facility2@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "ee14897f-32ca-4f5c-9b68-68b857e66335",
+        "facilityUUID": "1e02644d-a86e-410d-bde1-530d8b53dd8a"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "f6bf02b1-36b0-4941-896b-5ac092cd01c6",
+    "name": "facility4@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility3@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "9e1cc0b0-250c-4bd2-854f-a683db7def70",
+        "facilityUUID": "2cb665ec-4251-4057-b171-62cceb26be90"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
+  }
+]
