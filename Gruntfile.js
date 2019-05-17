@@ -29,7 +29,8 @@ module.exports = IDI.configure({
             "catchments.json"
         ],
         "facilities": {
-            "staging": ["facilities/staging-facilities.json"],
+            "dev": ["facilities/sample-facilities.json"],
+            "staging": ["facilities/sample-facilities.json"],
         },
         "checklistDetails": [],
         "concepts": [

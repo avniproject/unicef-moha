@@ -73,5 +73,39 @@
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
     "admin": false
+  },
+  {
+    "uuid": "a1bd55b2-a808-4d28-b823-ce8478803b77",
+    "name": "hailakandidhfacility@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facilityhdh@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "4f742415-4630-4fc6-8730-35d7ae6a6085",
+        "facilityUUID": "ea7f73a5-39f0-494c-9275-cd7c742260a4"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
+  },
+  {
+    "uuid": "adb277b9-669a-4b6b-87cd-27b98ca54c09",
+    "name": "baksadhfacility@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facilitybdh@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "5c7b5603-79a3-4426-bf0c-846835a1e7d5",
+        "facilityUUID": "f7059caf-f0c7-497e-b1b5-20a64b11d7d1"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false
   }
 ]

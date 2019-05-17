@@ -18,5 +18,15 @@
     "name": "Facility4",
     "uuid": "2cb665ec-4251-4057-b171-62cceb26be90",
     "locationUUID": "05cdd67a-dab9-420e-8db0-8a29ec40f720"
+  },
+  {
+    "name": "HailakandiDistrictHospital",
+    "uuid": "ea7f73a5-39f0-494c-9275-cd7c742260a4",
+    "locationUUID": "111cfc45-469e-44b3-a9ad-e7723efef736"
+  },
+  {
+    "name": "BaksaDistrictHospital",
+    "uuid": "f7059caf-f0c7-497e-b1b5-20a64b11d7d1",
+    "locationUUID": "6f1f9c44-52a7-4b65-a93b-7d644e63b2e9"
   }
 ]
