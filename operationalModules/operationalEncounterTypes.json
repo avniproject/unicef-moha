@@ -3,10 +3,10 @@
   "operationalEncounterTypes": [
     {
       "uuid": "42d867f1-209b-465f-ba90-d9c865b0ccc6",
-      "name": "Form 4 : Facility Based MDR",
+      "name": "Form 4 : Facility Based MDSR",
       "encounterType": {
         "uuid": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
-        "comment": "Form 4 : Facility Based MDR"
+        "comment": "Form 4 : Facility Based MDSR"
       }
     },
     {
@@ -19,7 +19,7 @@
     },
     {
       "uuid": "ecee795c-2bde-4cbd-afa7-2c877d2df5e0",
-      "name": "Form 6 : MDR Case summary",
+      "name": "Form 6 : MDSR Case summary",
       "encounterType": {
         "uuid": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403"
       }

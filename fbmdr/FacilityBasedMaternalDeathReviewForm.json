@@ -2223,6 +2223,24 @@
       ]
     },
     {
+      "uuid": "a7192af3-1f92-4e70-8c44-57dacb097e2b",
+      "name": "Image",
+      "display": "Image",
+      "displayOrder": 35.5,
+      "formElements": [
+        {
+          "name": "Capture Image",
+          "uuid": "7c3c87a4-9582-4385-bfbf-08124f431fbd",
+          "keyValues": [],
+          "concept": {
+            "uuid": "ccd4c780-775b-4141-8333-b44ab807c5da"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        }
+      ]
+    },
+    {
       "uuid": "2a9acc36-236f-40d0-aa1f-48f1983cd872",
       "name": "Form filled details",
       "display": "Form filled details",

@@ -2856,5 +2856,10 @@
     "uuid": "43a6d1ff-f6b4-433e-b34d-aa616fc71992",
     "dataType": "Numeric",
     "unit": "Hours, days"
+  },
+  {
+    "uuid": "ccd4c780-775b-4141-8333-b44ab807c5da",
+    "name": "Capture Image",
+    "dataType": "Image"
   }
 ]

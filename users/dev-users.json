@@ -9,6 +9,9 @@
     "catchmentUUID": "988abcc6-0dbf-49bf-9a97-cd7020346f3f",
     "operatingIndividualScope": "ByCatchment",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   }
 ]

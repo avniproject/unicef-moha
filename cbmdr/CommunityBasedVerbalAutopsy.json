@@ -2777,6 +2777,24 @@
           "mandatory": false
         }
       ]
+    },
+    {
+      "uuid": "e08d24fb-f308-460d-b017-7547c76d069d",
+      "name": "Image",
+      "display": "Image",
+      "displayOrder": 22,
+      "formElements": [
+        {
+          "name": "Capture Image",
+          "uuid": "36305926-07e6-4466-af93-29bd2df94c6a",
+          "keyValues": [],
+          "concept": {
+            "uuid": "ccd4c780-775b-4141-8333-b44ab807c5da"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        }
+      ]
     }
   ]
 }

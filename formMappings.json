@@ -2,7 +2,7 @@
   {
     "uuid": "428bab5b-3099-4976-8a8d-906d5eab677e",
     "formUUID": "96fabc2c-ec8f-4910-a9fa-5540d710d83a",
-    "comment": "MDR Registration Form",
+    "comment": "MDSR Registration Form",
     "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
   },
   {
@@ -10,7 +10,7 @@
     "formUUID": "2bfd54fe-7cf4-414f-9c54-ef06e950945a",
     "encounterTypeUUID": "b6383f71-ffc9-4d08-ba1f-2c2589a72171",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
-    "comment": "Facility Based MDR",
+    "comment": "Facility Based MDSR",
     "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
   },
   {
@@ -26,7 +26,7 @@
     "formUUID": "d982c23e-133c-4012-99fc-33eb9598d166",
     "encounterTypeUUID": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
-    "comment": "MDR case summary",
+    "comment": "MDSR case summary",
     "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
   },
   {
@@ -34,7 +34,7 @@
     "formUUID": "68171a3b-106d-4b2c-bf18-8732eb10cf5c",
     "encounterTypeUUID": null,
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
-    "comment": "MDR Notification form",
+    "comment": "MDSR Notification form",
     "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
   }
 ]

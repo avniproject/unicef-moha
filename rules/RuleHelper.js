@@ -1,5 +1,6 @@
-const { FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder } = require('rules-config/rules');
+const {FormElementStatusBuilder, FormElementStatus, VisitScheduleBuilder} = require('rules-config/rules');
 import lib from './lib';
+
 const moment = require("moment");
 
 class RuleHelper {
@@ -19,20 +20,19 @@ class RuleHelper {
 
     static generalObservationMatcher(context, scope, conceptName, matchingFn, [...answers] /*always array*/) {
         let statusBuilder = new FormElementStatusBuilder(context);
-        statusBuilder.show().when['valueIn'+scope](conceptName)[matchingFn](...answers);
+        statusBuilder.show().when['valueIn' + scope](conceptName)[matchingFn](...answers);
         return statusBuilder.build();
     }
 
     static Scope = {
-        Enrolment:'Enrolment',
-        Encounter:'Encounter',
-        EntireEnrolment:'EntireEnrolment'
+        Enrolment: 'Enrolment',
+        Encounter: 'Encounter',
+        EntireEnrolment: 'EntireEnrolment'
     };
 
 
-
     static removeRecommendation(decisions, groupName, recommendationName, reason) {
-        const defaultVal = { name: recommendationName , value: [] };
+        const defaultVal = {name: recommendationName, value: []};
         const group = decisions[groupName] = decisions[groupName] || [];
         const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
@@ -43,7 +43,7 @@ class RuleHelper {
     }
 
     static addRecommendation(decisions, groupName, recommendationName, reason) {
-        const defaultVal = { name: recommendationName , value: [] };
+        const defaultVal = {name: recommendationName, value: []};
         const group = decisions[groupName] = decisions[groupName] || [];
         const recommendation = group.find((d) => d.name === recommendationName) || (group.push(defaultVal), defaultVal);
         recommendation.value = recommendation.value || [];
@@ -68,7 +68,6 @@ class RuleHelper {
     }
 
 
-
     static addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
         scheduleBuilder.add({
                 name: visitName,
@@ -89,6 +88,12 @@ class RuleHelper {
 
     static scheduleOneVisit(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset) {
         this.addSchedule(scheduleBuilder, visitName, encounterTypeName, earliestDate, numberOfDaysForMaxOffset);
+        return scheduleBuilder.getAllUnique("encounterType");
+    }
+
+    static scheduleTwoVisits(scheduleBuilder, visitName1, encounterTypeName1, earliestDate1, numberOfDaysForMaxOffset1, visitName2, encounterTypeName2, earliestDate2, numberOfDaysForMaxOffset2) {
+        this.addSchedule(scheduleBuilder, visitName1, encounterTypeName1, earliestDate1, numberOfDaysForMaxOffset1);
+        this.addSchedule(scheduleBuilder, visitName2, encounterTypeName2, earliestDate2, numberOfDaysForMaxOffset2);
         return scheduleBuilder.getAllUnique("encounterType");
     }
 

@@ -17,13 +17,12 @@ class CbMdrPostEnrolment {
         if (_.get(programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
-        if(programEnrolment.getObservationReadableValue("Form filled in")==="Community"){
+        if (programEnrolment.getObservationReadableValue("Form filled in") === "Community") {
             let maxDate = 21;
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
-        }
-        else if (programEnrolment.getObservationReadableValue("Form filled in")==="Facility"){
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDSR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
+        } else if (programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
             let maxDate = 2;
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 4 : Facility Based MDR', 'Form 4 : Facility Based MDR', earliestDate, maxDate);
+            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 4 : Facility Based MDSR', 'Form 4 : Facility Based MDSR', earliestDate, maxDate);
         }
 
     }
@@ -32,20 +31,20 @@ class CbMdrPostEnrolment {
 
 @caseSummaryScheduleForForm5("76b2d695-4311-4ed5-86dc-7b4393a952f3", "caseSummarySchedulePostForm5", 10.0)
 class CaseSummaryPostForm5 {
-    static exec(programEncounter, visitSchedule = []){
+    static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
         if (_.get(programEncounter.programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
-        return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Community", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, "Form 6 : Case Summary - Community", "Form 6: MDSR Case summary", dateOfEncounter, maxDate);
     }
 }
 
 @caseSummaryScheduleForForm4("7bd5f9eb-97f8-4780-b527-a10fea22341d", "caseSummarySchedulePostForm4", 10.0)
 class CaseSummaryPostForm6 {
-    static exec(programEncounter, visitSchedule = []){
+    static exec(programEncounter, visitSchedule = []) {
         let scheduleBuilder = RuleHelper.createProgramEncounterVisitScheduleBuilder(programEncounter, visitSchedule);
         let dateOfEncounter = programEncounter.encounterDateTime;
         let maxDate = 1;
@@ -53,9 +52,9 @@ class CaseSummaryPostForm6 {
             return scheduleBuilder.getAllUnique("encounterType");
         }
         if (programEncounter.programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDR', 'Form5 : Community Based Verbal Autopsy Form', dateOfEncounter, 21);
+            return RuleHelper.scheduleTwoVisits(scheduleBuilder, "Form 6 : Case Summary - Facility", "Form 6: MDSR Case summary", dateOfEncounter, maxDate,
+                'Form 5 : Community Based MDSR', 'Form5 : Community Based Verbal Autopsy Form', dateOfEncounter, 21);
         }
-        return RuleHelper.scheduleOneVisit(scheduleBuilder,"Form 6 : Case Summary - Facility", "Form 6: MDR Case summary", dateOfEncounter,maxDate);
     }
 }
 

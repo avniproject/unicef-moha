@@ -9,7 +9,10 @@
     "catchmentUUID": "736ae0a8-177d-483f-a6a5-b204a4c8efcf",
     "operatingIndividualScope": "ByCatchment",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "84225f1f-4aad-44cb-948c-c3617b468c1e",
@@ -21,7 +24,10 @@
     "catchmentUUID": "b25e19e6-d446-48e8-afb9-bc5d5cefa5ed",
     "operatingIndividualScope": "ByCatchment",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "5cd83e28-30ab-4508-aeb4-2fe8ee923b79",
@@ -38,7 +44,10 @@
     ],
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "b329582c-518f-425b-930f-89452c7242c6",
@@ -55,7 +64,10 @@
     ],
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "f6bf02b1-36b0-4941-896b-5ac092cd01c6",
@@ -72,7 +84,10 @@
     ],
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "a1bd55b2-a808-4d28-b823-ce8478803b77",
@@ -89,7 +104,10 @@
     ],
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   },
   {
     "uuid": "adb277b9-669a-4b6b-87cd-27b98ca54c09",
@@ -106,6 +124,9 @@
     ],
     "operatingIndividualScope": "ByFacility",
     "orgAdmin": false,
-    "admin": false
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
   }
 ]
