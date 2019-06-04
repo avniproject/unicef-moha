@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Barpeta Facility1",
+    "uuid": "6a948ec3-8149-45a2-a5da-f903ab81861b",
+    "locationUUID": "f237e4e0-b7b5-4fab-9abf-c7c39f196947"
+  },
+  {
+    "name": "Karimganj Facility1",
+    "uuid": "59d440bd-14ec-42ef-abe5-ec05860a550f",
+    "locationUUID": "e2560aa9-8c63-4504-830d-f0f7dcedfb06"
+  }
+]

@@ -1,12 +1,12 @@
 [
   {
-    "uuid": "e597dc5d-8679-4f2f-aa39-27aa9ffe1e42",
-    "name": "cat2@mdr",
+    "uuid": "882c1b87-53a8-4554-a98d-66e3fea66369",
+    "name": "bdm1chenga@mdr",
     "password": "password",
-    "email": "openchssupport+mdr+dev2@samanvayfoundation.org",
+    "email": "openchssupport+bdm1Chenga+@samanvayfoundation.org",
     "phoneNumber": "+919999999999",
     "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
-    "catchmentUUID": "736ae0a8-177d-483f-a6a5-b204a4c8efcf",
+    "catchmentUUID": "8d15aa58-bca3-4244-802c-01e54d4a6c88",
     "operatingIndividualScope": "ByCatchment",
     "orgAdmin": false,
     "admin": false,
@@ -15,16 +15,101 @@
     }
   },
   {
-    "uuid": "a1bd55b2-a808-4d28-b823-ce8478803b77",
-    "name": "hailakandidhfacility@mdr",
+    "uuid": "b654ca91-308d-4d7d-a842-1fe8323bb36e",
+    "name": "bmo1chenga@mdr",
     "password": "password",
-    "email": "openchssupport+mdr+facilityhdh@samanvayfoundation.org",
+    "email": "openchssupport+bdm1Chenga+@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "a0cf88f7-dc1e-4403-a90c-09ba028a22ad",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
+  },
+  {
+    "uuid": "e7d461f5-5bfa-48d7-9d72-281a5add80c0",
+    "name": "bdm1mandia@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+dev2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "9ba173f7-6c36-448a-abec-b85959c19e54",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
+  },
+  {
+    "uuid": "59f58005-8aaa-4fd8-bb1b-557babaa6def",
+    "name": "bmo1mandia@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+dev2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "catchmentUUID": "75674b52-af2d-4f02-b80f-4425e0bbcf7f",
+    "operatingIndividualScope": "ByCatchment",
+    "orgAdmin": false,
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
+  },
+  {
+    "uuid": "6645d957-5b7e-48af-be5b-e77afdb34d82",
+    "name": "facility1mo1@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility1mo1@samanvayfoundation.org",
     "phoneNumber": "+919999999999",
     "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
     "facilities": [
       {
-        "uuid": "4f742415-4630-4fc6-8730-35d7ae6a6085",
-        "facilityUUID": "ea7f73a5-39f0-494c-9275-cd7c742260a4"
+        "uuid": "dbd03d67-1bcc-46a1-a4d0-ac6facc2156a",
+        "facilityUUID": "6a948ec3-8149-45a2-a5da-f903ab81861b"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
+  },
+  {
+    "uuid": "141d8b84-cfdd-491c-99d0-fbcd83da0a7b",
+    "name": "facility1mo2@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility1mo2@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "97eabee2-14a5-48cd-a2f4-d13ec50c4c3f",
+        "facilityUUID": "6a948ec3-8149-45a2-a5da-f903ab81861b"
+      }
+    ],
+    "operatingIndividualScope": "ByFacility",
+    "orgAdmin": false,
+    "admin": false,
+    "settings": {
+      "trackLocation": true
+    }
+  },
+  {
+    "uuid": "0a5d23a8-6512-459d-871d-adcd9c2ea745",
+    "name": "facility2mo1@mdr",
+    "password": "password",
+    "email": "openchssupport+mdr+facility2mo1@samanvayfoundation.org",
+    "phoneNumber": "+919999999999",
+    "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+    "facilities": [
+      {
+        "uuid": "0f24b6fc-2786-4c88-9c3c-6c7fb4936c76",
+        "facilityUUID": "59d440bd-14ec-42ef-abe5-ec05860a550f"
       }
     ],
     "operatingIndividualScope": "ByFacility",

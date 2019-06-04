@@ -32,7 +32,7 @@ module.exports = IDI.configure({
         "facilities": {
             "dev": ["facilities/sample-facilities.json"],
             "staging": ["facilities/sample-facilities.json"],
-            "uat": ["facilities/sample-facilities.json"],
+            "uat": ["facilities/uat-facilities.json"],
         },
         "checklistDetails": [],
         "concepts": [

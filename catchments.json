@@ -74,6 +74,50 @@
           "comment": "Bikrampur"
         }
       ]
+    },
+    {
+      "name": "Chenga1",
+      "uuid": "8d15aa58-bca3-4244-802c-01e54d4a6c88",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "2bc1a8d3-a77a-4825-8d9f-acf3aa30d581",
+          "comment": "Chenga"
+        }
+      ]
+    },
+    {
+      "name": "Chenga2",
+      "uuid": "a0cf88f7-dc1e-4403-a90c-09ba028a22ad",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "2bc1a8d3-a77a-4825-8d9f-acf3aa30d581",
+          "comment": "Chenga"
+        }
+      ]
+    },
+    {
+      "name": "Mandia1",
+      "uuid": "9ba173f7-6c36-448a-abec-b85959c19e54",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "a8816ef6-5752-45f4-b650-bd7e888fd066",
+          "comment": "Mandia"
+        }
+      ]
+    },
+    {
+      "name": "Mandia2",
+      "uuid": "75674b52-af2d-4f02-b80f-4425e0bbcf7f",
+      "type": "Block",
+      "locations": [
+        {
+          "uuid": "a8816ef6-5752-45f4-b650-bd7e888fd066",
+          "comment": "Mandia"
+        }
+      ]
     }
   ]
 }
