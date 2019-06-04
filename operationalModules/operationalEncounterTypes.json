@@ -19,9 +19,16 @@
     },
     {
       "uuid": "ecee795c-2bde-4cbd-afa7-2c877d2df5e0",
-      "name": "Form 6 : MDSR Case summary",
+      "name": "Form 6 : MDSR Case summary Community",
       "encounterType": {
         "uuid": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403"
+      }
+    },
+    {
+      "uuid": "becd6e17-fbfe-4fa4-ab1c-a4807e557070",
+      "name": "Form 6 : MDSR Case summary Facility",
+      "encounterType": {
+        "uuid": "a758dc40-3d94-4630-afbd-acab46db7c71"
       }
     }
   ]

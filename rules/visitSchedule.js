@@ -38,7 +38,7 @@ class CaseSummaryPostForm5 {
         if (_.get(programEncounter.programEnrolment.getObservationReadableValue("Type of death"), 0) !== "Suspected Maternal Death") {
             return scheduleBuilder.getAllUnique("encounterType");
         }
-        return RuleHelper.scheduleOneVisit(scheduleBuilder, "Form 6 : Case Summary - Community", "Form 6: MDSR Case summary", dateOfEncounter, maxDate);
+        return RuleHelper.scheduleOneVisit(scheduleBuilder, "Form 6 : Case Summary - Community", "Form 6: MDSR Case summary Community", dateOfEncounter, maxDate);
     }
 }
 
@@ -52,7 +52,7 @@ class CaseSummaryPostForm6 {
             return scheduleBuilder.getAllUnique("encounterType");
         }
         if (programEncounter.programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
-            return RuleHelper.scheduleTwoVisits(scheduleBuilder, "Form 6 : Case Summary - Facility", "Form 6: MDSR Case summary", dateOfEncounter, maxDate,
+            return RuleHelper.scheduleTwoVisits(scheduleBuilder, "Form 6 : Case Summary - Facility", "Form 6: MDSR Case summary Facility", dateOfEncounter, maxDate,
                 'Form 5 : Community Based MDSR', 'Form5 : Community Based Verbal Autopsy Form', dateOfEncounter, 21);
         }
     }

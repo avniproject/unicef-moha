@@ -26,7 +26,15 @@
     "formUUID": "d982c23e-133c-4012-99fc-33eb9598d166",
     "encounterTypeUUID": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403",
     "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
-    "comment": "MDSR case summary",
+    "comment": "MDSR case summary Community",
+    "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
+  },
+  {
+    "uuid": "dfd257fb-43c9-4a0d-856d-480090690f71",
+    "formUUID": "d982c23e-133c-4012-99fc-33eb9598d166",
+    "encounterTypeUUID": "a758dc40-3d94-4630-afbd-acab46db7c71",
+    "programUUID": "b5e689c0-05d0-4df6-a144-fb980e26ec10",
+    "comment": "MDSR case summary Facility",
     "subjectTypeUUID": "9f2af1f9-e150-4f8e-aad3-40bb7eb05aa3"
   },
   {

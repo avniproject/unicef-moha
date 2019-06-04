@@ -5,6 +5,7 @@ import {
     FormElementStatusBuilder,
     StatusBuilderAnnotationFactory
 } from 'rules-config/rules';
+import {WithName} from "rules-config";
 
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
@@ -16,6 +17,138 @@ const EncounterViewFilter = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61", 
 
 @EncounterViewFilter("81af8852-dd3f-48e3-9717-0f2de5de6654", "CBMDR View Filter", 100, {})
 class CbmdrViewFilter {
+
+    participateInInterview(formElementGroup, encounter) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({programEncounter: encounter, formElement: fe});
+            statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
+            return statusBuilder.build();
+        });
+    }
+
+    backgroundInformation(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    profileOfDeceaseWoman(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Availability of health facilities, services and transport')
+    dummy1(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Write GPLA-Gravida, Para, Live Births, Abortions')
+    dummy2(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Current Pregnancy (To be filled from the information given by the respondents and MCP Card)')
+    dummy3(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Module II')
+    dummy4(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Death during Antenatal Period')
+    dummy5(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Referral from Home/Village')
+    dummy6(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Referral form from Facility 1')
+    dummy7(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Referral form from Facility 2')
+    dummy8(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Referral form from Facility 3')
+    dummy9(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Seeking care')
+    dummy10(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('VIII. Abortion related Death')
+    dummy11(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Module III')
+    dummy12(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Outcome of the delivery')
+    dummy13(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('X. POST NATAL PERIOD')
+    dummy14(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Problems following delivery')
+    dummy15(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Postnatal Checkups')
+    dummy16(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('X. Referral from Home/Village')
+    dummy17(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('X. Referral form from Facility 1')
+    dummy18(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('X. Referral form from Facility 2')
+    dummy19(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('X. Referral form from Facility 3')
+    dummy20(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Open History')
+    dummy21(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('What could have been done to prevent death')
+    dummy22(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
+    @WithName('Image')
+    dummy23(encounter, formElementGroup) {
+        return this.participateInInterview(formElementGroup, encounter)
+    }
+
     @WithStatusBuilder
     otherPlaceOfDeath([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Place of death").containsAnswerConceptName("Other");
@@ -547,7 +680,8 @@ class CbmdrViewFilter {
 
     nameOfTheDeceasedWoman(programEncounter, formElement) {
         const name = programEncounter.programEnrolment.individual.nameString;
-        return new FormElementStatus(formElement.uuid, true, name);
+        const display = programEncounter.getObservationReadableValue('Participate in this interview') === 'No' ? false : true;
+        return new FormElementStatus(formElement.uuid, display, name);
     }
 
 

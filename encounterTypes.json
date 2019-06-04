@@ -8,7 +8,11 @@
     "uuid": "c5f537c5-dedf-478c-8da1-fa7ac4d5cf2c"
   },
   {
-    "name": "Form 6: MDSR Case summary",
+    "name": "Form 6: MDSR Case summary Community",
     "uuid": "dce0c6f5-76ee-4e8e-9ca6-4fc793866403"
+  },
+  {
+    "name": "Form 6: MDSR Case summary Facility",
+    "uuid": "a758dc40-3d94-4630-afbd-acab46db7c71"
   }
 ]
