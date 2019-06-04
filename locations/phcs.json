@@ -2992,17 +2992,6 @@
     ]
   },
   {
-    "uuid": "ff2275d2-283b-416a-97a5-eab4c936414b",
-    "name": "Phc",
-    "level": 2.6,
-    "type": "PHC Area",
-    "parents": [
-      {
-        "uuid": "452f1e22-fc41-42a0-a9b9-795a9147f1ae"
-      }
-    ]
-  },
-  {
     "uuid": "0e723f76-0df9-4b2a-978a-058a8d6848ca",
     "name": "Deorighat PHC",
     "level": 2.6,

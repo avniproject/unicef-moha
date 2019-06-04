@@ -1188,17 +1188,6 @@
     ]
   },
   {
-    "uuid": "452f1e22-fc41-42a0-a9b9-795a9147f1ae",
-    "name": "Block",
-    "level": 3,
-    "type": "Block",
-    "parents": [
-      {
-        "uuid": "fc8d9183-4267-4c6d-810c-f066443421e7"
-      }
-    ]
-  },
-  {
     "uuid": "813e5f7a-533f-4fb1-b58c-c9d7f8e51b25",
     "name": "Biswanath Chariali",
     "level": 3,
