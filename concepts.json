@@ -518,8 +518,14 @@
     "dataType": "Duration"
   },
   {
-    "name": "Live Births",
+    "name": "Past Live Births",
     "uuid": "eca8d9c2-b818-4913-abb1-1724920c9a41",
+    "dataType": "Numeric",
+    "unit": "No of live births"
+  },
+  {
+    "name": "Present Live Births",
+    "uuid": "26319f2a-49a7-4225-83b1-4f4ed4ca3f8c",
     "dataType": "Numeric",
     "unit": "No of live births"
   },
@@ -606,12 +612,6 @@
     "name": "Name of Nodal Person",
     "uuid": "4205021b-68e6-43ec-a78b-ff6471f62337",
     "dataType": "Text"
-  },
-  {
-    "name": "Placeholder",
-    "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650",
-    "dataType": "Coded",
-    "answers": []
   },
   {
     "name": "FBMDR NO.",

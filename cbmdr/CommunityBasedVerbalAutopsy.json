@@ -72,7 +72,7 @@
           "uuid": "36ddff83-9f3c-4def-a563-db190520e0b2",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -82,7 +82,7 @@
           "uuid": "d3fb3247-7360-4176-8085-57cccd49f0d1",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 2,
           "mandatory": false
@@ -92,7 +92,7 @@
           "uuid": "96e158f9-a7cf-40c4-89bf-19670200244d",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 3,
           "mandatory": false
@@ -102,7 +102,7 @@
           "uuid": "a97f502c-75ff-4df0-8435-185b33059c93",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 4,
           "mandatory": false
@@ -112,7 +112,7 @@
           "uuid": "4d5901c2-8922-434b-b574-7a4b91c5a4f8",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 5,
           "mandatory": false
@@ -122,7 +122,7 @@
           "uuid": "19b97eae-08c9-45ff-a810-f8923bb2b22e",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 6,
           "mandatory": false
@@ -132,7 +132,7 @@
           "uuid": "a054f53b-c227-466d-805f-3ed58f38e0f9",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 7,
           "mandatory": false
@@ -142,7 +142,7 @@
           "uuid": "00ca5492-8571-47b1-abcf-8f7061c6bd2b",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 8,
           "mandatory": false
@@ -160,7 +160,7 @@
           "uuid": "0f873de4-b68e-4ec7-a47b-9981de395485",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -238,7 +238,7 @@
           "uuid": "02579e29-d2bb-462d-9741-fb0637ecea15",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -533,7 +533,7 @@
           "mandatory": false
         },
         {
-          "name": "Live Birth",
+          "name": "Live Births",
           "uuid": "323f1dba-45d1-4e93-bd7f-47d97852736c",
           "keyValues": [],
           "concept": {
@@ -728,7 +728,7 @@
           "uuid": "8d2486ae-9f73-4053-bff8-e9deccdf04dc",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -759,7 +759,7 @@
           "uuid": "56caf29f-4a5f-40c8-a0fb-cbc10b1eb46f",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -850,7 +850,7 @@
           "uuid": "6b3deb0d-bfea-49b8-a580-dee3d30f99b7",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1.1,
           "mandatory": false
@@ -1008,7 +1008,7 @@
           "uuid": "cce2c4c5-3070-48f0-8f1d-3eee18dc7f07",
           "type": "SingleSelect",
           "concept": {
-            "uuid": "dcd04ea9-c92b-4356-94dd-67408e17c933"
+            "uuid": "61dfc28e-54e6-4a66-9449-c6b1e92e710e"
           },
           "displayOrder": 10,
           "mandatory": false
@@ -1027,7 +1027,7 @@
           "uuid": "0f94ac40-0521-4cac-a2a4-a2b78676843c",
           "keyValues": [],
           "concept": {
-            "uuid": "ff2aaf60-b72e-46ff-88dd-ee02e2a1e26f"
+            "uuid": "ce501675-82f0-4b30-a699-d8c67b674a46"
           },
           "displayOrder": 12,
           "mandatory": false
@@ -1075,7 +1075,7 @@
           "uuid": "8d1eb754-fd1f-45fe-b5dc-2e45c10c4c16",
           "keyValues": [],
           "concept": {
-            "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7"
+            "uuid": "991bfc76-f623-4299-bf59-c2eb5554c1f8"
           },
           "displayOrder": 3,
           "mandatory": false
@@ -1085,7 +1085,7 @@
           "uuid": "0110a4fa-827d-4b0a-9873-34a1dd72c501",
           "keyValues": [],
           "concept": {
-            "uuid": "ed54c6c0-f08d-4a06-8835-9eff0b5f9824"
+            "uuid": "a388eef9-2abc-41f5-a195-8936d396a05b"
           },
           "displayOrder": 4,
           "mandatory": false
@@ -1222,7 +1222,7 @@
           "uuid": "456d6761-9a76-445b-9cb5-effd9418bc23",
           "keyValues": [],
           "concept": {
-            "uuid": "0034d570-5cc0-4a84-b12a-064aade68fa7"
+            "uuid": "848bb657-7e29-4b15-b248-0f7a56690b3c"
           },
           "displayOrder": 3,
           "mandatory": false
@@ -1577,7 +1577,7 @@
           "uuid": "6e3c5c42-1203-494a-b664-f04ef1a63f42",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -1587,7 +1587,7 @@
           "uuid": "abc1a78f-edbb-4fbf-81e3-648cd25cc789",
           "keyValues": [],
           "concept": {
-            "uuid": "6e21ec9a-7bc0-4944-8a94-946e182d1650"
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
           },
           "displayOrder": 2,
           "mandatory": false
@@ -1720,10 +1720,7 @@
           "uuid": "127351c6-f479-42b3-8d16-a856b23a5679",
           "keyValues": [],
           "concept": {
-            "name": "Live Births",
-            "uuid": "eca8d9c2-b818-4913-abb1-1724920c9a41",
-            "dataType": "Numeric",
-            "unit": "No of live births"
+            "uuid": "26319f2a-49a7-4225-83b1-4f4ed4ca3f8c"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -1733,10 +1730,7 @@
           "uuid": "41a90642-fd53-456f-be83-e59f571b6198",
           "keyValues": [],
           "concept": {
-            "name": "Still Births",
-            "uuid": "f751d9b5-a83c-48c9-8db6-4418aa3c24d8",
-            "dataType": "Numeric",
-            "unit": "No. of still births"
+            "uuid": "f751d9b5-a83c-48c9-8db6-4418aa3c24d8"
           },
           "displayOrder": 2,
           "mandatory": false
