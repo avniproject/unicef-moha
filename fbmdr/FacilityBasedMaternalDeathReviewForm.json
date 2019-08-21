@@ -63,7 +63,7 @@
           "mandatory": false
         },
         {
-          "name": "MCTS ID",
+          "name": "RCH Number",
           "uuid": "9978f900-28b8-4ade-ad9f-c29a951b00f9",
           "concept": {
             "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f"
@@ -182,7 +182,7 @@
       "displayOrder": 3,
       "formElements": [
         {
-          "name": "1.a Date and Time of admission",
+          "name": "Date and time of Admission",
           "uuid": "75fe8187-05ff-4249-856b-90220a473aef",
           "keyValues": [],
           "concept": {
@@ -192,7 +192,7 @@
           "mandatory": true
         },
         {
-          "name": "1.b Date and Time of Death",
+          "name": "Date and time of Death",
           "uuid": "399b0d9f-8666-41e6-8f8f-6d60bdfda2c2",
           "keyValues": [],
           "concept": {
@@ -202,15 +202,12 @@
           "mandatory": true
         },
         {
-          "name": "1.c Duration of Hospital stay",
+          "name": "Duration of Hospital stay",
           "uuid": "a01f8db9-f258-4260-bda1-00cf61c334ae",
           "keyValues": [
             {
-              "key": "durationOptions",
-              "value": [
-                "Days",
-                "Hours"
-              ]
+              "key": "editable",
+              "value": false
             }
           ],
           "concept": {
@@ -220,7 +217,17 @@
           "mandatory": false
         },
         {
-          "name": "1.d Duration of ICU Stay",
+          "name": "Was mother admitted to ICU?",
+          "uuid": "bda25b11-c1b1-42e4-8ba4-ccb16537d039",
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "090bb4ab-7ba3-4aab-a040-acef52c75ed3"
+          },
+          "displayOrder": 4,
+          "mandatory": true
+        },
+        {
+          "name": "Duration of ICU Stay",
           "uuid": "d37063ff-9557-4497-b946-24022e74bdcc",
           "keyValues": [
             {
@@ -234,37 +241,62 @@
           "concept": {
             "uuid": "2f6e79b3-eafa-4101-b01a-a18636fc21a7"
           },
-          "displayOrder": 4,
-          "mandatory": false
+          "displayOrder": 4.1,
+          "mandatory": true
         },
         {
-          "name": "1.e Admission-delivery interval",
+          "name": "Why was mother not admitted to the ICU?",
+          "uuid": "6f2ef338-123e-4ef7-b540-51e0659baa30",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "91df8f1c-8029-414c-9581-7b3e01f1e724"
+          },
+          "displayOrder": 4.2,
+          "mandatory": true
+        },
+        {
+          "name": "Outcome of pregnancy",
+          "uuid": "7a5f0af7-a6eb-4aeb-8a65-f1864a0bb4ef",
+          "keyValues": [],
+          "concept": {
+            "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f"
+          },
+          "displayOrder": 5,
+          "mandatory": true
+        },
+        {
+          "name": "Date and time of Delivery",
+          "uuid": "eeb6f23e-5f17-4fca-9cec-e89338704e96",
+          "keyValues": [],
+          "concept": {
+            "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a"
+          },
+          "displayOrder": 5.1,
+          "mandatory": true
+        },
+        {
+          "name": "Admission -> delivery interval",
           "uuid": "272ec2eb-b704-468f-80b8-7b7dfebaef88",
           "keyValues": [
             {
-              "key": "durationOptions",
-              "value": [
-                "Days",
-                "Hours"
-              ]
+              "key": "editable",
+              "value": false
             }
           ],
           "concept": {
             "uuid": "bc543109-7ab8-4ba4-af97-b3ba171e9153"
           },
-          "displayOrder": 5,
+          "displayOrder": 5.2,
           "mandatory": false
         },
         {
-          "name": "1.f Admission-death interval",
+          "name": "Admission -> death interval",
           "uuid": "b40f413e-4bfd-477a-a7ab-57a6d1d2294b",
           "keyValues": [
             {
-              "key": "durationOptions",
-              "value": [
-                "Days",
-                "Hours"
-              ]
+              "key": "editable",
+              "value": false
             }
           ],
           "concept": {
@@ -272,16 +304,6 @@
           },
           "displayOrder": 6,
           "mandatory": false
-        },
-        {
-          "name": "1.g Outcome of pregnancy",
-          "uuid": "7a5f0af7-a6eb-4aeb-8a65-f1864a0bb4ef",
-          "keyValues": [],
-          "concept": {
-            "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f"
-          },
-          "displayOrder": 7,
-          "mandatory": true
         }
       ]
     },

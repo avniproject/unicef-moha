@@ -619,7 +619,7 @@
     "dataType": "Numeric"
   },
   {
-    "name": "MCTS NO",
+    "name": "RCH Number",
     "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f",
     "dataType": "Numeric"
   },
@@ -757,20 +757,32 @@
     ]
   },
   {
-    "name": "Date and Time of Admission",
+    "name": "Date and time of Admission",
     "uuid": "89881a1f-a428-40a6-a8d9-cf77ab9ef0b0",
     "dataType": "DateTime"
   },
   {
-    "name": "Date and Time of Death",
+    "name": "Date and time of Death",
     "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93",
-    "dataType": "DateTime",
-    "mandatory": false
+    "dataType": "DateTime"
   },
   {
     "name": "Duration of Hospital Stay",
     "uuid": "9cf4c6e4-a516-4121-8f78-7501c7fbe8c4",
-    "dataType": "Duration"
+    "dataType": "Text"
+  },
+  {
+    "name": "Was mother admitted to ICU?",
+    "uuid": "090bb4ab-7ba3-4aab-a040-acef52c75ed3",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
+      },
+      {
+        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
+      }
+    ]
   },
   {
     "name": "Duration of ICU Stay",
@@ -778,14 +790,53 @@
     "dataType": "Duration"
   },
   {
+    "name": "ICU was not required",
+    "uuid": "42059052-36d2-4b47-8b65-a9e68390c236",
+    "dataType": "NA"
+  },
+  {
+    "name": "HDU/Obs ICU not available",
+    "uuid": "c96c9c88-819f-4409-a639-f0839912d21a",
+    "dataType": "NA"
+  },
+  {
+    "name": "HDU/Obs ICU Bed not available",
+    "uuid": "8b49ebe5-c94b-4a9b-9da4-8337638e833f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Reason for mother not being admitted to the ICU",
+    "uuid": "91df8f1c-8029-414c-9581-7b3e01f1e724",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "42059052-36d2-4b47-8b65-a9e68390c236",
+        "abnormal": false
+      },
+      {
+        "uuid": "c96c9c88-819f-4409-a639-f0839912d21a",
+        "abnormal": true
+      },
+      {
+        "uuid": "8b49ebe5-c94b-4a9b-9da4-8337638e833f",
+        "abnormal": true
+      }
+    ]
+  },
+  {
+    "name": "Date and time of Delivery",
+    "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a",
+    "dataType": "DateTime"
+  },
+  {
     "name": "Admission-delivery interval",
     "uuid": "bc543109-7ab8-4ba4-af97-b3ba171e9153",
-    "dataType": "Duration"
+    "dataType": "Text"
   },
   {
     "name": "Admission-death interval",
     "uuid": "01882f0f-41e5-4ce1-b0d3-0116e279d1cc",
-    "dataType": "Duration"
+    "dataType": "Text"
   },
   {
     "uuid": "4006c7ed-b1b8-459a-8424-181969d6f23a",
@@ -798,7 +849,7 @@
     "dataType": "NA"
   },
   {
-    "name": "Outcome of Pregnancy",
+    "name": "Outcome of pregnancy",
     "uuid": "2aee3472-3034-4a5e-abf5-8100c5890f3f",
     "dataType": "Coded",
     "answers": [

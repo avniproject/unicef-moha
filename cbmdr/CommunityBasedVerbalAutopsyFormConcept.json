@@ -408,6 +408,11 @@
     "dataType": "DateTime"
   },
   {
+    "name": "Date of death",
+    "uuid": "ec98a4f9-9406-4706-8567-d4f6610f3583",
+    "dataType": "Date"
+  },
+  {
     "name": "Did the doctor or nurse at the health facility tell you the cause of death.",
     "uuid": "f44552ea-41f7-4056-b3ca-6867d3893ec2",
     "dataType": "Coded",
@@ -1717,16 +1722,6 @@
     "name": "Other, reason for home delivery",
     "uuid": "2f7da1fd-f199-4068-8f7a-cb3cf881af1e",
     "dataType": "Text"
-  },
-  {
-    "name": "Date and time of delivery",
-    "uuid": "dcb4741d-d65c-404e-8aec-8b805cde875a",
-    "dataType": "DateTime"
-  },
-  {
-    "name": "Date and time of death",
-    "uuid": "129198de-adec-4575-b960-047e30b8cefd",
-    "dataType": "DateTime"
   },
   {
     "name": "Delivery conducted by",

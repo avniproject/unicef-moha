@@ -4,9 +4,12 @@ import {
     FormElementStatusBuilder,
     RuleFactory,
     StatusBuilderAnnotationFactory,
-    WithName
+    WithName,
+    lib
 } from 'rules-config/rules';
-import lib from './lib';
+import moment from 'moment';
+const _ = require("lodash");
+
 
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 const RuleHelper = require('./RuleHelper');
@@ -16,9 +19,71 @@ const EncounterViewFilter = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a","
 const FormValidation = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a",'Validation');
 
 
+const calculateDurationInDaysAndHours = (startDateTime, endDateTime) => {
+    if (!_.isNil(startDateTime) && !_.isNil(endDateTime)) {
+        let diff = moment(endDateTime).diff(moment(startDateTime), 'days', true);
+        let days = Math.floor(diff);
+        let decimalValue = diff - days;
+        let hours = Math.round(decimalValue * 24 * 4) / 4;
+        return `${days} days, ${hours} hours`;
+    }
+};
 
 @EncounterViewFilter("63c43b26-794d-4213-aecb-c8093bc74921", "FBMDR View Filter", 100, {})
 class FbmdrViewFilter {
+
+    @WithStatusBuilder
+    durationOfHospitalStay([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show();
+        let formElementStatus = statusBuilder.build();
+        formElementStatus.value = calculateDurationInDaysAndHours(
+            programEncounter.getObservationValue('Date and time of Admission'),
+            programEncounter.getObservationValue('Date and time of Death')
+        );
+        return formElementStatus;
+    }
+
+    @WithStatusBuilder
+    durationOfIcuStay([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Was mother admitted to ICU?").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    whyWasMotherNotAdmittedToTheIcu([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Was mother admitted to ICU?").containsAnswerConceptName("No");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    dateAndTimeOfDelivery([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Outcome of pregnancy").containsAnyAnswerConceptName("Live Birth", "Still Birth");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    admissionDeliveryInterval([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Outcome of pregnancy").containsAnyAnswerConceptName("Live Birth", "Still Birth");
+        let formElementStatus = statusBuilder.build();
+        formElementStatus.value = calculateDurationInDaysAndHours(
+            programEncounter.getObservationValue('Date and time of Admission'),
+            programEncounter.getObservationValue('Date and time of Delivery')
+        );
+        return formElementStatus;
+    }
+
+    @WithStatusBuilder
+    admissionDeathInterval([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show();
+        let formElementStatus = statusBuilder.build();
+        formElementStatus.value = calculateDurationInDaysAndHours(
+            programEncounter.getObservationValue('Date and time of Admission'),
+            programEncounter.getObservationValue('Date and time of Death')
+        );
+
+        return formElementStatus;
+    }
+
     @WithStatusBuilder
     otherStaffAttendedAtHome([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Referral Attended from home").containsAnswerConceptName("Other Staff");
@@ -258,8 +323,6 @@ class FbmdrViewFilter {
 class FbmdrFormValidator {
     validate(programEncounter){
         const validationResults = [];
-        console.log("para",programEncounter.getObservationReadableValue('Parity'));
-        console.log("gravida",programEncounter.getObservationReadableValue('Gravida'));
 
         if(programEncounter.getObservationReadableValue('Parity') > programEncounter.getObservationReadableValue('Gravida')){
             validationResults.push(lib.C.createValidationError('Para Cannot be greater than Gravida'));

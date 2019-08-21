@@ -14,7 +14,7 @@
           "uuid": "6f25487b-cbf2-4a08-90ce-defbbacce9c3",
           "keyValues": [],
           "concept": {
-            "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93"
+            "uuid": "ec98a4f9-9406-4706-8567-d4f6610f3583"
           },
           "displayOrder": 1,
           "mandatory": true
@@ -1668,9 +1668,7 @@
           "uuid": "793f6a6d-9cbe-4f8f-9546-873f582f1486",
           "keyValues": [],
           "concept": {
-            "name": "5. Date and Time of death",
-            "uuid": "129198de-adec-4575-b960-047e30b8cefd",
-            "dataType": "Date"
+            "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93"
           },
           "displayOrder": 9,
           "mandatory": true

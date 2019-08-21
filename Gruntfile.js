@@ -16,7 +16,7 @@ module.exports = IDI.configure({
         "forms": [
             "registrationForm.json",
             "fbmdr/FacilityBasedMaternalDeathReviewForm.json",
-            "cbmdr/CommunityBasedVerbalAutopsy.json",
+            "cbmdr/CommunityBasedVerbalAutopsyForm.json",
             "MaternalDeathCaseSummaryForm.json",
             "MaternalDeathNotificationForm.json",
         ],
