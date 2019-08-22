@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 module.exports = _.merge({},
     require('./notificationFormHandeler')
-    ,require('./fbmdrFormHandler')
+    ,require('./FacilityBasedMDRFormHandler')
     ,require('./cbmdrFormHandeler')
     ,require('./MaternalDeathCaseSummaryHandeler')
     ,require('./visitSchedule')

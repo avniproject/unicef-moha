@@ -936,11 +936,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Date of referral from home",
-    "uuid": "3240300b-d6b8-4fa6-ab0a-45cab2c24d91",
-    "dataType": "Date"
-  },
-  {
     "name": "Time of onset of complication of labor at home",
     "uuid": "e58bb7d9-66d4-49b6-b74a-cedac3ab2a5f",
     "dataType": "Time"
@@ -954,11 +949,6 @@
     "name": "Transport used from home",
     "uuid": "019ed2ac-f118-4cc2-b752-625d880720a8",
     "dataType": "Text"
-  },
-  {
-    "name": "Date of referral from Facility 1",
-    "uuid": "31daf0fb-376d-42ba-be82-a0d7e20a6cfd",
-    "dataType": "Date"
   },
   {
     "name": "Referral time of onset of complication at facility 1",
@@ -1028,11 +1018,6 @@
     ]
   },
   {
-    "name": "Treatment given at Facility 1",
-    "uuid": "14516c0a-4aa5-4615-97f7-a3188cb77e91",
-    "dataType": "Text"
-  },
-  {
     "name": "Money spent on treatment at facility 1",
     "uuid": "ce501675-82f0-4b30-a699-d8c67b674a46",
     "dataType": "Numeric",
@@ -1043,11 +1028,6 @@
     "uuid": "5dcadb2f-910a-4e33-950d-a67296a1aae8",
     "dataType": "Numeric",
     "unit": "Hours, days"
-  },
-  {
-    "name": "Date of referral from Facility 2",
-    "uuid": "39eac12e-88bb-4b17-ad1c-cfeb7c328b20",
-    "dataType": "Date"
   },
   {
     "name": "Referral time of onset of complication at facility 2",
@@ -1117,11 +1097,6 @@
     ]
   },
   {
-    "name": "Treatment given at Facility 2",
-    "uuid": "9b34c076-a43d-4f5b-8ab9-44e8c1a861d3",
-    "dataType": "Text"
-  },
-  {
     "name": "Money spent on treatment at facility 2",
     "uuid": "ff2aaf60-b72e-46ff-88dd-ee02e2a1e26f",
     "dataType": "Numeric",
@@ -1132,11 +1107,6 @@
     "uuid": "25cf63f3-3d05-423e-8837-2ac6828d90cc",
     "dataType": "Numeric",
     "unit": "Hours, days"
-  },
-  {
-    "name": "Date of referral from Facility 3",
-    "uuid": "842e56af-a74c-4102-b271-215c648dde99",
-    "dataType": "Date"
   },
   {
     "name": "Referral time of onset of complication at facility 3",
@@ -1204,11 +1174,6 @@
         "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
       }
     ]
-  },
-  {
-    "name": "Treatment given at Facility 3",
-    "uuid": "ebd26d62-f3c1-498d-918a-94c535b11838",
-    "dataType": "Text"
   },
   {
     "name": "Money spent on treatment at facility 3",

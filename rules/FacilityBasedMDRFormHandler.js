@@ -15,8 +15,8 @@ const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'fo
 const RuleHelper = require('./RuleHelper');
 
 
-const EncounterViewFilter = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a","ViewFilter");
-const FormValidation = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a",'Validation');
+const ViewFilter = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a","ViewFilter");
+const Validation = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a",'Validation');
 
 
 const calculateDurationInDaysAndHours = (startDateTime, endDateTime) => {
@@ -29,7 +29,7 @@ const calculateDurationInDaysAndHours = (startDateTime, endDateTime) => {
     }
 };
 
-@EncounterViewFilter("63c43b26-794d-4213-aecb-c8093bc74921", "FBMDR View Filter", 100, {})
+@ViewFilter("63c43b26-794d-4213-aecb-c8093bc74921", "FBMDR View Filter", 100, {})
 class FbmdrViewFilter {
 
     @WithStatusBuilder
@@ -85,26 +85,80 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    otherStaffAttendedAtHome([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Referral Attended from home").containsAnswerConceptName("Other Staff");
+    periodOfGestationLiveStillBirth([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Outcome of pregnancy").containsAnyAnswerConceptName("Live Birth", "Still Birth");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    otherStaffAttendedAtFacility1([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Referral Attended at Facility 1").containsAnswerConceptName("Other Staff");
+    periodOfGestationNonLiveStillBirth([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Outcome of pregnancy").containsAnyAnswerConceptName("Abortion", "Ectopic", "Undelivered");
+        return statusBuilder.build();
+    }
+
+    facility1ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(1);
+            return statusBuilder.build();
+        });
+    }
+
+    facility2ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(2);
+            return statusBuilder.build();
+        });
+    }
+
+    facility3ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').equals(3);
+            return statusBuilder.build();
+        });
+    }
+
+    @WithStatusBuilder
+    facility1WhichOtherStaffAttended([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 1?").containsAnswerConceptName("Other Staff");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    otherStaffAttendedAtFacility2([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Referral Attended at Facility 2").containsAnswerConceptName("Other Staff");
+    facility2WhichOtherStaffAttended([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 2?").containsAnswerConceptName("Other Staff");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    otherStaffAttendedAtFacility3([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Referral Attended at Facility 3").containsAnswerConceptName("Other Staff");
+    facility3WhichOtherStaffAttended([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 3?").containsAnswerConceptName("Other Staff");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    homeWhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from home").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility1WhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 1").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility2WhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 2").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility3WhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 3").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
 
@@ -319,7 +373,7 @@ class FbmdrViewFilter {
 
 }
 
-@FormValidation("aeb9dad4-7583-4ee9-be24-05762185b503", "FBMDR Form Validator",100,{})
+@Validation("aeb9dad4-7583-4ee9-be24-05762185b503", "FBMDR Form Validator",100,{})
 class FbmdrFormValidator {
     validate(programEncounter){
         const validationResults = [];
