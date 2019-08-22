@@ -163,6 +163,74 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
+    facility1SpecifyOtherReasonForReferral([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 1").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility2SpecifyOtherReasonForReferral([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 2").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility3SpecifyOtherReasonForReferral([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 3").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility1SpecifyOtherTreatmentGiven([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 1").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility2SpecifyOtherTreatmentGiven([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 2").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility3SpecifyOtherTreatmentGiven([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 3").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    abortionDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Outcome of pregnancy').containsAnswerConceptName("Abortion");
+            return statusBuilder.build();
+        });
+    }
+
+    @WithStatusBuilder
+    wasSpontaneousAbortionComplete([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Abortion type").containsAnswerConceptName("Spontaneous abortion");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    wasInducedAbortionLegallyDone([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Abortion type").containsAnswerConceptName("Induced abortion");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    numberOfCentresVisited([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Termination done in more than 1 center").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyTheCentresVisitedBeforeThisFacility([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Termination done in more than 1 center").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
     otherCauseOfAntepartumBleeding([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("Late pregnancy Bleeding other than placental causes").containsAnswerConceptName("Other");
         return statusBuilder.build();
@@ -340,31 +408,6 @@ class FbmdrViewFilter {
     neonatalOutcome([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Gave birth").is.yes;
     }
-
-    referralFormFromFacility1(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
-            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(1);
-            return statusBuilder.build();
-        })
-    }
-
-    referralFormFromFacility2(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
-            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(2);
-            return statusBuilder.build();
-        })
-    }
-
-    referralFormFromFacility3(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe=>{
-            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("No of Places Visited Prior").is.greaterThanOrEqualTo(3);
-            return statusBuilder.build();
-        })
-    }
-
 
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper

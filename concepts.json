@@ -1447,8 +1447,66 @@
     ]
   },
   {
+    "name": "HR not available",
+    "uuid": "d2ad69d2-54f8-4443-ba1f-3dd3d60f6014",
+    "dataType": "NA"
+  },
+  {
+    "name": "Specialist not available",
+    "uuid": "3be048c4-7086-42a1-9c8b-0b540ef8b71f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Blood not available",
+    "uuid": "96d95d7f-38e2-4c6b-8612-fc12b26e4ce7",
+    "dataType": "NA"
+  },
+  {
+    "name": "ICU not available",
+    "uuid": "77442627-ef9d-4c7a-ae04-a81c2fec8fd2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Facility not equipped to manage",
+    "uuid": "ff0484fd-4fe1-43df-be6f-feb9762a79cd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Patient's/Attendants' request",
+    "uuid": "25b1a100-4a7c-4225-96d4-ec750e4638ae",
+    "dataType": "NA"
+  },
+  {
     "name": "Reason for referral from Facility 1",
     "uuid": "5b9df7c4-4493-4a11-9b39-c534bcdad60d",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "d2ad69d2-54f8-4443-ba1f-3dd3d60f6014"
+      },
+      {
+        "uuid": "3be048c4-7086-42a1-9c8b-0b540ef8b71f"
+      },
+      {
+        "uuid": "96d95d7f-38e2-4c6b-8612-fc12b26e4ce7"
+      },
+      {
+        "uuid": "77442627-ef9d-4c7a-ae04-a81c2fec8fd2"
+      },
+      {
+        "uuid": "ff0484fd-4fe1-43df-be6f-feb9762a79cd"
+      },
+      {
+        "uuid": "25b1a100-4a7c-4225-96d4-ec750e4638ae"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other reason for referral from Facility 1",
+    "uuid": "685637fa-94b9-4bbb-b1a0-3ad50176aa8e",
     "dataType": "Text"
   },
   {
@@ -1465,8 +1523,82 @@
     ]
   },
   {
+    "name": "Medicines",
+    "uuid": "68b4a819-f354-46e1-8701-ff318434a8ed",
+    "dataType": "NA"
+  },
+  {
+    "name": "Fluids",
+    "uuid": "31edf0f8-1258-4f88-a6dd-545bfcf8b6db",
+    "dataType": "NA"
+  },
+  {
+    "name": "Blood",
+    "uuid": "855b321d-cfe3-44ce-bff4-47cedb5f874b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Oxygen",
+    "uuid": "d08f1a56-e6fe-4ac2-96f5-69e5c1415c02",
+    "dataType": "NA"
+  },
+  {
+    "name": "ICU",
+    "uuid": "93261d61-4f1f-45ce-b8c0-a7ce1c70cb9d",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ventilator",
+    "uuid": "c5a846c1-13b3-444b-a7db-8210b00d7009",
+    "dataType": "NA"
+  },
+  {
+    "name": "Surgery",
+    "uuid": "fb535c20-03af-4f51-8f2e-9b06ab50eadb",
+    "dataType": "NA"
+  },
+  {
+    "name": "No treatment given",
+    "uuid": "7df5ee32-6828-4328-8f42-69560985042f",
+    "dataType": "NA"
+  },
+  {
     "name": "Treatment given at Facility 1",
     "uuid": "e751fcb0-d8c3-47fc-8d39-d61feff047d2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "68b4a819-f354-46e1-8701-ff318434a8ed"
+      },
+      {
+        "uuid": "31edf0f8-1258-4f88-a6dd-545bfcf8b6db"
+      },
+      {
+        "uuid": "855b321d-cfe3-44ce-bff4-47cedb5f874b"
+      },
+      {
+        "uuid": "d08f1a56-e6fe-4ac2-96f5-69e5c1415c02"
+      },
+      {
+        "uuid": "93261d61-4f1f-45ce-b8c0-a7ce1c70cb9d"
+      },
+      {
+        "uuid": "c5a846c1-13b3-444b-a7db-8210b00d7009"
+      },
+      {
+        "uuid": "fb535c20-03af-4f51-8f2e-9b06ab50eadb"
+      },
+      {
+        "uuid": "7df5ee32-6828-4328-8f42-69560985042f"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other treatment given at Facility 1",
+    "uuid": "840cb902-d2a1-4a35-8bf1-0c8fa328dacd",
     "dataType": "Text"
   },
   {
@@ -1526,6 +1658,34 @@
   {
     "name": "Reason for referral from Facility 2",
     "uuid": "30b9950f-e78c-46d1-864b-b8a4cef0a965",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "d2ad69d2-54f8-4443-ba1f-3dd3d60f6014"
+      },
+      {
+        "uuid": "3be048c4-7086-42a1-9c8b-0b540ef8b71f"
+      },
+      {
+        "uuid": "96d95d7f-38e2-4c6b-8612-fc12b26e4ce7"
+      },
+      {
+        "uuid": "77442627-ef9d-4c7a-ae04-a81c2fec8fd2"
+      },
+      {
+        "uuid": "ff0484fd-4fe1-43df-be6f-feb9762a79cd"
+      },
+      {
+        "uuid": "25b1a100-4a7c-4225-96d4-ec750e4638ae"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other reason for referral from Facility 2",
+    "uuid": "393fbfb7-df6d-4c30-89c7-e6b338bdbc57",
     "dataType": "Text"
   },
   {
@@ -1544,6 +1704,40 @@
   {
     "name": "Treatment given at Facility 2",
     "uuid": "70f354df-5846-4e7d-aec2-661bd2aba924",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "68b4a819-f354-46e1-8701-ff318434a8ed"
+      },
+      {
+        "uuid": "31edf0f8-1258-4f88-a6dd-545bfcf8b6db"
+      },
+      {
+        "uuid": "855b321d-cfe3-44ce-bff4-47cedb5f874b"
+      },
+      {
+        "uuid": "d08f1a56-e6fe-4ac2-96f5-69e5c1415c02"
+      },
+      {
+        "uuid": "93261d61-4f1f-45ce-b8c0-a7ce1c70cb9d"
+      },
+      {
+        "uuid": "c5a846c1-13b3-444b-a7db-8210b00d7009"
+      },
+      {
+        "uuid": "fb535c20-03af-4f51-8f2e-9b06ab50eadb"
+      },
+      {
+        "uuid": "7df5ee32-6828-4328-8f42-69560985042f"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other treatment given at Facility 2",
+    "uuid": "f1af5992-6057-4d1a-91e1-540430e8a0d7",
     "dataType": "Text"
   },
   {
@@ -1607,6 +1801,34 @@
   {
     "name": "Reason for referral from Facility 3",
     "uuid": "27daf271-29b8-4402-9ce6-abfbd4ae63d9",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "d2ad69d2-54f8-4443-ba1f-3dd3d60f6014"
+      },
+      {
+        "uuid": "3be048c4-7086-42a1-9c8b-0b540ef8b71f"
+      },
+      {
+        "uuid": "96d95d7f-38e2-4c6b-8612-fc12b26e4ce7"
+      },
+      {
+        "uuid": "77442627-ef9d-4c7a-ae04-a81c2fec8fd2"
+      },
+      {
+        "uuid": "ff0484fd-4fe1-43df-be6f-feb9762a79cd"
+      },
+      {
+        "uuid": "25b1a100-4a7c-4225-96d4-ec750e4638ae"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other reason for referral from Facility 3",
+    "uuid": "e99e949d-dc19-4a27-b27a-48bbc92f3b30",
     "dataType": "Text"
   },
   {
@@ -1625,6 +1847,40 @@
   {
     "name": "Treatment given at Facility 3",
     "uuid": "f6a950ca-5268-4ef4-8643-9b1f774f856e",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "68b4a819-f354-46e1-8701-ff318434a8ed"
+      },
+      {
+        "uuid": "31edf0f8-1258-4f88-a6dd-545bfcf8b6db"
+      },
+      {
+        "uuid": "855b321d-cfe3-44ce-bff4-47cedb5f874b"
+      },
+      {
+        "uuid": "d08f1a56-e6fe-4ac2-96f5-69e5c1415c02"
+      },
+      {
+        "uuid": "93261d61-4f1f-45ce-b8c0-a7ce1c70cb9d"
+      },
+      {
+        "uuid": "c5a846c1-13b3-444b-a7db-8210b00d7009"
+      },
+      {
+        "uuid": "fb535c20-03af-4f51-8f2e-9b06ab50eadb"
+      },
+      {
+        "uuid": "7df5ee32-6828-4328-8f42-69560985042f"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other treatment given at Facility 3",
+    "uuid": "3f178753-dfcb-4e4a-9a71-55df33222e7d",
     "dataType": "Text"
   },
   {
@@ -1969,7 +2225,7 @@
     "dataType": "Text"
   },
   {
-    "name": "Abortion Type",
+    "name": "Abortion type",
     "uuid": "b3e245ca-a965-464f-823a-cd75ead26911",
     "dataType": "Coded",
     "answers": [
@@ -2116,7 +2372,14 @@
     ]
   },
   {
-    "name": "Specify the centre visited",
+    "name": "Number of centres visited before this facility",
+    "uuid": "a6cc3e23-878b-439e-b7f3-8f24b0ec6ee9",
+    "dataType": "Numeric",
+    "lowAbsolute": 0,
+    "highNormal": 5
+  },
+  {
+    "name": "Other centres visited before this facility",
     "uuid": "147df247-b1cb-4bf5-afc2-c8bcbee8668f",
     "dataType": "Text"
   },

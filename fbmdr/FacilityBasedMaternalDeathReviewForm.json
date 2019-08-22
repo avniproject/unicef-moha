@@ -444,7 +444,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Time of onset of complication or onset of labor",
+          "name": "Home | Date and time of development of any complication (or labour)",
           "uuid": "b2b217a4-6eda-4ae5-9c72-0a0ae50d112d",
           "keyValues": [],
           "concept": {
@@ -454,7 +454,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Date of referral",
+          "name": "Home | Date of referral",
           "uuid": "707e029a-6608-40a6-9d73-a3eac1bf94e9",
           "keyValues": [],
           "concept": {
@@ -464,7 +464,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Time of calling transport",
+          "name": "Home | Time of calling transport",
           "uuid": "d43ea333-0c6d-4b02-8aa4-431d96c3a9a4",
           "keyValues": [],
           "concept": {
@@ -474,7 +474,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Time of arrival of transport",
+          "name": "Home | Time of arrival of transport",
           "uuid": "b7661928-c159-4f74-8634-85855b72700c",
           "keyValues": [],
           "concept": {
@@ -484,7 +484,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Type of transport used",
+          "name": "Home | Type of transport used",
           "uuid": "ae27833c-d42f-434d-a07e-9f5b96a183c0",
           "type": "SingleSelect",
           "keyValues": [],
@@ -495,7 +495,7 @@
           "mandatory": false
         },
         {
-          "name": "[Home] Which other type of transport was used?",
+          "name": "Home | Which other type of transport was used?",
           "uuid": "299bc3bf-0432-4f23-ad32-994b99b3e287",
           "keyValues": [],
           "concept": {
@@ -505,7 +505,7 @@
           "mandatory": true
         },
         {
-          "name": "[Home] Money spent on transport (Rs.)",
+          "name": "Home | Money spent on transport (Rs.)",
           "uuid": "a5ff3c04-2138-4c04-983a-e7947e15a168",
           "keyValues": [],
           "concept": {
@@ -550,7 +550,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Time of onset of complication or onset of labor",
+          "name": "Facility 1 | Date and time of development of any complication (or labour)",
           "uuid": "1d75cf57-bafd-4774-8fe6-471bd3d63741",
           "keyValues": [],
           "concept": {
@@ -560,7 +560,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Attended by?",
+          "name": "Facility 1 | Attended by?",
           "uuid": "b5f18261-585e-4f96-9e77-7c36d5ebd64f",
           "keyValues": [],
           "type": "MultiSelect",
@@ -571,7 +571,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Which other staff attended?",
+          "name": "Facility 1 | Which other staff attended?",
           "uuid": "83f13f36-a29d-4393-90ee-437448a6257e",
           "keyValues": [],
           "concept": {
@@ -581,7 +581,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 1] Name of facility referred",
+          "name": "Facility 1 | Name of facility referred",
           "uuid": "40303579-b596-4997-a759-2e5a77a6d8f3",
           "keyValues": [],
           "concept": {
@@ -591,7 +591,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Type of facility referred",
+          "name": "Facility 1 | Type of facility referred",
           "uuid": "e122c9e9-97c9-4038-bf1a-a183188305ee",
           "keyValues": [],
           "type": "SingleSelect",
@@ -602,7 +602,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Date of referral",
+          "name": "Facility 1 | Date of referral",
           "uuid": "749b2e85-b0be-4f64-8784-387a571b0fab",
           "keyValues": [],
           "concept": {
@@ -612,8 +612,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Reason for referral",
+          "name": "Facility 1 | Reason for referral",
           "uuid": "a08dc1d0-db44-4d29-8b5d-f29e8de5653a",
+          "type": "MultiSelect",
           "keyValues": [],
           "concept": {
             "uuid": "5b9df7c4-4493-4a11-9b39-c534bcdad60d"
@@ -622,7 +623,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Referral slip given?",
+          "name": "Facility 1 | Specify other reason for referral",
+          "uuid": "22183ce2-a46b-4d42-8d3b-488cee064d47",
+          "keyValues": [],
+          "concept": {
+            "uuid": "685637fa-94b9-4bbb-b1a0-3ad50176aa8e"
+          },
+          "displayOrder": 8.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 1 | Referral slip given?",
           "uuid": "d23c511c-b05f-4d08-9793-1ebc6589243d",
           "type": "SingleSelect",
           "concept": {
@@ -632,7 +643,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Time of calling transport",
+          "name": "Facility 1 | Time of calling transport",
           "uuid": "4b3ccbd7-bf9f-436f-bc57-03ffaaff64b1",
           "keyValues": [],
           "concept": {
@@ -642,7 +653,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Time of arrival of transport",
+          "name": "Facility 1 | Time of arrival of transport",
           "uuid": "ce6004cd-e815-4fab-8682-b2b872712f31",
           "keyValues": [],
           "concept": {
@@ -652,7 +663,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Type of transport used to reach next facility",
+          "name": "Facility 1 | Type of transport used to reach next facility",
           "uuid": "c064d5a5-1d10-44cd-81f7-d1524e46c1b3",
           "type": "SingleSelect",
           "keyValues": [],
@@ -663,7 +674,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Which other type of transport was used?",
+          "name": "Facility 1 | Which other type of transport was used?",
           "uuid": "42d93723-74f4-471a-b404-d7fb07ec2010",
           "keyValues": [],
           "concept": {
@@ -673,7 +684,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 1] Money spent on transport (Rs.) to reach next facility",
+          "name": "Facility 1 | Money spent on transport (Rs.) to reach next facility",
           "uuid": "9c64d106-19ba-49b8-be6b-c899c4911cc4",
           "keyValues": [],
           "concept": {
@@ -683,9 +694,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Treatment given",
+          "name": "Facility 1 | Treatment given",
           "uuid": "011e970f-f500-4916-8240-18d9573c3e45",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "e751fcb0-d8c3-47fc-8d39-d61feff047d2"
           },
@@ -693,7 +704,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 1] Money spent on treatment/ medicine/ diagnostics",
+          "name": "Facility 1 | Specify other treatment given",
+          "uuid": "6144a057-63cc-46ff-bacd-e09720646881",
+          "keyValues": [],
+          "concept": {
+            "uuid": "840cb902-d2a1-4a35-8bf1-0c8fa328dacd"
+          },
+          "displayOrder": 14.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 1 | Money spent on treatment/ medicine/ diagnostics",
           "uuid": "59d29604-5ec3-4682-9da2-bb24120b6f48",
           "keyValues": [],
           "concept": {
@@ -756,7 +777,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Time of onset of complication or onset of labor",
+          "name": "Facility 2 | Date and time of development of any complication (or labour)",
           "uuid": "365b79d3-ee98-4566-8dfe-5115d89df5e1",
           "keyValues": [],
           "concept": {
@@ -766,7 +787,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Attended by?",
+          "name": "Facility 2 | Attended by?",
           "uuid": "3211bcd5-bbf0-4995-80a3-81f69eb45371",
           "keyValues": [],
           "type": "MultiSelect",
@@ -777,7 +798,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Which other staff attended?",
+          "name": "Facility 2 | Which other staff attended?",
           "uuid": "dc668d05-5ad3-40ef-b0c2-6e32dab6dda2",
           "keyValues": [],
           "concept": {
@@ -787,7 +808,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 2] Name of facility referred",
+          "name": "Facility 2 | Name of facility referred",
           "uuid": "cdfde3e3-f874-4948-abca-4f383416c73b",
           "keyValues": [],
           "concept": {
@@ -797,7 +818,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Type of facility referred",
+          "name": "Facility 2 | Type of facility referred",
           "uuid": "4aad524f-4620-4a6a-b1e8-2addac522798",
           "keyValues": [],
           "type": "SingleSelect",
@@ -808,7 +829,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Date of referral",
+          "name": "Facility 2 | Date of referral",
           "uuid": "7f135067-8a07-4d28-8671-17505cf68517",
           "keyValues": [],
           "concept": {
@@ -818,8 +839,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Reason for referral",
+          "name": "Facility 2 | Reason for referral",
           "uuid": "5cbbdb39-5c70-432f-8100-ba8d4daab4c6",
+          "type": "MultiSelect",
           "keyValues": [],
           "concept": {
             "uuid": "30b9950f-e78c-46d1-864b-b8a4cef0a965"
@@ -828,7 +850,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Referral slip given?",
+          "name": "Facility 2 | Specify other reason for referral",
+          "uuid": "adfaa366-e1c4-47ef-9802-58f9d93a559f",
+          "keyValues": [],
+          "concept": {
+            "uuid": "393fbfb7-df6d-4c30-89c7-e6b338bdbc57"
+          },
+          "displayOrder": 8.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 2 | Referral slip given?",
           "uuid": "a3ec533d-baed-476b-8aac-113a7466acfd",
           "type": "SingleSelect",
           "concept": {
@@ -838,7 +870,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Time of calling transport",
+          "name": "Facility 2 | Time of calling transport",
           "uuid": "fb495559-e7c2-4b1b-bd9a-9465563b3bf1",
           "keyValues": [],
           "concept": {
@@ -848,7 +880,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Time of arrival of transport",
+          "name": "Facility 2 | Time of arrival of transport",
           "uuid": "8483472e-b7b3-4351-b880-a10231440903",
           "keyValues": [],
           "concept": {
@@ -858,7 +890,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Type of transport used to reach next facility",
+          "name": "Facility 2 | Type of transport used to reach next facility",
           "uuid": "0d6000dd-7969-4cb6-892b-40cd13d059dc",
           "type": "SingleSelect",
           "keyValues": [],
@@ -869,7 +901,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Which other type of transport was used?",
+          "name": "Facility 2 | Which other type of transport was used?",
           "uuid": "600e40cf-fefd-4347-aa4b-a0fb0b8261f9",
           "keyValues": [],
           "concept": {
@@ -879,7 +911,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 2] Money spent on transport (Rs.) to reach next facility",
+          "name": "Facility 2 | Money spent on transport (Rs.) to reach next facility",
           "uuid": "2cc7e7d2-3768-4c8f-b375-75cc0e582728",
           "keyValues": [],
           "concept": {
@@ -889,9 +921,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Treatment given",
+          "name": "Facility 2 | Treatment given",
           "uuid": "92a8f617-dfc7-49e3-a2ba-eefa1de12035",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "70f354df-5846-4e7d-aec2-661bd2aba924"
           },
@@ -899,7 +931,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 2] Money spent on treatment/ medicine/ diagnostics",
+          "name": "Facility 2 | Specify other treatment given",
+          "uuid": "ffab3e49-05c4-4627-b5a4-aa1e5bdd8862",
+          "keyValues": [],
+          "concept": {
+            "uuid": "f1af5992-6057-4d1a-91e1-540430e8a0d7"
+          },
+          "displayOrder": 14.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 2 | Money spent on treatment/ medicine/ diagnostics",
           "uuid": "b8f08872-8596-4950-82e1-3d1106a8f2be",
           "keyValues": [],
           "concept": {
@@ -962,7 +1004,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Time of onset of complication or onset of labor",
+          "name": "Facility 3 | Date and time of development of any complication (or labour)",
           "uuid": "fdd2a317-8b9a-4566-96fc-d3ffe2957fbd",
           "keyValues": [],
           "concept": {
@@ -972,7 +1014,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Attended by?",
+          "name": "Facility 3 | Attended by?",
           "uuid": "5d8b5279-8089-4a17-96aa-f836055b4980",
           "keyValues": [],
           "type": "MultiSelect",
@@ -983,7 +1025,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Which other staff attended?",
+          "name": "Facility 3 | Which other staff attended?",
           "uuid": "34ffd5c1-03e3-45c7-a40e-ceb68a057e44",
           "keyValues": [],
           "concept": {
@@ -993,7 +1035,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 3] Name of facility referred",
+          "name": "Facility 3 | Name of facility referred",
           "uuid": "ad049d84-282f-46da-8f90-6b3093bf4588",
           "keyValues": [],
           "concept": {
@@ -1003,7 +1045,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Type of facility referred",
+          "name": "Facility 3 | Type of facility referred",
           "uuid": "ff43a5ac-00c7-4a3e-8f3b-342c34b57bb4",
           "keyValues": [],
           "type": "SingleSelect",
@@ -1014,7 +1056,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Date of referral",
+          "name": "Facility 3 | Date of referral",
           "uuid": "af2f6b56-aaec-4182-ab77-22d289cc72eb",
           "keyValues": [],
           "concept": {
@@ -1024,8 +1066,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Reason for referral",
+          "name": "Facility 3 | Reason for referral",
           "uuid": "3fa0129d-09b0-4a53-9a8d-a0f02ed4bedc",
+          "type": "MultiSelect",
           "keyValues": [],
           "concept": {
             "uuid": "27daf271-29b8-4402-9ce6-abfbd4ae63d9"
@@ -1034,7 +1077,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Referral slip given?",
+          "name": "Facility 3 | Specify other reason for referral",
+          "uuid": "343518f4-86c8-4c27-8d4b-ee0d93f3d57e",
+          "keyValues": [],
+          "concept": {
+            "uuid": "e99e949d-dc19-4a27-b27a-48bbc92f3b30"
+          },
+          "displayOrder": 8.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 3 | Referral slip given?",
           "uuid": "9077b8a2-4c23-4ff8-843d-516f13c62b7e",
           "type": "SingleSelect",
           "concept": {
@@ -1044,7 +1097,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Time of calling transport",
+          "name": "Facility 3 | Time of calling transport",
           "uuid": "09077436-ad93-4c83-be3e-59f77fed9545",
           "keyValues": [],
           "concept": {
@@ -1054,7 +1107,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Time of arrival of transport",
+          "name": "Facility 3 | Time of arrival of transport",
           "uuid": "b9101733-de27-4480-93a3-d3d42fe5a75d",
           "keyValues": [],
           "concept": {
@@ -1064,7 +1117,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Type of transport used to reach next facility",
+          "name": "Facility 3 | Type of transport used to reach next facility",
           "uuid": "1da97a2b-8441-45d0-af21-e1dfae63fdff",
           "type": "SingleSelect",
           "keyValues": [],
@@ -1075,7 +1128,7 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Which other type of transport was used?",
+          "name": "Facility 3 | Which other type of transport was used?",
           "uuid": "93fdd116-9081-40e7-85c6-0516ca09ed13",
           "keyValues": [],
           "concept": {
@@ -1085,7 +1138,7 @@
           "mandatory": true
         },
         {
-          "name": "[Facility 3] Money spent on transport (Rs.) to reach next facility",
+          "name": "Facility 3 | Money spent on transport (Rs.) to reach next facility",
           "uuid": "7bddff0c-5051-40da-8af1-e449f7715867",
           "keyValues": [],
           "concept": {
@@ -1095,9 +1148,9 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Treatment given",
+          "name": "Facility 3 | Treatment given",
           "uuid": "22aa9681-9c17-4eb1-997a-9b7abe446408",
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "f6a950ca-5268-4ef4-8643-9b1f774f856e"
           },
@@ -1105,7 +1158,17 @@
           "mandatory": false
         },
         {
-          "name": "[Facility 3] Money spent on treatment/ medicine/ diagnostics",
+          "name": "Facility 3 | Specify other treatment given",
+          "uuid": "c83690fb-9d2e-45ee-8e32-c4c050ba5795",
+          "keyValues": [],
+          "concept": {
+            "uuid": "3f178753-dfcb-4e4a-9a71-55df33222e7d"
+          },
+          "displayOrder": 14.1,
+          "mandatory": true
+        },
+        {
+          "name": "Facility 3 | Money spent on treatment/ medicine/ diagnostics",
           "uuid": "28c5224e-fc72-4ff7-9012-780344512c8d",
           "keyValues": [],
           "concept": {
@@ -1136,8 +1199,8 @@
     },
     {
       "uuid": "08162f5e-be5c-4a1e-8405-371b3b92d2f7",
-      "name": "4. Diagnosis at time of admission",
-      "display": "4. Diagnosis at time of admission",
+      "name": "Diagnosis at time of admission",
+      "display": "Diagnosis at time of admission",
       "displayOrder": 12,
       "formElements": [
         {
@@ -1245,8 +1308,8 @@
     },
     {
       "uuid": "ef478604-fa68-41a9-80d6-6b24ddd546b8",
-      "name": "2. Hypertensive disorders of Pregnancy",
-      "display": "2. Hypertensive disorders of Pregnancy (if applicable)",
+      "name": "Hypertensive disorders of Pregnancy",
+      "display": "Hypertensive disorders of Pregnancy (if applicable)",
       "displayOrder": 13,
       "formElements": [
         {
@@ -1263,8 +1326,8 @@
     },
     {
       "uuid": "9a46dae8-6c5b-4b14-8b31-877aff7ee04d",
-      "name": "labor related Disorder",
-      "display": "3. Labor related disorder (if applicable)",
+      "name": "Labor related Disorder",
+      "display": "Labor related disorder (if applicable)",
       "displayOrder": 14,
       "formElements": [
         {
@@ -1291,8 +1354,8 @@
     },
     {
       "uuid": "52c134f8-20f6-4c45-a43f-7a3b8ce4f59e",
-      "name": "4. Medical Disorders",
-      "display": "4. Medical Disorders (if applicable)",
+      "name": "Medical Disorders",
+      "display": "Medical Disorders (if applicable)",
       "displayOrder": 15,
       "formElements": [
         {
@@ -1319,8 +1382,8 @@
     },
     {
       "uuid": "ce0a953d-e73e-4d56-973a-9071afaa1a93",
-      "name": "5. Infection",
-      "display": "5. Infection (if applicable)",
+      "name": "Infection",
+      "display": "Infection (if applicable)",
       "displayOrder": 16,
       "formElements": [
         {
@@ -1403,13 +1466,14 @@
     },
     {
       "uuid": "9693021e-5e81-4065-beae-ee2829cc1d71",
-      "name": "Abortion",
-      "display": "2. Abortion (if applicable)",
+      "name": "Abortion Details",
+      "display": "Abortion Details",
       "displayOrder": 19,
       "formElements": [
         {
-          "name": "a. Abortion",
+          "name": "Was abortion spontaneous or induced?",
           "uuid": "e51df72b-8521-4927-9cf7-df60af219564",
+          "type": "SingleSelect",
           "keyValues": [],
           "concept": {
             "uuid": "b3e245ca-a965-464f-823a-cd75ead26911"
@@ -1418,9 +1482,10 @@
           "mandatory": false
         },
         {
-          "name": "i. If spontaneous",
+          "name": "Was spontaneous abortion complete?",
           "uuid": "65f8bdce-6f4e-4103-a51e-ded58bd08299",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
             "uuid": "59ebc42c-01cd-4d50-a055-6406d00faf2d"
           },
@@ -1428,7 +1493,7 @@
           "mandatory": false
         },
         {
-          "name": "ii. If Induced",
+          "name": "Was induced abortion legally done?",
           "uuid": "af1fb403-f4b9-4a45-b753-e8c67783c41f",
           "keyValues": [],
           "type": "SingleSelect",
@@ -1439,7 +1504,7 @@
           "mandatory": false
         },
         {
-          "name": "b. What was the procedure adopted?",
+          "name": "What was the procedure adopted?",
           "uuid": "7a8bf595-c956-41ec-b4d6-253ac22afcca",
           "keyValues": [],
           "concept": {
@@ -1459,7 +1524,7 @@
           "mandatory": false
         },
         {
-          "name": "c. Post Abortal Period",
+          "name": "Post Abortal Period",
           "uuid": "e4abb9de-2ef0-4da7-962e-172df153d4dd",
           "keyValues": [],
           "concept": {
@@ -1469,7 +1534,7 @@
           "mandatory": false
         },
         {
-          "name": "d. Was the termination procedure done in more than one center",
+          "name": "Was the termination procedure done in more than one center?",
           "uuid": "c861c9ef-7e3b-4844-9923-154de4603a9d",
           "keyValues": [],
           "concept": {
@@ -1479,13 +1544,23 @@
           "mandatory": false
         },
         {
-          "name": "Specify the centre visited",
+          "name": "Number of centres visited",
+          "uuid": "49bb0c44-a762-495e-9e74-8b0158eef02f",
+          "keyValues": [],
+          "concept": {
+            "uuid": "a6cc3e23-878b-439e-b7f3-8f24b0ec6ee9"
+          },
+          "displayOrder": 6.1,
+          "mandatory": false
+        },
+        {
+          "name": "Specify the centres visited before this facility",
           "uuid": "2ff678f9-d507-41b5-b45f-8344afae9aa8",
           "keyValues": [],
           "concept": {
             "uuid": "147df247-b1cb-4bf5-afc2-c8bcbee8668f"
           },
-          "displayOrder": 7,
+          "displayOrder": 6.2,
           "mandatory": false
         }
       ]
@@ -1773,8 +1848,8 @@
     },
     {
       "uuid": "9d14e506-fd5f-4fd2-902c-18bb2977cf3c",
-      "name": "g. Neonatal Outcome",
-      "display": "g. Neonatal Outcome",
+      "name": "Neonatal Outcome",
+      "display": "Neonatal Outcome",
       "displayOrder": 27,
       "formElements": [
         {
