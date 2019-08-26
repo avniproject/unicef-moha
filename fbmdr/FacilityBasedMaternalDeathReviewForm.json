@@ -276,7 +276,7 @@
           "mandatory": true
         },
         {
-          "name": "Admission -> delivery interval",
+          "name": "Admission -> Delivery interval",
           "uuid": "272ec2eb-b704-468f-80b8-7b7dfebaef88",
           "keyValues": [
             {
@@ -291,7 +291,7 @@
           "mandatory": false
         },
         {
-          "name": "Admission -> death interval",
+          "name": "Admission -> Death interval",
           "uuid": "b40f413e-4bfd-477a-a7ab-57a6d1d2294b",
           "keyValues": [
             {
@@ -344,7 +344,7 @@
           "mandatory": false
         },
         {
-          "name": "Abortion",
+          "name": "Number of abortions",
           "uuid": "0599a4eb-e53b-49d1-907f-6c3dce0de237",
           "keyValues": [],
           "concept": {
@@ -522,6 +522,16 @@
       "display": "Facility 1 Referral Details",
       "displayOrder": 8,
       "formElements": [
+        {
+          "name": "Facility details should be filled in the order they were visited (first to last)",
+          "uuid": "47c17b0c-c5f7-4dcd-91e9-05af18fdb0ba",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 0.9,
+          "mandatory": false
+        },
         {
           "name": "Date of admission to Facility 1",
           "uuid": "366492cd-019c-4d70-84a2-6cc0395646c2",
@@ -1204,7 +1214,7 @@
       "displayOrder": 12,
       "formElements": [
         {
-          "name": "1. Hemorrhage (if applicable)",
+          "name": "Hemorrhage (if applicable)",
           "uuid": "4336547d-c418-4f30-8d29-ef4cb54a8981",
           "keyValues": [],
           "concept": {
@@ -1214,7 +1224,7 @@
           "mandatory": false
         },
         {
-          "name": "I. Abortion",
+          "name": "Abortion",
           "uuid": "888f5ed7-e7d5-4ce4-95ec-72c3718cf9ae",
           "type": "SingleSelect",
           "concept": {
@@ -1224,7 +1234,7 @@
           "mandatory": false
         },
         {
-          "name": "II. Ectopic Pregnancy",
+          "name": "Ectopic Pregnancy",
           "uuid": "5321d0ac-62b3-4acd-a3e7-6b6830f5219d",
           "type": "SingleSelect",
           "concept": {
@@ -1234,7 +1244,7 @@
           "mandatory": false
         },
         {
-          "name": "III. Gestational Trophoblastic Disease",
+          "name": "Gestational Trophoblastic Disease",
           "uuid": "ea0a129d-ab57-409b-bc92-3892030f67f5",
           "type": "SingleSelect",
           "concept": {
@@ -1244,7 +1254,7 @@
           "mandatory": false
         },
         {
-          "name": "IV. Antepartum Bleeding",
+          "name": "Antepartum Bleeding",
           "uuid": "4e332b6e-31ff-4680-9941-5bdc294abc23",
           "type": "SingleSelect",
           "concept": {
@@ -1254,7 +1264,7 @@
           "mandatory": false
         },
         {
-          "name": "IV.a. Placental causes",
+          "name": "Placental causes",
           "uuid": "52cdfeb6-a750-4719-b382-62f244d99f65",
           "keyValues": [],
           "concept": {
@@ -1264,7 +1274,7 @@
           "mandatory": false
         },
         {
-          "name": "IV.b. Late pregnancy Bleeding other than placental causes",
+          "name": "Late pregnancy Bleeding other than placental causes",
           "uuid": "201cbfaa-4e3c-41bb-8b44-6f8df24df517",
           "keyValues": [],
           "concept": {
@@ -1284,7 +1294,7 @@
           "mandatory": false
         },
         {
-          "name": "V. Intrapartum Bleeding",
+          "name": "Intrapartum Bleeding",
           "uuid": "08389f9e-a211-4367-9949-0f1b6b245541",
           "keyValues": [],
           "concept": {
@@ -1294,7 +1304,7 @@
           "mandatory": false
         },
         {
-          "name": "VI. Postpartum Bleeding",
+          "name": "Postpartum Bleeding",
           "uuid": "ee30b0ab-d3dc-44f8-ac17-2f279857c7ff",
           "keyValues": [],
           "type": "MultiSelect",
@@ -1568,11 +1578,11 @@
     {
       "uuid": "74ea2894-3b33-458c-9e32-25482497aea0",
       "name": "Antenatal Care",
-      "display": "3. Antenatal Care",
+      "display": "Antenatal Care",
       "displayOrder": 20,
       "formElements": [
         {
-          "name": "a. Did she receive ANC?",
+          "name": "Did she receive ANC?",
           "uuid": "68c0a227-ca3c-46d4-9037-b43cff770f58",
           "keyValues": [],
           "concept": {
@@ -1582,7 +1592,7 @@
           "mandatory": true
         },
         {
-          "name": "b. If Yes, Type of facility",
+          "name": "Type of facility",
           "uuid": "1e4727dd-42af-4d54-9cb1-411c9f008c5b",
           "keyValues": [],
           "type": "MultiSelect",
@@ -1603,7 +1613,7 @@
           "mandatory": true
         },
         {
-          "name": "c. Service provided by",
+          "name": "Service provided by",
           "uuid": "220c863d-95d7-453f-a764-0e184e71b97c",
           "keyValues": [],
           "type": "MultiSelect",
@@ -1624,7 +1634,7 @@
           "mandatory": false
         },
         {
-          "name": "d. Was she told about any disorder/ complication",
+          "name": "Was she told about any disorder/ complication?",
           "uuid": "16cd4462-e734-45f0-abfd-c6d9e23f25e6",
           "keyValues": [],
           "concept": {
@@ -1634,7 +1644,7 @@
           "mandatory": false
         },
         {
-          "name": "e. What was the risk factor identified",
+          "name": "What was the risk factor identified?",
           "uuid": "66bee48b-2cf4-40a6-af3c-9741137c5413",
           "keyValues": [],
           "type": "MultiSelect",
@@ -1659,11 +1669,11 @@
     {
       "uuid": "2b476e0c-22f2-41bb-a8ed-101a2decee79",
       "name": "DELIVERY, PUERPERIUM and Neonatal information",
-      "display": "4. DELIVERY, PUERPERIUM and Neonatal information",
+      "display": "DELIVERY, PUERPERIUM and Neonatal information",
       "displayOrder": 21,
       "formElements": [
         {
-          "name": "a. Did she have labor pains",
+          "name": "Did she have labor pains",
           "uuid": "5ce0e475-c435-4ad4-a41e-ab294e5d186a",
           "keyValues": [],
           "concept": {
@@ -1677,11 +1687,11 @@
     {
       "uuid": "3fde2fd4-39b6-42bc-8b6d-a8cbe308a2d6",
       "name": "Was a partograph used to monitor labor",
-      "display": "b. Was a partograph used to monitor labor",
+      "display": "Was a partograph used to monitor labor?",
       "displayOrder": 22,
       "formElements": [
         {
-          "name": "i. Past facility",
+          "name": "Past facility",
           "uuid": "3d3db1e6-2491-418e-912f-2287c0ba20a6",
           "keyValues": [],
           "concept": {
@@ -1691,7 +1701,7 @@
           "mandatory": false
         },
         {
-          "name": "ii. Current facility",
+          "name": "Current facility",
           "uuid": "f8e6cc4f-4c7c-4397-8ead-51f3b588bd67",
           "keyValues": [],
           "concept": {
@@ -1705,7 +1715,7 @@
     {
       "uuid": "c527ad2c-d2a7-4d63-a850-f4778fe73bac",
       "name": "Complication during labor",
-      "display": "c. Complication during labor",
+      "display": "Complication during labor",
       "displayOrder": 23,
       "formElements": [
         {
@@ -1734,11 +1744,11 @@
     {
       "uuid": "c7b634ca-d402-481b-8f51-175f8946e927",
       "name": "Mode of Delivery",
-      "display": "d. Mode of Delivery",
+      "display": "Mode of Delivery",
       "displayOrder": 24,
       "formElements": [
         {
-          "name": "1. Undelivered",
+          "name": "Undelivered",
           "uuid": "1b125616-34d7-4360-b594-d03abcc9b66e",
           "keyValues": [],
           "concept": {
@@ -1748,7 +1758,7 @@
           "mandatory": false
         },
         {
-          "name": "2. Vaginal",
+          "name": "Vaginal",
           "uuid": "552991b7-bbdc-4f30-8e06-9e83c93d356a",
           "keyValues": [],
           "concept": {
@@ -1758,7 +1768,7 @@
           "mandatory": false
         },
         {
-          "name": "3. Caesarean section",
+          "name": "Caesarean section",
           "uuid": "db1c1466-7768-4b07-89c9-bc14f94ae987",
           "keyValues": [],
           "type": "SingleSelect",
@@ -1769,7 +1779,7 @@
           "mandatory": false
         },
         {
-          "name": "4. Laparotomy",
+          "name": "Laparotomy",
           "uuid": "c4b9c3d0-7a61-41d7-aded-e2c248deedc7",
           "keyValues": [],
           "concept": {
@@ -1779,7 +1789,7 @@
           "mandatory": false
         },
         {
-          "name": "5. Indication (CS/ Instrumental)",
+          "name": "Indication (CS/ Instrumental)",
           "uuid": "93c95b05-b4a9-4502-bfc9-0ba9795e579e",
           "keyValues": [],
           "concept": {
@@ -1803,7 +1813,7 @@
     {
       "uuid": "ae4cda2e-59d0-42c4-8ab2-407a702bc03b",
       "name": "Anaesthesia",
-      "display": "e. Anaesthesia (Any adverse reaction)",
+      "display": "Anaesthesia (Any adverse reaction)",
       "displayOrder": 25,
       "formElements": [
         {
@@ -1821,7 +1831,7 @@
     {
       "uuid": "bd1b56ea-217c-4c95-935a-c1e9a482dd70",
       "name": "In which phase of labor did she develop complications",
-      "display": "f. In which phase of labor did she develop complications",
+      "display": "In which phase of labor did she develop complications",
       "displayOrder": 26,
       "formElements": [
         {
@@ -1877,7 +1887,7 @@
     {
       "uuid": "6e9a499a-9f57-4e93-8b83-6af9b5fa0eb6",
       "name": "If baby died, probable cause of death",
-      "display": "h. If baby died, probable cause of death",
+      "display": "If baby died, probable cause of death",
       "displayOrder": 28,
       "formElements": [
         {
@@ -1905,7 +1915,7 @@
     {
       "uuid": "a6ffaa40-90cf-4fb6-9016-60157554d92f",
       "name": "Postnatal Period",
-      "display": "i. Postnatal Period",
+      "display": "Postnatal Period",
       "displayOrder": 29,
       "formElements": [
         {
@@ -2022,7 +2032,7 @@
           "mandatory": false
         },
         {
-          "name": "If yes, No of units",
+          "name": "No. of units",
           "uuid": "f06aef1d-b387-4030-b011-ab8d7e71d3d7",
           "keyValues": [],
           "concept": {
@@ -2037,22 +2047,18 @@
           "keyValues": [],
           "concept": {
             "name": "Whole Blood units",
-            "uuid": "eb0a9789-de73-4b4c-a86e-db0a41cf0845",
-            "dataType": "Numeric",
-            "unit": "Quantity"
+            "uuid": "eb0a9789-de73-4b4c-a86e-db0a41cf0845"
           },
           "displayOrder": 8,
           "mandatory": false
         },
         {
-          "name": "/PRBC",
+          "name": "PRBC",
           "uuid": "01d1aa7b-dbf0-4423-b952-5798e1163131",
           "keyValues": [],
           "concept": {
             "name": "PRBC",
-            "uuid": "e0f3f7ce-df38-4481-882a-c566b50ed495",
-            "dataType": "Numeric",
-            "unit": "Quantity"
+            "uuid": "e0f3f7ce-df38-4481-882a-c566b50ed495"
           },
           "displayOrder": 9,
           "mandatory": false
@@ -2063,9 +2069,7 @@
           "keyValues": [],
           "concept": {
             "name": "FFP",
-            "uuid": "f114dd2e-8239-449f-bc91-c17230eb8da7",
-            "dataType": "Numeric",
-            "unit": "Quantity"
+            "uuid": "f114dd2e-8239-449f-bc91-c17230eb8da7"
           },
           "displayOrder": 10,
           "mandatory": false
@@ -2076,9 +2080,7 @@
           "keyValues": [],
           "concept": {
             "name": "Platelets",
-            "uuid": "92494139-7216-4b36-ab54-b69777fd30da",
-            "dataType": "Numeric",
-            "unit": "Quantity"
+            "uuid": "92494139-7216-4b36-ab54-b69777fd30da"
           },
           "displayOrder": 11,
           "mandatory": false
@@ -2089,9 +2091,7 @@
           "keyValues": [],
           "concept": {
             "name": "Cryo",
-            "uuid": "d94486d6-cbcd-4dae-97b6-ea82681ea0d7",
-            "dataType": "Numeric",
-            "unit": "Quantity"
+            "uuid": "d94486d6-cbcd-4dae-97b6-ea82681ea0d7"
           },
           "displayOrder": 12,
           "mandatory": false
@@ -2111,7 +2111,7 @@
     {
       "uuid": "e25f2b48-a0cb-4bf9-9768-8e20905b30d8",
       "name": "Primary diagnosis/condition leading to death",
-      "display": "6. Primary diagnosis/condition leading to death",
+      "display": "Primary diagnosis/condition leading to death",
       "displayOrder": 31,
       "formElements": [
         {
@@ -2129,7 +2129,7 @@
     {
       "uuid": "46557672-5094-41ed-b340-be29d511c9e2",
       "name": "Cause of death",
-      "display": "7. Cause of death",
+      "display": "Cause of death",
       "displayOrder": 32,
       "formElements": [
         {
@@ -2147,7 +2147,7 @@
     {
       "uuid": "922a5075-6d7e-4a2d-88a4-8b85974b367d",
       "name": "In your opinion were any of these factors present",
-      "display": "8. In your opinion were any of these factors present",
+      "display": "In your opinion were any of these factors present",
       "displayOrder": 33,
       "formElements": [
         {
@@ -2201,7 +2201,7 @@
           "mandatory": false
         },
         {
-          "name": "lack of transport from home to health care facility",
+          "name": "Lack of transport from home to health care facility",
           "uuid": "af737620-074d-4c48-9e2e-d2df116a7def",
           "keyValues": [],
           "concept": {
@@ -2221,7 +2221,7 @@
           "mandatory": false
         },
         {
-          "name": "lack of assured referral system",
+          "name": "Lack of assured referral system",
           "uuid": "56ab3173-79ed-453a-955b-70893aaea44b",
           "keyValues": [],
           "concept": {
@@ -2325,7 +2325,7 @@
     {
       "uuid": "af0f29fe-a2d1-4e70-9bda-aa67109cbcbd",
       "name": "Autopsy",
-      "display": "9. Autopsy",
+      "display": "Autopsy",
       "displayOrder": 34,
       "formElements": [
         {
@@ -2353,7 +2353,7 @@
     {
       "uuid": "50780c69-6de7-414c-9ca7-5f3e66ceb509",
       "name": "Case Summary",
-      "display": "10. Case Summary",
+      "display": "Case Summary",
       "displayOrder": 35,
       "formElements": [
         {

@@ -33,6 +33,16 @@ const calculateDurationInDaysAndHours = (startDateTime, endDateTime) => {
 class FbmdrViewFilter {
 
     @WithStatusBuilder
+    dateAndTimeOfDeath([programEncounter, formElement], statusBuilder) {
+        let dtAdmission = programEncounter.getObservationValue('Date and time of Admission');
+        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
+        if (dtAdmission && dtDeath && calculateDurationInDaysAndHours(dtAdmission, dtDeath).startsWith('-')) {
+            statusBuilder.validationError('Time of Death cannot be after time of Admission');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
     durationOfHospitalStay([programEncounter, formElement], statusBuilder) {
         statusBuilder.show();
         let formElementStatus = statusBuilder.build();
@@ -85,6 +95,57 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
+    gravida([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        if (para && !gravida) {
+            statusBuilder.validationError('There is no value specified');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    para([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        if (gravida && para && (para > gravida)) {
+            statusBuilder.validationError('Para cannot be more than Gravida');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    numberOfAbortions([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        let abortion = programEncounter.getObservationValue('Number of abortions');
+        if (gravida && para && abortion && (para + abortion > gravida)) {
+            statusBuilder.validationError('Para + Abortion cannot be more than Gravida');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    noOfLivingChildrenMale([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let numMaleLivingChildren = programEncounter.getObservationValue('No of Living Children - Male');
+        let numFemaleLivingChildren = programEncounter.getObservationValue('No of Living Children - Female') || 0;
+        if (gravida && numMaleLivingChildren && (numMaleLivingChildren + numFemaleLivingChildren > gravida)) {
+            statusBuilder.validationError('Number of living children cannot be more than Gravida');
+        }
+    }
+
+    @WithStatusBuilder
+    noOfLivingChildrenFemale([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let numMaleLivingChildren = programEncounter.getObservationValue('No of Living Children - Male') || 0;
+        let numFemaleLivingChildren = programEncounter.getObservationValue('No of Living Children - Female');
+        if (gravida && numFemaleLivingChildren && (numMaleLivingChildren + numFemaleLivingChildren > gravida)) {
+            statusBuilder.validationError('Number of living children cannot be more than Gravida');
+        }
+    }
+
+    @WithStatusBuilder
     periodOfGestationLiveStillBirth([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Outcome of pregnancy").containsAnyAnswerConceptName("Live Birth", "Still Birth");
         return statusBuilder.build();
@@ -118,6 +179,90 @@ class FbmdrViewFilter {
             statusBuilder.show().when.valueInEncounter('Number of places visited prior').equals(3);
             return statusBuilder.build();
         });
+    }
+
+    @WithStatusBuilder
+    dateOfAdmissionToFacility1([programEncounter, formElement], statusBuilder) {
+        let dateOfReferralFromHome = programEncounter.getObservationValue('Date of referral from home');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
+        if (dateOfReferralFromHome
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromHome, dateOfAdmissionToThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of admission to this facility cannot be before date of referral from home');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility1DateOfReferral([programEncounter, formElement], statusBuilder) {
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
+        let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 1');
+        if(dateOfAdmissionToThisFacility
+           && dateOfReferralFromThisFacility
+           && calculateDurationInDaysAndHours(dateOfAdmissionToThisFacility, dateOfReferralFromThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of referral out of this facility cannot be before date of admission to this facility');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    dateOfAdmissionToFacility2([programEncounter, formElement], statusBuilder) {
+        let dateOfAdmissionToPreviousFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
+        let dateOfReferralFromFacility1 = programEncounter.getObservationValue('Date of referral from Facility 1');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
+        if (dateOfReferralFromFacility1
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromFacility1, dateOfAdmissionToThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of admission to this facility cannot be before date of referral from previous facility');
+        }
+        if (dateOfAdmissionToPreviousFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfAdmissionToPreviousFacility, dateOfAdmissionToThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of admission to this facility cannot be before date of admission to previous facility');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility2DateOfReferral([programEncounter, formElement], statusBuilder) {
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
+        let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 2');
+        if(dateOfAdmissionToThisFacility
+           && dateOfReferralFromThisFacility
+           && calculateDurationInDaysAndHours(dateOfAdmissionToThisFacility, dateOfReferralFromThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of referral out of this facility cannot be before date of admission to this facility');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    dateOfAdmissionToFacility3([programEncounter, formElement], statusBuilder) {
+        let dateOfAdmissionToPreviousFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
+        let dateOfReferralFromFacility2 = programEncounter.getObservationValue('Date of referral from Facility 2');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
+        if (dateOfReferralFromFacility2
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromFacility2, dateOfAdmissionToThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of admission to this facility cannot be before date of referral from previous facility');
+        }
+        if (dateOfAdmissionToPreviousFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfAdmissionToPreviousFacility, dateOfAdmissionToThisFacility).startsWith('-')) {
+                statusBuilder.validationError('Date of admission to this facility cannot be before date of admission to previous facility');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    facility3DateOfReferral([programEncounter, formElement], statusBuilder) {
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
+        let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 3');
+        if(dateOfAdmissionToThisFacility &&
+            dateOfReferralFromThisFacility &&
+            calculateDurationInDaysAndHours(dateOfAdmissionToThisFacility, dateOfReferralFromThisFacility).startsWith('-')) {
+            statusBuilder.validationError('Date of referral out of this facility cannot be before date of admission to this facility');
+        }
+        return statusBuilder.build();
     }
 
     @WithStatusBuilder
@@ -269,25 +414,25 @@ class FbmdrViewFilter {
         return statusBuilder.build();
     }
     @WithStatusBuilder
-    bIfYesTypeOfFacility([programEncounter, formElement], statusBuilder){
+    typeOfFacility([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    cServiceProvidedBy([programEncounter, formElement], statusBuilder){
+    serviceProvidedBy([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    dWasSheToldAboutAnyDisorderComplication([programEncounter, formElement], statusBuilder){
+    wasSheToldAboutAnyDisorderComplication([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    eWhatWasTheRiskFactorIdentified([programEncounter, formElement], statusBuilder){
+    whatWasTheRiskFactorIdentified([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("ANC Received").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
@@ -310,14 +455,14 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    iPastFacility([programEncounter, formElement], statusBuilder){
-        statusBuilder.show().when.valueInEncounter("labor Pain").containsAnswerConceptName("Yes");
+    pastFacility([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Labor pain").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
-    iiCurrentFacility([programEncounter, formElement], statusBuilder){
-        statusBuilder.show().when.valueInEncounter("labor Pain").containsAnswerConceptName("Yes");
+    currentFacility([programEncounter, formElement], statusBuilder){
+        statusBuilder.show().when.valueInEncounter("Labor pain").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 
@@ -357,7 +502,7 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    ifYesNoOfUnits([programEncounter, formElement], statusBuilder){
+    noOfUnits([programEncounter, formElement], statusBuilder){
         statusBuilder.show().when.valueInEncounter("Blood transfusion given").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
@@ -395,12 +540,12 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    ivAPlacentalCauses([], statusBuilder) {
+    placentalCauses([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Antepartum Bleeding").is.yes;
     }
 
     @WithStatusBuilder
-    ivBLatePregnancyBleedingOtherThanPlacentalCauses([], statusBuilder) {
+    latePregnancyBleedingOtherThanPlacentalCauses([], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Antepartum Bleeding").is.yes;
     }
 

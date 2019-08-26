@@ -767,7 +767,7 @@
     "dataType": "DateTime"
   },
   {
-    "name": "Duration of Hospital Stay",
+    "name": "Duration of hospital stay",
     "uuid": "9cf4c6e4-a516-4121-8f78-7501c7fbe8c4",
     "dataType": "Text"
   },
@@ -2375,8 +2375,7 @@
     "name": "Number of centres visited before this facility",
     "uuid": "a6cc3e23-878b-439e-b7f3-8f24b0ec6ee9",
     "dataType": "Numeric",
-    "lowAbsolute": 0,
-    "highNormal": 5
+    "lowAbsolute": 0
   },
   {
     "name": "Other centres visited before this facility",
@@ -2614,7 +2613,7 @@
     ]
   },
   {
-    "name": "labor Pain",
+    "name": "Labor pain",
     "uuid": "bbb1a2b5-9535-46da-9e2b-67b47b5cc5e7",
     "dataType": "Coded",
     "answers": [
