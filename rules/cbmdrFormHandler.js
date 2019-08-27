@@ -74,89 +74,6 @@ class CbmdrViewFilter {
         return this.participateInInterview(formElementGroup, encounter)
     }
 
-    /*
-    @WithName('Module II')
-    dummy4(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Death during Antenatal Period')
-    dummy5(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Referral from Home/Village')
-    dummy6(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Referral form from Facility 1')
-    dummy7(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Referral form from Facility 2')
-    dummy8(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Referral form from Facility 3')
-    dummy9(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Seeking care')
-    dummy10(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Module III')
-    dummy12(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Outcome of the delivery')
-    dummy13(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('X. POST NATAL PERIOD')
-    dummy14(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-
-    @WithName('Problems following delivery')
-    dummy15(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('Postnatal Checkups')
-    dummy16(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('X. Referral from Home/Village')
-    dummy17(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('X. Referral form from Facility 1')
-    dummy18(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('X. Referral form from Facility 2')
-    dummy19(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
-    @WithName('X. Referral form from Facility 3')
-    dummy20(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-    */
-
     @WithName('Open History')
     dummy21(encounter, formElementGroup) {
         return this.participateInInterview(formElementGroup, encounter)
@@ -241,7 +158,7 @@ class CbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    liveBirths([programEncounter, formElement], statusBuilder) {
+    noOfLiveBirths([programEncounter, formElement], statusBuilder) {
         let para = programEncounter.getObservationValue('Parity');
         let numLiveBirths = programEncounter.getObservationValue('Past Live Births');
         if (para && numLiveBirths && (numLiveBirths > para)) {
@@ -642,7 +559,7 @@ class CbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    ix18IfYesPleaseDescribTheDelayInInitiatingTreatment([programEncounter, formElement], statusBuilder) {
+    ix18IfYesPleaseDescribeTheDelayInInitiatingTreatment([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Delay in initiating treatment 3").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }

@@ -1773,6 +1773,11 @@
     "dataType": "Text"
   },
   {
+    "name": "Live births in this delivery",
+    "uuid": "f15ae5ba-369f-469f-9792-a8f4a0039189",
+    "dataType": "Numeric"
+  },
+  {
     "name": "Type of delivery.",
     "uuid": "aac560fc-303d-464d-9922-f0e4ea18d79d",
     "dataType": "Coded",
@@ -2572,7 +2577,7 @@
     "dataType": "Text"
   },
   {
-    "name": "X. Date of referral from Facility 1",
+    "name": "X. Date of admission to Facility 1",
     "uuid": "6c9766e9-7128-4483-b587-f2a9199b9981",
     "dataType": "Date"
   },
@@ -2666,7 +2671,7 @@
     "unit": "Hours, days"
   },
   {
-    "name": "X. Date of referral from Facility 2",
+    "name": "X. Date of admission to Facility 2",
     "uuid": "1b806320-3956-4ca0-bf24-a67294ae5f1a",
     "dataType": "Date"
   },
@@ -2760,7 +2765,7 @@
     "unit": "Hours, days"
   },
   {
-    "name": "X. Date of referral from Facility 3",
+    "name": "X. Date of admission to Facility 3",
     "uuid": "12d6ad0d-d10c-42f0-a772-a9a84b64f32b",
     "dataType": "Date"
   },
