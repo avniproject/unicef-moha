@@ -524,12 +524,6 @@
     "unit": "No of live births"
   },
   {
-    "name": "Present Live Births",
-    "uuid": "26319f2a-49a7-4225-83b1-4f4ed4ca3f8c",
-    "dataType": "Numeric",
-    "unit": "No of live births"
-  },
-  {
     "name": "Still Births",
     "uuid": "f751d9b5-a83c-48c9-8db6-4418aa3c24d8",
     "dataType": "Numeric",
@@ -1973,7 +1967,7 @@
     "uuid": "e2e15be5-1e1d-4234-95b2-57828b7ffa7f"
   },
   {
-    "name": "Rupture Uterus",
+    "name": "Ruptured Uterus",
     "uuid": "b89c51cd-b3e6-43b2-b3f3-1114b1d15837"
   },
   {

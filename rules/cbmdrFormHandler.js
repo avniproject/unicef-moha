@@ -3,20 +3,45 @@ import {
     FormElementStatus,
     FormElementsStatusHelper,
     FormElementStatusBuilder,
-    StatusBuilderAnnotationFactory
+    StatusBuilderAnnotationFactory,
+    lib
 } from 'rules-config/rules';
 import {WithName} from "rules-config";
+import moment from 'moment';
+const _ = require("lodash");
+
 
 const WithStatusBuilder = StatusBuilderAnnotationFactory('programEncounter', 'formElement');
 
-
 const EncounterViewFilter = RuleFactory("814fdf94-52d9-48ee-a923-4042d799fb61", "ViewFilter");
-
 // const FormValidation = RuleFactory("2bfd54fe-7cf4-414f-9c54-ef06e950945a",'Validation');
 
+const dateDiff = (startDateTime, endDateTime) => {
+    if (!_.isNil(startDateTime) && !_.isNil(endDateTime)) {
+        return moment(endDateTime).diff(moment(startDateTime), 'days', true);
+    }
+};
 
 @EncounterViewFilter("81af8852-dd3f-48e3-9717-0f2de5de6654", "CBMDR View Filter", 100, {})
 class CbmdrViewFilter {
+
+    @WithStatusBuilder
+    dateOfInvestigation([programEncounter, formElement], statusBuilder) {
+        let dtInvestigation = programEncounter.getObservationValue('Date of Investigation');
+        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
+        if (dtInvestigation && (dateDiff(dtDeath, dtInvestigation) < 0)) {
+            statusBuilder.validationError('Date/time of investigation cannot be before Date/time of death');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyOtherProbableCauseOfDeath([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter("Probable cause of death details")
+            .containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
 
     participateInInterview(formElementGroup, encounter) {
         return formElementGroup.formElements.map(fe => {
@@ -49,6 +74,7 @@ class CbmdrViewFilter {
         return this.participateInInterview(formElementGroup, encounter)
     }
 
+    /*
     @WithName('Module II')
     dummy4(encounter, formElementGroup) {
         return this.participateInInterview(formElementGroup, encounter)
@@ -84,11 +110,6 @@ class CbmdrViewFilter {
         return this.participateInInterview(formElementGroup, encounter)
     }
 
-    @WithName('VIII. Abortion related Death')
-    dummy11(encounter, formElementGroup) {
-        return this.participateInInterview(formElementGroup, encounter)
-    }
-
     @WithName('Module III')
     dummy12(encounter, formElementGroup) {
         return this.participateInInterview(formElementGroup, encounter)
@@ -103,6 +124,7 @@ class CbmdrViewFilter {
     dummy14(encounter, formElementGroup) {
         return this.participateInInterview(formElementGroup, encounter)
     }
+
 
     @WithName('Problems following delivery')
     dummy15(encounter, formElementGroup) {
@@ -133,6 +155,7 @@ class CbmdrViewFilter {
     dummy20(encounter, formElementGroup) {
         return this.participateInInterview(formElementGroup, encounter)
     }
+    */
 
     @WithName('Open History')
     dummy21(encounter, formElementGroup) {
@@ -177,6 +200,53 @@ class CbmdrViewFilter {
     otherEducation([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Education").containsAnswerConceptName("Other");
         return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyOtherTransportAvailable([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter("Type of transport used from home").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    gravida([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        if (para && !gravida) {
+            statusBuilder.validationError('There is no value specified');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    para([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        if (gravida && para && (para > gravida)) {
+            statusBuilder.validationError('Para cannot be more than Gravida');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    abortions([programEncounter, formElement], statusBuilder) {
+        let gravida = programEncounter.getObservationValue('Gravida');
+        let para = programEncounter.getObservationValue('Parity');
+        let abortion = programEncounter.getObservationValue('Number of abortions');
+        if (gravida && para && abortion && (para + abortion > gravida)) {
+            statusBuilder.validationError('Para + Abortion cannot be more than Gravida');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    liveBirths([programEncounter, formElement], statusBuilder) {
+        let para = programEncounter.getObservationValue('Parity');
+        let numLiveBirths = programEncounter.getObservationValue('Past Live Births');
+        if (para && numLiveBirths && (numLiveBirths > para)) {
+            statusBuilder.validationError('Number of live births cannot be more than Para');
+        }
     }
 
     @WithStatusBuilder
@@ -251,7 +321,9 @@ class CbmdrViewFilter {
     moduleIi(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes;
+            statusBuilder.show().when
+                .valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy')
+                .or.when.valueInEncounter("Died during antenatal period").is.yes;
             return statusBuilder.build();
         })
     }
@@ -259,8 +331,10 @@ class CbmdrViewFilter {
     deathDuringAntenatalPeriod(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
+            statusBuilder.show().when
+                .valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy')
+                .or.when.valueInEncounter("Died during antenatal period").is.yes.and
+                .valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
             return statusBuilder.build();
         })
     }
@@ -310,16 +384,7 @@ class CbmdrViewFilter {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
-                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
                 .when.valueInEncounter("Did she seek care").is.no;
-            return statusBuilder.build();
-        })
-    }
-
-    viiiAbortionRelatedDeath(programEncounter, formElementGroup) {
-        return formElementGroup.formElements.map(fe => {
-            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes;
             return statusBuilder.build();
         })
     }
@@ -327,7 +392,9 @@ class CbmdrViewFilter {
     moduleIii(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            statusBuilder.show().when
+                .valueInEncounter("Period of Death")
+                .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
             return statusBuilder.build();
         })
     }
@@ -335,7 +402,9 @@ class CbmdrViewFilter {
     outcomeOfTheDelivery(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            statusBuilder.show().when
+                .valueInEncounter("Period of Death")
+                .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
             return statusBuilder.build();
         })
     }
@@ -343,7 +412,9 @@ class CbmdrViewFilter {
     xPostNatalPeriod(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            statusBuilder.show().when
+                .valueInEncounter("Period of Death")
+                .containsAnswerConceptName("Within 42 days of delivery");
             return statusBuilder.build();
         })
     }
@@ -351,8 +422,7 @@ class CbmdrViewFilter {
     problemsFollowingDelivery(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no.and
-                .when.valueInEncounter("Any problem following delivery").is.yes;
+            statusBuilder.show().when.valueInEncounter("Any problem following delivery").is.yes;
             return statusBuilder.build();
         })
     }
@@ -360,16 +430,11 @@ class CbmdrViewFilter {
     postnatalCheckups(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.no;
+            statusBuilder.show().when
+                .valueInEncounter("Period of Death")
+                .containsAnswerConceptName("Within 42 days of delivery");
             return statusBuilder.build();
         })
-    }
-
-
-    @WithStatusBuilder
-    viiDeathDuringAntenatalPeriod([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
-        return statusBuilder.build();
     }
 
     @WithStatusBuilder
@@ -398,13 +463,13 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     viii3DateOfSpontaneousAbortionDateOfTerminationOfPregnany([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Spontaneous");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Spontaneous abortion");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viii4IfTheAbortionWasSpontaneousWhereWasTheAbortionCompleted([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Spontaneous");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Spontaneous abortion");
         return statusBuilder.build();
     }
 
@@ -416,19 +481,19 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     viii5IfTheAbortionWasInducedHowWasItInduced([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced abortion");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viii7IfTheAbortionWasInducedWhoPerformedTheAbortion([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced abortion");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viii6IfTheAbortionWasInducedWhereDidSheHaveTheAbortion([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced abortion");
         return statusBuilder.build();
     }
 
@@ -446,13 +511,13 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     viii8AWhatWasTheReasonForInducingAbortion([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced abortion");
         return statusBuilder.build();
     }
 
     @WithStatusBuilder
     viii8BDescribeTheReasonForInducingTheAbortion([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced");
+        statusBuilder.show().when.valueInEncounter("Type of abortion").containsAnswerConceptName("Induced abortion");
         return statusBuilder.build();
     }
 
@@ -677,6 +742,15 @@ class CbmdrViewFilter {
         })
     }
 
+    viiiAbortionRelatedDeath(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when
+                .valueInEncounter("Period of Death")
+                .containsAnswerConceptName('During abortion or within 6 weeks after abortion');
+            return statusBuilder.build();
+        })
+    }
 
     nameOfTheDeceasedWoman(programEncounter, formElement) {
         const name = programEncounter.programEnrolment.individual.nameString;

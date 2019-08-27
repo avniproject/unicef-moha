@@ -14,7 +14,7 @@
           "uuid": "6f25487b-cbf2-4a08-90ce-defbbacce9c3",
           "keyValues": [],
           "concept": {
-            "uuid": "ec98a4f9-9406-4706-8567-d4f6610f3583"
+            "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93"
           },
           "displayOrder": 1,
           "mandatory": true
@@ -57,6 +57,16 @@
             "uuid": "04880a88-b87e-4bd5-a75d-ce230b847506"
           },
           "displayOrder": 5,
+          "mandatory": true
+        },
+        {
+          "name": "Specify other probable cause of death",
+          "uuid": "54cf5b2d-b5b7-45f2-98ff-a9ff7d54acbc",
+          "keyValues": [],
+          "concept": {
+            "uuid": "e3a7aab6-e92a-45b6-b04f-81c8c9af29f3"
+          },
+          "displayOrder": 6,
           "mandatory": true
         }
       ]
@@ -485,7 +495,7 @@
           "mandatory": false
         },
         {
-          "name": "Distance of this facility from the residence",
+          "name": "Distance of nearest facility providing C Section from the residence of the deceased",
           "uuid": "9ef37fea-2c6c-4121-8e46-75bfdea6fe03",
           "keyValues": [],
           "concept": {
@@ -498,11 +508,22 @@
           "name": "Mode of transport available to reach this facility.",
           "uuid": "15c7734f-4a79-41fd-90d9-a138e2e9f830",
           "keyValues": [],
+          "type": "MultiSelect",
           "concept": {
-            "uuid": "60e17127-ff83-46a4-b007-e0cdd562874c"
+            "uuid": "ca5c3e67-2d06-4947-b0be-8565a62eb39d"
           },
           "displayOrder": 3,
           "mandatory": false
+        },
+        {
+          "name": "Specify other transport available",
+          "uuid": "924748f3-f06b-4846-8456-3be7c85c9198",
+          "keyValues": [],
+          "concept": {
+            "uuid": "aebc54ac-c856-4ccf-a534-73e8008337be"
+          },
+          "displayOrder": 3.1,
+          "mandatory": true
         }
       ]
     },
@@ -751,7 +772,7 @@
     {
       "uuid": "6de373c2-d6ee-49fc-8935-12645bc9949c",
       "name": "Death during Antenatal Period",
-      "display": "VII. Death during Antenatal Period",
+      "display": "Death during Antenatal Period",
       "displayOrder": 9.1,
       "formElements": [
         {
@@ -1664,16 +1685,6 @@
           "mandatory": true
         },
         {
-          "name": "IX. 5. Date and Time of death",
-          "uuid": "793f6a6d-9cbe-4f8f-9546-873f582f1486",
-          "keyValues": [],
-          "concept": {
-            "uuid": "e3134346-5770-4d7c-8845-9da734bf2a93"
-          },
-          "displayOrder": 9,
-          "mandatory": true
-        },
-        {
           "name": "IX. 6. Who conducted the delivery",
           "uuid": "a799d619-03c5-449b-9495-28883a5091a7",
           "keyValues": [],
@@ -1718,7 +1729,7 @@
           "uuid": "127351c6-f479-42b3-8d16-a856b23a5679",
           "keyValues": [],
           "concept": {
-            "uuid": "26319f2a-49a7-4225-83b1-4f4ed4ca3f8c"
+            "uuid": "e3999b21-821c-4c6e-9953-156e70b9217c"
           },
           "displayOrder": 1,
           "mandatory": false
@@ -1969,7 +1980,7 @@
           "mandatory": false
         },
         {
-          "name": "IX. 16. Any information given to the relaltives about the nature of complication from the hospital",
+          "name": "IX. 16. Any information given to the relatives about the nature of complication from the hospital",
           "uuid": "37d80521-e191-4520-b122-2ea7ecf15cdb",
           "type": "SingleSelect",
           "concept": {
@@ -1999,7 +2010,7 @@
           "mandatory": false
         },
         {
-          "name": "IX. 18. If yes, please describ the delay in initiating treatment.",
+          "name": "IX. 18. If yes, please describe the delay in initiating treatment.",
           "uuid": "73aebaa7-d068-45b5-a123-e463154e68d3",
           "keyValues": [],
           "concept": {

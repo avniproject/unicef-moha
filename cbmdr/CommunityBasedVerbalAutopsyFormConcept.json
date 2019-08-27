@@ -260,12 +260,48 @@
   {
     "name": "Date of Investigation",
     "uuid": "a6351c9a-9e76-4e0d-af62-01dda452f895",
-    "dataType": "Date"
+    "dataType": "DateTime"
+  },
+  {
+    "name": "Septic abortion",
+    "uuid": "7db78d88-8cc1-4f67-9ca7-6cf5fad6c6d0",
+    "dataType": "NA"
   },
   {
     "name": "Probable cause of death details",
     "uuid": "04880a88-b87e-4bd5-a75d-ce230b847506",
-    "dataType": "Notes"
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "bbcab554-15c0-424f-a86f-e12a9ad38a53"
+      },
+      {
+        "uuid": "4ed8b24e-e031-4289-9c1e-70bde07a80a4"
+      },
+      {
+        "uuid": "489f07e5-d9e1-478a-969d-3acad587a15e"
+      },
+      {
+        "uuid": "8993ed6a-df82-420e-9da8-fc4eecd6bdc3"
+      },
+      {
+        "uuid": "2156deeb-bec7-4614-873f-eed4807a74f3"
+      },
+      {
+        "uuid": "b89c51cd-b3e6-43b2-b3f3-1114b1d15837"
+      },
+      {
+        "uuid": "7db78d88-8cc1-4f67-9ca7-6cf5fad6c6d0"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Other probable cause of death",
+    "uuid": "e3a7aab6-e92a-45b6-b04f-81c8c9af29f3",
+    "dataType": "Text"
   },
   {
     "name": "Participate in this interview",
@@ -480,8 +516,8 @@
     "unit": "Km"
   },
   {
-    "name": "Mode of transport available to reach this facility",
-    "uuid": "60e17127-ff83-46a4-b007-e0cdd562874c",
+    "name": "Other mode of transport available from home",
+    "uuid": "aebc54ac-c856-4ccf-a534-73e8008337be",
     "dataType": "Text"
   },
   {

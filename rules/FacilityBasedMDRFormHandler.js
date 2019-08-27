@@ -183,6 +183,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     dateOfAdmissionToFacility1([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(1);
         let dateOfReferralFromHome = programEncounter.getObservationValue('Date of referral from home');
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
         if (dateOfReferralFromHome
@@ -195,6 +196,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     facility1DateOfReferral([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(1);
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
         let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 1');
         if(dateOfAdmissionToThisFacility
@@ -207,6 +209,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     dateOfAdmissionToFacility2([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(2);
         let dateOfAdmissionToPreviousFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
         let dateOfReferralFromFacility1 = programEncounter.getObservationValue('Date of referral from Facility 1');
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
@@ -225,6 +228,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     facility2DateOfReferral([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(2);
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
         let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 2');
         if(dateOfAdmissionToThisFacility
@@ -237,6 +241,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     dateOfAdmissionToFacility3([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(3);
         let dateOfAdmissionToPreviousFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
         let dateOfReferralFromFacility2 = programEncounter.getObservationValue('Date of referral from Facility 2');
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
@@ -255,6 +260,7 @@ class FbmdrViewFilter {
 
     @WithStatusBuilder
     facility3DateOfReferral([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(3);
         let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
         let dateOfReferralFromThisFacility = programEncounter.getObservationValue('Date of referral from Facility 3');
         if(dateOfAdmissionToThisFacility &&
