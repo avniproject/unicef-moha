@@ -2420,6 +2420,11 @@
     "dataType": "Text"
   },
   {
+    "name": "Photo with details of treatment received from hospital record",
+    "uuid": "ffa84411-6f26-49d9-8c82-f4f7d6139f9a",
+    "dataType": "Image"
+  },
+  {
     "name": "Was she referred",
     "uuid": "0c9ec484-a94e-4035-8460-d73c3d730557",
     "dataType": "Coded",
@@ -2550,6 +2555,11 @@
     "name": "Open History",
     "uuid": "5ddb88ec-b309-44ed-ac29-0045023ab36a",
     "dataType": "Text"
+  },
+  {
+    "name": "Open History (Image)",
+    "uuid": "20664cf0-c724-4701-bb7c-01fdf4a6131c",
+    "dataType": "Image"
   },
   {
     "name": "steps to prevent death",

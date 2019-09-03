@@ -532,7 +532,7 @@
   {
     "name": "2b. Duration of onset of problem after delivery",
     "uuid": "7ba57be5-d20b-430f-8b2d-8a2816db4672",
-    "dataType": "Time"
+    "dataType": "Duration"
   },
   {
     "name": "11. No of post natal checkups received",

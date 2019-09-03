@@ -26,6 +26,23 @@ const dateDiff = (startDateTime, endDateTime) => {
 class CbmdrViewFilter {
 
     @WithStatusBuilder
+    dateOfDeath([programEncounter, formElement], statusBuilder) {
+        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
+        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
+            statusBuilder.validationError('Date/time of death cannot be in the future');
+        }
+    }
+
+    // In Background Information section
+    @WithStatusBuilder
+    q8DateTimeOfDeath([programEncounter, formElement], statusBuilder) {
+        let dtDeath = programEncounter.getObservationValue('Date & Time of Death');
+        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
+            statusBuilder.validationError('Date/time of death cannot be in the future');
+        }
+    }
+
+    @WithStatusBuilder
     dateOfInvestigation([programEncounter, formElement], statusBuilder) {
         let dtInvestigation = programEncounter.getObservationValue('Date of Investigation');
         let dtDeath = programEncounter.getObservationValue('Date and time of Death');
@@ -239,7 +256,7 @@ class CbmdrViewFilter {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when
-                .valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy')
+                .valueInEncounter('Period of Death').containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion')
                 .or.when.valueInEncounter("Died during antenatal period").is.yes;
             return statusBuilder.build();
         })
@@ -585,8 +602,20 @@ class CbmdrViewFilter {
     }
 
     @WithStatusBuilder
+    x6AWhatWasTheTreatmentProvidedAtTheHealthFacility([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").containsAnswerConceptName("Yes");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
     xIfOtherPleaseDescribeTheTreatmentProvidedAtTheHealthFacility([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Treatment in hospital").containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    x6BSeeTheHospitalRecordsIfAvailableAndFillDetailsOfTreatmentReceived([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
 

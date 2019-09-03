@@ -344,7 +344,7 @@
           "mandatory": false
         },
         {
-          "name": "8. Date & Time of Death",
+          "name": "Q8. Date & Time of Death",
           "uuid": "2420ed89-0d3d-4845-9890-a358beaf9d98",
           "keyValues": [],
           "concept": {
@@ -1748,7 +1748,7 @@
           "name": "IX. 9. What were the complications that the deceased woman(name) had during labour / delivery?",
           "uuid": "4560d3de-776b-4326-85bd-63e59d5bedde",
           "keyValues": [],
-          "type": "SingleSelect",
+          "type": "MultiSelect",
           "concept": {
             "uuid": "301165eb-9c76-45c0-89a8-a21eac81cfbf"
           },
@@ -1794,6 +1794,16 @@
             "uuid": "d3f8c64e-d983-414a-a4cf-909558043f7f"
           },
           "displayOrder": 7,
+          "mandatory": false
+        },
+        {
+          "name": "IX. 10b. OR, Take photo of hospital records if available with details of treatment received",
+          "uuid": "9245eb9f-6ffa-46fd-b2c9-2f365f0e717d",
+          "keyValues": [],
+          "concept": {
+            "uuid": "ffa84411-6f26-49d9-8c82-f4f7d6139f9a"
+          },
+          "displayOrder": 7.1,
           "mandatory": false
         },
         {
@@ -2070,9 +2080,7 @@
             }
           ],
           "concept": {
-            "name": "2b. Duration of onset of problem after delivery",
-            "uuid": "7ba57be5-d20b-430f-8b2d-8a2816db4672",
-            "dataType": "Date"
+            "uuid": "7ba57be5-d20b-430f-8b2d-8a2816db4672"
           },
           "displayOrder": 2,
           "mandatory": true
@@ -2759,6 +2767,16 @@
             "uuid": "5ddb88ec-b309-44ed-ac29-0045023ab36a"
           },
           "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Photo of Open History narrative (if available)",
+          "uuid": "7269e9f3-3014-4aba-bd5e-2cb0d7483e68",
+          "keyValues": [],
+          "concept": {
+            "uuid": "20664cf0-c724-4701-bb7c-01fdf4a6131c"
+          },
+          "displayOrder": 2,
           "mandatory": false
         }
       ]
