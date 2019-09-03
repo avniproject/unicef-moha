@@ -46,6 +46,10 @@
           "concept": {
             "uuid": "0bae0557-7461-4d4d-a14e-1e9e8793ba6f"
           },
+          "validFormat": {
+            "regex": "^[0-9]{12}$",
+            "descriptionKey": "Required12Digits"
+          },
           "displayOrder": 7,
           "mandatory": false
         },

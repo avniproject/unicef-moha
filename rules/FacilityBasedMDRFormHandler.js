@@ -37,7 +37,7 @@ class FbmdrViewFilter {
         let dtAdmission = programEncounter.getObservationValue('Date and time of Admission');
         let dtDeath = programEncounter.getObservationValue('Date and time of Death');
         if (dtAdmission && dtDeath && calculateDurationInDaysAndHours(dtAdmission, dtDeath).startsWith('-')) {
-            statusBuilder.validationError('Time of Death cannot be after time of Admission');
+            statusBuilder.validationError('Time of Death cannot be before Time of Admission');
         }
         return statusBuilder.build();
     }
