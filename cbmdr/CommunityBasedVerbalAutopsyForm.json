@@ -724,17 +724,6 @@
           },
           "displayOrder": 14,
           "mandatory": false
-        },
-        {
-          "name": "V.11. Did the woman die during Antenatal Period.",
-          "uuid": "53257989-283f-4eba-9e3a-31c6eed0727a",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "8b38acd7-82d4-4be1-8615-ad006a37d31d"
-          },
-          "displayOrder": 15,
-          "mandatory": true
         }
       ]
     },

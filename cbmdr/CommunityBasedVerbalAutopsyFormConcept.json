@@ -831,19 +831,6 @@
     "dataType": "Text"
   },
   {
-    "name": "Died during antenatal period",
-    "uuid": "8b38acd7-82d4-4be1-8615-ad006a37d31d",
-    "dataType": "Coded",
-    "answers": [
-      {
-        "uuid": "04bb1773-c353-44a1-a68c-9b448e07ff70"
-      },
-      {
-        "uuid": "e7b50c78-3d90-484d-a224-9887887780dc"
-      }
-    ]
-  },
-  {
     "name": "Problems deceased woman had at time of death",
     "uuid": "0f151dbe-93a6-46f4-a759-36b13de95c50",
     "dataType": "Text"

@@ -25,41 +25,6 @@ const dateDiff = (startDateTime, endDateTime) => {
 @EncounterViewFilter("81af8852-dd3f-48e3-9717-0f2de5de6654", "CBMDR View Filter", 100, {})
 class CbmdrViewFilter {
 
-    @WithStatusBuilder
-    dateOfDeath([programEncounter, formElement], statusBuilder) {
-        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
-        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
-            statusBuilder.validationError('Date/time of death cannot be in the future');
-        }
-    }
-
-    // In Background Information section
-    @WithStatusBuilder
-    q8DateTimeOfDeath([programEncounter, formElement], statusBuilder) {
-        let dtDeath = programEncounter.getObservationValue('Date & Time of Death');
-        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
-            statusBuilder.validationError('Date/time of death cannot be in the future');
-        }
-    }
-
-    @WithStatusBuilder
-    dateOfInvestigation([programEncounter, formElement], statusBuilder) {
-        let dtInvestigation = programEncounter.getObservationValue('Date of Investigation');
-        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
-        if (dtInvestigation && (dateDiff(dtDeath, dtInvestigation) < 0)) {
-            statusBuilder.validationError('Date/time of investigation cannot be before Date/time of death');
-        }
-        return statusBuilder.build();
-    }
-
-    @WithStatusBuilder
-    specifyOtherProbableCauseOfDeath([programEncounter, formElement], statusBuilder) {
-        statusBuilder.show().when
-            .valueInEncounter("Probable cause of death details")
-            .containsAnswerConceptName("Other");
-        return statusBuilder.build();
-    }
-
     participateInInterview(formElementGroup, encounter) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({programEncounter: encounter, formElement: fe});
@@ -106,6 +71,43 @@ class CbmdrViewFilter {
         return this.participateInInterview(formElementGroup, encounter)
     }
 
+
+    @WithStatusBuilder
+    dateOfDeath([programEncounter, formElement], statusBuilder) {
+        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
+        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
+            statusBuilder.validationError('Date/time of death cannot be in the future');
+        }
+    }
+
+    // In Background Information section
+    @WithStatusBuilder
+    q8DateTimeOfDeath([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
+        let dtDeath = programEncounter.getObservationValue('Date & Time of Death');
+        if (dtDeath && dateDiff(dtDeath, programEncounter.encounterDateTime) < 0) {
+            statusBuilder.validationError('Date/time of death cannot be in the future');
+        }
+    }
+
+    @WithStatusBuilder
+    dateOfInvestigation([programEncounter, formElement], statusBuilder) {
+        let dtInvestigation = programEncounter.getObservationValue('Date of Investigation');
+        let dtDeath = programEncounter.getObservationValue('Date and time of Death');
+        if (dtInvestigation && (dateDiff(dtDeath, dtInvestigation) < 0)) {
+            statusBuilder.validationError('Date/time of investigation cannot be before Date/time of death');
+        }
+        return statusBuilder.build();
+    }
+
+    @WithStatusBuilder
+    specifyOtherProbableCauseOfDeath([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when
+            .valueInEncounter("Probable cause of death details")
+            .containsAnswerConceptName("Other");
+        return statusBuilder.build();
+    }
+
     @WithStatusBuilder
     otherPlaceOfDeath([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Place of death").containsAnswerConceptName("Other");
@@ -145,6 +147,7 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     gravida([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
         let gravida = programEncounter.getObservationValue('Gravida');
         let para = programEncounter.getObservationValue('Parity');
         if (para && !gravida) {
@@ -155,6 +158,7 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     para([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
         let gravida = programEncounter.getObservationValue('Gravida');
         let para = programEncounter.getObservationValue('Parity');
         if (gravida && para && (para > gravida)) {
@@ -165,6 +169,7 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     abortions([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
         let gravida = programEncounter.getObservationValue('Gravida');
         let para = programEncounter.getObservationValue('Parity');
         let abortion = programEncounter.getObservationValue('Number of abortions');
@@ -176,6 +181,7 @@ class CbmdrViewFilter {
 
     @WithStatusBuilder
     noOfLiveBirths([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Participate in this interview").is.yes;
         let para = programEncounter.getObservationValue('Parity');
         let numLiveBirths = programEncounter.getObservationValue('Past Live Births');
         if (para && numLiveBirths && (numLiveBirths > para)) {
@@ -256,8 +262,7 @@ class CbmdrViewFilter {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when
-                .valueInEncounter('Period of Death').containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion')
-                .or.when.valueInEncounter("Died during antenatal period").is.yes;
+                .valueInEncounter('Period of Death').containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
             return statusBuilder.build();
         })
     }
@@ -266,9 +271,7 @@ class CbmdrViewFilter {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
             statusBuilder.show().when
-                .valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy')
-                .or.when.valueInEncounter("Died during antenatal period").is.yes.and
-                .valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6);
+                .valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy');
             return statusBuilder.build();
         })
     }
@@ -276,7 +279,7 @@ class CbmdrViewFilter {
     referralFromHomeVillage(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
                 .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
                 .when.valueInEncounter("Referred at that time").is.yes;
             return statusBuilder.build();
@@ -286,7 +289,7 @@ class CbmdrViewFilter {
     referralFormFromFacility1(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
                 .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
                 .when.valueInEncounter("Referred at that time").is.yes;
             return statusBuilder.build();
@@ -296,7 +299,7 @@ class CbmdrViewFilter {
     referralFormFromFacility2(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
                 .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
                 .when.valueInEncounter("Referred at that time").is.yes;
             return statusBuilder.build();
@@ -306,7 +309,7 @@ class CbmdrViewFilter {
     referralFormFromFacility3(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
                 .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
                 .when.valueInEncounter("Referred at that time").is.yes;
             return statusBuilder.build();
@@ -317,7 +320,7 @@ class CbmdrViewFilter {
     seekingCare(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
-            statusBuilder.show().when.valueInEncounter("Died during antenatal period").is.yes.and
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
                 .when.valueInEncounter("Did she seek care").is.no;
             return statusBuilder.build();
         })

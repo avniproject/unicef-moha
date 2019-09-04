@@ -39,6 +39,9 @@ class FbmdrViewFilter {
         if (dtAdmission && dtDeath && calculateDurationInDaysAndHours(dtAdmission, dtDeath).startsWith('-')) {
             statusBuilder.validationError('Time of Death cannot be before Time of Admission');
         }
+        if (dtDeath && calculateDurationInDaysAndHours(dtDeath, programEncounter.encounterDateTime).startsWith('-')) {
+            statusBuilder.validationError('Date/time of death cannot be in the future');
+        }
         return statusBuilder.build();
     }
 
