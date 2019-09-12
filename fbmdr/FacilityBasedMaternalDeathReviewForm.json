@@ -2130,17 +2130,208 @@
       "uuid": "46557672-5094-41ed-b340-be29d511c9e2",
       "name": "Cause of death",
       "display": "Cause of death",
-      "displayOrder": 32,
+      "displayOrder": 0,
       "formElements": [
         {
-          "name": "Antecedent causes, due to or as a consequence of",
-          "uuid": "79883c4e-8d03-4e32-9b65-b629fb014f33",
+          "name": "Cause of maternal death",
+          "uuid": "a749d1aa-9d36-4755-a287-306843d215ef",
           "keyValues": [],
+          "type": "SingleSelect",
           "concept": {
-            "uuid": "bbfde929-97a2-4948-88e8-6349e14a26ff"
+            "uuid": "27a14e4f-b074-4d5b-8358-2ffdfa6c25a2"
+          },
+          "displayOrder": 32,
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "uuid": "16e1dd44-6c60-4176-8aa1-fb7b908cbbca",
+      "name": "Direct causes of maternal death",
+      "display": "Maternal death: Direct causes",
+      "displayOrder": 32.1,
+      "formElements": [
+        {
+          "name": "Pregnancies with abortive outcome",
+          "uuid": "d2b46d0f-811b-4d4b-873d-b36ff7cb9291",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "388b96fa-4756-455a-baa9-38e00f090f3f"
           },
           "displayOrder": 1,
           "mandatory": false
+        },
+        {
+          "name": "Hypertensive disorders in pregnancy, birth and puerperium",
+          "uuid": "5ed3da60-9597-4eda-8705-729cc48c111a",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "41b9a15f-d576-4457-8594-b2576a7cf3f4"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Obstetric Haemorrhage",
+          "uuid": "395c5196-0d7f-4bf6-8309-745510fe71ef",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "060e631e-6b1e-4d53-8f59-1227fee486db"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Pregnancy related infection",
+          "uuid": "590e8e89-dc28-45b3-ba24-658b521efe1d",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "9e7056f9-ba29-45cd-b019-a1bc2e079f56"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Other Obstetric complications",
+          "uuid": "8a1fe35a-ca71-4982-9a38-4a4a39c8c571",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "93c029e4-005f-46b6-93fb-9041d8d1252b"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        },
+        {
+          "name": "Other direct cause",
+          "uuid": "26cf2014-0615-46b7-810e-dbbd0888925f",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "470ad5fc-7931-47bc-afcc-0c77b63edf1a"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        },
+        {
+          "name": "Select at least one cause of death from all options above",
+          "uuid": "c6c5e8af-f7ab-4bb2-ace4-6d4dceef31bf",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 7,
+          "mandatory": true
+        }
+      ]
+    },
+    {
+      "name": "Indirect causes of maternal death",
+      "display": "Maternal death: Indirect causes",
+      "uuid": "2d9135f0-e717-4ead-af10-ad3e576c2eb7",
+      "displayOrder": 32.2,
+      "formElements": [
+        {
+          "name": "Anaemia",
+          "uuid": "4c238b53-19bf-46b9-8eee-08e25aece736",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "d6990222-a6fe-4f42-a0a1-1279886672bb"
+          },
+          "displayOrder": 1,
+          "mandatory": false
+        },
+        {
+          "name": "Cardiac disorders",
+          "uuid": "e0546540-3034-4a59-819d-d9ff05687904",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "1860f864-b1c2-444b-a89a-394bc0674b31"
+          },
+          "displayOrder": 2,
+          "mandatory": false
+        },
+        {
+          "name": "Liver disorders",
+          "uuid": "c74126a4-97da-45d6-8630-e3b21af13389",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "e53298d5-d291-4b4a-9822-a8a3cdc6469c"
+          },
+          "displayOrder": 3,
+          "mandatory": false
+        },
+        {
+          "name": "Respiratory disorders",
+          "uuid": "5db75437-8630-46d0-be77-fc5662705d79",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "be0d7917-421b-4254-a895-6830af9b16b6"
+          },
+          "displayOrder": 4,
+          "mandatory": false
+        },
+        {
+          "name": "Renal disorders",
+          "uuid": "75db35c4-b235-4f09-9b27-88a6ab707f22",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "db0ed88c-f838-485e-9de2-b2626982ef4b"
+          },
+          "displayOrder": 5,
+          "mandatory": false
+        },
+        {
+          "name": "Endocrinal disorders",
+          "uuid": "3858b6af-fdad-454d-a2df-fec5dc49ca30",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "bc93dda2-15c4-4321-ac36-6bfca096f5ad"
+          },
+          "displayOrder": 6,
+          "mandatory": false
+        },
+        {
+          "name": "Neurological disorders",
+          "uuid": "7b4121d6-fabb-4977-924f-8902603afb26",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "949a41b4-98f2-4048-b50e-bb27d79ba9e0"
+          },
+          "displayOrder": 7,
+          "mandatory": false
+        },
+        {
+          "name": "Infections/ Infestations",
+          "uuid": "21fd1b14-42e2-4531-afb7-212f51be9522",
+          "keyValues": [],
+          "type": "MultiSelect",
+          "concept": {
+            "uuid": "39367397-a350-4eac-a5dd-a27c5d39d700"
+          },
+          "displayOrder": 8,
+          "mandatory": false
+        },
+        {
+          "name": "Select at least one cause of indirect death from all options above",
+          "uuid": "6992f1ef-2762-49e0-9d42-70bd63eecd25",
+          "keyValues": [],
+          "concept": {
+            "uuid": "b4e5a662-97bf-4846-b9b7-9baeab4d89c4"
+          },
+          "displayOrder": 9,
+          "mandatory": true
         }
       ]
     },

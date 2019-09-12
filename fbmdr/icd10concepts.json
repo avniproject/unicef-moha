@@ -1,0 +1,657 @@
+[
+  {
+    "name": "Induced abortion (safe/unsafe)",
+    "uuid": "30ac8930-2b0f-4e19-b6c0-db9f657ad312",
+    "dataType": "NA"
+  },
+  {
+    "name": "Ectopic pregnancy",
+    "uuid": "f641ab79-03d4-4ee8-89f5-0dc88431e006",
+    "dataType": "NA"
+  },
+  {
+    "name": "Gestational trophoblastic disease",
+    "uuid": "7da79f69-3bda-443c-b221-6d4cab326d01",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pregnancies with abortive outcome",
+    "uuid": "388b96fa-4756-455a-baa9-38e00f090f3f",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "e93e1640-7fea-4085-9f17-cfc36fcf13c5",
+        "name": "Spontaneous abortion"
+      },
+      {
+        "uuid": "30ac8930-2b0f-4e19-b6c0-db9f657ad312"
+      },
+      {
+        "uuid": "f641ab79-03d4-4ee8-89f5-0dc88431e006"
+      },
+      {
+        "uuid": "7da79f69-3bda-443c-b221-6d4cab326d01"
+      }
+    ]
+  },
+  {
+    "name": "Hypertensive disorders of pregnancy induced hypertension",
+    "uuid": "2b2c758a-fb72-48be-bfa6-53da283b9f5b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pre eclampsia",
+    "uuid": "fb12f988-df13-49e2-b360-60b9b61e263d",
+    "dataType": "NA"
+  },
+  {
+    "name": "HELLP Syndrome",
+    "uuid": "80c38348-64c9-4731-9e72-cbbedf0f95dc",
+    "dataType": "NA"
+  },
+  {
+    "name": "Hypertensive disorders in pregnancy, birth and puerperium",
+    "uuid": "41b9a15f-d576-4457-8594-b2576a7cf3f4",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "2b2c758a-fb72-48be-bfa6-53da283b9f5b"
+      },
+      {
+        "uuid": "fb12f988-df13-49e2-b360-60b9b61e263d"
+      },
+      {
+        "uuid": "489f07e5-d9e1-478a-969d-3acad587a15e",
+        "name": "Eclampsia"
+      },
+      {
+        "uuid": "80c38348-64c9-4731-9e72-cbbedf0f95dc"
+      },
+      {
+        "uuid": "1f4227dc-a51f-4237-9217-37d4cea92efd",
+        "name": "Essential Hypertension"
+      }
+    ]
+  },
+  {
+    "name": "Antepartum hemorrhage - Placenta previa",
+    "uuid": "b5c2547b-debc-4b3f-8b97-529cb3b95d72",
+    "dataType": "NA"
+  },
+  {
+    "name": "Antepartum hemorrhage - Placental abruption",
+    "uuid": "c6094358-0eb2-47a5-9ef4-2f2b175a613a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Antepartum hemorrhage - Unclassified",
+    "uuid": "bc6047fe-0066-4bee-aa0f-c63f4a461c30",
+    "dataType": "NA"
+  },
+  {
+    "name": "Scar dehiscence",
+    "uuid": "986bcd53-f5cd-43d8-b582-272d16421714",
+    "dataType": "NA"
+  },
+  {
+    "name": "Rupture uterus after obstructed labour or otherwise",
+    "uuid": "b418d991-9260-4dbc-b2c1-7dd324043fee",
+    "dataType": "NA"
+  },
+  {
+    "name": "Surgical injury during labour, Caesarean Section/ Forceps or Vacuum delivery / Cervical / Vaginal tears, others",
+    "uuid": "8cb94210-83ed-4cab-bc5e-cf7b00b5c024",
+    "dataType": "NA"
+  },
+  {
+    "name": "Third Stage haemorrhage with/without Retained placenta with/without Inversion of uterus",
+    "uuid": "bf894142-c193-46a8-8da0-e7b42b2e7a5e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Postpartum haemorrhage - Atonic",
+    "uuid": "e4daf313-4731-42b1-8a2f-153841d60000",
+    "dataType": "NA"
+  },
+  {
+    "name": "Postpartum haemorrhage - Traumatic",
+    "uuid": "7b45be67-2c3d-4a1e-93ce-7b2d1fc3591c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Postpartum haemorrhage - Mixed",
+    "uuid": "961b3bab-d6f7-42f1-8cca-28763fda10e3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Obstetric Haemmorhage",
+    "uuid": "060e631e-6b1e-4d53-8f59-1227fee486db",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b5c2547b-debc-4b3f-8b97-529cb3b95d72"
+      },
+      {
+        "uuid": "c6094358-0eb2-47a5-9ef4-2f2b175a613a"
+      },
+      {
+        "uuid": "bc6047fe-0066-4bee-aa0f-c63f4a461c30"
+      },
+      {
+        "uuid": "986bcd53-f5cd-43d8-b582-272d16421714"
+      },
+      {
+        "uuid": "b418d991-9260-4dbc-b2c1-7dd324043fee"
+      },
+      {
+        "uuid": "8cb94210-83ed-4cab-bc5e-cf7b00b5c024"
+      },
+      {
+        "uuid": "bf894142-c193-46a8-8da0-e7b42b2e7a5e"
+      },
+      {
+        "uuid": "e4daf313-4731-42b1-8a2f-153841d60000"
+      },
+      {
+        "uuid": "7b45be67-2c3d-4a1e-93ce-7b2d1fc3591c"
+      },
+      {
+        "uuid": "961b3bab-d6f7-42f1-8cca-28763fda10e3"
+      }
+    ]
+  },
+  {
+    "name": "Excluding abortive outcome",
+    "uuid": "0b63de68-8140-4e39-ab93-800472b38f18",
+    "dataType": "NA"
+  },
+  {
+    "name": "Chorioamnionitis without or with obstructed labour / prolonged labour",
+    "uuid": "96a52bda-91e0-49f0-bd46-c341335b6a62",
+    "dataType": "NA"
+  },
+  {
+    "comment": "Post surgical procedures (E.g. evacuation, Cesarean section, laparotomy, manual removal of placenta, others) , Infections of genito urinary tract , Infection of obstetric surgical wound following delivery , Infections of breast associated with child birth, Pyrexia of unknown origin following delivery",
+    "name": "ICD10: Post surgical procedures",
+    "uuid": "94d1440e-e65f-4a81-bea5-5f37fa46ac86",
+    "dataType": "NA"
+  },
+  {
+    "name": "Others like breast abscess",
+    "uuid": "edafd53d-e75b-4a99-a584-77cf0a7618ab",
+    "dataType": "NA"
+  },
+  {
+    "name": "Unknown",
+    "uuid": "c002df05-fc3f-4eab-ae14-3d5d92aeda01",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pregnancy related infection",
+    "uuid": "9e7056f9-ba29-45cd-b019-a1bc2e079f56",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "0b63de68-8140-4e39-ab93-800472b38f18"
+      },
+      {
+        "uuid": "96a52bda-91e0-49f0-bd46-c341335b6a62"
+      },
+      {
+        "uuid": "8993ed6a-df82-420e-9da8-fc4eecd6bdc3"
+      },
+      {
+        "uuid": "94d1440e-e65f-4a81-bea5-5f37fa46ac86"
+      },
+      {
+        "uuid": "edafd53d-e75b-4a99-a584-77cf0a7618ab"
+      },
+      {
+        "uuid": "c002df05-fc3f-4eab-ae14-3d5d92aeda01"
+      }
+    ]
+  },
+  {
+    "name": "Amniotic fluid embolism",
+    "uuid": "fcc1cb7b-5b5f-4d77-9c33-69a52fd67382",
+    "dataType": "NA"
+  },
+  {
+    "name": "Uterine inversion",
+    "uuid": "6c144f17-a931-4608-8e7a-e839cbf4fdd8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Hepatorenal failure due to vomiting during pregnancy",
+    "uuid": "b77b5539-2e68-412e-af52-c645a5b2830b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Unexplained",
+    "uuid": "a69600a2-56c8-458e-9c81-44ba7a35f7c8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other Obstetric complications",
+    "uuid": "93c029e4-005f-46b6-93fb-9041d8d1252b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "fcc1cb7b-5b5f-4d77-9c33-69a52fd67382"
+      },
+      {
+        "uuid": "6c144f17-a931-4608-8e7a-e839cbf4fdd8"
+      },
+      {
+        "uuid": "b77b5539-2e68-412e-af52-c645a5b2830b"
+      },
+      {
+        "uuid": "a69600a2-56c8-458e-9c81-44ba7a35f7c8"
+      }
+    ]
+  },
+  {
+    "name": "Unanticipated complications of management",
+    "uuid": "b55aef48-f9d4-481d-aa92-be55b4ef72ab",
+    "dataType": "NA"
+  },
+  {
+    "name": "Other direct cause",
+    "uuid": "470ad5fc-7931-47bc-afcc-0c77b63edf1a",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "b55aef48-f9d4-481d-aa92-be55b4ef72ab"
+      }
+    ]
+  },
+  {
+    "name": "Iron/Folic Acid Deficiency",
+    "uuid": "14bd0dc0-2e1c-45a9-b091-37f953ce3aa0",
+    "dataType": "NA"
+  },
+  {
+    "name": "Sickle cell Disease",
+    "uuid": "41da4826-c8df-4f05-aae6-43a4ff942667",
+    "dataType": "NA"
+  },
+  {
+    "name": "Thallasemia",
+    "uuid": "be51a12d-6575-40e8-9732-08941841e085",
+    "dataType": "NA"
+  },
+  {
+    "name": "Aplastic Anaemia",
+    "uuid": "632a1133-2047-4ad1-a0c4-115fe3bd574e",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Anaemia",
+    "uuid": "d6990222-a6fe-4f42-a0a1-1279886672bb",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "14bd0dc0-2e1c-45a9-b091-37f953ce3aa0"
+      },
+      {
+        "uuid": "41da4826-c8df-4f05-aae6-43a4ff942667"
+      },
+      {
+        "uuid": "be51a12d-6575-40e8-9732-08941841e085"
+      },
+      {
+        "uuid": "632a1133-2047-4ad1-a0c4-115fe3bd574e"
+      }
+    ]
+  },
+  {
+    "name": "Cardiomyopathy (antepartum, peripartum postpartum)",
+    "uuid": "133fa1e4-2867-482b-b6b1-2cf23a642cc3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Rheumatic heart disease",
+    "uuid": "05e2a041-af22-468d-b731-ff4c05956017",
+    "dataType": "NA"
+  },
+  {
+    "name": "Congenital heart disease",
+    "uuid": "6d659845-2712-48ed-8415-f740192952de",
+    "dataType": "NA"
+  },
+  {
+    "name": "Aortic aneurysm",
+    "uuid": "e93abcfc-b4ca-48b0-ae7e-e1bbe2d8d562",
+    "dataType": "NA"
+  },
+  {
+    "name": "Myocardial infarction",
+    "uuid": "3c774de4-6bbb-4ba7-87cf-0e3cf08d7255",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Cardiac disorders",
+    "uuid": "1860f864-b1c2-444b-a89a-394bc0674b31",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "133fa1e4-2867-482b-b6b1-2cf23a642cc3"
+      },
+      {
+        "uuid": "05e2a041-af22-468d-b731-ff4c05956017"
+      },
+      {
+        "uuid": "6d659845-2712-48ed-8415-f740192952de"
+      },
+      {
+        "uuid": "e93abcfc-b4ca-48b0-ae7e-e1bbe2d8d562"
+      },
+      {
+        "uuid": "3c774de4-6bbb-4ba7-87cf-0e3cf08d7255"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Acute fatty liver of pregnancy",
+    "uuid": "d3c420cb-4957-4adb-a8a2-3436b409caf1",
+    "dataType": "NA"
+  },
+  {
+    "name": "Acute hepatic failure",
+    "uuid": "833f5ff1-a88a-47d0-a4d4-1e83e22242a2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Cirrhosis of liver with portal hypertension",
+    "uuid": "4bba784f-b209-4987-9b1a-eda1a2d4a5a7",
+    "dataType": "NA"
+  },
+  {
+    "name": "Infective hepatitis (A,B,C,E)",
+    "uuid": "d657cc76-607b-49c9-92fd-233d5561c451",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Liver Disorders",
+    "uuid": "e53298d5-d291-4b4a-9822-a8a3cdc6469c",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "d3c420cb-4957-4adb-a8a2-3436b409caf1"
+      },
+      {
+        "uuid": "833f5ff1-a88a-47d0-a4d4-1e83e22242a2"
+      },
+      {
+        "uuid": "4bba784f-b209-4987-9b1a-eda1a2d4a5a7"
+      },
+      {
+        "uuid": "d657cc76-607b-49c9-92fd-233d5561c451"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Tuberculosis",
+    "uuid": "0c54ef19-5e62-4218-a202-801cd65742b4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pneumonia",
+    "uuid": "7eea1ebd-0d4b-445f-9f00-3313c53779f2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Adult respiratory distress syndrome",
+    "uuid": "df9c567a-1ce6-4e68-851a-46be9f63c1bb",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pulmonary embolism",
+    "uuid": "8c768121-358d-4875-aebf-e017c6bee0f4",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Respiratory Disorders",
+    "uuid": "be0d7917-421b-4254-a895-6830af9b16b6",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "0c54ef19-5e62-4218-a202-801cd65742b4"
+      },
+      {
+        "uuid": "7eea1ebd-0d4b-445f-9f00-3313c53779f2"
+      },
+      {
+        "uuid": "3d6fcc5e-fb31-4222-aa69-a02d43ff91cf",
+        "name": "Asthma"
+      },
+      {
+        "uuid": "df9c567a-1ce6-4e68-851a-46be9f63c1bb"
+      },
+      {
+        "uuid": "8c768121-358d-4875-aebf-e017c6bee0f4"
+      }
+    ]
+  },
+  {
+    "name": "Acute renal failure",
+    "uuid": "5d3cb9ea-7995-4cb3-8f92-b1182da7d5e6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Nephritis",
+    "uuid": "40b50fcb-56da-4177-8daa-0deaf95f6999",
+    "dataType": "NA"
+  },
+  {
+    "name": "Medico renal disease e.g chronic/acute renal failure",
+    "uuid": "601d399f-f721-4b2a-bd10-472f74f9e500",
+    "dataType": "NA"
+  },
+  {
+    "name": "Renal artery stenosis",
+    "uuid": "2ac51e94-898a-4a20-abbd-8ab6a8bf5310",
+    "dataType": "NA"
+  },
+  {
+    "name": "Collagen disorder",
+    "uuid": "85154b3e-1b08-4b51-b730-5ffef4f9414a",
+    "dataType": "NA"
+  },
+  {
+    "name": "Transplant complications",
+    "uuid": "921ce957-10e6-4b2b-a331-62ec6b2c62f9",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Renal disorders",
+    "uuid": "db0ed88c-f838-485e-9de2-b2626982ef4b",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "5d3cb9ea-7995-4cb3-8f92-b1182da7d5e6"
+      },
+      {
+        "uuid": "40b50fcb-56da-4177-8daa-0deaf95f6999"
+      },
+      {
+        "uuid": "601d399f-f721-4b2a-bd10-472f74f9e500"
+      },
+      {
+        "uuid": "2ac51e94-898a-4a20-abbd-8ab6a8bf5310"
+      },
+      {
+        "uuid": "85154b3e-1b08-4b51-b730-5ffef4f9414a"
+      },
+      {
+        "uuid": "921ce957-10e6-4b2b-a331-62ec6b2c62f9"
+      }
+    ]
+  },
+  {
+    "name": "Gestational diabetes mellitus",
+    "uuid": "dd7df42e-d425-40f1-8320-08b02ca6b9f1",
+    "dataType": "NA"
+  },
+  {
+    "name": "Diabetes mellitus",
+    "uuid": "6c8b4341-aef3-4827-81bf-c654ff512308",
+    "dataType": "NA"
+  },
+  {
+    "name": "Thyroid Disorder - Thyrotoxicosis",
+    "uuid": "5553766a-10e9-4cb6-8a0f-01bf973874f6",
+    "dataType": "NA"
+  },
+  {
+    "name": "Pheochromocytoma",
+    "uuid": "7da839cd-acfc-4c3d-8cbe-84a6298c9c45",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Endocrinal Disorders",
+    "uuid": "bc93dda2-15c4-4321-ac36-6bfca096f5ad",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "dd7df42e-d425-40f1-8320-08b02ca6b9f1"
+      },
+      {
+        "uuid": "6c8b4341-aef3-4827-81bf-c654ff512308"
+      },
+      {
+        "uuid": "5553766a-10e9-4cb6-8a0f-01bf973874f6"
+      },
+      {
+        "uuid": "7da839cd-acfc-4c3d-8cbe-84a6298c9c45"
+      }
+    ]
+  },
+  {
+    "name": "Cortical vein thrombosis",
+    "uuid": "3a813edc-c96f-46b0-8721-fd5afcec4748",
+    "dataType": "NA"
+  },
+  {
+    "name": "Cerebral embolism (stroke)",
+    "uuid": "25abdab9-a227-4157-b3d7-d5216d5db0bf",
+    "dataType": "NA"
+  },
+  {
+    "name": "Meningitis",
+    "uuid": "aec5d627-2cfe-457a-9c4d-d7034621b2a8",
+    "dataType": "NA"
+  },
+  {
+    "name": "Enhephalitis",
+    "uuid": "1c5ef62f-4d3b-4773-99cf-471ce9d27904",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Neurological Disorders",
+    "uuid": "949a41b4-98f2-4048-b50e-bb27d79ba9e0",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "a34bf7a0-4d55-41fa-855a-0b8094f369f7",
+        "name": "Epilepsy"
+      },
+      {
+        "uuid": "3a813edc-c96f-46b0-8721-fd5afcec4748"
+      },
+      {
+        "uuid": "25abdab9-a227-4157-b3d7-d5216d5db0bf"
+      },
+      {
+        "uuid": "aec5d627-2cfe-457a-9c4d-d7034621b2a8"
+      },
+      {
+        "uuid": "1c5ef62f-4d3b-4773-99cf-471ce9d27904"
+      }
+    ]
+  },
+  {
+    "name": "H1N1 viral Disease",
+    "uuid": "49b7b220-6677-4184-ab04-746483d22c9f",
+    "dataType": "NA"
+  },
+  {
+    "name": "Scrub typhus",
+    "uuid": "cd3db9ba-9982-4c32-b789-dacd0f0c160b",
+    "dataType": "NA"
+  },
+  {
+    "name": "Non-obstetric complications- Infections/ Infestations",
+    "uuid": "39367397-a350-4eac-a5dd-a27c5d39d700",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "0dee2973-eebe-4699-b676-b770fdd1c411",
+        "name": "Malaria"
+      },
+      {
+        "uuid": "5e9e7336-7ed2-4cf8-b60a-12e8ec4d6374",
+        "name": "Dengue"
+      },
+      {
+        "uuid": "49b7b220-6677-4184-ab04-746483d22c9f"
+      },
+      {
+        "uuid": "8425af99-4a07-4d99-97b2-cf955713a560",
+        "name": "HIV/AIDS"
+      },
+      {
+        "uuid": "cd3db9ba-9982-4c32-b789-dacd0f0c160b"
+      },
+      {
+        "uuid": "05ea583c-51d2-412d-ad00-06c432ffe538"
+      }
+    ]
+  },
+  {
+    "name": "Direct causes",
+    "uuid": "417ecf45-ebc3-4de5-8068-b11e539699a3",
+    "dataType": "NA"
+  },
+  {
+    "name": "Indirect causes",
+    "uuid": "746ea3a6-a615-4063-98e0-df25726dd4d2",
+    "dataType": "NA"
+  },
+  {
+    "name": "Unspecified / Unknown causes - Maternal death during Pregnancy, childbirth and the puerperium where the underlying cause is unknown or was not determined",
+    "uuid": "8cb721e2-6a19-4e7d-87a7-d6245ee6d04c",
+    "dataType": "NA"
+  },
+  {
+    "name": "Coincidental /Incidental causes - Death during pregnancy, child birth and the puerperium due to external causes",
+    "uuid": "c340d39a-de71-4197-9c23-4798de092acd",
+    "dataType": "NA"
+  },
+  {
+    "name": "Cause of maternal death",
+    "uuid": "27a14e4f-b074-4d5b-8358-2ffdfa6c25a2",
+    "dataType": "Coded",
+    "answers": [
+      {
+        "uuid": "417ecf45-ebc3-4de5-8068-b11e539699a3"
+      },
+      {
+        "uuid": "746ea3a6-a615-4063-98e0-df25726dd4d2"
+      },
+      {
+        "uuid": "8cb721e2-6a19-4e7d-87a7-d6245ee6d04c"
+      },
+      {
+        "uuid": "c340d39a-de71-4197-9c23-4798de092acd"
+      }
+    ]
+  }
+
+]

@@ -563,6 +563,46 @@ class FbmdrViewFilter {
         statusBuilder.show().when.valueInEncounter("Gave birth").is.yes;
     }
 
+    directCausesOfMaternalDeath(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Direct causes");
+            return statusBuilder.build();
+        });
+    }
+
+    indirectCausesOfMaternalDeath(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Indirect causes");
+            return statusBuilder.build();
+        });
+    }
+
+    @WithStatusBuilder
+    selectAtLeastOneCauseOfDeathFromAllOptionsAbove([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Direct causes").
+        and.valueInEncounter('Pregnancies with abortive outcome').is.notDefined.
+        and.valueInEncounter('Hypertensive disorders in pregnancy, birth and puerperium').is.notDefined.
+        and.valueInEncounter('Obstetric Haemmorhage').is.notDefined.
+        and.valueInEncounter('Pregnancy related infection').is.notDefined.
+        and.valueInEncounter('Other Obstetric complications').is.notDefined.
+        and.valueInEncounter('Other direct cause').is.notDefined;
+    }
+
+    @WithStatusBuilder
+    selectAtLeastOneCauseOfIndirectDeathFromAllOptionsAbove([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Indirect causes").
+        and.valueInEncounter('Non-obstetric complications- Anaemia').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Cardiac disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Liver Disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Respiratory Disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Renal disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Endocrinal Disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Neurological Disorders').is.notDefined.
+        and.valueInEncounter('Non-obstetric complications- Infections/ Infestations').is.notDefined;
+    }
+
     static exec(programEncounter, formElementGroup, today) {
         return FormElementsStatusHelper
             .getFormElementsStatusesWithoutDefaults(new FbmdrViewFilter(), programEncounter, formElementGroup, today);

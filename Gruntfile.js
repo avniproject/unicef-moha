@@ -36,6 +36,7 @@ module.exports = IDI.configure({
         "checklistDetails": [],
         "concepts": [
             "concepts.json",
+            "fbmdr/icd10concepts.json",
             "cbmdr/CommunityBasedVerbalAutopsyFormConcept.json",
         ],
         "locations": [
