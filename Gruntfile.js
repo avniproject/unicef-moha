@@ -11,7 +11,7 @@ module.exports = IDI.configure({
         "adminUsers": {
             // "prod": ["admin-user.json"],
             "dev": ["users/dev-admin-user.json"],
-            "uat": ["users/dev-admin-user.json"]
+            "uat":["users/dev-admin-user.json"]
         },
         "forms": [
             "registrationForm.json",
@@ -40,9 +40,9 @@ module.exports = IDI.configure({
             "cbmdr/CommunityBasedVerbalAutopsyFormConcept.json",
         ],
         "locations": [
-            "locations/districts.json",
-            "locations/blocks.json",
-            "locations/phcs.json"
+             "locations/districts.json",
+             "locations/blocks.json",
+             "locations/phcs.json"
         ],
         "programs": ["programs.json"],
         "encounterTypes": ["encounterTypes.json"],
@@ -59,11 +59,6 @@ module.exports = IDI.configure({
         ],
         "organisationSql": [
             /* "create_organisation.sql"*/
-        ],
-        "organisationConfig": ["organisationConfig.json"],
-        "translations": [
-            "translations/en.json",
-            "translations/hi_IN.json",
         ]
     }
 }, rulesConfigInfra);
