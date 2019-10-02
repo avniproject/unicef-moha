@@ -179,7 +179,31 @@ class FbmdrViewFilter {
     facility3ReferralDetails(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe=>{
             let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
-            statusBuilder.show().when.valueInEncounter('Number of places visited prior').equals(3);
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(3);
+            return statusBuilder.build();
+        });
+    }
+
+    facility4ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(4);
+            return statusBuilder.build();
+        });
+    }
+
+    facility5ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').is.greaterThanOrEqualTo(5);
+            return statusBuilder.build();
+        });
+    }
+
+    facility6ReferralDetails(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe=>{
+            let statusBuilder = new FormElementStatusBuilder({programEncounter:programEncounter, formElement:fe});
+            statusBuilder.show().when.valueInEncounter('Number of places visited prior').equals(6);
             return statusBuilder.build();
         });
     }
