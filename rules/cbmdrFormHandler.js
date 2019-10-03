@@ -722,6 +722,33 @@ class CbmdrViewFilter {
         })
     }
 
+    xReferralFormFromFacility4(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+                .or.when.valueInEncounter("Referral attended").yes;
+            return statusBuilder.build();
+        })
+    }
+
+    xReferralFormFromFacility5(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+                .or.when.valueInEncounter("Referral attended").yes;
+            return statusBuilder.build();
+        })
+    }
+
+    xReferralFormFromFacility6(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+                .or.when.valueInEncounter("Referral attended").yes;
+            return statusBuilder.build();
+        })
+    }
+
     viiiAbortionRelatedDeath(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
             let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
