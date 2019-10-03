@@ -316,6 +316,37 @@ class CbmdrViewFilter {
         })
     }
 
+    referralFormFromFacility4(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
+
+    referralFormFromFacility5(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
+
+    referralFormFromFacility6(programEncounter, formElementGroup) {
+        return formElementGroup.formElements.map(fe => {
+            let statusBuilder = new FormElementStatusBuilder({formElement: fe, programEncounter: programEncounter});
+            statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+                .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+                .when.valueInEncounter("Referred at that time").is.yes;
+            return statusBuilder.build();
+        })
+    }
+
+
 
     seekingCare(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {

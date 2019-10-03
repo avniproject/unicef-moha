@@ -508,6 +508,21 @@
     "dataType": "Time"
   },
   {
+    "name": "Referral Time to reach from Facility 4",
+    "uuid": "4dde8c35-a84b-4dca-a269-a57355050f43",
+    "dataType": "Time"
+  },
+  {
+    "name": "Referral Time to reach from Facility 5",
+    "uuid": "94b38d96-06f2-4aa6-ba36-d6c8435a41c6",
+    "dataType": "Time"
+  },
+  {
+    "name": "Referral Time to reach from Facility 6",
+    "uuid": "2ea77f87-e7a4-4c85-a692-b732fa1b7348",
+    "dataType": "Time"
+  },
+  {
     "name": "3. Date of spontaneous abortion/ date of termination of pregnany",
     "uuid": "9b7b4dad-5cab-4bad-9861-fef24e16e423",
     "dataType": "Date"
