@@ -1,5 +1,10 @@
 [
   {
+    "name": "Age at the time of first pregnancy",
+    "uuid": "6a7c1cd1-9c21-4b61-8779-150643ce8bd8",
+    "dataType": "Numeric"
+  },
+  {
     "name": "VIII. 11. If Other, specify",
     "uuid": "6ff1cc86-efdb-4f17-9666-5841321087b0",
     "dataType": "Text"
