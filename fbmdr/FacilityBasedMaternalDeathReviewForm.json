@@ -481,7 +481,8 @@
             "uuid": "ed47d0fc-4f9a-43e5-83d9-6f5cbd145686"
           },
           "displayOrder": 10,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         },
         {
           "name": "Home | Type of transport used",
@@ -512,7 +513,8 @@
             "uuid": "7d6e6b5f-6ef6-4eca-bce6-bf735210d913"
           },
           "displayOrder": 12,
-          "mandatory": false
+          "mandatory": false,
+          "voided": true
         }
       ]
     },
@@ -1219,7 +1221,8 @@
           "keyValues": [],
           "concept": {
             "name": "Date of admission to Facility 4",
-            "uuid": "106d3a71-0479-4aaa-af19-39df4a554816"          },
+            "uuid": "106d3a71-0479-4aaa-af19-39df4a554816"
+          },
           "displayOrder": 1,
           "mandatory": false
         },
@@ -1302,10 +1305,10 @@
           "name": "Facility 4 | Date of referral",
           "uuid": "75545e87-273c-46b6-9baa-30154d066579",
           "keyValues": [],
-          "concept": {    
+          "concept": {
             "name": "Date of referral from Facility 4",
             "uuid": "7d85f8c8-2f75-46c3-b3f8-f46117cbc9fb"
-         },
+          },
           "displayOrder": 7,
           "mandatory": false
         },
@@ -1316,7 +1319,8 @@
           "keyValues": [],
           "concept": {
             "name": "Reason for referral from Facility 4",
-            "uuid": "a14a9ca3-f4f0-4885-b4e5-b5acefcfab30"          },
+            "uuid": "a14a9ca3-f4f0-4885-b4e5-b5acefcfab30"
+          },
           "displayOrder": 8,
           "mandatory": false
         },
@@ -1327,7 +1331,7 @@
           "concept": {
             "name": "Other reason for referral from Facility 4",
             "uuid": "04d0ef40-f3ea-4d55-a23c-cadf5ab2c1ae"
-        },
+          },
           "displayOrder": 8.1,
           "mandatory": true
         },
@@ -1380,7 +1384,7 @@
           "name": "Facility 4 | Which other type of transport was used?",
           "uuid": "c220f4ab-35fe-43db-9ba1-a904619ef17d",
           "keyValues": [],
-          "concept": {            
+          "concept": {
             "name": "Other type of transport used from Facility 4",
             "uuid": "60a55b00-ddfa-4ac3-87de-5d45e5aed5c7"
           },
@@ -1921,7 +1925,7 @@
           "concept": {
             "name": "Money spent on treatment/ medicine/ diagnostics at Facility 6",
             "uuid": "fe88cae6-4329-4715-9de9-07dc3c385f11"
-           },
+          },
           "displayOrder": 15,
           "mandatory": false
         },
@@ -2872,6 +2876,17 @@
       "displayOrder": 0,
       "formElements": [
         {
+          "name": "Antecedent causes, due to or as a consequence of",
+          "uuid": "79883c4e-8d03-4e32-9b65-b629fb014f33",
+          "keyValues": [],
+          "concept": {
+            "uuid": "bbfde929-97a2-4948-88e8-6349e14a26ff"
+          },
+          "displayOrder": 1,
+          "mandatory": false,
+          "voided": true
+        },
+        {
           "name": "Cause of maternal death",
           "uuid": "a749d1aa-9d36-4755-a287-306843d215ef",
           "keyValues": [],
@@ -2880,6 +2895,26 @@
             "uuid": "27a14e4f-b074-4d5b-8358-2ffdfa6c25a2"
           },
           "displayOrder": 32,
+          "mandatory": true,
+          "voided": true
+        }
+      ]
+    },
+    {
+      "uuid": "b6cb814c-f4eb-4a11-acfe-823c4c8527c7",
+      "name": "Cause of death",
+      "display": "Cause of death",
+      "displayOrder": 32,
+      "formElements": [
+        {
+          "name": "Cause of maternal death",
+          "uuid": "9f6f9a3c-60fe-4ba5-8489-ef1c43a1a55d",
+          "keyValues": [],
+          "type": "SingleSelect",
+          "concept": {
+            "uuid": "27a14e4f-b074-4d5b-8358-2ffdfa6c25a2"
+          },
+          "displayOrder": 1,
           "mandatory": true
         }
       ]

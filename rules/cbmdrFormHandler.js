@@ -8,6 +8,7 @@ import {
 } from 'rules-config/rules';
 import {WithName} from "rules-config";
 import moment from 'moment';
+
 const _ = require("lodash");
 
 
@@ -22,8 +23,25 @@ const dateDiff = (startDateTime, endDateTime) => {
     }
 };
 
+const calculateDurationInDaysAndHours = (startDateTime, endDateTime) => {
+    if (!_.isNil(startDateTime) && !_.isNil(endDateTime)) {
+        let diff = moment(endDateTime).diff(moment(startDateTime), 'days', true);
+        let days = Math.floor(diff);
+        let decimalValue = diff - days;
+        let hours = Math.round(decimalValue * 24 * 4) / 4;
+        return `${days} days, ${hours} hours`;
+    }
+};
+
 @EncounterViewFilter("81af8852-dd3f-48e3-9717-0f2de5de6654", "CBMDR View Filter", 100, {})
 class CbmdrViewFilter {
+
+    static exec(programEncounter, formElementGroup, today) {
+
+
+        return FormElementsStatusHelper
+            .getFormElementsStatusesWithoutDefaults(new CbmdrViewFilter(), programEncounter, formElementGroup, today);
+    }
 
     participateInInterview(formElementGroup, encounter) {
         return formElementGroup.formElements.map(fe => {
@@ -71,6 +89,278 @@ class CbmdrViewFilter {
         return this.participateInInterview(formElementGroup, encounter)
     }
 
+    @WithName('Date of Admission to Facility 1')
+    @WithStatusBuilder
+    dummy24([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromHome = programEncounter.getObservationValue('Date of referral from home');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
+        const dateDiff = dateOfReferralFromHome
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromHome, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to this facility cannot be before date of referral from home')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('Date of Admission to Facility 2')
+    @WithStatusBuilder
+    dummy25([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('Date of admission to Facility 1');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 2 cannot be before date of referral from facility 1')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('Date of Admission to Facility 3')
+    @WithStatusBuilder
+    dummy26([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('Date of admission to Facility 2');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 3 cannot be before date of referral from facility 2')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('Date of Admission to Facility 4')
+    @WithStatusBuilder
+    dummy27([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('Date of admission to Facility 3');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 4');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 4 cannot be before date of referral from facility 3')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('Date of Admission to Facility 5')
+    @WithStatusBuilder
+    dummy28([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('Date of admission to Facility 4');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 5');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 5 cannot be before date of referral from facility 4')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('Date of Admission to Facility 6')
+    @WithStatusBuilder
+    dummy29([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter('Period of Death').containsAnswerConceptName('During pregnancy').and
+            .when.valueInEncounter("No of weeks of pregnancy").is.greaterThanOrEqualTo(6).and
+            .when.valueInEncounter("Referred at that time").is.yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('Date of admission to Facility 5');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('Date of admission to Facility 6');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 6 cannot be before date of referral from facility 5')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 1')
+    @WithStatusBuilder
+    dummy30([programEncounter, formElement], statusBuilder) {
+        console.log("came here --------------");
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromHome = programEncounter.getObservationValue('X. Date of referral from home');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 1');
+        console.log("dateOfReferralFromHome", dateOfReferralFromHome);
+        console.log("dateOfAdmissionToThisFacility", dateOfAdmissionToThisFacility);
+        const dateDiff = dateOfReferralFromHome
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromHome, dateOfAdmissionToThisFacility).startsWith('-');
+        console.log("dateDiff =", dateDiff);
+        statusBuilder.validationError('Date of admission to facility 1 cannot be before date of referral from Home')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 2')
+    @WithStatusBuilder
+    dummy31([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('X. Date of admission to Facility 1');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 2');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 2 cannot be before date of referral from Facility 1')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 3')
+    @WithStatusBuilder
+    dummy33([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('X. Date of admission to Facility 2');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 3');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 3 cannot be before date of referral from Facility 2')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 4')
+    @WithStatusBuilder
+    dummy34([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('X. Date of admission to Facility 3');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 4');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 4 cannot be before date of referral from Facility 3')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 5')
+    @WithStatusBuilder
+    dummy35([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('X. Date of admission to Facility 4');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 5');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 5 cannot be before date of referral from Facility 4')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithName('X. Date of Admission to Facility 6')
+    @WithStatusBuilder
+    dummy36([programEncounter, formElement], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Did she seek treatment").is.yes
+            .or.when.valueInEncounter("Referral attended").yes;
+        let dateOfReferralFromPrevFacility = programEncounter.getObservationValue('X. Date of admission to Facility 5');
+        let dateOfAdmissionToThisFacility = programEncounter.getObservationValue('X. Date of admission to Facility 6');
+        const dateDiff = dateOfReferralFromPrevFacility
+            && dateOfAdmissionToThisFacility
+            && calculateDurationInDaysAndHours(dateOfReferralFromPrevFacility, dateOfAdmissionToThisFacility).startsWith('-');
+        statusBuilder.validationError('Date of admission to facility 6 cannot be before date of referral from Facility 5')
+            .whenItem(dateDiff).is.truthy;
+    }
+
+    @WithStatusBuilder
+    facility1WhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+    }
+
+    @WithStatusBuilder
+    facility2WhichOtherTypeOfTransportWasUsed([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used from facility 2").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+    }
+
+    @WithName('Facility 3 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other3([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used from facility 3").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+    }
+
+    @WithName('Facility 4 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other4([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used from facility 4").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+    }
+
+    @WithName('Facility 5 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other5([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used from facility 5").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+
+    }
+
+    @WithName('Facility 6 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other6([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Referral transport used from facility 6").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter('Period of Death')
+            .containsAnyAnswerConceptName('During pregnancy', 'During abortion or within 6 weeks after abortion');
+    }
+
+    @WithName('X. Facility 1 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other7([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
+
+    @WithName('X. Facility 2 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other8([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used from facility 2").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
+
+    @WithName('X. Facility 3 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other9([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used from facility 3").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
+
+    @WithName('X. Facility 4 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other10([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used from facility 4").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
+
+    @WithName('X. Facility 5 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other11([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used from facility 5").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
+
+    @WithName('X. Facility 6 | Which other type of transport was used?')
+    @WithStatusBuilder
+    other12([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("X. Referral transport used from facility 6").containsAnswerConceptName("Other")
+            .and.when.valueInEncounter("Period of Death")
+            .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
+    }
 
     @WithStatusBuilder
     dateOfDeath([programEncounter, formElement], statusBuilder) {
@@ -249,14 +539,14 @@ class CbmdrViewFilter {
         return statusBuilder.build();
     }
 
+
+    //Module II formelement group to be skipped
+
     @WithStatusBuilder
     otherReasonForNotSeekingCare([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Reason for not seeking care 3").containsAnswerConceptName("Other");
         return statusBuilder.build();
     }
-
-
-    //Module II formelement group to be skipped
 
     moduleIi(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
@@ -345,8 +635,6 @@ class CbmdrViewFilter {
             return statusBuilder.build();
         })
     }
-
-
 
     seekingCare(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
@@ -609,13 +897,13 @@ class CbmdrViewFilter {
         return statusBuilder.build();
     }
 
+    //Section X
+
     @WithStatusBuilder
     ix18IfYesPleaseDescribeTheDelayInInitiatingTreatment([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Delay in initiating treatment 3").containsAnswerConceptName("Yes");
         return statusBuilder.build();
     }
-
-    //Section X
 
     @WithStatusBuilder
     xIfOtherPleaseDescribeTheProblemDuringPostnatalPeriod([programEncounter, formElement], statusBuilder) {
@@ -677,14 +965,14 @@ class CbmdrViewFilter {
         return statusBuilder.build();
     }
 
+
+    //Referral form section X
+
     @WithStatusBuilder
     viii2TypeOfAbortion([programEncounter, formElement], statusBuilder) {
         statusBuilder.show().when.valueInEncounter("Did deceased woman died while having abortion").is.yes;
         return statusBuilder.build();
     }
-
-
-    //Referral form section X
 
     xReferralFromHomeVillage(programEncounter, formElementGroup) {
         return formElementGroup.formElements.map(fe => {
@@ -763,14 +1051,6 @@ class CbmdrViewFilter {
         const name = programEncounter.programEnrolment.individual.nameString;
         const display = programEncounter.getObservationReadableValue('Participate in this interview') === 'No' ? false : true;
         return new FormElementStatus(formElement.uuid, display, name);
-    }
-
-
-    static exec(programEncounter, formElementGroup, today) {
-
-
-        return FormElementsStatusHelper
-            .getFormElementsStatusesWithoutDefaults(new CbmdrViewFilter(), programEncounter, formElementGroup, today);
     }
 }
 
