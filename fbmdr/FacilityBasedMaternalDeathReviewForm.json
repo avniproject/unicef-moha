@@ -2870,37 +2870,6 @@
       ]
     },
     {
-      "uuid": "46557672-5094-41ed-b340-be29d511c9e2",
-      "name": "Cause of death",
-      "display": "Cause of death",
-      "displayOrder": 0,
-      "formElements": [
-        {
-          "name": "Antecedent causes, due to or as a consequence of",
-          "uuid": "79883c4e-8d03-4e32-9b65-b629fb014f33",
-          "keyValues": [],
-          "concept": {
-            "uuid": "bbfde929-97a2-4948-88e8-6349e14a26ff"
-          },
-          "displayOrder": 1,
-          "mandatory": false,
-          "voided": true
-        },
-        {
-          "name": "Cause of maternal death",
-          "uuid": "a749d1aa-9d36-4755-a287-306843d215ef",
-          "keyValues": [],
-          "type": "SingleSelect",
-          "concept": {
-            "uuid": "27a14e4f-b074-4d5b-8358-2ffdfa6c25a2"
-          },
-          "displayOrder": 32,
-          "mandatory": true,
-          "voided": true
-        }
-      ]
-    },
-    {
       "uuid": "b6cb814c-f4eb-4a11-acfe-823c4c8527c7",
       "name": "Cause of death",
       "display": "Cause of death",

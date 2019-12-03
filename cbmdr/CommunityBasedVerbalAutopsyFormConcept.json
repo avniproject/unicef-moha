@@ -1314,7 +1314,7 @@
     "name": "Referral time of calling of transport from facility 4",
     "uuid": "06cab385-b953-44d6-a2f9-2f949d366564",
     "dataType": "Time",
-    "voided":true
+    "voided": true
   },
   {
     "name": "Referral transport used from facility 4",
@@ -1414,7 +1414,7 @@
     "name": "Referral time of calling of transport from facility 5",
     "uuid": "1ffdb73f-3257-4e40-9685-869ec99772f7",
     "dataType": "Time",
-    "voided":true
+    "voided": true
   },
   {
     "name": "Referral transport used from facility 5",
@@ -3156,7 +3156,6 @@
     "uuid": "f17ef349-befc-4f89-a4a6-ef000d34c342",
     "dataType": "Duration"
   },
-
   {
     "name": "X. Referral time of onset of complication at facility 2",
     "uuid": "1c2a7104-30ad-41f4-b4ef-0615db691643",
@@ -3395,7 +3394,6 @@
     "uuid": "785af3e9-1566-46f6-9620-dcd38fca4915",
     "dataType": "Duration"
   },
-
   {
     "name": "X. Referral time of onset of complication at facility 4",
     "uuid": "819add6e-1e00-4ef8-b6f6-9593d5818daa",
@@ -3742,5 +3740,70 @@
     "uuid": "ccd4c780-775b-4141-8333-b44ab807c5da",
     "name": "Capture Image",
     "dataType": "Image"
+  },
+  {
+    "uuid": "ebae71dc-e00d-47e6-af3f-ede9ad5c2169",
+    "name": "Specify Other Staff..",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "0ebfe58e-c5a6-42e4-b977-7a5ea438e84f",
+    "name": "Specify Other Treatment given at Facility 1",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "29bb6fc5-44e0-4c93-b366-b74fcc4d5c76",
+    "name": "Specify Other Staff at Facility 2",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "0d96bbb9-7216-467c-8d5d-7f162d7112ef",
+    "name": "Other Treatment given at Facility 2",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "cc665228-3833-4039-9e67-d53bee86dfdf",
+    "name": "Specify Other Staff at Facility 3",
+    "dataType": "Text"
+  },
+  {
+    "uuid": "31e1c862-1784-4e37-a5d4-f99c30d24a44",
+    "name": "Other Treatment given at Facility 3",
+    "dataType": "Text"
+  },
+  {
+    "name": "Specify Other Staff at Facility 4",
+    "uuid": "e731bbe8-cdfc-494d-83e4-06ee7706c1d6",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Reason for referral from Facility 4",
+    "uuid": "11fa2b9e-d98f-47f5-9e48-4d47677a92bc",
+    "dataType": "Text"
+  },
+  {
+    "name": "Specify Other Treatment given at Facility 4",
+    "uuid": "0e211eaf-b283-4349-9198-5b5dee72be71",
+    "dataType": "Text"
+  },
+  {
+    "name": "Specify Other Staff at Facility 5",
+    "uuid": "fa5772ab-b347-4a14-9095-9ece2dc803c4",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Treatment given at Facility 5",
+    "uuid": "c7c75a51-75b7-4a50-bbf2-7d8cd4dddd56",
+    "dataType": "Text"
+  },
+  {
+    "name": "Specify Other Staff at Facility 6",
+    "uuid": "dec660a4-9c71-4c1a-a5c6-dcc7dc286da5",
+    "dataType": "Text"
+  },
+  {
+    "name": "Other Treatment given at Facility 6",
+    "uuid": "8cb178c6-a23d-47d7-88bc-8ad131b69de3",
+    "dataType": "Text"
   }
 ]

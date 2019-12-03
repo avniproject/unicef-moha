@@ -55,6 +55,87 @@ class FbmdrViewFilter {
         );
         return formElementStatus;
     }
+    @WithName('Facility 4 | Which other staff attended?')
+    @WithStatusBuilder
+    a1([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 4?")
+            .containsAnswerConceptName("Other Staff");
+    }
+    @WithName('Facility 4 | Specify other reason for referral')
+    @WithStatusBuilder
+    a2([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 4")
+            .containsAnswerConceptName("Other");
+    }
+    @WithName('Facility 4 | Which other type of transport was used?')
+    @WithStatusBuilder
+    a3([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 4")
+            .containsAnswerConceptName("Other");
+    }
+    @WithName('Facility 4 | Specify other treatment given')
+    @WithStatusBuilder
+    a4([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 4")
+            .containsAnswerConceptName("Other");
+    }
+
+    @WithName('Facility 5 | Which other staff attended?')
+    @WithStatusBuilder
+    a5([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 5?")
+            .containsAnswerConceptName("Other Staff");
+    }
+
+    @WithName('Facility 5 | Specify other reason for referral')
+    @WithStatusBuilder
+    a6([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 5")
+            .containsAnswerConceptName("Other");
+    }
+
+
+
+    @WithName('Facility 5 | Which other type of transport was used?')
+    @WithStatusBuilder
+    a7([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 5")
+            .containsAnswerConceptName("Other");
+    }
+
+    @WithName('Facility 5 | Specify other treatment given')
+    @WithStatusBuilder
+    a8([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 5")
+            .containsAnswerConceptName("Other");
+    }
+    @WithName('Facility 6 | Which other staff attended?')
+    @WithStatusBuilder
+    a9([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Who attended at Facility 6?")
+            .containsAnswerConceptName("Other Staff");
+    }
+    @WithName('Facility 6 | Specify other reason for referral')
+    @WithStatusBuilder
+    a10([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from Facility 6")
+            .containsAnswerConceptName("Other");
+    }
+    @WithName('Facility 6 | Which other type of transport was used?')
+    @WithStatusBuilder
+    a11([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Type of transport used from Facility 6")
+            .containsAnswerConceptName("Other");
+    }
+
+
+    @WithName('Facility 6 | Specify other treatment given')
+    @WithStatusBuilder
+    a12([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 6")
+            .containsAnswerConceptName("Other");
+    }
+
 
     @WithStatusBuilder
     durationOfIcuStay([programEncounter, formElement], statusBuilder) {

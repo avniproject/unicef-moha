@@ -362,6 +362,98 @@ class CbmdrViewFilter {
             .containsAnyAnswerConceptName("During Delivery", "Within 42 days of delivery");
     }
 
+    @WithName('Specify Other Staff..')
+    @WithStatusBuilder
+    a1([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attened at facility 1 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Specify Other Treatment given at Facility 1')
+    @WithStatusBuilder
+    a2([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 1")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Staff at Facility 2')
+    @WithStatusBuilder
+    a3([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attended at facility 2 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Other Treatment given at Facility 2')
+    @WithStatusBuilder
+    a4([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 2")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Staff at Facility 3')
+    @WithStatusBuilder
+    a5([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attended at facility 3 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Other Treatment given at Facility 3')
+    @WithStatusBuilder
+    a6([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 3")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Staff at Facility 4')
+    @WithStatusBuilder
+    a7([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attended at facility 4 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Other Reason for referral from Facility 4')
+    @WithStatusBuilder
+    a8([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Reason for referral from facility 4")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Treatment given at Facility 4')
+    @WithStatusBuilder
+    a9([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 4")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Staff at Facility 5')
+    @WithStatusBuilder
+    a10([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attended at facility 5 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Other Treatment given at Facility 5')
+    @WithStatusBuilder
+    a11([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 5")
+            .containsAnswerConceptName("Other")
+    }
+
+    @WithName('Specify Other Staff at Facility 6')
+    @WithStatusBuilder
+    a12([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Attended at facility 6 by")
+            .containsAnswerConceptName("Other Staff")
+    }
+
+    @WithName('Other Treatment given at Facility 6')
+    @WithStatusBuilder
+    a13([], statusBuilder) {
+        statusBuilder.show().when.valueInEncounter("Treatment given at Facility 6")
+            .containsAnswerConceptName("Other")
+    }
+
+
     @WithStatusBuilder
     dateOfDeath([programEncounter, formElement], statusBuilder) {
         let dtDeath = programEncounter.getObservationValue('Date and time of Death');
