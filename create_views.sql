@@ -1192,7 +1192,8 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT    as "Enl.Contact Number",
        (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE    as "Enl.Date and time of Death",
-       (programEnrolment.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT    as "Enl.Name of place of death",
+       single_select_coded(programenrolment.observations ->>
+                           'edf3dc1b-9895-41f1-bfd3-f0e2ad1d667d'::text)::text             as "Enl.Name of place of death",
        single_select_coded(
                   programEnrolment.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT as "Enl.Timing of death in pregnancy",
        (programEnrolment.observations ->> 'a334f0f7-434d-4acf-b4c2-dff3cb6f454b')::TEXT    as "Enl.Name of reporting person",
