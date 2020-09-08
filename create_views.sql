@@ -113,7 +113,6 @@ FROM program_encounter programEncounter
             LEFT OUTER JOIN address_level a ON individual.address_id = a.id
 WHERE op.uuid = '61383d58-82b4-44fb-96d0-6449f0e68c1b'
   AND oet.uuid = 'becd6e17-fbfe-4fa4-ab1c-a4807e557070'
-  AND programEncounter.encounter_date_time IS NOT NULL
   AND programEnrolment.enrolment_date_time IS NOT NULL;
 
 
@@ -210,7 +209,6 @@ FROM program_encounter programEncounter
             LEFT OUTER JOIN address_level a ON individual.address_id = a.id
 WHERE op.uuid = '61383d58-82b4-44fb-96d0-6449f0e68c1b'
   AND oet.uuid = 'ecee795c-2bde-4cbd-afa7-2c877d2df5e0'
-  AND programEncounter.encounter_date_time IS NOT NULL
   AND programEnrolment.enrolment_date_time IS NOT NULL;
 
 drop view if exists unicef_moha_form_4_facility_based_mdsr;
@@ -656,7 +654,6 @@ FROM program_encounter programEncounter
             LEFT OUTER JOIN address_level a ON individual.address_id = a.id
 WHERE op.uuid = '61383d58-82b4-44fb-96d0-6449f0e68c1b'
   AND oet.uuid = '42d867f1-209b-465f-ba90-d9c865b0ccc6'
-  AND programEncounter.encounter_date_time IS NOT NULL
   AND programEnrolment.enrolment_date_time IS NOT NULL;
 
 drop view if exists unicef_moha_form_5_community_based_verbal_autopsy;
@@ -1163,7 +1160,6 @@ FROM program_encounter programEncounter
             LEFT OUTER JOIN address_level a ON individual.address_id = a.id
 WHERE op.uuid = '61383d58-82b4-44fb-96d0-6449f0e68c1b'
   AND oet.uuid = 'a77b9936-ab0a-46db-9a92-d90911e0f9e0'
-  AND programEncounter.encounter_date_time IS NOT NULL
   AND programEnrolment.enrolment_date_time IS NOT NULL;
 
 drop view if exists unicef_moha_mdsr_enrolment_view;
