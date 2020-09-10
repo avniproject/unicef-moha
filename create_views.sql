@@ -53,7 +53,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'f7c955f5-6747-4695-bf96-f6deb8fb41b4')::TEXT                    as "Enl.Name of Father",
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT                    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT                    as "Enl.Contact Number",
-       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enl.Date and time of Death",
+       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enl.Date and time of Death",
        (programEnrolment.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enl.Name of place of death",
        single_select_coded(
                   programEnrolment.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enl.Timing of death in pregnancy",
@@ -70,7 +70,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'e42d89b6-12fd-400a-8c25-d67251ecdfa2')::TEXT                    as "Enc.Place of residence",
        (programEncounter.observations ->> 'b9a674b8-1520-4033-99e0-25057820a5f1')::TEXT                    as "Enc.Native place",
        (programEncounter.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enc.Name of place of death",
-       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enc.Date and time of Death",
+       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enc.Date and time of Death",
        single_select_coded(
                   programEncounter.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enc.Timing of death in pregnancy",
        (programEncounter.observations ->> 'dc2c23e9-19ad-471f-81d1-213069ccc975')::TEXT                    as "Enc.Gravida",
@@ -149,7 +149,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'f7c955f5-6747-4695-bf96-f6deb8fb41b4')::TEXT                    as "Enl.Name of Father",
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT                    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT                    as "Enl.Contact Number",
-       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enl.Date and time of Death",
+       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enl.Date and time of Death",
        (programEnrolment.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enl.Name of place of death",
        single_select_coded(
                   programEnrolment.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enl.Timing of death in pregnancy",
@@ -166,7 +166,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'e42d89b6-12fd-400a-8c25-d67251ecdfa2')::TEXT                    as "Enc.Place of residence",
        (programEncounter.observations ->> 'b9a674b8-1520-4033-99e0-25057820a5f1')::TEXT                    as "Enc.Native place",
        (programEncounter.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enc.Name of place of death",
-       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enc.Date and time of Death",
+       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enc.Date and time of Death",
        single_select_coded(
                   programEncounter.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enc.Timing of death in pregnancy",
        (programEncounter.observations ->> 'dc2c23e9-19ad-471f-81d1-213069ccc975')::TEXT                    as "Enc.Gravida",
@@ -244,7 +244,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'f7c955f5-6747-4695-bf96-f6deb8fb41b4')::TEXT                    as "Enl.Name of Father",
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT                    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT                    as "Enl.Contact Number",
-       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enl.Date and time of Death",
+       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enl.Date and time of Death",
        (programEnrolment.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enl.Name of place of death",
        single_select_coded(
                   programEnrolment.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enl.Timing of death in pregnancy",
@@ -267,8 +267,8 @@ SELECT individual.id                                                            
                   programEncounter.observations ->> '39595a16-a9c6-49a5-a42b-3f462607058c')::TEXT                 as "Enc.Education",
        single_select_coded(
                   programEncounter.observations ->> 'cd6e5e69-fa7a-4eb8-9b7c-96735ff7fdf1')::TEXT                 as "Enc.Below Poverty Line",
-       (programEncounter.observations ->> '89881a1f-a428-40a6-a8d9-cf77ab9ef0b0')::DATE                    as "Enc.Date and time of Admission",
-       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enc.Date and time of Death",
+       (programEncounter.observations ->> '89881a1f-a428-40a6-a8d9-cf77ab9ef0b0')::TIMESTAMP                    as "Enc.Date and time of Admission",
+       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enc.Date and time of Death",
        (programEncounter.observations ->> '9cf4c6e4-a516-4121-8f78-7501c7fbe8c4')::TEXT                    as "Enc.Duration of hospital stay",
        single_select_coded(
                   programEncounter.observations ->> '090bb4ab-7ba3-4aab-a040-acef52c75ed3')::TEXT                 as "Enc.Was mother admitted to ICU?",
@@ -277,7 +277,7 @@ SELECT individual.id                                                            
                   programEncounter.observations ->> '91df8f1c-8029-414c-9581-7b3e01f1e724')::TEXT                 as "Enc.Reason for mother not being admitted to the ICU",
        single_select_coded(
                   programEncounter.observations ->> '2aee3472-3034-4a5e-abf5-8100c5890f3f')::TEXT                 as "Enc.Outcome of pregnancy",
-       (programEncounter.observations ->> 'dcb4741d-d65c-404e-8aec-8b805cde875a')::DATE                    as "Enc.Date and time of Delivery",
+       (programEncounter.observations ->> 'dcb4741d-d65c-404e-8aec-8b805cde875a')::TIMESTAMP                    as "Enc.Date and time of Delivery",
        (programEncounter.observations ->> 'bc543109-7ab8-4ba4-af97-b3ba171e9153')::TEXT                    as "Enc.Admission-delivery interval",
        (programEncounter.observations ->> '01882f0f-41e5-4ce1-b0d3-0116e279d1cc')::TEXT                    as "Enc.Admission-death interval",
        (programEncounter.observations ->> '8ec0e2b3-e3c7-441a-bde0-e6d9997646be')::TEXT                    as "Enc.Complaints at time of admission",
@@ -293,9 +293,9 @@ SELECT individual.id                                                            
        single_select_coded(
                   programEncounter.observations ->> '11d4816d-4253-4dda-92fc-16f2d2704e5a')::TEXT                 as "Enc.Condition on Admission",
        (programEncounter.observations ->> '56e4d9dd-64dd-4c03-b92d-a27df84c662a')::TEXT                    as "Enc.Number of places visited prior",
-       (programEncounter.observations ->> '147dfae9-1b84-4a55-9ed3-76704987f10c')::DATE                    as "Enc.Time of onset of complication or labor at home",
+       (programEncounter.observations ->> '147dfae9-1b84-4a55-9ed3-76704987f10c')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at home",
        (programEncounter.observations ->> 'b7fafaa7-5bc7-4c57-8dd0-3d7f0727a1c6')::DATE                    as "Enc.Date of referral from home",
-       (programEncounter.observations ->> '2ea89ce6-d287-4ff0-884f-d8cfe892670a')::DATE                    as "Enc.Time of calling transport at home",
+       (programEncounter.observations ->> '2ea89ce6-d287-4ff0-884f-d8cfe892670a')::TIMESTAMP                    as "Enc.Time of calling transport at home",
        single_select_coded(
                   programEncounter.observations ->> 'ca5c3e67-2d06-4947-b0be-8565a62eb39d')::TEXT                 as "Enc.Type of transport used from home",
        (programEncounter.observations ->> 'bce98ba0-7b07-461b-b34f-0a55cf706427')::TEXT                    as "Enc.Other type of transport used from home",
@@ -314,8 +314,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '685637fa-94b9-4bbb-b1a0-3ad50176aa8e')::TEXT                    as "Enc.Other reason for referral from Facility 1",
        single_select_coded(
                   programEncounter.observations ->> 'a2576f78-9099-42b0-9e52-0c741675e1c7')::TEXT                 as "Enc.Referral Slip from Facility 1",
-       (programEncounter.observations ->> '50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb')::DATE                    as "Enc.Time of calling transport at Facility 1",
-       (programEncounter.observations ->> '2adf6c28-d52b-4a4a-9b66-b59406297a9d')::DATE                    as "Enc.Time of arrival of transport at Facility 1",
+       (programEncounter.observations ->> '50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 1",
+       (programEncounter.observations ->> '2adf6c28-d52b-4a4a-9b66-b59406297a9d')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 1",
        single_select_coded(
                   programEncounter.observations ->> '0ee7403c-85c3-4f8c-b5b3-ce9678ca28d9')::TEXT                 as "Enc.Type of transport used from Facility 1",
        (programEncounter.observations ->> '02afc5fa-0af3-4e20-a88e-d5adf0b8b833')::TEXT                    as "Enc.Other type of transport used from Facility 1",
@@ -327,7 +327,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '4a232aaa-ba51-4a07-9995-e05723e2c6b7')::TEXT                    as "Enc.Time spent at Facility 1",
        (programEncounter.observations ->> '5f1987e8-1ddb-4cd2-9c56-fa13a76842c4')::DATE                    as "Enc.Date of admission to Facility 2",
        (programEncounter.observations ->> 'e193c36e-3f18-4077-8ba5-32a2fb5f5500')::TEXT                    as "Enc.Time taken to reach Facility 2",
-       (programEncounter.observations ->> '6ed4757a-9db8-4b02-a855-4bcf48a5ed8a')::DATE                    as "Enc.Time of onset of complication or labor at Facility 2",
+       (programEncounter.observations ->> '6ed4757a-9db8-4b02-a855-4bcf48a5ed8a')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at Facility 2",
        multi_select_coded(
                   programEncounter.observations -> '582ddda2-e720-4ce8-8891-8246a68f3dc5')::TEXT                  as "Enc.Who attended at Facility 2?",
        (programEncounter.observations ->> '510abab6-0b52-46f6-80a2-937f2fa3af7e')::TEXT                    as "Enc.Details of other staff who attended at facility 2",
@@ -353,7 +353,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'edd5599e-c4d4-4f4f-a0a3-280c46179c21')::TEXT                    as "Enc.Time spent at Facility 2",
        (programEncounter.observations ->> '1ce3f4cb-898f-44b4-ba6b-11e401149e18')::DATE                    as "Enc.Date of admission to Facility 3",
        (programEncounter.observations ->> 'b2bbe74f-39c8-4e45-b850-6417d7f3e903')::TEXT                    as "Enc.Time taken to reach Facility 3",
-       (programEncounter.observations ->> '6ce00a0e-c05f-4b77-b49e-3420ff5646b6')::DATE                    as "Enc.Time of onset of complication or labor at Facility 3",
+       (programEncounter.observations ->> '6ce00a0e-c05f-4b77-b49e-3420ff5646b6')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at Facility 3",
        multi_select_coded(
                   programEncounter.observations -> 'a4233145-2938-4377-aa3e-0f92cb2eff7a')::TEXT                  as "Enc.Who attended at Facility 3?",
        (programEncounter.observations ->> 'b7532907-648f-4648-9d2b-96eb3393e4eb')::TEXT                    as "Enc.Details of other staff who attended at facility 3",
@@ -366,8 +366,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'e99e949d-dc19-4a27-b27a-48bbc92f3b30')::TEXT                    as "Enc.Other reason for referral from Facility 3",
        single_select_coded(
                   programEncounter.observations ->> '4d547c43-136c-4ef2-bf9d-eadd927c5b97')::TEXT                 as "Enc.Referral Slip given at Facility 3?",
-       (programEncounter.observations ->> 'cd7c2138-4806-43e1-9e03-0e98ec53d8e8')::DATE                    as "Enc.Time of calling transport at Facility 3",
-       (programEncounter.observations ->> '4fa759a6-6f00-4926-9362-9417d80f40c0')::DATE                    as "Enc.Time of arrival of transport at Facility 3",
+       (programEncounter.observations ->> 'cd7c2138-4806-43e1-9e03-0e98ec53d8e8')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 3",
+       (programEncounter.observations ->> '4fa759a6-6f00-4926-9362-9417d80f40c0')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 3",
        single_select_coded(
                   programEncounter.observations ->> '7c053916-0be1-40aa-aae4-397838beef66')::TEXT                 as "Enc.Type of transport used from Facility 3",
        (programEncounter.observations ->> 'a82c140d-bf5c-426b-9a18-296b31504f43')::TEXT                    as "Enc.Other type of transport used from Facility 3",
@@ -379,7 +379,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '9a6cf54d-81cd-43d8-99f3-9f47be38fba4')::TEXT                    as "Enc.Time spent at Facility 3",
        (programEncounter.observations ->> '106d3a71-0479-4aaa-af19-39df4a554816')::DATE                    as "Enc.Date of admission to Facility 4",
        (programEncounter.observations ->> '01b6abb5-1514-4bec-8e04-df04d6bb6ee8')::TEXT                    as "Enc.Time taken to reach Facility 4",
-       (programEncounter.observations ->> '2cea43d4-7d4d-4a83-8981-b73f57c87bd8')::DATE                    as "Enc.Time of onset of complication or labor at Facility 4",
+       (programEncounter.observations ->> '2cea43d4-7d4d-4a83-8981-b73f57c87bd8')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at Facility 4",
        multi_select_coded(
                   programEncounter.observations -> '52cdaadb-99ec-4140-a66e-23c3375d2744')::TEXT                  as "Enc.Who attended at Facility 4?",
        (programEncounter.observations ->> 'f71eb688-3971-41ac-bfe7-a4051069bc11')::TEXT                    as "Enc.Details of other staff who attended at facility 4",
@@ -392,8 +392,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '04d0ef40-f3ea-4d55-a23c-cadf5ab2c1ae')::TEXT                    as "Enc.Other reason for referral from Facility 4",
        single_select_coded(
                   programEncounter.observations ->> 'aca0991b-381e-476d-8df2-1d2bc61ebe69')::TEXT                 as "Enc.Referral Slip given at Facility 4?",
-       (programEncounter.observations ->> '3863a025-c1bb-4372-aa99-cd437e39a715')::DATE                    as "Enc.Time of calling transport at Facility 4",
-       (programEncounter.observations ->> '9fd80d7a-7eae-4be0-a050-5ceed157e5e8')::DATE                    as "Enc.Time of arrival of transport at Facility 4",
+       (programEncounter.observations ->> '3863a025-c1bb-4372-aa99-cd437e39a715')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 4",
+       (programEncounter.observations ->> '9fd80d7a-7eae-4be0-a050-5ceed157e5e8')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 4",
        single_select_coded(
                   programEncounter.observations ->> '6535dbb5-ed11-45ba-bf04-dadacf1596a0')::TEXT                 as "Enc.Type of transport used from Facility 4",
        (programEncounter.observations ->> '60a55b00-ddfa-4ac3-87de-5d45e5aed5c7')::TEXT                    as "Enc.Other type of transport used from Facility 4",
@@ -405,7 +405,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '4aaf529c-2068-4cc9-9ee1-3deacf903071')::TEXT                    as "Enc.Time spent at Facility 4",
        (programEncounter.observations ->> '064774a5-cd7e-45f4-8db8-98a79839bc47')::DATE                    as "Enc.Date of admission to Facility 5",
        (programEncounter.observations ->> 'd1a8bdc6-3502-4319-9f31-ef823ae36b02')::TEXT                    as "Enc.Time taken to reach Facility 5",
-       (programEncounter.observations ->> '73572a0c-fe7b-4da2-871e-f08363e96f18')::DATE                    as "Enc.Time of onset of complication or labor at Facility 5",
+       (programEncounter.observations ->> '73572a0c-fe7b-4da2-871e-f08363e96f18')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at Facility 5",
        multi_select_coded(
                   programEncounter.observations -> '5678560f-0632-44b1-9d6f-1b9c111dfe89')::TEXT                  as "Enc.Who attended at Facility 5?",
        (programEncounter.observations ->> 'a182d8b5-df5e-4241-8cfe-9530612b7735')::TEXT                    as "Enc.Details of other staff who attended at facility 5",
@@ -418,8 +418,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'e2f483a9-9093-40d7-b493-014798709bd4')::TEXT                    as "Enc.Other reason for referral from Facility 5",
        single_select_coded(
                   programEncounter.observations ->> '7b88f490-cfa1-4ab1-8c67-083b162e4b66')::TEXT                 as "Enc.Referral Slip given at Facility 5?",
-       (programEncounter.observations ->> 'bd66d704-e347-4283-974b-7639b4264f52')::DATE                    as "Enc.Time of calling transport at Facility 5",
-       (programEncounter.observations ->> 'ca1dee29-7910-4325-8b3e-fe682fd72b31')::DATE                    as "Enc.Time of arrival of transport at Facility 5",
+       (programEncounter.observations ->> 'bd66d704-e347-4283-974b-7639b4264f52')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 5",
+       (programEncounter.observations ->> 'ca1dee29-7910-4325-8b3e-fe682fd72b31')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 5",
        single_select_coded(
                   programEncounter.observations ->> 'a59c217b-5451-4f5d-a20a-844cc99e9426')::TEXT                 as "Enc.Type of transport used from Facility 5",
        (programEncounter.observations ->> '6cb7786a-d76f-4056-968f-5a951188d62c')::TEXT                    as "Enc.Other type of transport used from Facility 5",
@@ -431,7 +431,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '4a356fda-833e-477b-849c-3f8d20006593')::TEXT                    as "Enc.Time spent at Facility 5",
        (programEncounter.observations ->> '3df2de99-4dd8-4983-84e3-129438f33b5f')::DATE                    as "Enc.Date of admission to Facility 6",
        (programEncounter.observations ->> '0238c3f9-7246-4d2a-95c6-55545d12c7ae')::TEXT                    as "Enc.Time taken to reach Facility 6",
-       (programEncounter.observations ->> 'e2ed1023-b389-44a0-b6c8-38df59703480')::DATE                    as "Enc.Time of onset of complication or labor at Facility 6",
+       (programEncounter.observations ->> 'e2ed1023-b389-44a0-b6c8-38df59703480')::TIMESTAMP                    as "Enc.Time of onset of complication or labor at Facility 6",
        multi_select_coded(
                   programEncounter.observations -> '34179738-feb8-47e6-864e-9e758e93ba53')::TEXT                  as "Enc.Who attended at Facility 6?",
        (programEncounter.observations ->> '81697baa-dc3c-43e1-a10c-d8f91796f997')::TEXT                    as "Enc.Details of other staff who attended at facility 6",
@@ -444,8 +444,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '2240fb6e-c156-430a-89fd-a9d10f027c17')::TEXT                    as "Enc.Other reason for referral from Facility 6",
        single_select_coded(
                   programEncounter.observations ->> '610a6f50-7e8a-4bc3-9c9e-b2fb85846175')::TEXT                 as "Enc.Referral Slip given at Facility 6?",
-       (programEncounter.observations ->> '75f78e6d-b4b5-4261-9255-8c45e105a465')::DATE                    as "Enc.Time of calling transport at Facility 6",
-       (programEncounter.observations ->> '233fb4fb-a334-4305-ab77-164ab31912c5')::DATE                    as "Enc.Time of arrival of transport at Facility 6",
+       (programEncounter.observations ->> '75f78e6d-b4b5-4261-9255-8c45e105a465')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 6",
+       (programEncounter.observations ->> '233fb4fb-a334-4305-ab77-164ab31912c5')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 6",
        single_select_coded(
                   programEncounter.observations ->> 'e760187b-f01f-4e30-aad1-e137e82ce909')::TEXT                 as "Enc.Type of transport used from Facility 6",
        (programEncounter.observations ->> 'ec9ebede-368b-491b-842a-1b01a59c7b33')::TEXT                    as "Enc.Other type of transport used from Facility 6",
@@ -689,7 +689,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'f7c955f5-6747-4695-bf96-f6deb8fb41b4')::TEXT                    as "Enl.Name of Father",
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT                    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT                    as "Enl.Contact Number",
-       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enl.Date and time of Death",
+       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enl.Date and time of Death",
        (programEnrolment.observations ->> '079fb844-0d72-49cf-8389-b821f1b5ab37')::TEXT                    as "Enl.Name of place of death",
        single_select_coded(
                   programEnrolment.observations ->> '9e0e21b0-e5c2-406a-8da6-a11a78d65329')::TEXT                 as "Enl.Timing of death in pregnancy",
@@ -697,7 +697,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'ad31dc43-3c4d-48ff-aae6-194858207f1f')::TEXT                    as "Enl.Designation of reporting person",
        (programEnrolment.observations ->> 'a08c7590-1940-4a88-8d66-ec46649669cd')::DATE                    as "Enl.Reporting Date",
        (programEnrolment.observations ->> '4b721e9d-bf7f-4ccd-bf7e-1df9d40308ab')::TEXT                    as "Enl.Name of subcenter",
-       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE                    as "Enc.Date and time of Death",
+       (programEncounter.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP                    as "Enc.Date and time of Death",
        (programEncounter.observations ->> 'a425325b-919e-4aca-801f-5d9c8ae9f211')::TEXT                    as "Enc.Name of Investigator",
        (programEncounter.observations ->> 'eb3336cc-454c-44ff-be3c-a67f7ebfc22f')::TEXT                    as "Enc.Designation of Investigator",
        (programEncounter.observations ->> 'a6351c9a-9e76-4e0d-af62-01dda452f895')::DATE                    as "Enc.Date of Investigation",
@@ -722,7 +722,7 @@ SELECT individual.id                                                            
                   programEncounter.observations ->> '3f6c371a-4638-4823-be14-98c22f208902')::TEXT                 as "Enc.Place of death",
        (programEncounter.observations ->> '3631fbd7-40d9-456d-8987-ba3b9d5f4a2f')::TEXT                    as "Enc.Other Place of death",
        (programEncounter.observations ->> '4daa982b-5886-405a-be04-4c26cbca3c41')::TEXT                    as "Enc.Specify the name and place of the institution or village / urban area where death occurred",
-       (programEncounter.observations ->> 'f7e5d7d4-110a-4ecd-a77d-7fb26086f68e')::DATE                    as "Enc.Date & Time of Death",
+       (programEncounter.observations ->> 'f7e5d7d4-110a-4ecd-a77d-7fb26086f68e')::TIMESTAMP                    as "Enc.Date & Time of Death",
        single_select_coded(
                   programEncounter.observations ->> 'f44552ea-41f7-4056-b3ca-6867d3893ec2')::TEXT                 as "Enc.Did the doctor or nurse at the health facility tell you the cause of death.",
        (programEncounter.observations ->> '105764fd-9786-4254-b3ae-a00f711ec952')::TEXT                    as "Enc.Cause of death",
@@ -786,11 +786,11 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '00719230-f57d-4c51-8183-eded9a67267f')::TEXT                    as "Enc.Other place to seek care",
        (programEncounter.observations ->> 'b7fafaa7-5bc7-4c57-8dd0-3d7f0727a1c6')::DATE                    as "Enc.Date of referral from home",
        (programEncounter.observations ->> 'e58bb7d9-66d4-49b6-b74a-cedac3ab2a5f')::TEXT                    as "Enc.Time of onset of complication of labor at home",
-       (programEncounter.observations ->> '2ea89ce6-d287-4ff0-884f-d8cfe892670a')::DATE                    as "Enc.Time of calling transport at home",
+       (programEncounter.observations ->> '2ea89ce6-d287-4ff0-884f-d8cfe892670a')::TIMESTAMP                    as "Enc.Time of calling transport at home",
        (programEncounter.observations ->> '0c6b579d-795c-43c5-ab1e-92d7146ec930')::DATE                    as "Enc.Date of admission to Facility 1",
        (programEncounter.observations ->> 'bdddd6ae-504f-4562-b00c-96f9a794693b')::TEXT                    as "Enc.Referral time of onset of complication at facility 1",
-       (programEncounter.observations ->> '50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb')::DATE                    as "Enc.Time of calling transport at Facility 1",
-       (programEncounter.observations ->> '2adf6c28-d52b-4a4a-9b66-b59406297a9d')::DATE                    as "Enc.Time of arrival of transport at Facility 1",
+       (programEncounter.observations ->> '50707344-3e3a-4dff-bc7b-dd8e1ab9ceeb')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 1",
+       (programEncounter.observations ->> '2adf6c28-d52b-4a4a-9b66-b59406297a9d')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 1",
        single_select_coded(
                   programEncounter.observations ->> 'bb85a4a6-d35b-4878-80fd-2aca12af2857')::TEXT                 as "Enc.Referral transport used",
        (programEncounter.observations ->> '02afc5fa-0af3-4e20-a88e-d5adf0b8b833')::TEXT                    as "Enc.Other type of transport used from Facility 1",
@@ -810,8 +810,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '5dcadb2f-910a-4e33-950d-a67296a1aae8')::TEXT                    as "Enc.Time spent at facility 1",
        (programEncounter.observations ->> '5f1987e8-1ddb-4cd2-9c56-fa13a76842c4')::DATE                    as "Enc.Date of admission to Facility 2",
        (programEncounter.observations ->> '05afff29-f474-408b-b4ea-fccf75b29996')::TEXT                    as "Enc.Referral time of onset of complication at facility 2",
-       (programEncounter.observations ->> '99c2471f-cdc6-4a33-91a7-81ebbce7179b')::DATE                    as "Enc.Time of calling transport at Facility 2",
-       (programEncounter.observations ->> 'f1bb3a1c-d6e5-4dd4-8293-cc3ecc1f51db')::DATE                    as "Enc.Time of arrival of transport at Facility 2",
+       (programEncounter.observations ->> '99c2471f-cdc6-4a33-91a7-81ebbce7179b')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 2",
+       (programEncounter.observations ->> 'f1bb3a1c-d6e5-4dd4-8293-cc3ecc1f51db')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 2",
        single_select_coded(
                   programEncounter.observations ->> 'a388eef9-2abc-41f5-a195-8936d396a05b')::TEXT                 as "Enc.Referral transport used from facility 2",
        (programEncounter.observations ->> '25b33aef-788c-4dcc-86ba-ee2727adbf51')::TEXT                    as "Enc.Other type of transport used from Facility 2",
@@ -832,7 +832,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '1ce3f4cb-898f-44b4-ba6b-11e401149e18')::DATE                    as "Enc.Date of admission to Facility 3",
        (programEncounter.observations ->> 'd625abc1-f93c-44c7-bb53-983af6a49082')::TEXT                    as "Enc.Referral time of onset of complication at facility 3",
        (programEncounter.observations ->> '848bb657-7e29-4b15-b248-0f7a56690b3c')::TEXT                    as "Enc.Referral time of calling of transport from facility 3",
-       (programEncounter.observations ->> '4fa759a6-6f00-4926-9362-9417d80f40c0')::DATE                    as "Enc.Time of arrival of transport at Facility 3",
+       (programEncounter.observations ->> '4fa759a6-6f00-4926-9362-9417d80f40c0')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 3",
        single_select_coded(
                   programEncounter.observations ->> '328d7efd-39a5-4aa6-9e31-26bebced8d1b')::TEXT                 as "Enc.Referral transport used from facility 3",
        (programEncounter.observations ->> 'a82c140d-bf5c-426b-9a18-296b31504f43')::TEXT                    as "Enc.Other type of transport used from Facility 3",
@@ -852,8 +852,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> 'a620420d-3b52-45f4-9bf2-e1e539638e6f')::TEXT                    as "Enc.Time spent at facility 3",
        (programEncounter.observations ->> '106d3a71-0479-4aaa-af19-39df4a554816')::DATE                    as "Enc.Date of admission to Facility 4",
        (programEncounter.observations ->> 'b2444282-fa1e-45e1-8498-c0f58add7dfb')::TEXT                    as "Enc.Referral time of onset of complication at facility 4",
-       (programEncounter.observations ->> '3863a025-c1bb-4372-aa99-cd437e39a715')::DATE                    as "Enc.Time of calling transport at Facility 4",
-       (programEncounter.observations ->> '9fd80d7a-7eae-4be0-a050-5ceed157e5e8')::DATE                    as "Enc.Time of arrival of transport at Facility 4",
+       (programEncounter.observations ->> '3863a025-c1bb-4372-aa99-cd437e39a715')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 4",
+       (programEncounter.observations ->> '9fd80d7a-7eae-4be0-a050-5ceed157e5e8')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 4",
        single_select_coded(
                   programEncounter.observations ->> '9819aa51-f52f-413c-b8fd-4b407ffa8500')::TEXT                 as "Enc.Referral transport used from facility 4",
        (programEncounter.observations ->> '60a55b00-ddfa-4ac3-87de-5d45e5aed5c7')::TEXT                    as "Enc.Other type of transport used from Facility 4",
@@ -875,8 +875,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '1d20e2e6-d9a1-4aa0-a45e-3f5fca0e111e')::TEXT                    as "Enc.Time spent at facility 4",
        (programEncounter.observations ->> '064774a5-cd7e-45f4-8db8-98a79839bc47')::DATE                    as "Enc.Date of admission to Facility 5",
        (programEncounter.observations ->> 'be019ec3-5e76-4263-832f-c3a29a851792')::TEXT                    as "Enc.Referral time of onset of complication at facility 5",
-       (programEncounter.observations ->> 'bd66d704-e347-4283-974b-7639b4264f52')::DATE                    as "Enc.Time of calling transport at Facility 5",
-       (programEncounter.observations ->> 'ca1dee29-7910-4325-8b3e-fe682fd72b31')::DATE                    as "Enc.Time of arrival of transport at Facility 5",
+       (programEncounter.observations ->> 'bd66d704-e347-4283-974b-7639b4264f52')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 5",
+       (programEncounter.observations ->> 'ca1dee29-7910-4325-8b3e-fe682fd72b31')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 5",
        single_select_coded(
                   programEncounter.observations ->> 'fa119bd1-3466-4c81-94bd-73c0607dfe99')::TEXT                 as "Enc.Referral transport used from facility 5",
        (programEncounter.observations ->> '6cb7786a-d76f-4056-968f-5a951188d62c')::TEXT                    as "Enc.Other type of transport used from Facility 5",
@@ -896,8 +896,8 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '4d2043dc-e30d-49d1-b0cb-fbfabdb4ca94')::TEXT                    as "Enc.Time spent at facility 5",
        (programEncounter.observations ->> '3df2de99-4dd8-4983-84e3-129438f33b5f')::DATE                    as "Enc.Date of admission to Facility 6",
        (programEncounter.observations ->> '0abbfdfa-062c-4e9c-bd91-31e189d36b66')::TEXT                    as "Enc.Referral time of onset of complication at facility 6",
-       (programEncounter.observations ->> '75f78e6d-b4b5-4261-9255-8c45e105a465')::DATE                    as "Enc.Time of calling transport at Facility 6",
-       (programEncounter.observations ->> '233fb4fb-a334-4305-ab77-164ab31912c5')::DATE                    as "Enc.Time of arrival of transport at Facility 6",
+       (programEncounter.observations ->> '75f78e6d-b4b5-4261-9255-8c45e105a465')::TIMESTAMP                    as "Enc.Time of calling transport at Facility 6",
+       (programEncounter.observations ->> '233fb4fb-a334-4305-ab77-164ab31912c5')::TIMESTAMP                    as "Enc.Time of arrival of transport at Facility 6",
        single_select_coded(
                   programEncounter.observations ->> 'e7026a6c-68a1-4846-8a35-1a42a3606532')::TEXT                 as "Enc.Referral transport used from facility 6",
        (programEncounter.observations ->> 'ec9ebede-368b-491b-842a-1b01a59c7b33')::TEXT                    as "Enc.Other type of transport used from Facility 6",
@@ -954,7 +954,7 @@ SELECT individual.id                                                            
                   programEncounter.observations -> 'e7ae50e1-4c1c-43bd-8584-54b0d24d109a')::TEXT                  as "Enc.Reason for home delivery",
        (programEncounter.observations ->> '2f7da1fd-f199-4068-8f7a-cb3cf881af1e')::TEXT                    as "Enc.Other, reason for home delivery",
        (programEncounter.observations ->> '0625382b-a698-4232-b3bb-5ef94aa66fb3')::TEXT                    as "Enc.3. No. of completed pregnancy weeks at time of delivery",
-       (programEncounter.observations ->> 'dcb4741d-d65c-404e-8aec-8b805cde875a')::DATE                    as "Enc.Date and time of Delivery",
+       (programEncounter.observations ->> 'dcb4741d-d65c-404e-8aec-8b805cde875a')::TIMESTAMP                    as "Enc.Date and time of Delivery",
        multi_select_coded(
                   programEncounter.observations -> '3868f0f7-51b7-4714-ab84-6ecb321ae885')::TEXT                  as "Enc.Delivery conducted by",
        (programEncounter.observations ->> '462fff03-0a0c-4552-bf78-7a212834c6e5')::TEXT                    as "Enc.other, delivery conducte by",
@@ -1007,7 +1007,7 @@ SELECT individual.id                                                            
        (programEncounter.observations ->> '63096bd8-bd43-45d9-84ad-2d68e8d3c29f')::TEXT                    as "Enc.description of delay in treatment 3",
        single_select_coded(
                   programEncounter.observations ->> 'a8d00f9f-056a-4de5-90d8-224ec828ae71')::TEXT                 as "Enc.Any problem following delivery",
-       (programEncounter.observations ->> 'a93c67d9-3dd4-4e27-8a52-6d5960d3c1bd')::DATE                    as "Enc.Date and time of onset of problem",
+       (programEncounter.observations ->> 'a93c67d9-3dd4-4e27-8a52-6d5960d3c1bd')::TIMESTAMP                    as "Enc.Date and time of onset of problem",
        (programEncounter.observations ->> '7ba57be5-d20b-430f-8b2d-8a2816db4672')::TEXT                    as "Enc.2b. Duration of onset of problem after delivery",
        multi_select_coded(
                   programEncounter.observations -> '915a72da-8e27-4aff-9283-a4459281522d')::TEXT                  as "Enc.Problem during postnatal period",
@@ -1187,7 +1187,7 @@ SELECT individual.id                                                            
        (programEnrolment.observations ->> 'f7c955f5-6747-4695-bf96-f6deb8fb41b4')::TEXT    as "Enl.Name of Father",
        (programEnrolment.observations ->> '0bae0557-7461-4d4d-a14e-1e9e8793ba6f')::TEXT    as "Enl.RCH Number",
        (programEnrolment.observations ->> '82fa0dbb-92f9-4ec2-9263-49054e64d909')::TEXT    as "Enl.Contact Number",
-       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::DATE    as "Enl.Date and time of Death",
+       (programEnrolment.observations ->> 'e3134346-5770-4d7c-8845-9da734bf2a93')::TIMESTAMP    as "Enl.Date and time of Death",
        single_select_coded(programenrolment.observations ->>
                            'edf3dc1b-9895-41f1-bfd3-f0e2ad1d667d'::text)::text             as "Enl.Name of place of death",
        single_select_coded(
