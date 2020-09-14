@@ -1203,3 +1203,36 @@ FROM program_enrolment programEnrolment
             LEFT OUTER JOIN address_level a ON individual.address_id = a.id
 WHERE op.uuid = '61383d58-82b4-44fb-96d0-6449f0e68c1b'
   AND programEnrolment.enrolment_date_time IS NOT NULL;
+
+
+
+create view unicef_moha_district_district_form
+as
+SELECT individual.id AS individual_id,
+       oet.name AS encounter_type_name,
+       oet.encounter_type_id,
+       encounter.id,
+       encounter.earliest_visit_date_time,
+       encounter.encounter_date_time,
+       encounter.uuid,
+       encounter.name,
+       encounter.max_visit_date_time,
+       encounter.is_voided,
+       encounter.encounter_location,
+       encounter.audit_id,
+       encounter.cancel_date_time,
+       encounter.cancel_location,
+       ((encounter.observations ->> '11040c96-eeef-4deb-978d-ec0def0e4b9d'::text))::date AS date,
+       ((encounter.observations ->> 'fba46667-f37a-4067-b2c2-05e9bf89ec5d'::text))::numeric AS "reporting month",
+       ((encounter.observations ->> 'b15facec-2b87-4b54-8a11-2d75ba62db3c'::text))::numeric AS "Reporting year",
+       ((encounter.observations ->> '406785b1-1153-4ba2-bec2-cc0d0eb5d094'::text))::numeric AS "Number of Maternal deaths reviewed by District MDR Committee",
+       ((encounter.observations ->> '42400155-e60f-46ad-9f98-dae910330ea5'::text))::numeric AS "Number of Maternal deaths reviewed by CMO",
+       ((encounter.observations ->> '18e04bd9-0982-4275-847a-0d3a34bcad55'::text))::numeric AS "Number of Maternal deaths reviewed by the District Collector",
+       ((encounter.observations ->> '21c71cbf-5cfa-4235-a922-b2799f243dd8'::text))::numeric AS "Number of Deaths for which Confidential Reviews have been condu",
+       ((encounter.observations ->> '761cc94d-1d6c-4bbc-adca-e00ecf718ba6'::text))::numeric AS "Number of Meetings of Confidential Review Committee",
+       ((encounter.observations ->> '0a8346a2-414b-4d6b-a8f7-cd30768d1e29'::text))::numeric AS "Meetings of State Level Task Force held"
+FROM (((encounter encounter
+    LEFT JOIN operational_encounter_type oet ON ((encounter.encounter_type_id = oet.encounter_type_id)))
+    LEFT JOIN individual individual ON ((encounter.individual_id = individual.id)))
+         LEFT JOIN operational_subject_type ost ON ((ost.subject_type_id = individual.subject_type_id)))
+WHERE (((oet.uuid)::text = 'e8e728aa-f1c3-4521-b98e-8ab68fa6ac07'::text) AND ((ost.uuid)::text = 'e7a30a80-e71e-4126-9fed-9e81b6988c36'::text));
