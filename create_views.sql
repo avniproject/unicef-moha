@@ -1236,3 +1236,31 @@ FROM (((encounter encounter
     LEFT JOIN individual individual ON ((encounter.individual_id = individual.id)))
          LEFT JOIN operational_subject_type ost ON ((ost.subject_type_id = individual.subject_type_id)))
 WHERE (((oet.uuid)::text = 'e8e728aa-f1c3-4521-b98e-8ab68fa6ac07'::text) AND ((ost.uuid)::text = 'e7a30a80-e71e-4126-9fed-9e81b6988c36'::text));
+
+
+
+create view unicef_moha_district
+as
+SELECT individual.id,
+       individual.address_id,
+       individual.uuid,
+       individual.first_name,
+       individual.last_name,
+       g.name AS gender,
+       individual.date_of_birth,
+       date_part('year'::text, age((individual.date_of_birth)::timestamp with time zone)) AS age_in_years,
+       ((date_part('year'::text, age((individual.date_of_birth)::timestamp with time zone)) * (12)::double precision) + date_part('month'::text, age((individual.date_of_birth)::timestamp with time zone))) AS age_in_months,
+       individual.date_of_birth_verified,
+       individual.registration_date,
+       individual.facility_id,
+       individual.registration_location,
+       individual.subject_type_id,
+       individual.audit_id,
+       ost.name AS subject_type_name,
+       a.title AS location_name,
+       individual.is_voided
+FROM (((individual individual
+    LEFT JOIN operational_subject_type ost ON ((ost.subject_type_id = individual.subject_type_id)))
+    LEFT JOIN gender g ON ((g.id = individual.gender_id)))
+         LEFT JOIN address_level a ON ((individual.address_id = a.id)))
+WHERE ((ost.uuid)::text = 'e7a30a80-e71e-4126-9fed-9e81b6988c36'::text);
