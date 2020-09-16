@@ -19,10 +19,14 @@ class CbMdrPostEnrolment {
         }
         if (programEnrolment.getObservationReadableValue("Form filled in") === "Community") {
             let maxDate = 21;
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDSR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
+            if (!programEnrolment.hasEncounterOfType('Form5 : Community Based Verbal Autopsy Form')) {
+                return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 5 : Community Based MDSR', 'Form5 : Community Based Verbal Autopsy Form', earliestDate, maxDate);
+            }
         } else if (programEnrolment.getObservationReadableValue("Form filled in") === "Facility") {
             let maxDate = 2;
-            return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 4 : Facility Based MDSR', 'Form 4 : Facility Based MDSR', earliestDate, maxDate);
+            if (!programEnrolment.hasEncounterOfType('Form 4 : Facility Based MDSR')) {
+                return RuleHelper.scheduleOneVisit(scheduleBuilder, 'Form 4 : Facility Based MDSR', 'Form 4 : Facility Based MDSR', earliestDate, maxDate);
+            }
         }
 
     }
