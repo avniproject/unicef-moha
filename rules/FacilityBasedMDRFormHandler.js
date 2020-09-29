@@ -688,7 +688,7 @@ class FbmdrViewFilter {
     selectOnlyOneCauseOfDeathFromAllOptionsAbove([programEncounter, formElement], statusBuilder) {
 
         const answers = [programEncounter
-            .getObservationReadableValue('GrPregnancies with abortive outcomeavida'),
+            .getObservationReadableValue('Pregnancies with abortive outcome'),
             programEncounter.getObservationReadableValue('Hypertensive disorders in pregnancy, birth and puerperium'),
             programEncounter.getObservationReadableValue('Obstetric Haemmorhage'),
             programEncounter.getObservationReadableValue('Pregnancy related infection'),
@@ -708,16 +708,28 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    selectAtLeastOneCauseOfIndirectDeathFromAllOptionsAbove([], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Indirect causes").
-        and.valueInEncounter('Non-obstetric complications- Anaemia').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Cardiac disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Liver Disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Respiratory Disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Renal disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Endocrinal Disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Neurological Disorders').is.notDefined.
-        and.valueInEncounter('Non-obstetric complications- Infections/ Infestations').is.notDefined;
+    selectOnlyOneCauseOfIndirectDeathFromAllOptionsAbove([programEncounter, formElement], statusBuilder) {
+
+        const answers = [programEncounter
+            .getObservationReadableValue('Non-obstetric complications- Anaemia'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Cardiac disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Liver Disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Respiratory Disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Renal disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Endocrinal Disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Neurological Disorders'),
+            programEncounter.getObservationReadableValue('Non-obstetric complications- Infections/ Infestations')
+        ];
+    
+        let count = 0;
+             _.forEach(answers, element => {
+                 if (_.isEqual(element,undefined))
+                 count++;
+            });
+               
+        statusBuilder.show().when.valueInEncounter('Cause of maternal death')
+        .containsAnswerConceptName("Indirect causes").and.        
+        whenItem(!_.isEqual(count,7)).is.truthy;
     }
 
     static exec(programEncounter, formElementGroup, today) {
