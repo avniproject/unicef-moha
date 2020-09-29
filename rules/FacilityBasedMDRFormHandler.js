@@ -685,14 +685,26 @@ class FbmdrViewFilter {
     }
 
     @WithStatusBuilder
-    selectAtLeastOneCauseOfDeathFromAllOptionsAbove([], statusBuilder) {
-        statusBuilder.show().when.valueInEncounter('Cause of maternal death').containsAnswerConceptName("Direct causes").
-        and.valueInEncounter('Pregnancies with abortive outcome').is.notDefined.
-        and.valueInEncounter('Hypertensive disorders in pregnancy, birth and puerperium').is.notDefined.
-        and.valueInEncounter('Obstetric Haemmorhage').is.notDefined.
-        and.valueInEncounter('Pregnancy related infection').is.notDefined.
-        and.valueInEncounter('Other Obstetric complications').is.notDefined.
-        and.valueInEncounter('Other direct cause').is.notDefined;
+    selectOnlyOneCauseOfDeathFromAllOptionsAbove([programEncounter, formElement], statusBuilder) {
+
+        const answers = [programEncounter
+            .getObservationReadableValue('GrPregnancies with abortive outcomeavida'),
+            programEncounter.getObservationReadableValue('Hypertensive disorders in pregnancy, birth and puerperium'),
+            programEncounter.getObservationReadableValue('Obstetric Haemmorhage'),
+            programEncounter.getObservationReadableValue('Pregnancy related infection'),
+            programEncounter.getObservationReadableValue('Other Obstetric complications'),
+            programEncounter.getObservationReadableValue('Other direct cause')
+        ];
+    
+        let count = 0;
+             _.forEach(answers, element => {
+                 if (_.isEqual(element,undefined))
+                 count++;
+            });
+               
+        statusBuilder.show().when.valueInEncounter('Cause of maternal death')
+        .containsAnswerConceptName("Direct causes").and.        
+        whenItem(!_.isEqual(count,5)).is.truthy;
     }
 
     @WithStatusBuilder
