@@ -1144,6 +1144,12 @@ class CbmdrViewFilter {
         const display = programEncounter.getObservationReadableValue('Participate in this interview') === 'No' ? false : true;
         return new FormElementStatus(formElement.uuid, display, name);
     }
+
+    @WithName("1. Name of the respondent")
+    respName(programEncounter, formElement) {
+        const name = programEncounter.getObservationReadableValue('Respondent Name');
+        return new FormElementStatus(formElement.uuid, true, name);
+    }
 }
 
 
