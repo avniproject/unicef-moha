@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FBMD Review" pageWidth="842" pageHeight="1191" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+	<property name="ireport.jasperserver.user" value="joya"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/FBMD_Review_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/FBMD_Review"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by al.title)                                                as "S. No"
+     , coalesce(al.title, 'Total')                                                          as "District"
+     , count(*) filter ( where visit_number = 1 )                                           as "Scheduled"
+     , count(*) filter ( where visit_number = 1 and form4_encounter_date_time is not null ) as "Reviewed"
+     , trunc(nullif(count(*) filter ( where visit_number = 1 and form4_encounter_date_time is not null ), 0) * 100.0
+                 / nullif(count(*) filter ( where visit_number = 1 ), 0), 2)                as "Percentage"
+from address_level al
+         left join (
+    select district.id                                                                            as district_id
+         , form4."Enc.encounter_date_time"                                                        as form4_encounter_date_time
+         , row_number() over (partition by reg."Ind.Id" order by form4."Enc.encounter_date_time") as visit_number
+    from unicef_moha_individual_registration_view reg
+             left join unicef_moha_mdsr_enrolment_view enrolment on reg."Ind.Id" = enrolment."Ind.Id"
+             left join address_level phc on reg."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+             right join unicef_moha_form_4_facility_based_mdsr form4 on form4."Enl.Id" = enrolment."Enl.Id"
+         where 1=1
+			and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}             
+) agg_data on district_id = al.id
+where al.parent_id is null
+group by rollup (al.title);]]>
+	</queryString>
+	<field name="S. No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="S. No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+	</field>
+	<field name="Scheduled" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Scheduled"/>
+	</field>
+	<field name="Reviewed" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Reviewed"/>
+	</field>
+	<field name="Percentage" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Percentage"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="550" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[FBMD Review]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="80" height="30" uuid="15b619de-ecf5-4d96-9b59-fa2e730d059f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="701a295c-7453-4386-b19e-691a4d446d40"/>
+				</reportElement>
+				<text><![CDATA[S. No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="80" y="0" width="142" height="30" uuid="42923ec7-252f-49d9-961a-acf3be54f96c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="21d0bbcb-6ef6-44f5-b716-a67ecf3069b6"/>
+				</reportElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="222" y="0" width="111" height="30" uuid="7a95d46e-e9cb-4fbd-9572-829c0b412442">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2a46f11-0bdc-4909-a5ec-389fe19c45a5"/>
+				</reportElement>
+				<text><![CDATA[Scheduled]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="333" y="0" width="111" height="30" uuid="d75276a2-bd8d-48d2-9795-5114ba676d9e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd735b35-fab5-4002-8110-59e0b569bb5d"/>
+				</reportElement>
+				<text><![CDATA[Reviewed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="444" y="0" width="111" height="30" uuid="337c96fb-de4b-4829-a0ea-bcf2e1aa70e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="54966381-77a7-4100-a6aa-4c340393f143"/>
+				</reportElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="72366ff2-5d13-4dbe-bf51-be00cdee8421">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="701a295c-7453-4386-b19e-691a4d446d40"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{S. No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="80" y="0" width="142" height="30" uuid="edc1ff83-9204-44c6-831a-e229c70b5f02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="21d0bbcb-6ef6-44f5-b716-a67ecf3069b6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="222" y="0" width="111" height="30" uuid="a096c049-c9e9-4634-9e86-2b29e612d541">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2a46f11-0bdc-4909-a5ec-389fe19c45a5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Scheduled}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Scheduled} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and enrolment.\"Enl.Form filled in\" = 'Facility' ".concat($F{District}.equals("Total") ? "" : " and district.title =  '" +$F{District} + "'")]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA[" "]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="333" y="0" width="111" height="30" uuid="00ac19c5-b29a-4798-a7e3-d30aa3e7d01e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd735b35-fab5-4002-8110-59e0b569bb5d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Reviewed}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Reviewed} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and form4.\"Enc.encounter_date_time\" is not null".concat($F{District}.equals("Total") ? "" : " and district.title =  '" +$F{District} + "'")]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="444" y="0" width="111" height="30" uuid="f27eef3f-e187-452a-b94f-60f00ab03dc0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="54966381-77a7-4100-a6aa-4c340393f143"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Percentage} == null ? "0%" : $F{Percentage}.toString().concat("%")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

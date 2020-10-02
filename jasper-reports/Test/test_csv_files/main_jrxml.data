@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test-csv" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mdsr/map/CSVDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.components.map.key" value="AIzaSyDV5vyu5yUYs-HPW7ISURfKbYf2eSnmeW4"/>
+	<property name="ireport.jasperserver.user" value="joya"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Test/test_csv_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Test/test_csv"/>
+	<property name="net.sf.jasperreports.data.adapter" value="repo:/MDSR/Reports/Test/CSVDataAdapter"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="district" class="java.lang.String"/>
+	<field name="longitude" class="java.math.BigDecimal"/>
+	<field name="latitude" class="java.math.BigDecimal"/>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="550" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="450">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="10" y="10" width="790" height="440" uuid="15788332-9976-48ec-a939-d7c10ba9b9a1"/>
+				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<c:latitudeExpression><![CDATA[26.05779746879292]]></c:latitudeExpression>
+					<c:longitudeExpression><![CDATA[92.7645232552521]]></c:longitudeExpression>
+					<c:zoomExpression><![CDATA[7]]></c:zoomExpression>
+					<c:pathStyle>
+						<c:item>
+							<c:itemProperty name="name" value="Style1"/>
+							<c:itemProperty name="fillOpacity" value="0.4"/>
+							<c:itemProperty name="strokeWeight" value="3"/>
+							<c:itemProperty name="isPolygon" value="true"/>
+							<c:itemProperty name="fillColor" value="#19854F"/>
+							<c:itemProperty name="strokeColor" value="#C45452"/>
+							<c:itemProperty name="strokeOpacity" value="0.5"/>
+						</c:item>
+					</c:pathStyle>
+					<c:pathData>
+						<dataset resetType="Report"/>
+						<c:item>
+							<c:itemProperty name="fillOpacity" value="0.3"/>
+							<c:itemProperty name="latitude">
+								<valueExpression><![CDATA[$F{latitude}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="strokeWeight" value="2"/>
+							<c:itemProperty name="isPolygon" value="true"/>
+							<c:itemProperty name="fillColor" value="#2AEB51"/>
+							<c:itemProperty name="name">
+								<valueExpression><![CDATA[$F{district}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="strokeColor" value="#703B3A"/>
+							<c:itemProperty name="longitude">
+								<valueExpression><![CDATA[$F{longitude}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="strokeOpacity" value="0.8"/>
+							<c:itemProperty name="visible" value="true"/>
+							<c:itemProperty name="style" value="Style1"/>
+						</c:item>
+					</c:pathData>
+				</c:map>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

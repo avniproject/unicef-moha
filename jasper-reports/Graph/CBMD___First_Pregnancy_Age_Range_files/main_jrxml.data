@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CBMD - First Pregnancy Age Range" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="NupoorK"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Graph/CBMD___First_Pregnancy_Age_Range_files/main"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Graph/CBMD___First_Pregnancy_Age_Range"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[with first_pregnancy_age_data as (
+    select count(*) filter ( where form5."Enc.Age at the time of first pregnancy"::integer < 15 )     as under_15,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 15 and 18 ) as b15_18,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 19 and 21 ) as b19_21,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 22 and 25 ) as b22_25,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 26 and 30 ) as b26_30,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 31 and 35 ) as b31_35,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer between 36 and 49 ) as b36_49,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy"::integer > 49 )              as above_49,
+           count(*)
+           filter ( where form5."Enc.Age at the time of first pregnancy" is null )                    as data_not_reported,
+           count(*)                                                                                   as total_count
+    from unicef_moha_form_5_community_based_verbal_autopsy form5
+             left join unicef_moha_mdsr_enrolment_view enrolment
+                       on form5."Enl.Id" = enrolment."Enl.Id"
+             left join address_level phc on form5."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+    where 1 = 1 and "Enc.encounter_date_time" is not null
+                and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+                and $X{IN, district.title, PARAM_DISTRICT}
+                and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+)
+select unnest(
+               array [
+                   '< 15',
+                   '15 - 18',
+                   '19 - 21',
+                   '22 - 25',
+                   '26 - 30',
+                   '31 - 35',
+                   '36 - 49',
+                   '> 49',
+                   'Data not reported',
+                   'Total'
+                   ]
+           )  as age_range,
+       unnest(array [
+           under_15,
+           b15_18,
+           b19_21,
+           b22_25,
+           b26_30,
+           b31_35,
+           b36_49,
+           above_49,
+           data_not_reported,
+           total_count
+           ]) as count,
+       unnest(array [
+           trunc(nullif(under_15, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b15_18, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b19_21, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b22_25, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b26_30, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b31_35, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(b36_49, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(above_49, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(data_not_reported, 0) * 100.0 / nullif(total_count, 0), 1),
+           trunc(nullif(total_count, 0) * 100.0 / nullif(total_count, 0), 1)
+           ]) as percentage,
+       unnest(array [
+           'and form5."Enc.Age at the time of first pregnancy"::integer < 15',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 15 and 18',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 19 and 21',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 22 and 25',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 26 and 30',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 31 and 35',
+           'and form5."Enc.Age at the time of first pregnancy"::integer between 36 and 49',
+           'and form5."Enc.Age at the time of first pregnancy"::integer > 49',
+           'and form5."Enc.Age at the time of first pregnancy" is null and form5."Enc.encounter_date_time" is not null',
+           'and form5."Enc.encounter_date_time" is not null'
+           ]) as condition
+from first_pregnancy_age_data data
+;]]>
+	</queryString>
+	<field name="age_range" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="age_range"/>
+	</field>
+	<field name="count" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count"/>
+	</field>
+	<field name="percentage" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="percentage"/>
+	</field>
+	<field name="condition" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="condition"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="555" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[CBMD - First Pregnancy Age Range]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="185" height="30" uuid="4de4860c-8317-4bd4-91b1-811ec2e3c88a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b881db3-f0f3-4434-ac1f-b7ffbe282f82"/>
+				</reportElement>
+				<text><![CDATA[Age Range]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="185" y="0" width="185" height="30" uuid="dc7f3ada-af87-4dbd-b3d3-03fa6b8dfa12">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea087f41-4f0e-45a5-95d1-8f65b0262322"/>
+				</reportElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="370" y="0" width="185" height="30" uuid="030c079e-e86d-46ec-ba74-4ca263a4dc30">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffd5d17-103b-4a39-89f1-16e2d662b610"/>
+				</reportElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="30" uuid="58acd358-04ca-426c-8c85-b293561b73a5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b881db3-f0f3-4434-ac1f-b7ffbe282f82"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{age_range}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="185" y="0" width="185" height="30" uuid="42cb343b-86b7-49e9-9069-cecf642560d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ea087f41-4f0e-45a5-95d1-8f65b0262322"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{count} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$F{condition}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_5_community_based_verbal_autopsy form5 on form5.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="370" y="0" width="185" height="30" uuid="68ea2986-7b9d-416e-a69a-aeb8957643d5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bffd5d17-103b-4a39-89f1-16e2d662b610"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{percentage} == null ? "0%" : $F{percentage}.toString().concat("%")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="350">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<pieChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="0" y="30" width="520" height="270" uuid="4cfcf81c-780a-486c-b5e0-1680f61b3523">
+						<printWhenExpression><![CDATA[$F{count} > 0]]></printWhenExpression>
+					</reportElement>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["First Pregnancy Age Range"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset minPercentage="1.0">
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{age_range}]]></keyExpression>
+					<valueExpression><![CDATA[$F{age_range}.equals("Total") ? 0 : $F{count}]]></valueExpression>
+					<labelExpression><![CDATA[$F{age_range}+"\n"+$F{percentage}+"%"]]></labelExpression>
+					<sectionHyperlink hyperlinkType="ReportExecution">
+						<hyperlinkTooltipExpression><![CDATA[$F{age_range}]]></hyperlinkTooltipExpression>
+						<hyperlinkParameter name="_report">
+							<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_START">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_END">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+							<hyperlinkParameterExpression><![CDATA[$F{condition}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+							<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_5_community_based_verbal_autopsy form5 on form5.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DISTRICT">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+					</sectionHyperlink>
+				</pieDataset>
+				<piePlot labelFormat="">
+					<plot/>
+					<itemLabel>
+						<font size="12" isBold="true"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

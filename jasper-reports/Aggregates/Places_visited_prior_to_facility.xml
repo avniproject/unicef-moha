@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Aggregates</folder>
+    <name>Places_visited_prior_to_facility</name>
+    <version>10</version>
+    <label>Places visited prior to facility where died</label>
+    <description></description>
+    <creationDate>2020-09-10T15:49:11.892+05:30</creationDate>
+    <updateDate>2020-09-30T14:05:08.344+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Places_visited_prior_to_facility_files</folder>
+            <name>main_jrxml</name>
+            <version>18</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-10T15:49:11.892+05:30</creationDate>
+            <updateDate>2020-09-30T14:05:07.655+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AggregateReportStyles.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Places_visited_prior_to_facility_files</folder>
+            <name>AggregateReportStyles.jrtx</name>
+            <version>9</version>
+            <label>AggregateReportStyles.jrtx</label>
+            <creationDate>2020-09-10T15:49:11.892+05:30</creationDate>
+            <updateDate>2020-09-10T15:49:11.892+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

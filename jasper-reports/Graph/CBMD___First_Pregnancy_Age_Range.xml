@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Graph</folder>
+    <name>CBMD___First_Pregnancy_Age_Range</name>
+    <version>15</version>
+    <label>CBMD - First Pregnancy Age Range</label>
+    <description></description>
+    <creationDate>2020-09-15T16:06:43.634+05:30</creationDate>
+    <updateDate>2020-10-01T10:36:37.100+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Graph/CBMD___First_Pregnancy_Age_Range_files</folder>
+            <name>main_jrxml</name>
+            <version>1</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-10-01T10:36:37.100+05:30</creationDate>
+            <updateDate>2020-10-01T10:36:37.100+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Graph/CBMD___First_Pregnancy_Age_Range_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>0</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-15T16:06:43.634+05:30</creationDate>
+            <updateDate>2020-09-15T16:06:43.634+05:30</updateDate>
+            <referenceUri>/Templates/Styles/Linelist.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

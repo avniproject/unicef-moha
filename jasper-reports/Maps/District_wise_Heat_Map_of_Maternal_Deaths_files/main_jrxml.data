@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="District wise Heat Map of Maternal Deaths" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+	<property name="net.sf.jasperreports.components.map.key" value="AIzaSyDV5vyu5yUYs-HPW7ISURfKbYf2eSnmeW4"/>
+	<property name="ireport.jasperserver.user" value="joya"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Maps/District_wise_Heat_Map_of_Maternal_Deaths_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Maps/District_wise_Heat_Map_of_Maternal_Deaths"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<subDataset name="Dataset1" uuid="9d2d609f-8351-45c6-a8dc-d717dfc3bcbb">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mdsr/map/CSVDataAdapter.xml"/>
+		<field name="district" class="java.lang.String"/>
+		<field name="longitude" class="java.math.BigDecimal"/>
+		<field name="latitude" class="java.math.BigDecimal"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select 1;]]>
+	</queryString>
+	<field name="?column?" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="?column?"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="550" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="555" height="30" uuid="9eaabad5-b99d-46e9-b053-23d9d2809a6d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57693165-87d0-4063-9f4c-81c97db2469e"/>
+				</reportElement>
+				<text><![CDATA[?column?]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="30" uuid="39ea2bd9-0804-4f81-8c67-ccbc4b41d70d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="57693165-87d0-4063-9f4c-81c97db2469e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{?column?}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="350">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="0" y="20" width="555" height="320" uuid="f559fa53-03f7-4a88-bf70-c1a97c2c9511"/>
+				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<c:latitudeExpression><![CDATA[26.05779746879292]]></c:latitudeExpression>
+					<c:longitudeExpression><![CDATA[92.2645232552521]]></c:longitudeExpression>
+					<c:zoomExpression><![CDATA[7]]></c:zoomExpression>
+					<c:pathStyle>
+						<c:item>
+							<c:itemProperty name="name" value="Red"/>
+							<c:itemProperty name="fillColor" value="#ED3241"/>
+						</c:item>
+						<c:item>
+							<c:itemProperty name="name" value="Green"/>
+							<c:itemProperty name="fillColor" value="#5CE612"/>
+						</c:item>
+					</c:pathStyle>
+					<c:pathData>
+						<dataset resetType="Report">
+							<datasetRun subDataset="Dataset1" uuid="d3b5404e-ff6e-4f5f-a642-e3290fceebb0"/>
+						</dataset>
+						<c:item>
+							<c:itemProperty name="latitude">
+								<valueExpression><![CDATA[$F{latitude}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="isPolygon" value="true"/>
+							<c:itemProperty name="name">
+								<valueExpression><![CDATA[$F{district}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="longitude">
+								<valueExpression><![CDATA[$F{longitude}]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="fillColor" value="#FFFFFF"/>
+							<c:itemProperty name="style" value="Red"/>
+						</c:item>
+					</c:pathData>
+				</c:map>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

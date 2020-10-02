@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Maternal deaths at Home" pageWidth="1684" pageHeight="720" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="fa1a9231-754c-4c0f-8a57-3e034206cd5a">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="prod DB"/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/Maternal_deaths_at_Home_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/Maternal_deaths_at_Home"/>
+	<template><![CDATA["repo:AggregateReportStyles.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by al.title) as                     "Sr.No"
+        ,
+       coalesce(al.title, 'Total')           as                     "District",
+       count(*) filter ( where place = 'Home' and timing != 'None') "Number of maternal deaths Reported at home",
+       trunc(nullif((count(*) filter ( where place = 'Home' and timing != 'None')::numeric * 100 / nullif(count(*), 0)),
+                    0), 2)                                          "% of maternal deaths at home"
+from address_level al
+         left join (
+    select district.id as                               district_id,
+           enrolment."Enl.Name of place of death"       place,
+           enrolment."Enl.Timing of death in pregnancy" timing,
+           enrolment."Ind.Id"                           ind_id,
+           block.title block
+
+
+    from unicef_moha_mdsr_enrolment_view enrolment
+             left join address_level phc on enrolment."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+             where  $X{BETWEEN,enrolment."Enl.enrolment_date_time",PARAM_DATE_START, PARAM_DATE_END}
+             
+ 
+ 
+) agg_data on district_id = al.id
+where al.parent_id is null
+and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              al.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+group by rollup (al.title);]]>
+	</queryString>
+	<field name="Sr.No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Sr.No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address_level"/>
+	</field>
+	<field name="Number of maternal deaths Reported at home" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Number of maternal deaths Reported at home"/>
+	</field>
+	<field name="% of maternal deaths at home" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="% of maternal deaths at home"/>
+	</field>
+	<variable name="DYNAMIC_WHERE" class="java.lang.String">
+		<variableExpression><![CDATA[$F{District}.equals("Total") ? "and enrolment.\"Enl.Name of place of death\" ='Home' and enrolment.\"Enl.Timing of death in pregnancy\" != 'None'" : "and district.title = '" + $F{District} + "' and enrolment.\"Enl.Name of place of death\" ='Home' and enrolment.\"Enl.Timing of death in pregnancy\" != 'None'   "]]></variableExpression>
+	</variable>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="210" y="0" width="950" height="50" uuid="b41c1dbc-657e-4f9f-93da-2951563f95d4"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[Maternal deaths at Home ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="210" y="0" width="80" height="50" uuid="828b9c12-0860-45b1-bb2f-1452eee963bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b485fd08-aba7-4030-9cfe-cd2f1e62596d"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Sr.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="290" y="0" width="290" height="50" uuid="7def7b76-761e-4e27-95d1-26f9d4eca37d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="169b3c4b-3b87-4249-b24e-7abed1ebad7e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="580" y="0" width="290" height="50" uuid="d3c26b6b-9d91-4ef0-a857-5ded3c824da8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba598d28-8904-4b6f-aba5-b85cf2314774"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Number of maternal deaths Reported at home]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="870" y="0" width="290" height="50" uuid="e00520c2-aa39-482a-91c3-b62364af83f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9472181a-5af1-45dd-a91a-b8b5e24d392b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[% of maternal deaths at home]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="210" y="0" width="80" height="30" uuid="3d070a15-e282-4fc4-b863-f5684e1fe5b8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b485fd08-aba7-4030-9cfe-cd2f1e62596d"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{Sr.No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="290" y="0" width="290" height="30" uuid="e6e07dd7-7662-45f5-b4da-9cb464c69656">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="169b3c4b-3b87-4249-b24e-7abed1ebad7e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="580" y="0" width="290" height="30" uuid="4a44c011-4acd-4cde-b72a-e22ea3c36e2f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba598d28-8904-4b6f-aba5-b85cf2314774"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Number of maternal deaths Reported at home}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Number of maternal deaths Reported at home} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$V{DYNAMIC_WHERE}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowPreCalculatedPercentageElement" stretchType="RelativeToTallestObject" x="870" y="0" width="290" height="30" uuid="06328195-fc3d-4fe4-9e38-7f6cc0f84c3b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9472181a-5af1-45dd-a91a-b8b5e24d392b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{% of maternal deaths at home} == null ? "0%" : $F{% of maternal deaths at home}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

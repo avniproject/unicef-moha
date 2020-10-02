@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Places visited prior to facility" pageWidth="1684" pageHeight="720" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa1a9231-754c-4c0f-8a57-3e034206cd5a">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="NupoorK"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/Places_visited_prior_to_facility_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/Places_visited_prior_to_facility"/>
+	<template><![CDATA["repo:AggregateReportStyles.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[with all_data as (
+    select row_number() over (partition by enc."Enl.Id" order by "Enc.encounter_date_time" ) rank,
+           enc."Enc.Number of places visited prior"::numeric                             visit
+    from unicef_moha_form_4_facility_based_mdsr enc
+    left join unicef_moha_mdsr_enrolment_view enl on enl."Enl.Id"=enc."Enc.program_enrolment_id"
+             left join address_level phc on enc."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+             where  "Enc.encounter_date_time" is not null
+             and $X{BETWEEN,enl."Enl.enrolment_date_time",PARAM_DATE_START, PARAM_DATE_END}
+             and $X{IN,district.title,PARAM_DISTRICT}
+             and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+)
+select unnest(array ['0','1','2','3','4','5','6','Data not reported']) as "Number of Places visited",
+       unnest(array [
+           count(*) filter ( where visit = 0),
+           count(*) filter ( where visit = 1),
+           count(*) filter ( where visit = 2),
+           count(*) filter ( where visit = 3),
+           count(*) filter ( where visit = 4),
+           count(*) filter ( where visit = 5),
+           count(*) filter ( where visit = 6),
+           count(*) filter ( where visit is null)
+
+           ])                                      as "Number of Maternal Death"
+from all_data
+;]]>
+	</queryString>
+	<field name="Number of Places visited" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Number of Places visited"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_form_4_facility_based_mdsr"/>
+	</field>
+	<field name="Number of Maternal Death" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Number of Maternal Death"/>
+	</field>
+	<variable name="DYNAMIC_WHERE" class="java.lang.String">
+		<variableExpression><![CDATA[$F{Number of Places visited}.equals("0") ? "visit = '0'" :
+    $F{Number of Places visited}.equals("1") ? "visit = '1'" :
+    $F{Number of Places visited}.equals("2") ? "visit = '2'" :
+    $F{Number of Places visited}.equals("3") ? "visit = '3'" :
+    $F{Number of Places visited}.equals("4") ? "visit = '4'" :
+    $F{Number of Places visited}.equals("5") ? "visit = '5'" :
+    $F{Number of Places visited}.equals("6") ? "visit = '6'" :
+    $F{Number of Places visited}.equals("Data not reported") ? "visit is null" :
+" 1=1"]]></variableExpression>
+	</variable>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="220" y="0" width="576" height="50" uuid="b41c1dbc-657e-4f9f-93da-2951563f95d4"/>
+				<text><![CDATA[Places visited prior to facility where died]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="220" y="0" width="288" height="30" uuid="78185c63-1507-45e1-9bd3-a7b94047f21f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5316d2e6-8c4e-4510-bd33-d0a966613f2a"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Number of Places visited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="508" y="0" width="288" height="30" uuid="79423b41-ae23-4e1a-8a2d-af91c56fe491">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30b51dc3-aae3-4fe8-afd1-4899426876a1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Number of Maternal Death]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="220" y="0" width="288" height="30" uuid="9606cd5f-e800-493b-845f-137d21ca3069">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5316d2e6-8c4e-4510-bd33-d0a966613f2a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Number of Places visited}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="508" y="0" width="288" height="30" uuid="71ba3aa6-6c26-4ce3-9cb7-97f6a897c4dc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="30b51dc3-aae3-4fe8-afd1-4899426876a1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Number of Maternal Death}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Number of Maternal Death} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/Places_visited_prior_to_facility_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$V{DYNAMIC_WHERE}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

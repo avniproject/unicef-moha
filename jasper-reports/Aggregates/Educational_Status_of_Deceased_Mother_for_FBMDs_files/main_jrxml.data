@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Deaths in Transit" pageWidth="842" pageHeight="1191" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bae6b2e-9e26-4fe4-9359-9af26a69b598">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="NupoorK"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/Educational_Status_of_Deceased_Mother_for_FBMDs_files/main"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/Educational_Status_of_Deceased_Mother_for_FBMDs"/>
+	<template><![CDATA["repo:Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[with data as (
+  select count(*) filter ( where "Enc.Education" = 'Illeterate') illiterate,
+         count(*) filter ( where "Enc.Education" = 'Upto 5th Class') upto_5th_class,
+         count(*) filter ( where "Enc.Education" = '6th to 12th Class') from_6th_to_12th_class,
+         count(*) filter ( where "Enc.Education" = 'Beyond 12th Class') beyond_12th_class,
+         count(*) filter ( where "Enc.Education" is null) not_answered,
+         count(*)  total
+  from unicef_moha_form_4_facility_based_mdsr form_4
+  join unicef_moha_mdsr_enrolment_view enl on form_4."Enl.Id" = enl."Enl.Id"
+  left join address_level phc on form_4."Ind.address_id" = phc.id
+  left join address_level block on phc.parent_id = block.id
+  left join address_level district on block.parent_id = district.id
+  where "Enc.encounter_date_time" is not null
+  and $X{BETWEEN, enl."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+  and $X{IN,district.title,PARAM_DISTRICT}
+  
+ and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end  
+)
+select unnest(array['Illeterate',
+                    'Upto 5th Class',
+                    '6th to 12th Class',
+                    'Beyond 12th Class',
+                    'Data not reported',
+                    'Total']) "Education Status",
+       unnest(array[illiterate,
+       				upto_5th_class, 
+       				from_6th_to_12th_class,
+       				beyond_12th_class,
+       				not_answered,
+       				total]) "Number of Deceased Mother(s)"
+from data;]]>
+	</queryString>
+	<field name="Education Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Education Status"/>
+	</field>
+	<field name="Number of Deceased Mother(s)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Number of Deceased Mother(s)"/>
+	</field>
+	<variable name="PARAM_DYNAMIC_WHERE" class="java.lang.String">
+		<variableExpression><![CDATA[$F{Education Status}.equals("Total") ? "and 1=1 and form_4.\"Enc.encounter_date_time\" is not null" :
+		 $F{Education Status}.equals("Data not reported") ? "and form_4.\"Enc.Education\" is null and form_4.\"Enc.encounter_date_time\" is not null" 
+		:"and form_4.\"Enc.Education\" = '" + $F{Education Status} + "' and form_4.\"Enc.encounter_date_time\" is not null"]]></variableExpression>
+	</variable>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="360" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Educational Status of Deceased Mother for FBMDs]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="200" height="30" uuid="2f5d060b-1b56-4dcd-972e-1d4e71e23df0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<text><![CDATA[Education Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="200" y="0" width="160" height="30" uuid="0836dd04-d1aa-4ff5-b227-1567d509306b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<text><![CDATA[Number of Deceased Mother(s)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="200" height="30" uuid="1daa9953-3f84-4401-aa72-e9470ed70a6d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Education Status}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="200" y="0" width="160" height="30" uuid="199e6405-98ed-4b24-9411-548cd8da03e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Number of Deceased Mother(s)}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Number of Deceased Mother(s)} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form_4 on form_4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$V{PARAM_DYNAMIC_WHERE}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

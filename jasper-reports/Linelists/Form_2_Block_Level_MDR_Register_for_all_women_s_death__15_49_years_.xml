@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Linelists</folder>
+    <name>Form_2_Block_Level_MDR_Register_for_all_women_s_death__15_49_years_</name>
+    <version>12</version>
+    <label>Form 2 Block Level MDR Register for all women’s death (15-49 years)</label>
+    <description></description>
+    <creationDate>2020-09-16T16:26:37.616+05:30</creationDate>
+    <updateDate>2020-09-28T16:42:14.343+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Linelists/Form_2_Block_Level_MDR_Register_for_all_women_s_death__15_49_years__files</folder>
+            <name>main_jrxml</name>
+            <version>1</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-28T16:42:14.343+05:30</creationDate>
+            <updateDate>2020-09-28T16:42:14.343+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_BLOCK</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="Linelist.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Linelists/Form_2_Block_Level_MDR_Register_for_all_women_s_death__15_49_years__files</folder>
+            <name>Linelist.jrtx</name>
+            <version>9</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-16T16:26:37.616+05:30</creationDate>
+            <updateDate>2020-09-16T16:26:37.616+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

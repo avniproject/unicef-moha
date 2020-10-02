@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Deaths in Transit" pageWidth="842" pageHeight="1191" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/Deaths_in_Transit_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/Deaths_in_Transit"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by al.title)                                                 as "S. No"
+     , coalesce(al.title, 'Total') as "District"
+     , count(*) filter ( where "Place of Death" = 'Transit' and "Timing of Death" <> 'None') as count_in_transit
+     , count(*) filter ( where "Timing of Death" <> 'None')                                  as total_deaths
+     , trunc((nullif(count(*) filter ( where "Place of Death" = 'Transit' and "Timing of Death" <> 'None'), 0) * 100.0 /
+              nullif(count(*) filter ( where "Timing of Death" <> 'None'), 0)), 2)           as percentage_in_transit
+from address_level al
+         left join
+     (
+         select district.title                               as "District"
+              , district.id                                  as district_id
+              , enrolment."Enl.Date and time of Death"       as "Date and Time of Death"
+              , enrolment."Enl.Name of place of death"       as "Place of Death"
+              , enrolment."Enl.Timing of death in pregnancy" as "Timing of Death"
+              , enrolment."Enl.enrolment_date_time",
+              block.title block
+         from unicef_moha_individual_registration_view reg
+                  left join unicef_moha_mdsr_enrolment_view enrolment on reg."Ind.Id" = enrolment."Ind.Id"
+                  left join address_level phc on reg."Ind.address_id" = phc.id
+                  left join address_level block on phc.parent_id = block.id
+                  left join address_level district on block.parent_id = district.id
+         where 1=1
+			and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}         
+     ) maternal_deaths on al.id = district_id
+where al.parent_id is null
+and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              al.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+group by rollup (al.title);]]>
+	</queryString>
+	<field name="S. No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="S. No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+	</field>
+	<field name="count_in_transit" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count_in_transit"/>
+	</field>
+	<field name="total_deaths" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="total_deaths"/>
+	</field>
+	<field name="percentage_in_transit" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="percentage_in_transit"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="480" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Deaths in Transit]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="80" height="30" uuid="401cdcc2-0cf0-454b-aeaf-8eab1830647f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d53a43d-a4ce-4dab-901f-a8cef0006483"/>
+				</reportElement>
+				<text><![CDATA[S. No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="80" y="0" width="200" height="30" uuid="2f5d060b-1b56-4dcd-972e-1d4e71e23df0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="280" y="0" width="100" height="30" uuid="0836dd04-d1aa-4ff5-b227-1567d509306b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="380" y="0" width="100" height="30" uuid="fa011970-54e5-4e45-9a45-222a2c47f3ab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31979013-51b2-4991-b153-1df2932a0dbf"/>
+				</reportElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="ce0d5b81-79eb-4165-b2a6-d9caa056d04f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d53a43d-a4ce-4dab-901f-a8cef0006483"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{S. No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="80" y="0" width="200" height="30" uuid="1daa9953-3f84-4401-aa72-e9470ed70a6d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="280" y="0" width="100" height="30" uuid="199e6405-98ed-4b24-9411-548cd8da03e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{count_in_transit}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{count_in_transit} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and enrolment.\"Enl.Name of place of death\" = 'Transit' and enrolment.\"Enl.Timing of death in pregnancy\" <> 'None'".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'") )]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="380" y="0" width="100" height="30" uuid="c56151ca-884a-4745-96a2-fd664ca2572c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31979013-51b2-4991-b153-1df2932a0dbf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{percentage_in_transit} == null ? "0%" : $F{percentage_in_transit}.toString().concat("%")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

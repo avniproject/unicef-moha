@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Test</folder>
+    <name>Trial_UserRoleParamsInReport</name>
+    <version>18</version>
+    <label>Trial-UserRoleParamsInReport</label>
+    <description></description>
+    <creationDate>2020-09-23T17:53:44.112+05:30</creationDate>
+    <updateDate>2020-09-28T09:18:30.888+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Test/Trial_UserRoleParamsInReport_files</folder>
+            <name>main_jrxml</name>
+            <version>32</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-23T17:53:44.112+05:30</creationDate>
+            <updateDate>2020-09-28T09:18:30.352+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Test/Trial_UserRoleParamsInReport_files</folder>
+            <name>LoggedInUsername</name>
+            <version>1</version>
+            <label>LoggedInUsername</label>
+            <description></description>
+            <creationDate>2020-09-28T09:18:30.888+05:30</creationDate>
+            <updateDate>2020-09-28T09:18:30.888+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Test/Trial_UserRoleParamsInReport_files/LoggedInUsername_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <description></description>
+                    <creationDate>2020-09-28T09:18:30.888+05:30</creationDate>
+                    <updateDate>2020-09-28T09:18:30.888+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+    <dataSnapshotMetadata>
+        <snapshotDate>2020-09-25T18:27:51.703+05:30</snapshotDate>
+        <parameter single-value="true">
+            <values
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String">testmdsr</values>
+            <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String">LoggedInUsername</name>
+            <value-type>single</value-type>
+        </parameter>
+    </dataSnapshotMetadata>
+</reportUnit>

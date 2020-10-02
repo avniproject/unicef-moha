@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CBMD Review" pageWidth="1684" pageHeight="1191" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa1a9231-754c-4c0f-8a57-3e034206cd5a">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="prod DB"/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/CBMD_Review"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/CBMD_Review_files/main_jrxml"/>
+	<template><![CDATA["repo:Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="LoggedInUserAttributeValues" class="java.util.Collection" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$F{District}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by al.title)                    "Sr.No",
+       coalesce(al.title, 'Total')                              "District",
+       count(*)  filter (where visit_number = 1 )              "Number of Community-based maternal deaths Review form scheduled",
+       count(*) filter (where visit_number = 1  and encounter_date_time is not null)  "Number of CBMD Review done",
+       trunc(nullif( nullif(count(*)   
+ filter (where visit_number = 1 and encounter_date_time is not null),0)* 100.00 /count(*) filter (where visit_number = 1 ),0 ), 2)      "% of CBMD review done"
+
+from address_level al
+         left join   
+(select district.id district_id ,
+        "Enc.encounter_date_time" encounter_date_time,
+        row_number() over (partition by enrolment."Enl.Id" order by "Enc.encounter_date_time") as visit_number,
+        block.title block
+       
+from unicef_moha_mdsr_enrolment_view enrolment
+      LEFT JOIN address_level phc ON phc.id = enrolment."Ind.address_id"
+      LEFT JOIN address_level block ON block.id = phc.parent_id
+      LEFT JOIN address_level district ON block.parent_id = district.id
+	  RIGHT JOIN  unicef_moha_form_5_community_based_verbal_autopsy followup ON followup."Enl.Id" =  enrolment."Enl.Id"
+ where 1=1 and  $X{BETWEEN, "Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+ 
+ )agg_data on district_id = al.id
+where al.parent_id is null
+ and $X{IN,al.title,PARAM_DISTRICT}
+ and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              al.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+ 
+
+group by rollup (al.title)]]>
+	</queryString>
+	<field name="Sr.No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Sr.No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address_level"/>
+	</field>
+	<field name="Number of Community-based maternal deaths Review form scheduled" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Number of Community-based maternal deaths Review form scheduled"/>
+	</field>
+	<field name="Number of CBMD Review done" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Number of CBMD Review done"/>
+	</field>
+	<field name="% of CBMD review done" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="% of CBMD review done"/>
+	</field>
+	<variable name="SCHEDULED_DYNAMIC_WHERE" class="java.lang.String">
+		<variableExpression><![CDATA[$F{District}.equals("Total") ? "and 1=1" :
+		"and district.title = '" + $F{District} + "'"]]></variableExpression>
+	</variable>
+	<variable name="COMPLETED_DYNAMIC_WHERE" class="java.lang.String">
+		<variableExpression><![CDATA[$F{District}.equals("Total") ? "and \"Enc.encounter_date_time\" is not null" :
+		"and district.title = '" + $F{District} + "' and  \"Enc.encounter_date_time\" is not null"]]></variableExpression>
+	</variable>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="1026" height="50" uuid="b41c1dbc-657e-4f9f-93da-2951563f95d4"/>
+				<text><![CDATA[CBMD Review ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="90" height="60" uuid="49fb6661-9b1b-4afc-82cc-b4de90728a1e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c37df591-717a-4796-89bf-c3cb733fb9bf"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Sr.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="90" y="0" width="234" height="60" uuid="13bcaf9a-9bfb-4534-b5d1-e1c30d4752ad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddc9b55e-e8d5-49d7-a4de-eb8ecd6287a0"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="324" y="0" width="234" height="60" uuid="efc20039-958f-4087-90da-3bd872dc1176">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6dc7bf45-1f55-4e44-b253-8c944e048848"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Number of Community-based maternal deaths Review form scheduled]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="558" y="0" width="234" height="60" uuid="d4b6eecb-eb35-4552-b34e-222c8db5e4c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="885f90e6-755e-4777-884e-99fb0109a590"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Number of CBMD Review done]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="792" y="0" width="234" height="60" uuid="65c5f0d0-3afa-4c14-8bbe-174e8b874650">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d4c76b03-1f0a-4ef0-8cc8-317ff9b45f7e"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[% of CBMD review done]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="5a6dcb34-3a12-4190-9036-a6720869ee05">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c37df591-717a-4796-89bf-c3cb733fb9bf"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{Sr.No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="90" y="0" width="234" height="30" uuid="b5e36872-690f-4f11-96ab-102101b6a38f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddc9b55e-e8d5-49d7-a4de-eb8ecd6287a0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="324" y="0" width="234" height="30" uuid="bf46023d-be5d-4c97-9aac-980efc4fb649">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6dc7bf45-1f55-4e44-b253-8c944e048848"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Number of Community-based maternal deaths Review form scheduled} == null ? "0" : $F{Number of Community-based maternal deaths Review form scheduled}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Number of Community-based maternal deaths Review form scheduled} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/Linelist_for_women"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$V{SCHEDULED_DYNAMIC_WHERE}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="558" y="0" width="234" height="30" uuid="aa3bb5ff-70a9-4d5d-932e-62fadf9a6869">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="885f90e6-755e-4777-884e-99fb0109a590"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Number of CBMD Review done}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Number of CBMD Review done} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/Linelist_for_women"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[$V{COMPLETED_DYNAMIC_WHERE}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowPreCalculatedPercentageElement" stretchType="RelativeToTallestObject" x="792" y="0" width="234" height="30" uuid="cacf2a4e-139d-46ac-8d07-677bab9e13a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d4c76b03-1f0a-4ef0-8cc8-317ff9b45f7e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{% of CBMD review done} == null ? "0%" : $F{% of CBMD review done}.toString().concat("%")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

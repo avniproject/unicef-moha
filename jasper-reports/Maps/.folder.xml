@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/MDSR/Reports</parent>
+    <name>Maps</name>
+    <label>Maps</label>
+    <description></description>
+    <creationDate>2020-09-04T23:07:39.899+05:30</creationDate>
+    <updateDate>2020-09-04T23:07:39.899+05:30</updateDate>
+    <resource>District_wise_Heat_Map_of_Maternal_Deaths</resource>
+    <permission>
+        <permissionMask>0</permissionMask>
+        <recipient recipientType="role">ROLE_MDSR</recipient>
+    </permission>
+</folder>

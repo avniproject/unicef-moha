@@ -1,0 +1,22 @@
+[
+    {
+        "uuid": "b329582c-518f-425b-930f-89452c7242c6",
+        "name": "facility@moha",
+        "password": "password",
+        "email": "openchssupport+mdr+facility2@samanvayfoundation.org",
+        "phoneNumber": "+919999999999",
+        "organisationUUID": "feb521da-9d33-42f2-9c12-caa2cda6b7da",
+        "facilities": [
+          {
+            "uuid": "ee14897f-32ca-4f5c-9b68-68b857e66335",
+            "facilityUUID": "1e02644d-a86e-410d-bde1-530d8b53dd8a"
+          }
+        ],
+        "operatingIndividualScope": "ByFacility",
+        "orgAdmin": false,
+        "admin": false,
+        "settings": {
+          "trackLocation": true
+        }
+      }
+]

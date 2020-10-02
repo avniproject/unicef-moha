@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/MDSR/Reports</parent>
+    <name>Graph</name>
+    <label>Graph</label>
+    <description></description>
+    <creationDate>2020-09-04T23:07:22.481+05:30</creationDate>
+    <updateDate>2020-09-04T23:07:22.481+05:30</updateDate>
+    <resource>CBMD___First_Pregnancy_Age_Range</resource>
+    <resource>CBMD___Period_of_Death</resource>
+    <resource>CBMD___Place_of_Death</resource>
+    <resource>CBMD_Type_of_facility_used_for_transport</resource>
+    <resource>FBMD___Cause_of_Death</resource>
+    <resource>FBMDR_and_CBMDR_Counts_by_District</resource>
+</folder>

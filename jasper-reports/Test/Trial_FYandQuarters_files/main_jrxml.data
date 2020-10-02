@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Trial-FYandQuarters" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+	<property name="ireport.jasperserver.user" value="joya"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Test/Trial_FYandQuarters_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Test/Trial_FYandQuarters"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp" isForPrompting="false" evaluationTime="Late">
+		<defaultValueExpression><![CDATA[$P{PARAM_YEAR}  !=  null && $P{PARAM_QUARTER} != null ? $P{PARAM_QUARTER}.equals("Q1") ? new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 0, 1, 0, 0, 0, 0) : $P{PARAM_QUARTER}.equals("Q2") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 3, 1, 0, 0, 0, 0) : $P{PARAM_QUARTER}.equals("Q3") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 6, 1, 0, 0, 0, 0) : $P{PARAM_QUARTER}.equals("Q4") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 9, 1, 0, 0, 0, 0) : null  : null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp" isForPrompting="false" evaluationTime="Late">
+		<defaultValueExpression><![CDATA[$P{PARAM_YEAR}  !=  null && $P{PARAM_QUARTER} != null ? $P{PARAM_QUARTER}.equals("Q1") ? new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 2, 31, 23, 59, 59, 0) : $P{PARAM_QUARTER}.equals("Q2") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 5, 30, 23, 59, 59, 0) : $P{PARAM_QUARTER}.equals("Q3") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 8, 30, 23, 59, 59, 0) : $P{PARAM_QUARTER}.equals("Q4") ?new java.sql.Timestamp($P{PARAM_YEAR}.intValue(), 11, 31, 23, 59, 59, 0) : null  : null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_YEAR" class="java.lang.Integer"/>
+	<parameter name="PARAM_QUARTER" class="java.lang.String"/>
+	<parameter name="PARAM_FY" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 1;]]>
+	</queryString>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="550" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="52" uuid="5da1121a-e920-4458-9388-f631526f8892"/>
+				<textFieldExpression><![CDATA[$P{PARAM_DATE_START}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="52" uuid="a0b5b99a-87a5-4593-a5fd-08b3f49438e7"/>
+				<textFieldExpression><![CDATA[$P{PARAM_DATE_END}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

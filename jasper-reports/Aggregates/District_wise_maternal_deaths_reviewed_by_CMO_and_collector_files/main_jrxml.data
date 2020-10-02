@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="District-wise maternal deaths reviewed by CMO and collector" pageWidth="1684" pageHeight="720" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="fa1a9231-754c-4c0f-8a57-3e034206cd5a">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="prod DB"/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/District_wise_maternal_deaths_reviewed_by_CMO_and_collector_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/District_wise_maternal_deaths_reviewed_by_CMO_and_collector"/>
+	<template><![CDATA["repo:AggregateReportStyles.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[with all_data as(select district.id as                                                     district_id,
+                        enc."Number of Maternal deaths reviewed by CMO"                    cmo,
+                        enc."Number of Maternal deaths reviewed by the District Collector" collector,
+                    concat("reporting month",'-02-', "Reporting year")::timestamptz r_date,
+                    block.title block
+                 from unicef_moha_district_district_form enc
+                          left join unicef_moha_district reg on reg.id = enc.individual_id
+                          left join address_level phc on reg.address_id = phc.id
+                          left join address_level block on phc.parent_id = block.id
+                          left join address_level district on block.parent_id = district.id
+                )
+
+select row_number() over (order by al.title) as "Sr.No"
+        ,
+       coalesce(al.title, 'Total')           as "District",
+       coalesce(sum(cmo),0) as "Cases reviewed by CMO",
+       coalesce(sum(collector),0) as "Cases reviewed by Collector"
+from address_level al
+         left join (
+             select district_id,cmo,collector,r_date,block from all_data  where $X{BETWEEN, r_date, PARAM_DATE_START, PARAM_DATE_END}
+    )agg_data on district_id = al.id
+where al.parent_id is null
+and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              al.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+group by rollup (al.title);]]>
+	</queryString>
+	<field name="Sr.No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Sr.No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+	</field>
+	<field name="Cases reviewed by CMO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Cases reviewed by CMO"/>
+	</field>
+	<field name="Cases reviewed by Collector" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Cases reviewed by Collector"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="740" height="50" uuid="b41c1dbc-657e-4f9f-93da-2951563f95d4"/>
+				<text><![CDATA[District-wise maternal deaths reviewed by CMO and collector ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="110" height="30" uuid="c319dee6-e2ed-4df0-951e-7290bb071baa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84c7240d-0557-499e-b4c6-06bb603c5d9e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Sr.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="110" y="0" width="210" height="30" uuid="2bdda694-761a-4a54-9ea2-8370b690ad5c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0782618e-9c26-4d23-8abb-3f069c11c7a1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="320" y="0" width="210" height="30" uuid="b9b00296-381d-4053-ae0b-aca39e04b59e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8994a574-1091-4d59-83af-c7f2e1f4536b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Cases reviewed by CMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="530" y="0" width="210" height="30" uuid="ad507bfa-d782-40b4-9491-7041b9e90eed">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca5e1466-cb1b-4b0d-b327-950aeca6f84c"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Cases reviewed by Collector]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="30" uuid="830a59fa-8a6a-429f-9787-0f15fadf00fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84c7240d-0557-499e-b4c6-06bb603c5d9e"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{Sr.No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="110" y="0" width="210" height="30" uuid="9bfae4cd-d3fa-4dfd-8127-2e6069daeff7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0782618e-9c26-4d23-8abb-3f069c11c7a1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="320" y="0" width="210" height="30" uuid="8f49db1f-e7d6-4312-9f02-4db9498a4e7f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8994a574-1091-4d59-83af-c7f2e1f4536b"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{Cases reviewed by CMO}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowNumericElement" stretchType="RelativeToTallestObject" x="530" y="0" width="210" height="30" uuid="0ab01201-7e6c-4e03-b970-01bd06234134">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca5e1466-cb1b-4b0d-b327-950aeca6f84c"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{Cases reviewed by Collector}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

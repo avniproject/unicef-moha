@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Underlying factors for maternal deaths - FBMD" pageWidth="842" pageHeight="1191" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46e2906b-edd3-46d0-8bf5-caaced29692d">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="NupoorK"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Aggregates/Underlying_factors_for_maternal_deaths___FBMD_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/Underlying_factors_for_maternal_deaths___FBMD"/>
+	<template><![CDATA["repo:/Templates/Styles/Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by district.title) "S. No",
+       coalesce(district.title, 'Total') as "District",
+       count(*) filter ( where "Enc.Delay in woman seeking help" = 'Yes' or
+                               "Enc.Refusal of treatment or admission" = 'Yes' or
+                               "Enc.Refusal of admission in previous facility" = 'Yes') personal,
+       count(*) filter ( where "Enc.Logistical Problems" = 'Yes' or
+                               "Enc.lack of transport from home to health care facility" = 'Yes' or
+                               "Enc.Lack of transport between health care facilities" = 'Yes' or
+                               "Enc.lack of assured referral system" = 'Yes') logistical,
+       count(*) filter ( where "Enc.Lack of facilities, equipment or consumable" = 'Yes' or
+                               "Enc.Lack of blood/ blood product" = 'Yes' or
+                               "Enc.Lack of OT availability" = 'Yes') facilities,
+       count(*) filter ( where "Enc.Lack of human resources" = 'Yes' or
+                               "Enc.Lack of Anesthetist" = 'Yes' or
+                               "Enc.Lack of Obstetricians" = 'Yes' or
+                               "Enc.Lack of expertise, training or education" = 'Yes') health_personnel_problems,
+       count(*) filter ( where "Enc.Delay in woman seeking help" is null and
+                               "Enc.Refusal of treatment or admission" is null and
+                               "Enc.Refusal of admission in previous facility" is null and
+                               
+                               "Enc.Logistical Problems" is null and
+                               "Enc.lack of transport from home to health care facility" is null and
+                               "Enc.Lack of transport between health care facilities" is null and
+                               "Enc.lack of assured referral system" is null and
+                               
+                               "Enc.Lack of facilities, equipment or consumable" is null and
+                               "Enc.Lack of blood/ blood product" is null and
+                               "Enc.Lack of OT availability" is null and
+                               
+       						   "Enc.Lack of human resources" is null and
+                               "Enc.Lack of Anesthetist" is null and
+                               "Enc.Lack of Obstetricians" is null and
+                               "Enc.Lack of expertise, training or education" is null) data_not_reported
+from address_level phc
+       join address_level_type alt on phc.type_id = alt.id
+       join address_level block on block.id = phc.parent_id
+       join address_level district on district.id = block.parent_id
+       left join unicef_moha_form_4_facility_based_mdsr form4 on form4."Ind.address_id" = phc.id
+       left join unicef_moha_mdsr_enrolment_view enrolment on form4."Enl.Id" = enrolment."Enl.Id"
+where alt.name = 'Phc area'
+and "Enc.encounter_date_time" is not null
+and (enrolment."Enl.enrolment_date_time" is NULL OR ($X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}))
+and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+group by rollup(district.title);]]>
+	</queryString>
+	<field name="S. No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="S. No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+	</field>
+	<field name="personal" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="personal"/>
+	</field>
+	<field name="logistical" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="logistical"/>
+	</field>
+	<field name="facilities" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="facilities"/>
+	</field>
+	<field name="health_personnel_problems" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="health_personnel_problems"/>
+	</field>
+	<field name="data_not_reported" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="data_not_reported"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="780" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[Underlying factors for maternal deaths - FBMD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="80" height="30" uuid="401cdcc2-0cf0-454b-aeaf-8eab1830647f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d53a43d-a4ce-4dab-901f-a8cef0006483"/>
+				</reportElement>
+				<text><![CDATA[S. No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="80" y="0" width="200" height="30" uuid="2f5d060b-1b56-4dcd-972e-1d4e71e23df0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="280" y="0" width="100" height="30" uuid="0836dd04-d1aa-4ff5-b227-1567d509306b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<text><![CDATA[Personal/Family]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="380" y="0" width="100" height="30" uuid="dbd6d4af-64ab-4c69-9bde-05076b5494ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27cbf205-b83f-4aa4-b618-027ccf702416"/>
+				</reportElement>
+				<text><![CDATA[Logistical Problems]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="480" y="0" width="100" height="30" uuid="e0b4aae3-5336-452f-ac6f-2007ab77e5e5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1fb8557-023e-439c-a82c-8a8bb18c99fa"/>
+				</reportElement>
+				<text><![CDATA[Facilities]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="580" y="0" width="100" height="30" uuid="f6fb3b8e-39f6-42e9-a0ed-4593f9482f16">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9367f59a-cb6e-48ba-b79f-e4abbd342d18"/>
+				</reportElement>
+				<text><![CDATA[Health Personnel Problems]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="680" y="0" width="100" height="30" uuid="f6fb3b8e-39f6-42e9-a0ed-4593f9482f17">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9367f59a-cb6e-48ba-b79f-e4abbd342d19"/>
+				</reportElement>
+				<text><![CDATA[Data not reported]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="ce0d5b81-79eb-4165-b2a6-d9caa056d04f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1d53a43d-a4ce-4dab-901f-a8cef0006483"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{S. No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="80" y="0" width="200" height="30" uuid="1daa9953-3f84-4401-aa72-e9470ed70a6d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d68d5fbe-922c-4a06-9ad2-502613ebbb16"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="280" y="0" width="100" height="30" uuid="199e6405-98ed-4b24-9411-548cd8da03e6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06496c4e-1da2-45cd-87f8-9e2fe0fb0b08"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{personal}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{personal} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and (\"Enc.Delay in woman seeking help\" = 'Yes' or \"Enc.Refusal of treatment or admission\" = 'Yes' or \"Enc.Refusal of admission in previous facility\" = 'Yes')".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'") )]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="380" y="0" width="100" height="30" uuid="2b232795-e165-49fc-8937-e9358aa8a044">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="27cbf205-b83f-4aa4-b618-027ccf702416"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{logistical}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{logistical} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and (\"Enc.Logistical Problems\" = 'Yes' or \"Enc.lack of transport from home to health care facility\" = 'Yes' or \"Enc.Lack of transport between health care facilities\" = 'Yes' or \"Enc.lack of assured referral system\" = 'Yes')".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'") )]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="480" y="0" width="100" height="30" uuid="0c71f08f-3fa0-41ee-8c0e-a7b9ff28080a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c1fb8557-023e-439c-a82c-8a8bb18c99fa"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{facilities}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{facilities} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and (\"Enc.Lack of facilities, equipment or consumable\" = 'Yes' or \"Enc.Lack of blood/ blood product\" = 'Yes' or \"Enc.Lack of OT availability\" = 'Yes')".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'") )]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="580" y="0" width="100" height="30" uuid="9ade98ae-0e30-46bf-94e6-98e94c7756c2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9367f59a-cb6e-48ba-b79f-e4abbd342d18"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{health_personnel_problems}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{health_personnel_problems} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and (\"Enc.Lack of human resources\" = 'Yes' or \"Enc.Lack of Anesthetist\" = 'Yes' or \"Enc.Lack of Obstetricians\" = 'Yes' or \"Enc.Lack of expertise, training or education\" = 'Yes')".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'") )]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="680" y="0" width="100" height="30" uuid="9ade98ae-0e30-46bf-94e6-098e94c77563">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9367f59a-cb6e-48ba-b79f-e4abbd342d19"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{data_not_reported}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{data_not_reported} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and (form4.\"Enc.encounter_date_time\" is not null and \"Enc.Delay in woman seeking help\" is null and \"Enc.Refusal of treatment or admission\" is null and \"Enc.Refusal of admission in previous facility\" is null and \"Enc.Logistical Problems\" is null and \"Enc.lack of transport from home to health care facility\" is null and \"Enc.Lack of transport between health care facilities\" is null and \"Enc.lack of assured referral system\" is null and \"Enc.Lack of facilities, equipment or consumable\" is null and \"Enc.Lack of blood/ blood product\" is null and \"Enc.Lack of OT availability\" is null and \"Enc.Lack of human resources\"  is null and \"Enc.Lack of Anesthetist\"  is null  and \"Enc.Lack of Obstetricians\"  is null and \"Enc.Lack of expertise, training or education\"  is null and \"Enc.Lack of human resources\" is null and \"Enc.Lack of Anesthetist\" is null and \"Enc.Lack of Obstetricians\" is null and \"Enc.Lack of expertise, training or education\" is null)".concat($F{District}.equals("Total") ? "" : " and district.title =  '".concat($F{District}).concat("'"))]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

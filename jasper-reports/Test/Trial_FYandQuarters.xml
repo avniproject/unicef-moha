@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Test</folder>
+    <name>Trial_FYandQuarters</name>
+    <version>7</version>
+    <label>Trial-FYandQuarters</label>
+    <description></description>
+    <creationDate>2020-09-15T17:45:51.162+05:30</creationDate>
+    <updateDate>2020-09-25T18:32:05.445+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Test/Trial_FYandQuarters_files</folder>
+            <name>main_jrxml</name>
+            <version>6</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-15T17:45:51.162+05:30</creationDate>
+            <updateDate>2020-09-15T17:55:45.491+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_YEAR</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_QUARTER</uri>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Test/Trial_FYandQuarters_files</folder>
+            <name>PARAM_FY</name>
+            <version>2</version>
+            <label>PARAM_FY</label>
+            <creationDate>2020-09-15T17:55:45.639+05:30</creationDate>
+            <updateDate>2020-09-15T17:55:45.639+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Test/Trial_FYandQuarters_files/PARAM_FY_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <creationDate>2020-09-15T17:55:45.639+05:30</creationDate>
+                    <updateDate>2020-09-15T17:55:45.639+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Test/Trial_FYandQuarters_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>0</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-15T17:45:51.162+05:30</creationDate>
+            <updateDate>2020-09-15T17:45:51.162+05:30</updateDate>
+            <referenceUri>/Templates/Styles/Linelist.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+    <dataSnapshotMetadata>
+        <snapshotDate>2020-09-25T18:32:05.322+05:30</snapshotDate>
+    </dataSnapshotMetadata>
+</reportUnit>

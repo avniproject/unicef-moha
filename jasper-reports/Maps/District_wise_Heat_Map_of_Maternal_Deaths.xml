@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Maps</folder>
+    <name>District_wise_Heat_Map_of_Maternal_Deaths</name>
+    <version>4</version>
+    <label>District wise Heat Map of Maternal Deaths</label>
+    <description></description>
+    <creationDate>2020-09-18T12:27:31.436+05:30</creationDate>
+    <updateDate>2020-09-18T16:17:53.590+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Maps/District_wise_Heat_Map_of_Maternal_Deaths_files</folder>
+            <name>main_jrxml</name>
+            <version>8</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-18T12:27:31.436+05:30</creationDate>
+            <updateDate>2020-09-18T16:17:53.393+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Maps/District_wise_Heat_Map_of_Maternal_Deaths_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>0</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-18T12:27:31.436+05:30</creationDate>
+            <updateDate>2020-09-18T12:27:31.436+05:30</updateDate>
+            <referenceUri>/Templates/Styles/Linelist.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>true</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

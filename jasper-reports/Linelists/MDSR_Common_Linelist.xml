@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Linelists</folder>
+    <name>MDSR_Common_Linelist</name>
+    <version>37</version>
+    <label>MDSR Common Linelist</label>
+    <description></description>
+    <creationDate>2020-09-08T10:57:19.219+05:30</creationDate>
+    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>main_jrxml</name>
+            <version>3</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-28T14:22:42.998+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:32.751+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_DYNAMIC_WHERE</name>
+            <version>1</version>
+            <label>PARAM_DYNAMIC_WHERE</label>
+            <description></description>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_DYNAMIC_WHERE_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <description></description>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_DYNAMIC_JOIN</name>
+            <version>1</version>
+            <label>PARAM_DYNAMIC_JOIN</label>
+            <description></description>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_DYNAMIC_JOIN_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <description></description>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_DYNAMIC_OUTER_WHERE</name>
+            <version>1</version>
+            <label>PARAM_DYNAMIC_OUTER_WHERE</label>
+            <description></description>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_DYNAMIC_OUTER_WHERE_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <description></description>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_DYNAMIC_UNIQUE_ORDER_FIELD</name>
+            <version>1</version>
+            <label>PARAM_DYNAMIC_UNIQUE_ORDER_FIELD</label>
+            <description></description>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_DYNAMIC_UNIQUE_ORDER_FIELD_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <description></description>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_DYNAMIC_COLUMN</name>
+            <version>1</version>
+            <label>PARAM_DYNAMIC_COLUMN</label>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_DYNAMIC_COLUMN_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <type>1</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>PARAM_TIMING_OF_DEATH_INVISIBLE</name>
+            <version>1</version>
+            <label>PARAM_TIMING_OF_DEATH_INVISIBLE</label>
+            <description></description>
+            <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+            <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+            <type>11</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>false</visible>
+            <query>
+                <localResource exportedWithPermissions="false" xsi:type="query">
+                    <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/PARAM_TIMING_OF_DEATH_INVISIBLE_files</folder>
+                    <name>PARAM_TIMING_OF_DEATH_INVISIBLE</name>
+                    <version>0</version>
+                    <label>PARAM_TIMING_OF_DEATH_INVISIBLE</label>
+                    <description></description>
+                    <creationDate>2020-09-28T14:32:33.174+05:30</creationDate>
+                    <updateDate>2020-09-28T14:32:33.174+05:30</updateDate>
+                    <language>sql</language>
+                    <queryString>select answer_concept_name 
+from concept_concept_answer 
+where concept_uuid ='9e0e21b0-e5c2-406a-8da6-a11a78d65329'
+order by answer_order;</queryString>
+                    <dataSource>
+                        <uri>/MDSR/Data_Sources/mdsr</uri>
+                    </dataSource>
+                </localResource>
+            </query>
+            <queryVisibleColumn>answer_concept_name</queryVisibleColumn>
+            <queryValueColumn>answer_concept_name</queryValueColumn>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Linelists/MDSR_Common_Linelist_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>0</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-08T10:57:19.219+05:30</creationDate>
+            <updateDate>2020-09-08T10:57:19.219+05:30</updateDate>
+            <referenceUri>/Templates/Styles/Linelist.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+    <dataSnapshotMetadata>
+        <snapshotDate>2020-09-08T11:10:02.491+05:30</snapshotDate>
+        <parameter single-value="true">
+            <values
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String"></values>
+            <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String">PARAM_DYNAMIC_WHERE</name>
+            <value-type>single</value-type>
+        </parameter>
+        <parameter single-value="true">
+            <values
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String"></values>
+            <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="http://java.sun.com" xsi:type="java:java.lang.String">PARAM_DYNAMIC_JOIN</name>
+            <value-type>single</value-type>
+        </parameter>
+    </dataSnapshotMetadata>
+</reportUnit>

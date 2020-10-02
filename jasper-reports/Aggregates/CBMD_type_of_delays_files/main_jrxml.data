@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CBMD type of delays" pageWidth="1684" pageHeight="1080" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa1a9231-754c-4c0f-8a57-3e034206cd5a">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="NupoorK"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Aggregates/CBMD_type_of_delays"/>
+	<template><![CDATA["repo:/Templates/Styles/AggregateReportStyles.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by al.title)                             "Sr.No",
+       coalesce(al.title, 'Total')                                                        "District",
+       count(*)  filter (where visit_number = 1 and delayed_care is not null)             "MD with Delay in seeking care",
+       count(*) filter (where visit_number = 1  and delayed_health_facility is not null)  "MD with Delay in reaching health facility",
+       count(*) filter (where visit_number = 1  and delayed_care_in_facility is not null) "MD with Delay in receiving adequate care in facility",
+       count(*) filter (where visit_number = 1 
+       and delayed_care is null 
+       and delayed_health_facility is null
+       and delayed_care_in_facility is null)         "Data not reported"
+       
+from address_level al
+         left join  (
+select district.id district_id ,
+       "Enc.Delay in seeking care" delayed_care,
+       "Enc.Delay in reaching health facility" delayed_health_facility,
+       "Enc.Delay in receiving adequate care in facility" delayed_care_in_facility,
+       row_number() over (partition by enrolment."Enl.Id" order by "Enc.encounter_date_time") as visit_number,
+       block.title block
+       
+        
+from unicef_moha_mdsr_enrolment_view enrolment
+      LEFT JOIN address_level phc ON phc.id = enrolment."Ind.address_id"
+      LEFT JOIN address_level block ON block.id = phc.parent_id
+      LEFT JOIN address_level district ON block.parent_id = district.id
+	  RIGHT JOIN  unicef_moha_form_6_mdsr_case_summary_community followup ON followup."Enl.Id" =  enrolment."Enl.Id"
+        
+where "Enc.encounter_date_time" is not null
+and $X{BETWEEN, "Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+)
+agg_data on district_id = al.id
+where al.parent_id is null
+and $X{IN,al.title,PARAM_DISTRICT}
+
+ and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              al.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+ 
+group by rollup (al.title)]]>
+	</queryString>
+	<field name="Sr.No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Sr.No"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+	</field>
+	<field name="MD with Delay in seeking care" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="MD with Delay in seeking care"/>
+	</field>
+	<field name="MD with Delay in reaching health facility" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="MD with Delay in reaching health facility"/>
+	</field>
+	<field name="MD with Delay in receiving adequate care in facility" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="MD with Delay in receiving adequate care in facility"/>
+	</field>
+	<field name="Data not reported" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Data not reported"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="880" height="50" uuid="b41c1dbc-657e-4f9f-93da-2951563f95d4"/>
+				<text><![CDATA[CBMD type of delays]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="80" height="30" uuid="b6e61f4d-7814-4340-aee1-21e770390636">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="de155c17-dc52-4cea-b3dd-dc19c417a243"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Sr.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="80" y="0" width="120" height="30" uuid="023e7fe5-ea9a-4d7c-858b-5c5919ff91f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00a39b69-58c0-4fae-bd53-6ca21e31e5a1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="200" y="0" width="120" height="30" uuid="71d13b09-9496-423d-94ca-3dd1fb21e039">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d6e58b7-f210-4487-8e63-30ee6c616d19"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[MD with Delay in seeking care]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="320" y="0" width="180" height="30" uuid="b8deeff8-2cad-4f14-bcc7-be2d546409b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7378a47c-5404-4515-bbe5-7cc02f2a7ad3"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[MD with Delay in reaching health facility]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="500" y="0" width="190" height="30" uuid="c30e16d5-a84d-4755-9427-26e2dc62bada">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df73c50e-4123-482e-9078-1e75eca4b8c8"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[MD with Delay in receiving adequate care in facility]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="690" y="0" width="190" height="30" uuid="c30e16d5-a84d-4755-9427-26e2dc62badd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df73c50e-4123-482e-9078-1e75eca4b8c9"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#0D0303"/>
+				</box>
+				<text><![CDATA[Data not reported]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="28267a05-d5d8-4053-8d6a-7392466d488e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="de155c17-dc52-4cea-b3dd-dc19c417a243"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}.equals("Total") ? "" : $F{Sr.No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="80" y="0" width="120" height="30" uuid="205b1be7-fc30-4696-b583-10b81c407bb6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00a39b69-58c0-4fae-bd53-6ca21e31e5a1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="200" y="0" width="120" height="30" uuid="9bebdc54-cc39-4041-8345-9f84a05c37c2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d6e58b7-f210-4487-8e63-30ee6c616d19"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MD with Delay in seeking care}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{MD with Delay in seeking care} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_6_mdsr_case_summary_community community on community.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and community.\"Enc.Delay in seeking care\" is not null"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="320" y="0" width="180" height="30" uuid="82a22a16-fb56-4f8d-857e-007e585b2f59">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7378a47c-5404-4515-bbe5-7cc02f2a7ad3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MD with Delay in reaching health facility}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{MD with Delay in reaching health facility} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_6_mdsr_case_summary_community community on community.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and community.\"Enc.Delay in reaching health facility\" is not null"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="500" y="0" width="190" height="30" uuid="ed6a752f-c3ff-415a-bcb0-cae11791b4b3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df73c50e-4123-482e-9078-1e75eca4b8c8"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{MD with Delay in receiving adequate care in facility}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{MD with Delay in receiving adequate care in facility} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_6_mdsr_case_summary_community community on community.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and community.\"Enc.Delay in receiving adequate care in facility\" is not null"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="690" y="0" width="190" height="30" uuid="fd6a752f-c3ff-415a-bcb0-cae11791b4b3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df73c50e-4123-482e-9078-1e75eca4b8c9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Data not reported}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$F{Data not reported} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkTooltipExpression><![CDATA["View List"]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA["left join unicef_moha_form_6_mdsr_case_summary_community community on community.\"Enl.Id\"=enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA["and community.\"Enc.Delay in seeking care\" is null and community.\"Enc.Delay in reaching health facility\" is null and community.\"Enc.Delay in receiving adequate care in facility\" is null and community.\"Enc.encounter_date_time\" is not null"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

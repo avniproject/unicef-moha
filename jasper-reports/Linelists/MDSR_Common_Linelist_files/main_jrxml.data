@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MDSR Common Linelist" pageWidth="1684" pageHeight="720" orientation="Landscape" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Linelists/MDSR_Common_Linelist_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Linelists/MDSR_Common_Linelist"/>
+	<template><![CDATA["repo:Linelist.jrtx"]]></template>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DYNAMIC_OUTER_WHERE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DYNAMIC_UNIQUE_ORDER_FIELD" class="java.lang.String">
+		<defaultValueExpression><![CDATA["enrolment.\"Enl.enrolment_date_time\""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DYNAMIC_WHERE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DYNAMIC_JOIN" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="PARAM_TIMING_OF_DEATH_INVISIBLE" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="PARAM_DYNAMIC_COLUMN" class="java.lang.String">
+		<defaultValueExpression><![CDATA[" "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select row_number() over (order by "Name of Deceased Woman") as "S. No", *
+from ( select * from (
+         select concat(reg."Ind.first_name", ' ', reg."Ind.last_name") as "Name of Deceased Woman"
+               , reg."Ind.uuid"                                         as "IndUuid"        
+              , district.title                                         as "District"
+              , block.title                                            as "Block"
+              , phc.title 											   as "Village"
+              , to_char(age(reg."Ind.date_of_birth"), 'yy')            as "Age"
+              , enrolment."Enl.Name of Father"                         as "Name of Father"
+              , enrolment."Enl.Name of Husband"                        as "Name of Husband"
+              , enrolment."Enl.RCH Number"                             as "RCH Number"
+              , enrolment."Enl.Contact Number"                         as "Contact No"
+              , enrolment."Enl.Date and time of Death"                 as "Date and Time of Death"
+              , enrolment."Enl.Name of place of death"                 as "Place of Death"
+              , enrolment."Enl.Timing of death in pregnancy"           as "Timing of Death"
+              , row_number() over (partition by reg."Ind.Id" order by $P!{PARAM_DYNAMIC_UNIQUE_ORDER_FIELD})          as unique_user
+              $P!{PARAM_DYNAMIC_COLUMN}
+         from unicef_moha_individual_registration_view reg
+                  left join unicef_moha_mdsr_enrolment_view enrolment on reg."Ind.Id" = enrolment."Ind.Id"
+                  left join address_level phc on reg."Ind.address_id" = phc.id                  
+                  left join address_level block on phc.parent_id = block.id
+                  left join address_level district on block.parent_id = district.id
+$P!{PARAM_DYNAMIC_JOIN}
+where 1 = 1
+and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+and $X{IN, enrolment."Enl.Timing of death in pregnancy", PARAM_TIMING_OF_DEATH_INVISIBLE}
+and $X{IN, district.title, PARAM_DISTRICT}
+
+ and case
+          when $P{LoggedInUserAttribute_district} notnull then
+              district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+ 
+
+$P!{PARAM_DYNAMIC_WHERE}
+
+) possible_dupes where unique_user = 1
+$P!{PARAM_DYNAMIC_OUTER_WHERE}
+     ) linelist]]>
+	</queryString>
+	<field name="S. No" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="S. No"/>
+	</field>
+	<field name="Name of Deceased Woman" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Name of Deceased Woman"/>
+	</field>
+	<field name="IndUuid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="IndUuid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_individual_registration_view"/>
+	</field>
+	<field name="District" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="District"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address_level"/>
+	</field>
+	<field name="Block" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Block"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="address_level"/>
+	</field>
+	<field name="Village" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Village"/>
+	</field>
+	<field name="Age" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Age"/>
+	</field>
+	<field name="Name of Father" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Name of Father"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="Name of Husband" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Name of Husband"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="RCH Number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="RCH Number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="Contact No" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Contact No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="Date and Time of Death" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="Date and Time of Death"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="Place of Death" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Place of Death"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<field name="Timing of Death" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Timing of Death"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="unicef_moha_mdsr_enrolment_view"/>
+	</field>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="1644" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[List of Deceased Women ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="80" height="30" uuid="134c081e-b6b0-4d2e-8aab-74033e7f40e5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef7aa203-1ee1-4ea7-8bb7-2b60f136a610"/>
+				</reportElement>
+				<text><![CDATA[S. No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="80" y="0" width="172" height="30" uuid="9bc49c50-337c-4d39-ba7d-50c45426925b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="249f37aa-ca82-4263-8f69-3aa179f4c147"/>
+				</reportElement>
+				<text><![CDATA[Name of Deceased Woman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="252" y="0" width="126" height="30" uuid="38659ab0-7f46-40e5-bba1-0595e799d0a2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9bd46cc-fda4-42c0-a832-8b366fe52fa1"/>
+				</reportElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="378" y="0" width="126" height="30" uuid="1574e208-0908-4234-9701-2e83a7ab79b2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc8d255a-88ff-4747-a3f3-6e4e201c4dec"/>
+				</reportElement>
+				<text><![CDATA[Block]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="504" y="0" width="126" height="30" uuid="b8e7d203-3078-4526-9430-c1d21e4b0c58">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="13e1d2d1-e8c7-49a3-a419-fd8cd47f7153"/>
+				</reportElement>
+				<text><![CDATA[Village]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="630" y="0" width="126" height="30" uuid="87449e07-6457-44fe-b039-c8d63130d51c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f84b2955-2cd8-4e65-91aa-cc2fc47aaa61"/>
+				</reportElement>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="756" y="0" width="126" height="30" uuid="76cdb39e-36c3-4f94-8523-227dfe0bec2c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16d9ae21-c0d8-4dd2-a8de-07f254418d89"/>
+				</reportElement>
+				<text><![CDATA[Name of Father]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="882" y="0" width="126" height="30" uuid="cae9500d-566b-4c21-a1fe-feb6c9e95864">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67720e18-5fbb-48d2-af12-7a893f6b1002"/>
+				</reportElement>
+				<text><![CDATA[Name of Husband]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="1008" y="0" width="126" height="30" uuid="e5b54ad2-8fc4-4f7b-9001-9173acb705f5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83846426-940e-4b5c-9e47-ea01b0a1c853"/>
+				</reportElement>
+				<text><![CDATA[RCH Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="1134" y="0" width="126" height="30" uuid="5ce1faa2-f37a-4d5e-9bb4-0778f0530469">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6ce86dd-9d61-4886-ac81-c6f9ce9af843"/>
+				</reportElement>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="1260" y="0" width="126" height="30" uuid="e83c2075-2d1f-422e-8cb8-f33584c72bad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="864f01ae-a5a1-401d-a145-d2a1a7021c40"/>
+				</reportElement>
+				<text><![CDATA[Date and Time of Death]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="1386" y="0" width="126" height="30" uuid="8d4ae8f2-8b1d-4fdd-bc8a-f786062c65e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6e4c9b2-5016-4ecb-bb95-f49339a49be7"/>
+				</reportElement>
+				<text><![CDATA[Place of Death]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="1512" y="0" width="126" height="30" uuid="3505296f-7544-4d14-9ee3-4f5016ae0cfc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="588a17a3-9edd-405e-97e7-b642f3795b8b"/>
+				</reportElement>
+				<text><![CDATA[Timing of Death]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="c2e9b182-b8fa-4615-8836-98c30f6bb062">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ef7aa203-1ee1-4ea7-8bb7-2b60f136a610"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{S. No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="Reference" hyperlinkTarget="Blank">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="80" y="0" width="172" height="30" uuid="56ef0762-daff-4358-ac42-7c2467292d72">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="249f37aa-ca82-4263-8f69-3aa179f4c147"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Name of Deceased Woman}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["https://app.avniproject.org/#/app/subject?uuid=".concat($F{IndUuid})]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="252" y="0" width="126" height="30" uuid="50e37ddd-3246-4bf9-9073-d314e6e9ad5f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9bd46cc-fda4-42c0-a832-8b366fe52fa1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{District}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="378" y="0" width="126" height="30" uuid="840d9550-c50a-4e51-bd18-09bda5886caa">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc8d255a-88ff-4747-a3f3-6e4e201c4dec"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Block}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="504" y="0" width="126" height="30" uuid="a1b27945-971d-47c6-a602-e1bae314fa46">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="13e1d2d1-e8c7-49a3-a419-fd8cd47f7153"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Village}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="630" y="0" width="126" height="30" uuid="0623ba6c-8574-4ff1-b1fa-b3acca266bc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f84b2955-2cd8-4e65-91aa-cc2fc47aaa61"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Age}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="756" y="0" width="126" height="30" uuid="ef6c5ccf-be07-4637-9e21-81005844f0e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16d9ae21-c0d8-4dd2-a8de-07f254418d89"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Name of Father}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="882" y="0" width="126" height="30" uuid="b161aff7-bab4-4d4a-97b4-8231ef154cc7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67720e18-5fbb-48d2-af12-7a893f6b1002"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Name of Husband}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="1008" y="0" width="126" height="30" uuid="cb6573ac-724e-44e0-8ed6-23000a08cd06">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83846426-940e-4b5c-9e47-ea01b0a1c853"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{RCH Number}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="1134" y="0" width="126" height="30" uuid="292b04fa-b120-4d1b-9703-a4f168aa283f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f6ce86dd-9d61-4886-ac81-c6f9ce9af843"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Contact No}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="1260" y="0" width="126" height="30" uuid="6caa976a-d41e-4d81-8de5-faa5be47d321">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="864f01ae-a5a1-401d-a145-d2a1a7021c40"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Date and Time of Death}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="1386" y="0" width="126" height="30" uuid="45fc9015-0cc1-4e65-98b8-bfe0a6b9543d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c6e4c9b2-5016-4ecb-bb95-f49339a49be7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Place of Death}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="1512" y="0" width="126" height="30" uuid="0d75193a-9d24-4777-b86c-a4671733261b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="588a17a3-9edd-405e-97e7-b642f3795b8b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Timing of Death}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

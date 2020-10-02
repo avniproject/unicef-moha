@@ -32,6 +32,7 @@ module.exports = IDI.configure({
             "dev": ["facilities/sample-facilities.json"],
             "staging": ["facilities/sample-facilities.json"],
             "uat": ["facilities/uat-facilities.json"],
+            // "prod":["facilities/prod-facilities.json"]
         },
         "checklistDetails": [],
         "concepts": [
@@ -53,6 +54,7 @@ module.exports = IDI.configure({
             "dev": ["users/dev-users.json"],
             "staging": ["users/staging-users.json"],
             "uat": ["users/uat-users.json"],
+            // "prod" :["users/prod-facility-user.json"]
         },
         "rules": [
             "./rules/index.js"

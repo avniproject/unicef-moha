@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/MDSR/Reports</parent>
+    <name>Linelists</name>
+    <label>Linelists</label>
+    <description></description>
+    <creationDate>2020-09-04T23:06:47.034+05:30</creationDate>
+    <updateDate>2020-09-04T23:06:47.034+05:30</updateDate>
+    <resource>Form_2_Block_Level_MDR_Register_for_all_women_s_death__15_49_years_</resource>
+    <resource>Linelist_for_women</resource>
+    <resource>MDSR_Common_Linelist</resource>
+    <resource>Places_visited_prior_to_facility_Linelist</resource>
+</folder>

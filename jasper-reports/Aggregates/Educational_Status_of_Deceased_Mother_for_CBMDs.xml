@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Aggregates</folder>
+    <name>Educational_Status_of_Deceased_Mother_for_CBMDs</name>
+    <version>13</version>
+    <label>CBMD Educational Status of Deceased Mother</label>
+    <description></description>
+    <creationDate>2020-09-10T15:12:31.918+05:30</creationDate>
+    <updateDate>2020-09-29T21:03:27.517+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Educational_Status_of_Deceased_Mother_for_CBMDs_files</folder>
+            <name>main_jrxml</name>
+            <version>22</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-10T15:12:31.918+05:30</creationDate>
+            <updateDate>2020-09-29T21:03:27.040+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="Linelist.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Educational_Status_of_Deceased_Mother_for_CBMDs_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>10</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-10T15:16:07.491+05:30</creationDate>
+            <updateDate>2020-09-10T15:16:07.491+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

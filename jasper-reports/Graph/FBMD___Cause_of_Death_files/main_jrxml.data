@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.11.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FBMD - Cause of Death" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05cc1aaf-5713-4062-a0f6-7bab099e5fb6">
+	<property name="ireport.jasperserver.url" value="https://reporting-jasper.avniproject.org/jasperserver/"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Yenepoya Data Adapter "/>
+	<property name="ireport.jasperserver.user" value="sachink"/>
+	<property name="ireport.jasperserver.report.resource" value="/MDSR/Reports/Graph/FBMD___Cause_of_Death_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/MDSR/Reports/Graph/FBMD___Cause_of_Death"/>
+	<template><![CDATA["repo:Linelist.jrtx"]]></template>
+	<subDataset name="Direct_Causes_Dataset" uuid="76c18664-308c-4f25-a227-34242ffeed3d">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+		<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+		<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+		<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+		<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+		<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+		<queryString language="SQL">
+			<![CDATA[with direct_causes_data as (
+    select count(*) filter ( where form4."Enc.Pregnancies with abortive outcome" is not null )                as abortive
+         , count(*)
+           filter ( where form4."Enc.Hypertensive disorders in pregnancy, birth and puerperium" is not null ) as hypertensive
+         , count(*) filter ( where form4."Enc.Obstetric Haemmorhage" is not null )                            as haemmorhage
+         , count(*)
+           filter ( where form4."Enc.Pregnancy related infection" is not null)                                as infection
+         , count(*)
+           filter ( where form4."Enc.Other Obstetric complications" is not null)                              as other_obstetric
+         , count(*) filter ( where form4."Enc.Other direct cause" is not null)                                as other
+    from unicef_moha_form_4_facility_based_mdsr form4
+             left join unicef_moha_mdsr_enrolment_view enrolment
+                       on form4."Enl.Id" = enrolment."Enl.Id"
+             left join address_level phc on form4."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+    where form4."Enc.Cause of maternal death" = 'Direct causes'
+                and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+                and $X{IN, district.title, PARAM_DISTRICT} 
+                and case
+          when $P{LoggedInUserAttribute_district} notnull then
+             district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+                        
+                
+)
+select unnest(
+        array [
+            'Pregnancies with abortive outcome'
+            , 'Hypertensive disorders in pregnancy, birth and puerperium'
+            , 'Obstetric Haemorrhage'
+            , 'Pregnancy related infection'
+            , 'Other Obstetric complications'
+            , 'Other direct cause'
+            ]
+    ) as direct_cause
+     , unnest(array [
+    abortive
+    , hypertensive
+    , haemmorhage
+    , infection
+    , other_obstetric
+    , other
+    ]
+    ) as count
+     , unnest(array [
+    trunc(nullif(abortive, 0) * 100.0 /
+          nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    , trunc(nullif(hypertensive, 0) * 100.0 /
+            nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    , trunc(nullif(haemmorhage, 0) * 100.0 /
+            nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    , trunc(nullif(infection, 0) * 100.0 /
+            nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    , trunc(nullif(other_obstetric, 0) * 100.0 /
+            nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    , trunc(nullif(other, 0) * 100.0 /
+            nullif(abortive + hypertensive + haemmorhage + infection + other_obstetric + other, 0), 1)
+    ]
+    ) as percentage
+      , unnest(
+        array [
+            'and form4."Enc.Pregnancies with abortive outcome" is not null'
+            ,'and form4."Enc.Hypertensive disorders in pregnancy, birth and puerperium" is not null'
+            ,'and form4."Enc.Obstetric Haemmorhage" is not null'
+            ,'and form4."Enc.Pregnancy related infection" is not null'
+            ,'and form4."Enc.Other Obstetric complications" is not null'
+            ,'and form4."Enc.Other direct cause" is not null'
+            ]
+    ) as condition   
+from direct_causes_data
+;]]>
+		</queryString>
+		<field name="direct_cause" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="direct_cause"/>
+		</field>
+		<field name="count" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="count"/>
+		</field>
+		<field name="percentage" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="percentage"/>
+		</field>
+		<field name="condition" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="condition"/>
+		</field>
+		<variable name="total_direct_count" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{count}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="Indirect_Causes_Dataset" uuid="ce7c435b-6ba0-4d2c-9719-e7f824a1df54">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="unicef_moha@prod"/>
+		<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+		<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+		<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+		<parameter name="PARAM_TOTAL_INDIRECT_COUNT" class="java.lang.Long"/>
+		<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+		<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+		<queryString language="SQL">
+			<![CDATA[with indirect_causes_data as (
+    select count(*) filter ( where form4."Enc.Non-obstetric complications- Anaemia" is not null )                    as anaemia
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Cardiac disorders" is not null )                   as cardiac
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Liver Disorders" is not null )                     as liver
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Respiratory Disorders" is not null)                as respiratory
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Renal disorders" is not null)                      as renal
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Neurological Disorders" is not null)               as neuro
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Infections/ Infestations" is not null)             as infections_infestations
+         , count(*)
+           filter ( where form4."Enc.Non-obstetric complications- Endocrinal Disorders" is not null)                 as endocrinal
+    from unicef_moha_form_4_facility_based_mdsr form4
+             left join unicef_moha_mdsr_enrolment_view enrolment
+                       on form4."Enl.Id" = enrolment."Enl.Id"
+             left join address_level phc on form4."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+    where form4."Enc.Cause of maternal death" = 'Indirect causes'
+                and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+                and $X{IN, district.title, PARAM_DISTRICT}  
+                and case
+          when $P{LoggedInUserAttribute_district} notnull then
+             district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+)
+select unnest(
+        array [
+            'Anaemia'
+            , 'Cardiac Disorders'
+            , 'Liver Disorders'
+            , 'Respiratory Disorders'
+            , 'Renal Disorders'
+            , 'Neurological Disorders'
+            , 'Infections / Infestations'
+            , 'Endocrinal Disorders'
+            ]
+    ) as indirect_cause
+     , unnest(array [
+    anaemia
+    , cardiac
+    , liver
+    , respiratory
+    , renal
+    , neuro
+    , infections_infestations
+    , endocrinal
+    ]
+    ) as count
+     , unnest(array [
+    trunc(nullif(anaemia, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(cardiac, 0) * 100.0 /
+          nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(liver, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(respiratory, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(renal, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(neuro, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(infections_infestations, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+    , trunc(nullif(endocrinal, 0) * 100.0 /
+            nullif(anaemia + cardiac + liver + respiratory + renal + neuro + infections_infestations + endocrinal, 0), 1)
+
+    ]
+    ) as percentage
+         , unnest(
+        array [
+            'and form4."Enc.Non-obstetric complications- Anaemia" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Cardiac disorders" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Liver Disorders" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Respiratory Disorders" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Renal disorders" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Neurological Disorders" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Infections/ Infestations" is not null'
+            ,'and form4."Enc.Non-obstetric complications- Endocrinal Disorders" is not null'
+            ]
+    ) as condition
+from indirect_causes_data;]]>
+		</queryString>
+		<field name="indirect_cause" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="indirect_cause"/>
+		</field>
+		<field name="count" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="count"/>
+		</field>
+		<field name="percentage" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="percentage"/>
+		</field>
+		<field name="condition" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="condition"/>
+		</field>
+	</subDataset>
+	<parameter name="PARAM_DATE_START" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DATE_END" class="java.sql.Timestamp"/>
+	<parameter name="PARAM_DISTRICT" class="java.util.List" nestedType="java.lang.String"/>
+	<parameter name="PARAM_COD_REPORT_MODE" class="java.lang.String">
+		<defaultValueExpression><![CDATA["overall"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttribute_district" class="java.lang.String" nestedType="java.lang.String" isForPrompting="false"/>
+	<parameter name="LoggedInUserAttribute_block" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select c.answer_concept_name  as cause_of_death
+     , nullif(count, 0)       as count
+     , trunc(nullif(count, 0) * 100.0 /
+             nullif((select count(*)
+                     from unicef_moha_form_4_facility_based_mdsr form4
+                              left join unicef_moha_mdsr_enrolment_view enrolment
+                                        on form4."Enl.Id" = enrolment."Enl.Id"
+                              left join address_level phc on form4."Ind.address_id" = phc.id
+                              left join address_level block on phc.parent_id = block.id
+                              left join address_level district on block.parent_id = district.id
+                     where "Enc.Cause of maternal death" is not null
+                and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+                and $X{IN, district.title, PARAM_DISTRICT}
+                and case
+          when $P{LoggedInUserAttribute_district} notnull then
+             district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end
+                    ), 0), 1) as percentage
+
+from concept_concept_answer c
+         left join (
+    select form4."Enc.Cause of maternal death" as cause_of_death, count(*) as count
+    from unicef_moha_form_4_facility_based_mdsr form4
+             left join unicef_moha_mdsr_enrolment_view enrolment
+                       on form4."Enl.Id" = enrolment."Enl.Id"
+             left join address_level phc on form4."Ind.address_id" = phc.id
+             left join address_level block on phc.parent_id = block.id
+             left join address_level district on block.parent_id = district.id
+    where form4."Enc.Cause of maternal death" is not null
+                and $X{BETWEEN, enrolment."Enl.enrolment_date_time", PARAM_DATE_START, PARAM_DATE_END}
+                and $X{IN, district.title, PARAM_DISTRICT}
+                and case
+          when $P{LoggedInUserAttribute_district} notnull then
+             district.title in ($P{LoggedInUserAttribute_district})
+          else 1 = 1
+end
+and  case
+          when $P{LoggedInUserAttribute_block} notnull then
+              block.title in ($P{LoggedInUserAttribute_block})
+          else 1 = 1
+end 
+    group by (form4."Enc.Cause of maternal death")
+) form5_data on form5_data.cause_of_death = c.answer_concept_name
+where c.concept_uuid = '27a14e4f-b074-4d5b-8358-2ffdfa6c25a2'
+order by c.answer_order
+;]]>
+	</queryString>
+	<field name="cause_of_death" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cause_of_death"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="concept_concept_answer"/>
+	</field>
+	<field name="count" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count"/>
+	</field>
+	<field name="percentage" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="percentage"/>
+	</field>
+	<variable name="total_count" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{count}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="100" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ReportTitle" x="0" y="0" width="550" height="50" uuid="ccc013a8-2e32-4c97-acca-cfac4c04bef7"/>
+				<text><![CDATA[FBMD - Cause of Death]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="0" width="185" height="30" uuid="fd6e64cc-82a6-4d3c-bab1-51232a25ee40">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f30874-dd53-4dd2-9c54-bfe10965045e"/>
+				</reportElement>
+				<text><![CDATA[Cause of Death]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="185" y="0" width="185" height="30" uuid="9bee515c-27ba-4a39-b27b-df37f4fd6d2d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11b2c11a-c5ed-4bdd-a14b-44964bc24811"/>
+				</reportElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="370" y="0" width="185" height="30" uuid="1ef1b82d-b1c9-43f6-aa9a-47e0efd6a6d0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd428300-7b67-4b59-bba3-8a2bb387bf4b"/>
+				</reportElement>
+				<text><![CDATA[Percentage]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="30" uuid="c6860ca8-4b20-4c40-8d35-00702b97a988">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="68f30874-dd53-4dd2-9c54-bfe10965045e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cause_of_death}.indexOf("-") != -1 ? $F{cause_of_death}.substring(0,$F{cause_of_death}.indexOf("-") ) : $F{cause_of_death}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="185" y="0" width="185" height="30" uuid="7cef123a-907c-4316-9630-34d922ccb259">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11b2c11a-c5ed-4bdd-a14b-44964bc24811"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{count} == null ? 0 : $F{count}]]></textFieldExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[" and form4.\"Enc.Cause of maternal death\" =  '" + $F{cause_of_death} + "'"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement style="DataRowElement" stretchType="RelativeToTallestObject" x="370" y="0" width="185" height="30" uuid="f5d5a473-ba2e-42ec-981c-c818119e07e8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd428300-7b67-4b59-bba3-8a2bb387bf4b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{percentage} == null ? "0%" : $F{percentage}.toString().concat("%")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="400">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField hyperlinkType="ReportExecution">
+				<reportElement style="DataRowElement" x="185" y="0" width="185" height="30" uuid="6969f487-6444-4917-bfa7-bf9aea3a27b5"/>
+				<textFieldExpression><![CDATA[$V{total_count} == null ? 0 : $V{total_count}]]></textFieldExpression>
+				<hyperlinkWhenExpression><![CDATA[$V{total_count} > 0]]></hyperlinkWhenExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_START">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DATE_END">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+					<hyperlinkParameterExpression><![CDATA[" and form4.\"Enc.Cause of maternal death\" is not null"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+					<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="PARAM_DISTRICT">
+					<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<staticText>
+				<reportElement style="DataRowElement" x="0" y="0" width="185" height="30" uuid="0f7ed89b-f135-461f-ab6a-fab3e36f00a0"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="DataRowElement" x="370" y="0" width="185" height="30" uuid="9d99e760-72fa-4e46-b2b8-1c85cebda75c"/>
+				<textFieldExpression><![CDATA[$V{total_count} == null ? "0%" : "100%"]]></textFieldExpression>
+			</textField>
+			<pieChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="0" y="50" width="555" height="300" uuid="edebed9a-2953-4cde-b549-a2f3d3cc7860">
+						<printWhenExpression><![CDATA[$V{total_count} > 0 && $P{PARAM_COD_REPORT_MODE}.equals("indirect")]]></printWhenExpression>
+					</reportElement>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["Indirect Causes"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset minPercentage="1.0">
+					<dataset resetType="Report">
+						<datasetRun subDataset="Indirect_Causes_Dataset" uuid="37b22c27-f431-4f9d-bd71-6da79c33bf3b">
+							<datasetParameter name="PARAM_DATE_START">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_DATE_END">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_DISTRICT">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_TOTAL_INDIRECT_COUNT">
+								<datasetParameterExpression><![CDATA[$F{cause_of_death}.equals("Indirect causes") ? $F{count} : 0]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LoggedInUserAttribute_district">
+								<datasetParameterExpression><![CDATA[$P{LoggedInUserAttribute_district}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LoggedInUserAttribute_block">
+								<datasetParameterExpression><![CDATA[$P{LoggedInUserAttribute_block}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{indirect_cause}]]></keyExpression>
+					<valueExpression><![CDATA[$F{count}]]></valueExpression>
+					<labelExpression><![CDATA[$F{indirect_cause}+"\n"+$F{percentage}+"%"]]></labelExpression>
+					<sectionHyperlink hyperlinkType="ReportExecution">
+						<hyperlinkTooltipExpression><![CDATA[$F{indirect_cause}]]></hyperlinkTooltipExpression>
+						<hyperlinkParameter name="_report">
+							<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_START">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_END">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+							<hyperlinkParameterExpression><![CDATA[$F{condition}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+							<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DISTRICT">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+					</sectionHyperlink>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel>
+						<font size="12" isBold="true"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="0" y="50" width="555" height="300" uuid="cf9c4a04-c88a-42ea-9506-d3652bdebedd">
+						<printWhenExpression><![CDATA[$V{total_count} > 0 && $P{PARAM_COD_REPORT_MODE}.equals("direct")]]></printWhenExpression>
+					</reportElement>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["Direct Causes"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset minPercentage="1.0">
+					<dataset resetType="Report">
+						<datasetRun subDataset="Direct_Causes_Dataset" uuid="adc0f5fa-1021-490f-a3fa-fe9a1fe820cd">
+							<datasetParameter name="PARAM_DATE_START">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_DATE_END">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="PARAM_DISTRICT">
+								<datasetParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LoggedInUserAttribute_district">
+								<datasetParameterExpression><![CDATA[$P{LoggedInUserAttribute_district}]]></datasetParameterExpression>
+							</datasetParameter>
+							<datasetParameter name="LoggedInUserAttribute_block">
+								<datasetParameterExpression><![CDATA[$P{LoggedInUserAttribute_block}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{direct_cause}]]></keyExpression>
+					<valueExpression><![CDATA[$F{count}]]></valueExpression>
+					<labelExpression><![CDATA[$F{direct_cause}+"\n"+$F{percentage}+"%"]]></labelExpression>
+					<sectionHyperlink hyperlinkType="ReportExecution">
+						<hyperlinkTooltipExpression><![CDATA[$F{direct_cause}]]></hyperlinkTooltipExpression>
+						<hyperlinkParameter name="_report">
+							<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_START">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_END">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+							<hyperlinkParameterExpression><![CDATA[$F{condition}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+							<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DISTRICT">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+					</sectionHyperlink>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel>
+						<font size="12" isBold="true"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="-12" y="50" width="580" height="300" uuid="855b5240-384a-4a67-8fac-e7901fcb825f">
+						<printWhenExpression><![CDATA[$V{total_count} > 0 && $P{PARAM_COD_REPORT_MODE}.equals("overall")]]></printWhenExpression>
+					</reportElement>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["Cause of Death"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset minPercentage="1.0">
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{cause_of_death}.indexOf("-") != -1 ? $F{cause_of_death}.substring(0,$F{cause_of_death}.indexOf("-") ) : $F{cause_of_death}]]></keyExpression>
+					<valueExpression><![CDATA[$F{count} == null ? 0 : $F{count}]]></valueExpression>
+					<labelExpression><![CDATA[$F{count} >=1 ?  $F{cause_of_death}.indexOf("-") != -1 ? $F{cause_of_death}.substring(0,$F{cause_of_death}.indexOf("-") ).concat("\n").concat($F{percentage}.toString().concat("%")).concat("\n") : $F{cause_of_death}.concat("\n").concat($F{percentage}.toString().concat("%")).concat("\n") : ""]]></labelExpression>
+					<sectionHyperlink hyperlinkType="ReportExecution">
+						<hyperlinkTooltipExpression><![CDATA[$F{cause_of_death}]]></hyperlinkTooltipExpression>
+						<hyperlinkParameter name="_report">
+							<hyperlinkParameterExpression><![CDATA["/MDSR/Reports/Linelists/MDSR_Common_Linelist"]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_START">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_START}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DATE_END">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DATE_END}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_WHERE">
+							<hyperlinkParameterExpression><![CDATA[" and form4.\"Enc.Cause of maternal death\" =  '" + $F{cause_of_death} + "'"]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DYNAMIC_JOIN">
+							<hyperlinkParameterExpression><![CDATA[" right join unicef_moha_form_4_facility_based_mdsr form4 on form4.\"Enl.Id\" = enrolment.\"Enl.Id\""]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+						<hyperlinkParameter name="PARAM_DISTRICT">
+							<hyperlinkParameterExpression><![CDATA[$P{PARAM_DISTRICT}]]></hyperlinkParameterExpression>
+						</hyperlinkParameter>
+					</sectionHyperlink>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel>
+						<font size="12" isBold="true"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

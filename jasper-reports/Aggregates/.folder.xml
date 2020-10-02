@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/MDSR/Reports</parent>
+    <name>Aggregates</name>
+    <label>Aggregates</label>
+    <description></description>
+    <creationDate>2020-09-04T23:06:37.055+05:30</creationDate>
+    <updateDate>2020-09-04T23:06:37.055+05:30</updateDate>
+    <resource>CBMD_Review</resource>
+    <resource>CBMD_type_of_delays</resource>
+    <resource>Deaths_in_Transit</resource>
+    <resource>District_wise_maternal_deaths_reviewed_by_CMO_and_collector</resource>
+    <resource>Educational_Status_of_Deceased_Mother_for_CBMDs</resource>
+    <resource>Educational_Status_of_Deceased_Mother_for_FBMDs</resource>
+    <resource>FBMD_Review</resource>
+    <resource>FBMD_type_of_delays</resource>
+    <resource>Maternal_deaths_at_Home</resource>
+    <resource>Places_visited_prior_to_facility</resource>
+    <resource>Underlying_factors_for_maternal_deaths___FBMD</resource>
+</folder>

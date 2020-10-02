@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Graph</folder>
+    <name>CBMD_Type_of_facility_used_for_transport</name>
+    <version>42</version>
+    <label>CBMD - Type of transport used for facility 1</label>
+    <description></description>
+    <creationDate>2020-09-15T14:17:07.263+05:30</creationDate>
+    <updateDate>2020-10-01T10:37:49.360+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Graph/CBMD_Type_of_facility_used_for_transport_files</folder>
+            <name>main_jrxml</name>
+            <version>1</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-10-01T10:37:49.360+05:30</creationDate>
+            <updateDate>2020-10-01T10:37:49.360+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_TIMING_OF_DEATH</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="Linelist.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Graph/CBMD_Type_of_facility_used_for_transport_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>37</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-15T14:17:07.263+05:30</creationDate>
+            <updateDate>2020-09-15T14:17:07.263+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

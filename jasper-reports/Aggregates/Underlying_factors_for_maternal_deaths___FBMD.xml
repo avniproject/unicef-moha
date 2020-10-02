@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Aggregates</folder>
+    <name>Underlying_factors_for_maternal_deaths___FBMD</name>
+    <version>9</version>
+    <label>Underlying factors for maternal deaths - FBMD</label>
+    <description></description>
+    <creationDate>2020-09-11T17:51:07.204+05:30</creationDate>
+    <updateDate>2020-09-30T14:49:34.218+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Underlying_factors_for_maternal_deaths___FBMD_files</folder>
+            <name>main_jrxml</name>
+            <version>15</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-14T06:26:00.494+05:30</creationDate>
+            <updateDate>2020-09-30T14:49:33.599+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="Linelist.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Underlying_factors_for_maternal_deaths___FBMD_files</folder>
+            <name>Linelist.jrtx</name>
+            <version>8</version>
+            <label>Linelist.jrtx</label>
+            <creationDate>2020-09-11T17:51:07.204+05:30</creationDate>
+            <updateDate>2020-09-11T17:51:07.204+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

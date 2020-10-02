@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Aggregates</folder>
+    <name>Maternal_deaths_at_Home</name>
+    <version>12</version>
+    <label>Maternal deaths at Home</label>
+    <description></description>
+    <creationDate>2020-09-08T09:07:54.484+05:30</creationDate>
+    <updateDate>2020-09-28T14:55:26.246+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Maternal_deaths_at_Home_files</folder>
+            <name>main_jrxml</name>
+            <version>22</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-08T09:07:54.484+05:30</creationDate>
+            <updateDate>2020-09-28T14:55:25.501+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AggregateReportStyles.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/Maternal_deaths_at_Home_files</folder>
+            <name>AggregateReportStyles.jrtx</name>
+            <version>11</version>
+            <label>AggregateReportStyles.jrtx</label>
+            <creationDate>2020-09-08T09:07:54.484+05:30</creationDate>
+            <updateDate>2020-09-08T09:07:54.484+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

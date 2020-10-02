@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/MDSR/Reports/Aggregates</folder>
+    <name>CBMD_type_of_delays</name>
+    <version>10</version>
+    <label>CBMD type of delays</label>
+    <description></description>
+    <creationDate>2020-09-11T22:00:44.980+05:30</creationDate>
+    <updateDate>2020-09-30T13:27:54.982+05:30</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/CBMD_type_of_delays_files</folder>
+            <name>main_jrxml</name>
+            <version>1</version>
+            <label>Main jrxml</label>
+            <creationDate>2020-09-30T13:27:54.982+05:30</creationDate>
+            <updateDate>2020-09-30T13:27:54.982+05:30</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/MDSR/Data_Sources/mdsr</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_START</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DATE_END</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/MDSR/Input_Controls/PARAM_DISTRICT</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AggregateReportStyles.jrtx.data" xsi:type="fileResource">
+            <folder>/MDSR/Reports/Aggregates/CBMD_type_of_delays_files</folder>
+            <name>AggregateReportStyles.jrtx</name>
+            <version>9</version>
+            <label>AggregateReportStyles.jrtx</label>
+            <creationDate>2020-09-11T22:00:44.980+05:30</creationDate>
+            <updateDate>2020-09-11T22:00:44.980+05:30</updateDate>
+            <fileType>jrtx</fileType>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

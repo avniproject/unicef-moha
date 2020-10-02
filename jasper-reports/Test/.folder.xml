@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/MDSR/Reports</parent>
+    <name>Test</name>
+    <label>Test</label>
+    <description></description>
+    <creationDate>2020-09-15T17:44:22.406+05:30</creationDate>
+    <updateDate>2020-09-15T17:44:22.406+05:30</updateDate>
+    <resource>assam_districts.csv</resource>
+    <resource>CSVDataAdapter</resource>
+    <resource>test_csv</resource>
+    <resource>Trial_FYandQuarters</resource>
+    <resource>Trial_UserRoleParamsInReport</resource>
+    <permission>
+        <permissionMask>0</permissionMask>
+        <recipient recipientType="role">ROLE_MDSR</recipient>
+    </permission>
+</folder>
